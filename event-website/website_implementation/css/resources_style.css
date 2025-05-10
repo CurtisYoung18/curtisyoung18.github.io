@@ -22,7 +22,7 @@ body {
 .card {
     position: relative;
     width: 300px;
-    height: 450px;
+    height: 400px;
     margin: 20px;
     background-color: #758a99;
     border-radius: 20px;
@@ -34,69 +34,88 @@ body {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     /* Prevents the card from shrinking if there's not enough space */
     flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card .photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* default big image */
-.card .photo {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0%;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-/* zoom in when hovering */
-.card:hover .photo {
-    top: 30px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* a small circle */
-    /* Creates a gradient that fades from transparent to black */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-}
-
-/* Adds a gradient overlay to the photo for aesthetic and readability reasons */
-.card .photo::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, #222);
+    object-position: center;
 }
 
 .card h1 {
     position: absolute;
-    top: 370px;
-    transition: 0.5s;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
     font-size: 25px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    transition: 0.3s;
+    z-index: 2;
 }
 
-.card:hover h1 {
-    top: 170px;
+.card .content {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+    opacity: 0;
 }
 
-.card h2{
-    margin-top: 220px;
-    width: 90%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+.card.active .content {
+    top: 0;
+    opacity: 1;
+}
+
+.card.active .photo {
+    filter: blur(3px);
+}
+
+.card.active h1 {
+    bottom: auto;
+    top: 20px;
+    background: transparent;
+}
+
+.card h2 {
     font-size: 18px;
     text-align: center;
     margin-bottom: 20px;
     padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .card a {
+    display: block;
     text-align: center;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: #fff;
 }
 
 /* learn more button */
@@ -105,10 +124,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 8px 32px;
     border-radius: 8px;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
 .more:hover {
-    scale: 1.3;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 /* for tablet and phones in landscape */

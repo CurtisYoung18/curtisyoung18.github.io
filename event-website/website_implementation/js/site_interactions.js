@@ -22,3 +22,25 @@ if (width <= 1194) {
 // run this code then the page first loads
 updateAriaAttributes();
 window.addEventListener("resize", updateAriaAttributes);
+
+// Handle card interactions
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active class from all cards
+            cards.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked card
+            this.classList.add('active');
+        });
+    });
+
+    // Close card when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.card')) {
+            cards.forEach(card => card.classList.remove('active'));
+        }
+    });
+});
