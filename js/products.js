@@ -360,12 +360,13 @@ allCards.forEach(card => {
         const description = this.dataset.description;
         const image = this.dataset.image;
         const github = this.dataset.github;
+        const demo = this.dataset.demo;
 
         modal.querySelector('.modal-image').src = image;
         modal.querySelector('.modal-title').textContent = title;
         modal.querySelector('.modal-description').textContent = description;
         modal.querySelector('.github-link').href = github;
-
+        modal.querySelector('.demo-link').href = demo;
         modal.classList.add('active');
         
         // 停止自动滚动

@@ -250,18 +250,53 @@
 
 .modal-links {
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.modal-links .github-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.modal-links .link {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    margin-left: auto;
 }
 
 .modal-links a {
-    padding: 0.8rem 1.5rem;
-    background: #3498db;
-    color: white;
+    padding: 0.9rem 2.2rem;
+    background: linear-gradient(90deg, rgba(52,152,219,0.7), rgba(46,204,113,0.7));
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 24px rgba(52,152,219,0.15), 0 1.5px 8px rgba(46,204,113,0.10);
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
 }
 
 .modal-links a:hover {
-    background: #2980b9;
+    background: linear-gradient(90deg, rgba(46,204,113,0.85), rgba(52,152,219,0.85));
+    box-shadow: 0 8px 32px rgba(52,152,219,0.25), 0 3px 16px rgba(46,204,113,0.18);
+    transform: scale(1.07) translateY(-2px);
+    color: #fff;
+}
+
+.modal-links i {
+    font-size: 1.3em;
+    filter: drop-shadow(0 1px 2px rgba(52,152,219,0.2));
 } 

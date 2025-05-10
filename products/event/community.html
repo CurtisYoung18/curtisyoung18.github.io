@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- responsive nav bar -->
+      <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer" 
+      />
+      <title>The Mindful Retreat</title>
+
+      <!--Google Fonts-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+      <!-- link to css -->
+      <link rel="stylesheet" href="website_implementation/css/community_styles.css">
+      <link rel="stylesheet" href="website_implementation/css/general_styles.css">
+      
+      <!-- flatpickr date picker - sourced from flatpickr.js.org -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    </head>
+    <body>
+        <header aria-label="Website navigation header">
+            <!-- the navigation bar -->
+            <div class="navbar" aria-label="Main navigation bar">
+                <div class="logo"><a href="index.html" aria-label="Home page link">The Mindful Retreat</a></div>
+                <ul class="links" aria-label="Primary navigation links">
+                    <li><a href="about.html" id="about1">About</a></li>
+                    <li><a href="gallery.html" id="gallery2">Gallery</a></li>
+                    <li><a href="community.html" id="community3">Community</a></li>
+                    <li><a href="resources.html" id="resources4">Resources</a></li>
+                </ul>
+                <a href="#" class="action_btn" aria-label="Search button">Search</a>
+                <div class="toggle_btn" aria-label="Menu toggle button">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <!-- responsive menu -->
+            <div class="dropdown_menu" aria-label="Responsive dropdown menu">
+                <li><a href="about.html" id="about1">About</a></li>
+                <li><a href="gallery.html" id="gallery2">Gallery</a></li>
+                <li><a href="community.html" id="community3">Community</a></li>
+                <li><a href="resources.html" id="resources4">Resources</a></li>
+                <li><a href="#" class="action_btn">Search</a></li>
+            </div>           
+        </header>
+
+        <!-- the main content -->
+        <section class="flex-main-content" aria-label="Main content">
+            <div class="grid-row">
+                <div class="col-12 col-md-12 col-lg-4">
+                    <p class="grab-text">This wellness site is a project that aims to make community wellness activities more visible to people.</p>
+                    <br>
+                    <p class="grab-text">Community wellness events are aggregated into one page, making it easier for people to find local wellness events.</p>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-8">
+                    <div class="grid-row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <div class="card" role="group" aria-labelledby="card-form-title" aria-describedby="card-form-desc">
+                              <h2 class="card-header m-2" id="card-form-title">Submit an event form</h2>
+                              <img class="card-banner-image" src="website_implementation/media/gallery_1.jpg" alt="Image of Quiet Mindful" loading="lazy">
+                              <form id="eventForm" class="m-2" enctype="multipart/form-data" aria-label="Event submission form">
+                                  <div class="form-group">
+                                      <label for="name">Event Name:</label>
+                                      <input type="text" id="name" name="name" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="location">Location:</label>
+                                      <input type="text" id="location" name="location" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="location">Organiser:</label>
+                                    <input type="text" id="organiser" name="organiser" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Event Type:</label>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="event_type" id="workshop" value="Workshop" required>
+                                          <label class="form-check-input" for="workshop">Workshop</label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="event_type" id="seminar" value="Seminar" required>
+                                          <label class="form-check-input" for="seminar">Seminar</label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="event_type" id="groupActivity" value="Group Activity" required>
+                                          <label class="form-check-input" for="groupActivity">Group Activity</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="event_type" id="webinar" value="Webinar" required>
+                                        <label class="form-check-input" for="webinar">Webinar</label>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="description">Description:</label>
+                                      <textarea id="description" name="description" rows="4" required></textarea>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="date_time">Date and Time:</label>
+                                      <input type="text" id="date_time" name="date_time" placeholder="e.g. 2023-05-31 14:30" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="photo" id="photo-file-input-label" class="p-1">Add a photo (Optional)</label>
+                                      <input type="file" name="photo-file-input" id="photo-file-input" accept="image/*" capture="camera"> <span id="selected-file-name"></span>
+                                  </div>
+                                  <div>
+                                      <input class="btn btn-primary" type="submit" value="Submit Event">
+                                  </div>
+                              </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <h3 class="text-white">Filter events</h3>
+                            <select id="filterDropdown" aria-label="Event type filter dropdown">
+                                <option value="">ALL</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Group Activity">Group Activity</option>
+                                <option value="Webinar">Webinar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid-row" id="events-container" aria-label="Events listing">
+
+                    </div>
+                </div>
+
+            </div>          
+        </section>
+
+        <!-- site js -->
+        <script src="website_implementation/js/site_interactions.js"></script>
+        <script src="website_implementation/js/card_height.js"></script>
+        <script src="website_implementation/js/forum_event.js"></script>
+        <script src="website_implementation/js/res_nav.js"></script>
+    </body>
+</html>
