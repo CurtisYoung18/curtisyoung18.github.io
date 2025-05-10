@@ -563,10 +563,10 @@ header label {
   text-align: center;
 }
 .intro .avatar {
-  padding: 10px;
+  padding: 15px;
 }
 .intro .avatar img {
-  width: 128px;
+  width: 180px;
   height: auto;
   display: inline-block;
   -webkit-border-radius: 100%;
@@ -590,17 +590,22 @@ header label {
   cursor: pointer;
 }
 .nickname {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: normal;
+  margin: 15px 0;
+}
+.description {
+  font-size: 1.2em;
+  margin: 15px 0;
 }
 .links a {
-  padding: 0 5px;
+  padding: 0 8px;
 }
 .links a:hover {
   background-color: transparent;
 }
 .links .iconfont {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .post-wrap {
   position: relative;
