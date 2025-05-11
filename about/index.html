@@ -1,52 +1,297 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-
-
-
     <meta name="description" content="Curtis Mei's Portfolio and Blog">
-
-
     <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-
-
-<title>About | Curtis Mei's Portfolio</title>
-
-
-
+    <title>About | Curtis Mei's Portfolio</title>
     <link rel="icon" href="/favicon.ico">
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
     <link rel="stylesheet" href="/css/style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/tocbot.min.js"></script>
+    <style>
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
+        .profile-section {
+            position: relative;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
 
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-    
-    
-        
-    
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
 
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin: 0.5rem 0;
+        }
+
+        .profile-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            margin-right: 0.5rem;
+        }
+
+        .content-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: scale(1.05);
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .cv-section {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-top: 4rem;
+        }
+
+        .cv-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .cv-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .cv-button i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .github-chart {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .github-chart img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Interactive elements */
+        .interactive-element {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-element::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .interactive-element:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(100, 100);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="wrapper">
         <header>
@@ -113,73 +358,171 @@
 </script>
         <div class="main">
             <div class="container">
-    <article class="post-wrap page">
-        
-        <h2 class="post-title">About</h2>
-        
-        <section class="post-content">
-            <div class="cv-download">
-                <a href="/files/CV.pdf" class="cv-button" download>
-                    <i class="iconfont icon-download"></i> Download CV
-                </a>
+                <div class="about-container">
+                    <!-- Profile Section -->
+                    <section class="profile-section fade-in">
+                        <div class="profile-header">
+                            <img src="/images/profile.png" alt="Curtis Mei" class="profile-image">
+                            <div class="profile-info">
+                                <h1 class="profile-name">Curtis Mei</h1>
+                                <p class="profile-title">Software Developer & Machine Learning Enthusiast</p>
+                                <p class="profile-description">
+                                    I am a passionate software developer with a strong foundation in both frontend and backend development, 
+                                    as well as machine learning. My experience spans across web development, reinforcement learning, 
+                                    and creating user-friendly applications. I enjoy tackling complex problems and turning them into elegant solutions.
+                                </p>
+                                <div class="social-links">
+                                    <a href="https://github.com/CurtisYoung18" target="_blank" class="social-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/curtis-mei" target="_blank" class="social-link">
+                                        <i class="fab fa-linkedin"></i> LinkedIn
+                                    </a>
+                                    <a href="mailto:curtis.mei@example.com" class="social-link">
+                                        <i class="fas fa-envelope"></i> Email
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Content Sections -->
+                    <div class="content-section">
+                        <!-- Skills Section -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">Skills & Expertise</h2>
+                            <div class="skill-list">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Vue.js</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">RESTful APIs</span>
+                                <span class="skill-tag">WebSocket</span>
+                            </div>
+                        </div>
+
+                        <!-- Projects Section -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">Featured Projects</h2>
+                            <ul class="project-list">
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/7140-My-event-website" target="_blank">
+                                            Mindful Retreat
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        A modern event website for mindfulness retreats, featuring responsive design and interactive elements
+                                    </p>
+                                </li>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/My-Portfolio" target="_blank">
+                                            GreenGo Portfolio
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        A portfolio website for GreenGo, an online information platform for biking enthusiasts
+                                    </p>
+                                </li>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/ScanMe" target="_blank">
+                                            Scan Me
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        An online QR code generator for restaurants to facilitate contactless payments
+                                    </p>
+                                </li>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank">
+                                            DQN Implementation
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">Education</h2>
+                            <div class="education-item">
+                                <h3>BSc in Computer Science</h3>
+                                <p>Curtin University</p>
+                                <p>2023</p>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Contributions -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">GitHub Activity</h2>
+                            <div class="github-chart">
+                                <img src="https://ghchart.rshah.org/CurtisYoung18" alt="Curtis's Github chart">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CV Download Section -->
+                    <section class="cv-section fade-in">
+                        <h2 class="section-title">Download My CV</h2>
+                        <p>Get a detailed overview of my experience and skills</p>
+                        <a href="/files/CV.pdf" class="cv-button interactive-element" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </section>
+                </div>
             </div>
-
-            <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1>
-            <p>I am a passionate software developer with a strong foundation in both frontend and backend development, as well as machine learning. My experience spans across web development, reinforcement learning, and creating user-friendly applications. I enjoy tackling complex problems and turning them into elegant solutions.</p>
-            <p>Beyond coding, I'm an avid learner who enjoys exploring new technologies and contributing to open-source projects. I believe in writing clean, maintainable code and creating intuitive user experiences.</p>
-            <p>Contributions in the last year:</p>
-            <p><img src="https://ghchart.rshah.org/CurtisYoung18" alt="Curtis's Github chart"></p>
-
-            <h1 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h1>
-            <ul>
-                <li><a href="https://github.com/CurtisYoung18/7140-My-event-website" target="_blank" rel="noopener">Mindful Retreat</a>: A modern event website for mindfulness retreats, featuring responsive design and interactive elements</li>
-                <li><a href="https://github.com/CurtisYoung18/My-Portfolio" target="_blank" rel="noopener">GreenGo Portfolio</a>: A portfolio website for GreenGo, an online information platform for biking enthusiasts</li>
-                <li><a href="https://github.com/CurtisYoung18/ScanMe" target="_blank" rel="noopener">Scan Me</a>: An online QR code generator for restaurants to facilitate contactless payments</li>
-                <li><a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank" rel="noopener">DQN Implementation</a>: Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch</li>
-            </ul>
-
-            <h1 id="Skills-amp-Expertise"><a href="#Skills-amp-Expertise" class="headerlink" title="Skills &amp; Expertise"></a>Skills &amp; Expertise</h1>
-            <p>Here are the technologies and tools I work with regularly. Those marked in bold are my primary areas of expertise.</p>
-            <ul>
-                <li>Programming Languages: <strong>Python</strong>, <strong>JavaScript</strong>, <strong>HTML/CSS</strong>, TypeScript, Java</li>
-                <li>Frontend Development: <strong>React</strong>, <strong>Vue.js</strong>, <strong>jQuery</strong>, <strong>Bootstrap</strong>, <strong>Semantic UI</strong></li>
-                <li>Backend Development: <strong>Node.js</strong>, <strong>Express</strong>, <strong>Python Flask</strong></li>
-                <li>Machine Learning: <strong>PyTorch</strong>, <strong>TensorFlow</strong>, <strong>Reinforcement Learning</strong>, <strong>Deep Learning</strong></li>
-                <li>Databases: <strong>MySQL</strong>, <strong>MongoDB</strong>, Redis</li>
-                <li>Tools & Technologies: <strong>Git</strong>, <strong>Docker</strong>, <strong>Linux</strong>, <strong>RESTful APIs</strong>, <strong>WebSocket</strong></li>
-                <li>Development Tools: <strong>VS Code</strong>, <strong>PyCharm</strong>, <strong>Postman</strong>, <strong>Jupyter Notebook</strong></li>
-            </ul>
-
-            <h1 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h1>
-            <p>BSc in Computer Science, 2023, <a href="https://www.curtin.edu.au/" target="_blank" rel="noopener">Curtin University</a></p>
-
-            <style>
-                .cv-download {
-                    text-align: center;
-                    margin: 2em 0;
-                }
-                .cv-button {
-                    display: inline-block;
-                    padding: 12px 24px;
-                    background-color: #4a90e2;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 4px;
-                    font-weight: bold;
-                    transition: background-color 0.3s ease;
-                }
-                .cv-button:hover {
-                    background-color: #357abd;
-                }
-                .cv-button i {
-                    margin-right: 8px;
-                }
-            </style>
-        </section>
-    </article>
-</div>
-
         </div>
+
+        <script>
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+            // Add ripple effect to interactive elements
+            document.querySelectorAll('.interactive-element').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    element.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 1000);
+                });
+            });
+        </script>
+
         <footer id="footer" class="footer">
     <div class="copyright">
         <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>

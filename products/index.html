@@ -1,30 +1,162 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-    <meta name="description" content="Curtis Mei's Portfolio and Blog">
+    <meta name="description" content="Curtis の Home">
     <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-    <title>Products | Curtis Mei's Portfolio</title>
+    <title>Products | Curtis の Home</title>
     <link rel="icon" href="/favicon.ico">
-    
-    <!-- scripts list from _config.yml -->
-    <script src="/js/script.js"></script>
-    <script src="/js/tocbot.min.js"></script>
-    <script src="/js/products.js" defer></script>
-    
-    <!-- stylesheets list from _config.yml -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+        }
+
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .product-link i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <nav class="navbar">
                 <div class="container">
-                    <div class="navbar-header header-logo"><a href="/">Curtis Mei's Portfolio</a></div>
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
                     <div class="menu navbar-right">
                         <a class="menu-item" href="/archives">Posts</a>
                         <a class="menu-item" href="/products">Products</a>
@@ -36,12 +168,12 @@
                     </div>
                 </div>
             </nav>
-            
+
             <nav class="navbar-mobile" id="nav-mobile">
                 <div class="container">
                     <div class="navbar-header">
                         <div>
-                            <a href="/">Curtis Mei's Portfolio</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                            <a href="/">Curtis の Home</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
                         </div>
                         <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
                     </div>
@@ -55,84 +187,80 @@
                 </div>
             </nav>
         </header>
-        
+
         <div class="main">
             <div class="container">
-                <article class="post-wrap page">
-                    <h2 class="post-title">
-                        <span>P</span>
-                        <span>R</span>
-                        <span>O</span>
-                        <span>D</span>
-                        <span>U</span>
-                        <span>C</span>
-                        <span>T</span>
-                        <span>S</span>
-                    </h2>
+                <div class="products-container">
+                    <h2 class="post-title">Products</h2>
                     <div class="products-grid">
-                        <div class="carousel-container">
-                            
-                            <div class="product-card" data-title="Mindful Retreat" data-description="My-Event-Website is a entry-level project for frontend development." data-image="/images/products/event.png" data-github="https://github.com/CurtisYoung18/7140-My-event-website" data-demo="/products/event/index.html">
-                                <div class="card-content">
-                                    <img src="/images/products/event.png" alt="my-event-website">
-                                    <h1>Mindful Retreat</h1>
+                        <div class="product-card">
+                            <img src="/images/products/event.png" alt="Mindful Retreat" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Mindful Retreat</h3>
+                                <p class="product-description">A modern event website for mindfulness retreats, featuring responsive design and interactive elements.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/7140-My-event-website" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="/products/event/index.html" target="_blank" class="product-link">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
                                 </div>
                             </div>
-                            
-                            <div class="product-card" data-title="GreenGo Portfolio" data-description="GreenGo Portfolio is a portfolio website for GreenGo, an online information platform for biking enthusiasts." data-image="/images/products/portfolio.gif" data-github="https://github.com/CurtisYoung18/My-Portfolio" data-demo="/products/GreenGo/Portfolio/portfolio.html">
-                                <div class="card-content">
-                                    <img src="/images/products/portfolio.gif" alt="GreenGo Portfolio">
-                                    <h1>GreenGo Portfolio</h1>
-                                </div>
-                            </div>
-                            
-                            <div class="product-card" data-title="Scan Me" data-description="Scan Me is an online qr code generator designed for restaurant owners to generate qr codes for their customers to scan and pay for their orders." data-image="/images/products/scan_me.png" data-github="https://github.com/CurtisYoung18/ScanMe">  
-                                <div class="card-content">
-                                    <img src="/images/products/scan_me.png" alt="Scan Me">
-                                    <h1>Scan Me</h1>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-title="DQN Implementation" data-description="This is a implementation of DQN beyond Cartpole and Lunar Lander using PyTorch." data-image="/images/products/dqn.gif" data-github="https://github.com/CurtisYoung18/RL-DQN">  
-                                <div class="card-content">
-                                    <img src="/images/products/dqn.gif" alt="DQN Implementation">
-                                    <h1>DQN Implementation</h1>
-                                </div>
-                            </div>
-                           
-                            
-                            
                         </div>
-                        <div class="carousel-scrollbar">
-                            <div class="carousel-scrollbar-thumb"></div>
+
+                        <div class="product-card">
+                            <img src="/images/products/portfolio.gif" alt="GreenGo Portfolio" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">GreenGo Portfolio</h3>
+                                <p class="product-description">A portfolio website for GreenGo, an online information platform for biking enthusiasts.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/My-Portfolio" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="/products/GreenGo/Portfolio/portfolio.html" target="_blank" class="product-link">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="/images/products/scan_me.png" alt="Scan Me" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Scan Me</h3>
+                                <p class="product-description">An online QR code generator for restaurants to facilitate contactless payments.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/ScanMe" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="/images/products/dqn.gif" alt="DQN Implementation" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">DQN Implementation</h3>
+                                <p class="product-description">Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         </div>
-        
+
         <footer id="footer" class="footer">
             <div class="copyright">
                 <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
             </div>
         </footer>
     </div>
-
-    <!-- 添加弹出层 -->
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <img class="modal-image" src="" alt="">
-            <h2 class="modal-title"></h2>
-            <p class="modal-description"></p>
-            <div class="modal-links">
-                <a href="" target="_blank" class="github-link"><i class="iconfont icon-github" style="font-size: 1.5em;"></i>View on GitHub</a>
-                <a href="" target="_blank" class="demo-link"><i class="iconfont icon-try" style="font-size: 1.5em;"></i>Try Demo</a>
-
-            </div>
-        </div>
-    </div>
-
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
 </body>
 </html>
