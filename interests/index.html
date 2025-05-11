@@ -11,6 +11,39 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <style>
+        /* Dark mode styles */
+        .dark .interests-header h1,
+        .dark .interests-header p,
+        .dark .card-title,
+        .dark .card-subtitle,
+        .dark .card-description {
+            color: #e0e0e0 !important;
+        }
+
+        .dark .interest-card {
+            background: rgba(30, 30, 30, 0.7) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .dark .interest-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .dark .card-link {
+            background: #2980b9 !important;
+            color: #ffffff !important;
+        }
+
+        .dark .card-link:hover {
+            background: #3498db !important;
+        }
+
+        .dark .card-tag {
+            background: rgba(52, 152, 219, 0.9) !important;
+            color: #ffffff !important;
+        }
+
+        /* Light mode styles (existing styles) */
         .interests-container {
             max-width: 1200px;
             margin: 0 auto;

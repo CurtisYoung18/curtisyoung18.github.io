@@ -14,12 +14,63 @@
     <script src="/js/script.js"></script>
     <script src="/js/tocbot.min.js"></script>
     <style>
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        /* Dark mode styles */
+        .dark .profile-name,
+        .dark .profile-title,
+        .dark .profile-description,
+        .dark .section-title,
+        .dark .project-title,
+        .dark .project-description,
+        .dark .skill-tag,
+        .dark .education-item h3,
+        .dark .education-item p,
+        .dark .cv-section p {
+            color: #e0e0e0 !important;
         }
 
+        .dark .profile-section,
+        .dark .glass-card,
+        .dark .cv-section {
+            background: rgba(30, 30, 30, 0.7) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .dark .skill-tag {
+            background: rgba(52, 152, 219, 0.2) !important;
+            color: #3498db !important;
+        }
+
+        .dark .skill-tag:hover {
+            background: rgba(52, 152, 219, 0.3) !important;
+        }
+
+        .dark .project-item {
+            background: rgba(40, 40, 40, 0.5) !important;
+        }
+
+        .dark .project-item:hover {
+            background: rgba(50, 50, 50, 0.7) !important;
+        }
+
+        .dark .social-link {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #e0e0e0 !important;
+        }
+
+        .dark .social-link:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .dark .cv-button {
+            background: linear-gradient(135deg, #2980b9, #3498db) !important;
+            color: #ffffff !important;
+        }
+
+        .dark .cv-button:hover {
+            background: linear-gradient(135deg, #3498db, #2980b9) !important;
+        }
+
+        /* Light mode styles (existing styles) */
         .profile-section {
             position: relative;
             margin-bottom: 4rem;

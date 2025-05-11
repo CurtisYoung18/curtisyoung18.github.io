@@ -12,6 +12,33 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Dark mode styles */
+        .dark .product-title,
+        .dark .product-description,
+        .dark .post-title {
+            color: #e0e0e0 !important;
+        }
+
+        .dark .product-card {
+            background: rgba(30, 30, 30, 0.7) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .dark .product-card:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .dark .product-link {
+            background: rgba(52, 152, 219, 0.2) !important;
+            color: #3498db !important;
+        }
+
+        .dark .product-link:hover {
+            background: rgba(52, 152, 219, 0.3) !important;
+            color: #2980b9 !important;
+        }
+
+        /* Light mode styles (existing styles) */
         .products-container {
             max-width: 1200px;
             margin: 0 auto;

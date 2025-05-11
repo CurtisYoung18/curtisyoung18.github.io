@@ -169,5 +169,75 @@
 </footer>
     </div>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+    <style>
+        /* Dark mode styles */
+        .dark .post-title,
+        .dark .post-content h1,
+        .dark .post-content h2,
+        .dark .post-content h3,
+        .dark .post-content p,
+        .dark .post-content li,
+        .dark .post-content a {
+            color: #e0e0e0 !important;
+        }
+
+        .dark .post-content a {
+            color: #3498db !important;
+        }
+
+        .dark .post-content a:hover {
+            color: #2980b9 !important;
+        }
+
+        .dark .post-wrap {
+            background: rgba(30, 30, 30, 0.7) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        /* Light mode styles */
+        .post-wrap {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .post-content {
+            line-height: 1.8;
+        }
+
+        .post-content h1 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .post-content ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+            margin: 1rem 0;
+        }
+
+        .post-content li {
+            margin: 0.5rem 0;
+            color: #34495e;
+        }
+
+        .post-content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .post-content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+    </style>
 </body>
 </html>
