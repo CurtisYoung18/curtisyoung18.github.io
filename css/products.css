@@ -292,6 +292,8 @@
     margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modal-links a {
@@ -299,22 +301,44 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1.5rem;
-    background: #3498db;
-    color: white;
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     font-size: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
 }
 
 .modal-links a:hover {
-    background: #2980b9;
+    background: rgba(52, 152, 219, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.modal-links a.github-link {
+    background: rgba(36, 41, 46, 0.1);
+    color: #24292e;
+    border-color: rgba(36, 41, 46, 0.2);
+}
+
+.modal-links a.github-link:hover {
+    background: rgba(36, 41, 46, 0.15);
+    box-shadow: 0 6px 20px rgba(36, 41, 46, 0.1);
+    border-color: rgba(36, 41, 46, 0.3);
+}
+
+.modal-links a.demo-link {
+    margin-left: auto;
 }
 
 .modal-links i {
     font-size: 1.2em;
+    opacity: 0.9;
 }
 
 /* 自定义滚动条样式 */
@@ -357,10 +381,15 @@
     
     .modal-links {
         flex-direction: column;
+        gap: 0.8rem;
     }
     
     .modal-links a {
         width: 100%;
         justify-content: center;
+    }
+    
+    .modal-links a.demo-link {
+        margin-left: 0;
     }
 } 
