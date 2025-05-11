@@ -1,171 +1,232 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-
-
-
-    <meta name="description" content="Curtis の Blog">
-
-
-    <meta name="keywords" content="Curtis Mei, Zhiyang Mei Blog">
-
-
-<title>Curtis の Blog</title>
-
-
-
+    <meta name="description" content="Curtis's Interests - Movies, Music, Books and More">
+    <meta name="keywords" content="Curtis Mei, Interests, Movies, Music, Books">
+    <title>Interests - Curtis's Blog</title>
     <link rel="icon" href="/favicon.ico">
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
     <link rel="stylesheet" href="/css/style.css">
-    
+    <style>
+        .interests-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
         
-    
-
-
-<meta name="generator" content="Hexo 4.2.1"></head>
+        .interests-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .interests-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .interests-header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        
+        .interest-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        
+        .card-description {
+            font-size: 1rem;
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .card-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .card-link:hover {
+            background: #2980b9;
+        }
+        
+        .card-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(52, 152, 219, 0.9);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .interests-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="wrapper">
         <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Curtis の Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/products">Products</a>
-                    
-                    <a class="menu-item" href="/interests">Interests</a>
-                    
-                    <a class="menu-item" href="/collection">Collections</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Curtis の Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Blog</a></div>
+                    <div class="menu navbar-right">
+                        <a class="menu-item" href="/archives">Posts</a>
+                        <a class="menu-item" href="/products">Products</a>
+                        <a class="menu-item" href="/interests">Interests</a>
+                        <a class="menu-item" href="/collection">Collections</a>
+                        <a class="menu-item" href="/about">About</a>
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+                    </div>
                 </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/products">Products</a>
+            </nav>
+        </header>
 
-                    <a class="menu-item" href="/interests">Interests</a>
-                                
-                    <a class="menu-item" href="/collection">Collections</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
         <div class="main">
-            
-    <div class="container">
-    <div class="intro">
-        <div class="avatar">
-            <a href="/about"><img src="/image/profile.png"></a>
-        </div>
-        <div class="nickname">Curtis</div>
-        <div class="description"><p><span class="typing-effect">🚀 Open Source Enthusiast | Master's Student</span></p>
-</div>
-        <div class="links">
-            
+            <div class="interests-container">
+                <div class="interests-header">
+                    <h1>My Interests</h1>
+                    <p>A curated collection of things that inspire and excite me</p>
+                </div>
                 
-                    <a class="link-item" title="Blog" href="/archives">
-                        
-                        
-                            <i class="iconfont icon-blog"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Resume" href="/about">
-                        
-                        
-                            <i class="iconfont icon-resume"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Instagram" href="https://www.instagram.com/magicyoung63" target="_blank" rel="noopener">
-                        
-                        
-                            <i class="iconfont icon-instagram"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Github" href="https://github.com/CurtisYoung18" target="_blank" rel="noopener">
-                        
-                        
-                            <i class="iconfont icon-github"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Link" href="mailto:magicyoung63@gmail.com?subject=Hello Curtis&body=Hi Curtis,%0D%0A%0D%0AI'd like to get in touch with you.">
-                        
-                        
-                            <i class="iconfont icon-link"></i>
-                        
-                    </a>
-                
-            
-        </div>
-    </div>
-</div>
+                <div class="cards-grid">
+                    <!-- Movies & TV Shows -->
+                    <div class="interest-card">
+                        <span class="card-tag">TV Series</span>
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Love, Death & Robots" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">Love, Death & Robots</h2>
+                            <p class="card-subtitle">Netflix Original Series</p>
+                            <p class="card-description">A collection of animated short stories that span the science fiction, fantasy, horror and comedy genres. Each episode is a unique visual and narrative experience.</p>
+                            <a href="https://www.netflix.com/title/80174608" class="card-link" target="_blank">Watch on Netflix</a>
+                        </div>
+                    </div>
 
+                    <!-- Music -->
+                    <div class="interest-card">
+                        <span class="card-tag">Music</span>
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Music" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">Favorite Tracks</h2>
+                            <p class="card-subtitle">My Playlist</p>
+                            <p class="card-description">A collection of songs that have inspired me, from classical to electronic. Each track tells a story and evokes unique emotions.</p>
+                            <a href="https://open.spotify.com/user/your-profile" class="card-link" target="_blank">Listen on Spotify</a>
+                        </div>
+                    </div>
 
+                    <!-- Books -->
+                    <div class="interest-card">
+                        <span class="card-tag">Books</span>
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Books" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">Reading List</h2>
+                            <p class="card-subtitle">Tech & Philosophy</p>
+                            <p class="card-description">A collection of books that have shaped my thinking about technology, philosophy, and life. From technical deep-dives to philosophical explorations.</p>
+                            <a href="#" class="card-link">View Reading List</a>
+                        </div>
+                    </div>
+
+                    <!-- Photography -->
+                    <div class="interest-card">
+                        <span class="card-tag">Photography</span>
+                        <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Photography" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">Photography</h2>
+                            <p class="card-subtitle">Visual Stories</p>
+                            <p class="card-description">Capturing moments and stories through the lens. From street photography to nature landscapes, each photo tells a unique story.</p>
+                            <a href="https://www.instagram.com/magicyoung63" class="card-link" target="_blank">View on Instagram</a>
+                        </div>
+                    </div>
+
+                    <!-- Tech Projects -->
+                    <div class="interest-card">
+                        <span class="card-tag">Projects</span>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Projects" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">Side Projects</h2>
+                            <p class="card-subtitle">Personal Experiments</p>
+                            <p class="card-description">A collection of personal projects and experiments in technology. From web applications to automation tools, each project is a learning journey.</p>
+                            <a href="https://github.com/CurtisYoung18" class="card-link" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- Travel -->
+                    <div class="interest-card">
+                        <span class="card-tag">Travel</span>
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Travel" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">Travel Adventures</h2>
+                            <p class="card-subtitle">Places & Memories</p>
+                            <p class="card-description">Exploring new places and cultures. Each journey brings new perspectives and unforgettable memories.</p>
+                            <a href="#" class="card-link">View Travel Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
-    </div>
-</footer>
+            <div class="copyright">
+                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+            </div>
+        </footer>
     </div>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
 </body>
