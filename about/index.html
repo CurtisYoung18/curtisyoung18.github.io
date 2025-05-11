@@ -3,345 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
     <meta name="description" content="Curtis の Home">
     <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
     <title>About | Curtis の Home</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="/js/script.js"></script>
     <script src="/js/tocbot.min.js"></script>
-    <style>
-        /* Dark mode styles */
-        .dark .profile-name,
-        .dark .profile-title,
-        .dark .profile-description,
-        .dark .section-title,
-        .dark .project-title,
-        .dark .project-description,
-        .dark .skill-tag,
-        .dark .education-item h3,
-        .dark .education-item p,
-        .dark .cv-section p {
-            color: #e0e0e0 !important;
-        }
-
-        .dark .profile-section,
-        .dark .glass-card,
-        .dark .cv-section {
-            background: rgba(30, 30, 30, 0.7) !important;
-            border-color: rgba(255, 255, 255, 0.1) !important;
-        }
-
-        .dark .skill-tag {
-            background: rgba(52, 152, 219, 0.2) !important;
-            color: #3498db !important;
-        }
-
-        .dark .skill-tag:hover {
-            background: rgba(52, 152, 219, 0.3) !important;
-        }
-
-        .dark .project-item {
-            background: rgba(40, 40, 40, 0.5) !important;
-        }
-
-        .dark .project-item:hover {
-            background: rgba(50, 50, 50, 0.7) !important;
-        }
-
-        .dark .social-link {
-            background: rgba(255, 255, 255, 0.1) !important;
-            color: #e0e0e0 !important;
-        }
-
-        .dark .social-link:hover {
-            background: rgba(255, 255, 255, 0.2) !important;
-        }
-
-        .dark .cv-button {
-            background: linear-gradient(135deg, #2980b9, #3498db) !important;
-            color: #ffffff !important;
-        }
-
-        .dark .cv-button:hover {
-            background: linear-gradient(135deg, #3498db, #2980b9) !important;
-        }
-
-        /* Light mode styles (existing styles) */
-        .profile-section {
-            position: relative;
-            margin-bottom: 4rem;
-            padding: 2rem;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-info {
-            flex: 1;
-        }
-
-        .profile-name {
-            font-size: 2.5rem;
-            margin: 0;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-
-        .profile-title {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin: 0.5rem 0;
-        }
-
-        .profile-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #34495e;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            color: #2c3e50;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .social-link i {
-            margin-right: 0.5rem;
-        }
-
-        .content-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            padding: 0.3rem 0.8rem;
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 15px;
-            font-size: 0.9rem;
-            color: #2c3e50;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(52, 152, 219, 0.2);
-            transform: scale(1.05);
-        }
-
-        .project-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .project-item {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .project-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .project-title {
-            font-size: 1.1rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-description {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-        }
-
-        .cv-section {
-            text-align: center;
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            margin-top: 4rem;
-        }
-
-        .cv-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
-
-        .cv-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-        }
-
-        .cv-button i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .github-chart {
-            margin: 2rem 0;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .github-chart img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .profile-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-
-            .content-section {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Interactive elements */
-        .interactive-element {
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .interactive-element::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%);
-            transform-origin: 50% 50%;
-        }
-
-        .interactive-element:focus:not(:active)::after {
-            animation: ripple 1s ease-out;
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(100, 100);
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -350,49 +22,31 @@
                 <div class="container">
                     <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
                     <div class="menu navbar-right">
-                        
                             <a class="menu-item" href="/archives">Posts</a>
-                        
                             <a class="menu-item" href="/products">Products</a>
-                            
-                            <a class="menu-item" href="/interests">Interests</a>
-                            
                             <a class="menu-item" href="/collection">Collections</a>
-                        
                             <a class="menu-item" href="/about">About</a>
-                        
-                        <input id="switch_default" type="checkbox" class="switch_default">
-                        <label for="switch_default" class="toggleBtn"></label>
                     </div>
-        
                 </div>
             </nav>
-
     
     <nav class="navbar-mobile" id="nav-mobile">
         <div class="container">
             <div class="navbar-header">
                 <div>
-                    <a href="/">Curtis の Home</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                            <a href="/">Curtis の Home</a>
                 </div>
                 <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
             </div>
             <div class="menu" id="mobile-menu">
-                
                     <a class="menu-item" href="/archives">Posts</a>
-                
                     <a class="menu-item" href="/products">Products</a>
-                
                     <a class="menu-item" href="/tag">Tags</a>
-                
                     <a class="menu-item" href="/collection">Collections</a>
-                
                     <a class="menu-item" href="/about">About</a>
-                
             </div>
         </div>
     </nav>
-
 </header>
 <script>
     var mobileBtn = function f() {
@@ -415,22 +69,32 @@
                         <div class="profile-header">
                             <img src="/images/profile.png" alt="Curtis Mei" class="profile-image">
                             <div class="profile-info">
-                                <h1 class="profile-name">Curtis Mei</h1>
-                                <p class="profile-title">Software Developer & Machine Learning Enthusiast</p>
+                                <h1 class="profile-name">Zhiyang Mei</h1>
+                                <br>
                                 <p class="profile-description">
-                                    I am a passionate software developer with a strong foundation in both frontend and backend development, 
-                                    as well as machine learning. My experience spans across web development, reinforcement learning, 
-                                    and creating user-friendly applications. I enjoy tackling complex problems and turning them into elegant solutions.
+                                    I am a Master's student at the University of Queensland, specializing in Machine Learning and AI Security. 
+                                    With a strong foundation in both software development and research, I focus on creating innovative solutions 
+                                    in AI security and machine learning applications. My experience spans across web development, 
+                                    reinforcement learning, and AI model security research.
                                 </p>
                                 <div class="social-links">
                                     <a href="https://github.com/CurtisYoung18" target="_blank" class="social-link">
-                                        <i class="fab fa-github"></i> GitHub
+                                        <div class="social-link-content">
+                                            <i class="fab fa-github"></i>
+                                            <span class="social-link-text">GitHub</span>
+                                        </div>
                                     </a>
-                                    <a href="https://www.linkedin.com/in/curtis-mei" target="_blank" class="social-link">
-                                        <i class="fab fa-linkedin"></i> LinkedIn
+                                    <a href="mailto:magicyoung63@yahoo.com" class="social-link email-link">
+                                        <div class="social-link-content">
+                                            <i class="fas fa-envelope"></i>
+                                            <span class="social-link-text">Email</span>
+                                        </div>
                                     </a>
-                                    <a href="mailto:curtis.mei@example.com" class="social-link">
-                                        <i class="fas fa-envelope"></i> Email
+                                    <a href="tel:+61403813564" class="social-link phone-link">
+                                        <div class="social-link-content">
+                                            <i class="fas fa-phone"></i>
+                                            <span class="social-link-text">Phone</span>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -440,24 +104,42 @@
                     <!-- Content Sections -->
                     <div class="content-section">
                         <!-- Skills Section -->
-                        <div class="glass-card fade-in">
+                        <div class="glass-card skills-card">
                             <h2 class="section-title">Skills & Expertise</h2>
-                            <div class="skill-list">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Vue.js</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Express</span>
-                                <span class="skill-tag">PyTorch</span>
-                                <span class="skill-tag">TensorFlow</span>
-                                <span class="skill-tag">MySQL</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Linux</span>
-                                <span class="skill-tag">RESTful APIs</span>
-                                <span class="skill-tag">WebSocket</span>
+                            <div class="skills-container">
+                                <div class="skill-category">
+                                    <h3>Programming Languages</h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">PyTorch</span>
+                                        <span class="skill-tag">PHP</span>
+                                        <span class="skill-tag">Java</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">SQL</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <h3>Web Development</h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag">Vue.js</span>
+                                        <span class="skill-tag">Node.js</span>
+                                        <span class="skill-tag">HTML5</span>
+                                        <span class="skill-tag">CSS3</span>
+                                        <span class="skill-tag">RESTful APIs</span>
+                                    </div>
+                                </div>
+                               
+                                <div class="skill-category">
+                                    <h3>Tools & Others</h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Git</span>
+                                        <span class="skill-tag">Docker</span>
+                                        <span class="skill-tag">AWS</span>
+                                        <span class="skill-tag">Linux</span>
+                                        <span class="skill-tag">LaTex</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -467,22 +149,12 @@
                             <ul class="project-list">
                                 <li class="project-item interactive-element">
                                     <h3 class="project-title">
-                                        <a href="https://github.com/CurtisYoung18/7140-My-event-website" target="_blank">
-                                            Mindful Retreat
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        A modern event website for mindfulness retreats, featuring responsive design and interactive elements
-                                    </p>
-                                </li>
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
                                         <a href="https://github.com/CurtisYoung18/My-Portfolio" target="_blank">
-                                            GreenGo Portfolio
+                                            GreenGo
                                         </a>
                                     </h3>
                                     <p class="project-description">
-                                        A portfolio website for GreenGo, an online information platform for biking enthusiasts
+                                        Comprehensive web application built with HTML, CSS, JavaScript, and PHP
                                     </p>
                                 </li>
                                 <li class="project-item interactive-element">
@@ -492,40 +164,67 @@
                                         </a>
                                     </h3>
                                     <p class="project-description">
-                                        An online QR code generator for restaurants to facilitate contactless payments
+                                        Online Order System developed using HTML, CSS, JavaScript, PHP, Java, and MySQL
                                     </p>
                                 </li>
                                 <li class="project-item interactive-element">
                                     <h3 class="project-title">
                                         <a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank">
-                                            DQN Implementation
+                                            DQN beyond Cartpole and Lunar Lander
                                         </a>
                                     </h3>
                                     <p class="project-description">
-                                        Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch
+                                        Reinforcement Learning Application implemented with PyTorch and Python
                                     </p>
                                 </li>
-                            </ul>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="#" target="_blank">
+                                            SecurePrune
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Research-oriented prototype for machine unlearning using PyTorch and NumPy
+                                    </p>
+                                </li>
+</ul>
                         </div>
 
                         <!-- Education Section -->
                         <div class="glass-card fade-in">
                             <h2 class="section-title">Education</h2>
                             <div class="education-item">
-                                <h3>BSc in Computer Science</h3>
-                                <p>Curtin University</p>
-                                <p>2023</p>
+                                <h3>M.Sc. in Information Technology</h3>
+                                <p>EAIT, University of Queensland</p>
+                                <p>Brisbane, Australia</p>
+                                <p>2023 – 2025.6 (expected)</p>
+                                <p>GPA: 5.9/7</p>
+                                <ul class="education-details">
+                                    <li>Research area: Machine Learning, AI Security</li>
+                                    <li>Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence</li>
+</ul>
+                            </div>
+                            <div class="education-item">
+                                <h3>B.Sc. in International Economics and Trade</h3>
+                                <p>School of Business, Shantou University</p>
+                                <p>Shantou, China</p>
+                                <p>2019 – 2023</p>
                             </div>
                         </div>
 
-                        <!-- GitHub Contributions -->
-                        <div class="glass-card fade-in">
-                            <h2 class="section-title">GitHub Activity</h2>
-                            <div class="github-chart">
-                                <img src="https://ghchart.rshah.org/CurtisYoung18" alt="Curtis's Github chart">
+                        <!-- Publications Section -->
+                        <div class="glass-card">
+                            <h2 class="section-title">Publications</h2>
+                            <div class="publication-item">
+                                <h3>AI Model Modulation with Logits Redistribution</h3>
+                                <p class="publication-authors">Zihan Wang*, Zhongkui Ma*, Xinguo Feng, Zhiyang Mei, Ethan Ma, Derui Wang, Minhui Xue, Guangdong Bai</p>
+                                <p class="publication-venue">Proceedings of the ACM Web Conference (WWW '25), 2025</p>
+                                <a href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" class="publication-link">
+                                    <i class="fas fa-external-link-alt"></i> View Paper
+                                </a>
                             </div>
                         </div>
-                    </div>
+</div>
 
                     <!-- CV Download Section -->
                     <section class="cv-section fade-in">
@@ -572,14 +271,268 @@
                     }, 1000);
                 });
             });
+
+            // 添加按钮展开动画
+            document.addEventListener('DOMContentLoaded', function() {
+                const emailLink = document.querySelector('.email-link');
+                const phoneLink = document.querySelector('.phone-link');
+                
+                function handleLinkClick(e, link, text) {
+                    e.preventDefault();
+                    const content = link.querySelector('.social-link-content');
+                    const icon = link.querySelector('i');
+                    const textSpan = link.querySelector('.social-link-text');
+                    
+                    if (link.classList.contains('expanded')) {
+                        // 收起
+                        link.classList.remove('expanded');
+                        textSpan.textContent = text;
+                        setTimeout(() => {
+                            link.href = link.classList.contains('email-link') ? 
+                                'mailto:magicyoung63@yahoo.com' : 
+                                'tel:+61403813564';
+                        }, 300);
+                    } else {
+                        // 展开
+                        link.classList.add('expanded');
+                        textSpan.textContent = link.classList.contains('email-link') ? 
+                            'magicyoung63@yahoo.com' : 
+                            '+61 403813564';
+                        link.href = '#';
+                    }
+                }
+
+                emailLink.addEventListener('click', (e) => handleLinkClick(e, emailLink, 'Email'));
+                phoneLink.addEventListener('click', (e) => handleLinkClick(e, phoneLink, 'Phone'));
+            });
         </script>
 
         <footer id="footer" class="footer">
     <div class="copyright">
-        <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
 </footer>
     </div>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+    <script type="text/javascript" src="/js/about.js"></script>
+    <style>
+        /* 更新技能卡片样式 */
+        .skills-card {
+            grid-column: 1 / -1;
+            margin-bottom: 2rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            color: #2c3e50;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.15);
+        }
+
+        /* 更新按钮样式 */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 调整 zhiyangmei 高度 */
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 4px solid #fff;
+        }
+
+        /* 深色模式样式更新 */
+        .dark .skill-category {
+            background: rgba(30, 30, 30, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .skill-category h3 {
+            color: #e0e0e0;
+            border-bottom-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .skill-tag {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
+            color: #e0e0e0;
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .skill-tag:hover {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.25), rgba(41, 128, 185, 0.25));
+        }
+
+        .dark .social-link {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .skill-tags {
+                gap: 0.8rem;
+            }
+
+            .skill-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 更新 profile-name 样式 */
+        .profile-name {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin: 0;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+            line-height: 1.2;
+            min-height: 4rem;
+            display: block;
+        }
+
+        /* 更新 CV section 样式 */
+        .cv-section {
+            margin-top: 9rem;
+            margin-bottom: 4rem;
+            padding: 3.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 更新 CV 按钮样式 */
+        .cv-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+
+        .cv-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .cv-button:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* 深色模式样式更新 */
+        .dark .cv-section {
+            background: rgba(30, 30, 30, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .cv-button {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
+            color: #e0e0e0;
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .cv-button:hover {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.25), rgba(41, 128, 185, 0.25));
+            color: #3498db;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .cv-section {
+                margin-top: 4rem;
+                margin-bottom: 3rem;
+                padding: 2.5rem;
+            }
+        }
+    </style>
 </body>
 </html>
