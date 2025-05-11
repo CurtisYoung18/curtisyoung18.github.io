@@ -19,6 +19,11 @@ Welcome to my digital playground! I love building robust SaaS platforms, automat
 - [milog-android](https://github.com/curtisyoung18/milog-android): Hybrid blog app for Android
 - [Go](https://github.com/curtisyoung18/Go): AR navigation app for Android
 
+## Projects
+
+- [My-Event-Website](https://github.com/curtisyoung18/7140-My-event-website): A entry-level project for frontend development ([Demo](https://curtisyoung18.github.io/products/event/index.html))
+- [GreenGo Portfolio](https://github.com/curtisyoung18/My-Portfolio): A portfolio website for GreenGo ([Demo](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html))
+
 > 🌟 More projects? Check my [GitHub profile](https://github.com/curtisyoung18)!
 
 ## 💡 Skills & Tools
