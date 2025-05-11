@@ -206,6 +206,9 @@
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
+    overflow-y: auto;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .modal.active {
@@ -216,15 +219,20 @@
 .modal-content {
     position: relative;
     width: 95%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 3rem;
+    padding: 2rem;
     transform: scale(0.9);
     transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .modal.active .modal-content {
@@ -239,82 +247,120 @@
     color: #666;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .modal-close:hover {
     color: #333;
+    background: white;
 }
 
 .modal-image {
     width: 100%;
-    max-height: 600px;
+    max-height: 50vh;
     object-fit: contain;
     border-radius: 10px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .modal-title {
     font-size: 2rem;
     color: #2c3e50;
-    margin-bottom: 1rem;
+    margin: 0;
+    padding-right: 2rem;
 }
 
 .modal-description {
-    color: #666;
-    line-height: 1.8;
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .modal-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1.5rem;
-}
-
-.modal-links .github-link {
-    display: flex;
-    align-items: center;
-    gap: 0.7em;
-}
-
-.modal-links .link {
-    display: flex;
-    align-items: center;
-    gap: 0.7em;
-    margin-left: auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .modal-links a {
-    padding: 0.9rem 2.2rem;
-    background: linear-gradient(90deg, rgba(52,152,219,0.7), rgba(46,204,113,0.7));
-    color: #fff;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 24px rgba(52,152,219,0.15), 0 1.5px 8px rgba(46,204,113,0.10);
-    border: none;
-    outline: none;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .modal-links a:hover {
-    background: linear-gradient(90deg, rgba(46,204,113,0.85), rgba(52,152,219,0.85));
-    box-shadow: 0 8px 32px rgba(52,152,219,0.25), 0 3px 16px rgba(46,204,113,0.18);
-    transform: scale(1.07) translateY(-2px);
-    color: #fff;
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .modal-links i {
-    font-size: 1.3em;
-    filter: drop-shadow(0 1px 2px rgba(52,152,219,0.2));
+    font-size: 1.2em;
+}
+
+/* 自定义滚动条样式 */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .modal {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+        width: 100%;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-description {
+        font-size: 1rem;
+    }
+    
+    .modal-links {
+        flex-direction: column;
+    }
+    
+    .modal-links a {
+        width: 100%;
+        justify-content: center;
+    }
 } 
