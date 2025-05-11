@@ -361,12 +361,21 @@ allCards.forEach(card => {
         const image = this.dataset.image;
         const github = this.dataset.github;
         const demo = this.dataset.demo;
+        const demoLink = modal.querySelector('.demo-link');
 
         modal.querySelector('.modal-image').src = image;
         modal.querySelector('.modal-title').textContent = title;
         modal.querySelector('.modal-description').textContent = description;
         modal.querySelector('.github-link').href = github;
-        modal.querySelector('.demo-link').href = demo;
+        
+        // Show/hide demo link based on presence of data-demo
+        if (demo) {
+            demoLink.href = demo;
+            demoLink.style.display = 'inline-flex';
+        } else {
+            demoLink.style.display = 'none';
+        }
+        
         modal.classList.add('active');
         
         // 停止自动滚动
