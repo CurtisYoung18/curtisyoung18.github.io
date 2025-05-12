@@ -9,15 +9,35 @@
 
 Welcome to my personal website and digital portfolio! This repository contains my personal website, blog, and various project showcases. I love sharing my thoughts, experiences, and technical insights through this platform.
 
-## 🌐 Website Structure
+## 🌟 Featured Projects
 
-- **Home Page**: Main landing page showcasing my latest updates and featured content
-- **About**: Personal introduction and professional background
-- **Blog**: Technical articles, project insights, and personal thoughts
-- **Collection**: Curated collection of my work and interests
-- **Products**: Showcase of my projects and applications
-  - [GreenGo Portfolio](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html): A portfolio website for GreenGo
-  - [Event Website](https://curtisyoung18.github.io/products/event/website_implementation/index.html): A modern event management website
+### Web Development
+- **[GreenGo Portfolio](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html)**
+  - Developed a modern, responsive portfolio website for GreenGo
+  - Implemented custom animations and interactive features
+  - Created a user-friendly interface with optimized performance
+
+- **[Event Management Website](https://curtisyoung18.github.io/products/event/website_implementation/index.html)**
+  - Built a comprehensive event management platform
+  - Features include event registration, gallery, and resource management
+  - Implemented responsive design for all devices
+
+### Mobile Development
+- **[AR Navigation App (Go)](https://github.com/curtisyoung18/Go)**
+  - Developed an Android AR navigation application
+  - Implemented real-time location tracking and AR visualization
+  - Integrated with Google Maps API for enhanced navigation
+
+### Open Source Projects
+- **[2048 Game in React](https://github.com/curtisyoung18/2048-react)**
+  - Created a modern implementation of the classic 2048 game
+  - Built with React and modern JavaScript practices
+  - Features responsive design and touch controls
+
+- **[Ruby Pictogram Generator (rpictogrify)](https://github.com/curtisyoung18/rpictogrify)**
+  - Developed a Ruby-based tool for generating pictograms
+  - Implemented custom algorithms for image processing
+  - Created a user-friendly CLI interface
 
 ## 📝 Blog Posts
 
@@ -46,13 +66,8 @@ This website is built with:
 ## 📫 Connect with Me
 
 - Website: [curtisyoung18.github.io](https://curtisyoung18.github.io)
-- Email: [curtisyoung18@gmail.com](mailto:curtisyoung18@gmail.com)
+- Email: [curtisyoung63@gmail.com](mailto:curtisyoung63@gmail.com)
 - GitHub: [@curtisyoung18](https://github.com/curtisyoung18)
-
-## 📈 GitHub Stats
-
-![Curtis's GitHub stats](https://github-readme-stats.vercel.app/api?username=curtisyoung18&show_icons=true&theme=radical)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=curtisyoung18&layout=compact&theme=radical)
 
 ---
 
