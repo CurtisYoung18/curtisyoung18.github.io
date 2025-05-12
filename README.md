@@ -13,7 +13,6 @@ Currently pursuing my Master's degree at the University of Queensland, focusing 
 
 ### University of Queensland
 **M.Sc. in Information Technology** (2023 - 2025.6 expected)
-- GPA: 5.9/7
 - Research Area: Machine Learning, AI Security
 - Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence
 
