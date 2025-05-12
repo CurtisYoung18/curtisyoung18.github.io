@@ -7,49 +7,53 @@
 
 🚀 **Full-Stack Engineer | Open Source Enthusiast | Automation Evangelist**
 
-Welcome to my digital playground! I love building robust SaaS platforms, automating workflows, and contributing to open source. My passion is turning ideas into reality with code.
+Welcome to my personal website and digital portfolio! This repository contains my personal website, blog, and various project showcases. I love sharing my thoughts, experiences, and technical insights through this platform.
 
-## 🏆 Featured Projects
+## 🌐 Website Structure
 
-- [2048-react](https://github.com/curtisyoung18/2048-react): 2048 Game in React ([Demo](https://curtisyoung18.github.io/2048-react/))
-- [rpictogrify](https://github.com/curtisyoung18/rpictogrify): Ruby pictogram generator
-- [letscertbot](https://github.com/curtisyoung18/letscertbot): Automated SSL certificate management
-- [intro](https://github.com/curtisyoung18/intro): Rails feature introduction & user guide
-- [milog](https://github.com/curtisyoung18/milog): Rails-powered blog platform
-- [milog-android](https://github.com/curtisyoung18/milog-android): Hybrid blog app for Android
-- [Go](https://github.com/curtisyoung18/Go): AR navigation app for Android
+- **Home Page**: Main landing page showcasing my latest updates and featured content
+- **About**: Personal introduction and professional background
+- **Blog**: Technical articles, project insights, and personal thoughts
+- **Collection**: Curated collection of my work and interests
+- **Products**: Showcase of my projects and applications
+  - [GreenGo Portfolio](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html): A portfolio website for GreenGo
+  - [Event Website](https://curtisyoung18.github.io/products/event/website_implementation/index.html): A modern event management website
 
-## Projects
+## 📝 Blog Posts
 
-- [My-Event-Website](https://github.com/curtisyoung18/7140-My-event-website): A entry-level project for frontend development ([Demo](https://curtisyoung18.github.io/products/event/index.html))
-- [GreenGo Portfolio](https://github.com/curtisyoung18/My-Portfolio): A portfolio website for GreenGo ([Demo](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html))
+Recent blog posts can be found in the `posts/` directory, covering topics such as:
+- Technical projects and development experiences
+- Photography journey and visual storytelling
+- Personal insights and professional growth
 
-> 🌟 More projects? Check my [GitHub profile](https://github.com/curtisyoung18)!
+## 🛠️ Technical Stack
+
+This website is built with:
+- HTML5 & CSS3 for structure and styling
+- JavaScript for interactive features
+- Responsive design for optimal viewing across devices
+- Custom CSS animations and transitions
+- Modern web development practices
 
 ## 💡 Skills & Tools
 
-![Ruby](https://img.shields.io/badge/-Ruby-red?logo=ruby&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow?logo=javascript&logoColor=white)
-![Vue.js](https://img.shields.io/badge/-Vue.js-42b883?logo=vue.js&logoColor=white)
-![React](https://img.shields.io/badge/-React-61dafb?logo=react&logoColor=white)
-![Rails](https://img.shields.io/badge/-Rails-cc0000?logo=ruby-on-rails&logoColor=white)
-![Docker](https://img.shields.io/badge/-Docker-2496ed?logo=docker&logoColor=white)
-![GitLab CI](https://img.shields.io/badge/-GitLab%20CI-fca121?logo=gitlab&logoColor=white)
-![JMeter](https://img.shields.io/badge/-JMeter-d22128?logo=apache-jmeter&logoColor=white)
-![MySQL](https://img.shields.io/badge/-MySQL-4479a1?logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/-Redis-dc382d?logo=redis&logoColor=white)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)
+
+## 📫 Connect with Me
+
+- Website: [curtisyoung18.github.io](https://curtisyoung18.github.io)
+- Email: [curtisyoung18@gmail.com](mailto:curtisyoung18@gmail.com)
+- GitHub: [@curtisyoung18](https://github.com/curtisyoung18)
 
 ## 📈 GitHub Stats
 
 ![Curtis's GitHub stats](https://github-readme-stats.vercel.app/api?username=curtisyoung18&show_icons=true&theme=radical)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=curtisyoung18&layout=compact&theme=radical)
 
-## 📫 Connect with Me
-
-- Blog: [curtisyoung18.github.io](https://curtisyoung18.github.io)
-- Email: [curtisyoung18@gmail.com](mailto:curtisyoung18@gmail.com)
-- GitHub: [@curtisyoung18](https://github.com/curtisyoung18)
-
 ---
 
-> *"Code is poetry. Let's build something amazing together!"*
+> *"Sharing knowledge and experiences through code and words."*
