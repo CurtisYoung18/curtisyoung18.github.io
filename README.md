@@ -1,74 +1,81 @@
-# 👋 Hi, I'm Curtis (Zhiyang Mei)
+# 👋 Hi, I'm Zhiyang Mei (Curtis)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=curtisyoung18&color=blue)
 ![GitHub followers](https://img.shields.io/github/followers/curtisyoung18?label=Follow&style=social)
 
 ---
 
-🚀 **Full-Stack Engineer | Open Source Enthusiast | Automation Evangelist**
+🚀 **M.Sc. Student in Information Technology | AI Researcher | Full-Stack Developer**
 
-Welcome to my personal website and digital portfolio! This repository contains my personal website, blog, and various project showcases. I love sharing my thoughts, experiences, and technical insights through this platform.
+Currently pursuing my Master's degree at the University of Queensland, focusing on Machine Learning and AI Security. Passionate about developing innovative solutions and contributing to cutting-edge research in artificial intelligence.
+
+## 📚 Education
+
+### University of Queensland
+**M.Sc. in Information Technology** (2023 - 2025.6 expected)
+- GPA: 5.9/7
+- Research Area: Machine Learning, AI Security
+- Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence
+
+### Shantou University
+**B.Sc. in International Economics and Trade** (2019 - 2023)
+
+## 📝 Publications
+
+**AI Model Modulation with Logits Redistribution** (2025)
+- Published in Proceedings of the ACM Web Conference (WWW '25)
+- Co-authored with Zihan Wang, Zhongkui Ma, et al.
+- [DOI: 10.1145/3696410.3714737](https://dl.acm.org/doi/10.1145/3696410.3714737)
 
 ## 🌟 Featured Projects
 
+### AI & Machine Learning
+- **[SecurePrune](https://github.com/curtisyoung18/SecurePrune)**
+  - Research-oriented prototype for machine unlearning
+  - Implemented using PyTorch and NumPy
+  - Focuses on secure model pruning and data removal
+
+- **[DQN beyond Cartpole and Lunar Lander](https://github.com/curtisyoung18/DQN)**
+  - Advanced Reinforcement Learning application
+  - Built with PyTorch and Python
+  - Extends Deep Q-Network implementations
+
 ### Web Development
-- **[GreenGo Portfolio](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html)**
-  - Developed a modern, responsive portfolio website for GreenGo
-  - Implemented custom animations and interactive features
-  - Created a user-friendly interface with optimized performance
+- **[GreenGo](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html)**
+  - Comprehensive web application
+  - Technologies: HTML, CSS, JavaScript, PHP
+  - Features modern UI/UX design and responsive layout
 
-- **[Event Management Website](https://curtisyoung18.github.io/products/event/website_implementation/index.html)**
-  - Built a comprehensive event management platform
-  - Features include event registration, gallery, and resource management
-  - Implemented responsive design for all devices
-
-### Mobile Development
-- **[AR Navigation App (Go)](https://github.com/curtisyoung18/Go)**
-  - Developed an Android AR navigation application
-  - Implemented real-time location tracking and AR visualization
-  - Integrated with Google Maps API for enhanced navigation
-
-### Open Source Projects
-- **[2048 Game in React](https://github.com/curtisyoung18/2048-react)**
-  - Created a modern implementation of the classic 2048 game
-  - Built with React and modern JavaScript practices
-  - Features responsive design and touch controls
-
-- **[Ruby Pictogram Generator (rpictogrify)](https://github.com/curtisyoung18/rpictogrify)**
-  - Developed a Ruby-based tool for generating pictograms
-  - Implemented custom algorithms for image processing
-  - Created a user-friendly CLI interface
-
-## 📝 Blog Posts
-
-Recent blog posts can be found in the `posts/` directory, covering topics such as:
-- Technical projects and development experiences
-- Photography journey and visual storytelling
-- Personal insights and professional growth
-
-## 🛠️ Technical Stack
-
-This website is built with:
-- HTML5 & CSS3 for structure and styling
-- JavaScript for interactive features
-- Responsive design for optimal viewing across devices
-- Custom CSS animations and transitions
-- Modern web development practices
+- **[Scan Me](https://github.com/curtisyoung18/ScanMe)**
+  - Online Order System
+  - Full-stack development with HTML, CSS, JavaScript, PHP, Java
+  - Database integration with MySQL
 
 ## 💡 Skills & Tools
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-yellow?logo=javascript&logoColor=white)
+### Languages
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white)
+![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=white)
+![SQL](https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white)
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
+
+### Frameworks & Tools
+![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)
+![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=white)
+![LaTeX](https://img.shields.io/badge/-LaTeX-008080?logo=latex&logoColor=white)
+![VSCode](https://img.shields.io/badge/-VSCode-007ACC?logo=visual-studio-code&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white)
 
 ## 📫 Connect with Me
 
 - Website: [curtisyoung18.github.io](https://curtisyoung18.github.io)
-- Email: [curtisyoung63@gmail.com](mailto:curtisyoung63@gmail.com)
+- Email: [zhiyang.mei@student.uq.edu.au](mailto:zhiyang.mei@student.uq.edu.au)
+- Phone: [+61 403813564](tel:+61403813564)
 - GitHub: [@curtisyoung18](https://github.com/curtisyoung18)
 
 ---
 
-> *"Sharing knowledge and experiences through code and words."*
+> *"Bridging the gap between academic research and practical applications in AI and software development."*
