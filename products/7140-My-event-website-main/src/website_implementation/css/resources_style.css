@@ -1,7 +1,10 @@
 /* background setting*/
 body {
-    background-color: #f5f7fa;
-    /* Remove background image */
+    background-image:url('../media/resource_background.jpg');
+    /* photo created by David Marcu, from https://unsplash.com/photos/78A265wPiO4 */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* hightlight where we are */

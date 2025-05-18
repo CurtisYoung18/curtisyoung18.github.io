@@ -48,14 +48,16 @@
 
 /* 欢迎卡片样式 */
 .welcome-card {
-    background-color: #f5f7fa;
+    background-image: url('images/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #2c3e50;
+    color: white;
     padding: 20px;
     box-sizing: border-box;
 }
