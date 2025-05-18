@@ -1,0 +1,46 @@
+.profile-image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about-me {
+    text-align: center;
+}
+
+.bio {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.skill-icons i {
+  font-size: 3rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.skill-icons i:hover {
+  color: #007bff;
+}
+

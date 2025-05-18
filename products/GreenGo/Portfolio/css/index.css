@@ -1,0 +1,104 @@
+#welcomeBtn {
+    background-color: rgba(144, 239, 237, 0.8);
+    color: white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+#welcomeBtn:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transform: scale(1.05);
+}
+
+.flip-container {
+    perspective: 1000px;
+    margin-top: 80px;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+/* 欢迎卡片样式 */
+.welcome-card {
+    background-color: #f5f7fa;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #2c3e50;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.welcome-card h1 {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.welcome-card p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+#exploreBtn {
+    background-color: rgba(144, 239, 237, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+#exploreBtn:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transform: scale(1.05);
+}
+
+
+
+#hero {
+    text-align: center;
+}

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Curtis Mei">
+    <meta name="description" content="Curtis の Home">
+    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
+    <title>About | Curtis の Home</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/tocbot.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
+                    <div class="menu navbar-right">
+                            <a class="menu-item" href="/archives">Posts</a>
+                            <a class="menu-item" href="/products">Products</a>
+                            <a class="menu-item" href="/collection">Collections</a>
+                            <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                            <a href="/">Curtis の Home</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                    <a class="menu-item" href="/archives">Posts</a>
+                    <a class="menu-item" href="/products">Products</a>
+                    <a class="menu-item" href="/tag">Tags</a>
+                    <a class="menu-item" href="/collection">Collections</a>
+                    <a class="menu-item" href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+                <div class="about-container">
+                    <!-- Profile Section -->
+                    <section class="profile-section fade-in">
+                        <div class="profile-header">
+                            <img src="/images/profile.png" alt="Curtis Mei" class="profile-image">
+                            <div class="profile-info">
+                                <h1 class="profile-name">Zhiyang Mei</h1>
+                                <br>
+                                <p class="profile-description">
+                                    I am a Master's student at the University of Queensland, specializing in Machine Learning and AI Security. 
+                                    With a strong foundation in both software development and research, I focus on creating innovative solutions 
+                                    in AI security and machine learning applications. My experience spans across web development, 
+                                    reinforcement learning, and AI model security research.
+                                </p>
+                                <div class="social-links">
+                                    <a href="https://github.com/CurtisYoung18" target="_blank" class="social-link">
+                                        <div class="social-link-content">
+                                            <i class="fab fa-github"></i>
+                                            <span class="social-link-text">GitHub</span>
+                                        </div>
+                                    </a>
+                                    <a href="mailto:magicyoung63@yahoo.com" class="social-link email-link">
+                                        <div class="social-link-content">
+                                            <i class="fas fa-envelope"></i>
+                                            <span class="social-link-text">Email</span>
+                                        </div>
+                                    </a>
+                                    <a href="tel:+61403813564" class="social-link phone-link">
+                                        <div class="social-link-content">
+                                            <i class="fas fa-phone"></i>
+                                            <span class="social-link-text">Phone</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Content Sections -->
+                    <div class="content-section">
+                        <!-- Skills Section -->
+                        <div class="glass-card skills-card">
+                            <h2 class="section-title">Skills & Expertise</h2>
+                            <div class="skills-container">
+                                <div class="skill-category">
+                                    <h3>Programming Languages</h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">PyTorch</span>
+                                        <span class="skill-tag">PHP</span>
+                                        <span class="skill-tag">Java</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">SQL</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <h3>Web Development</h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag">Vue.js</span>
+                                        <span class="skill-tag">Node.js</span>
+                                        <span class="skill-tag">HTML5</span>
+                                        <span class="skill-tag">CSS3</span>
+                                        <span class="skill-tag">RESTful APIs</span>
+                                    </div>
+                                </div>
+                               
+                                <div class="skill-category">
+                                    <h3>Tools & Others</h3>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Git</span>
+                                        <span class="skill-tag">Docker</span>
+                                        <span class="skill-tag">AWS</span>
+                                        <span class="skill-tag">Linux</span>
+                                        <span class="skill-tag">LaTex</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects Section -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">Featured Projects</h2>
+                            <ul class="project-list">
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/My-Portfolio" target="_blank">
+                                            GreenGo
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Comprehensive web application built with HTML, CSS, JavaScript, and PHP
+                                    </p>
+                                </li>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/ScanMe" target="_blank">
+                                            Scan Me
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Online Order System developed using HTML, CSS, JavaScript, PHP, Java, and MySQL
+                                    </p>
+                                </li>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank">
+                                            DQN beyond Cartpole and Lunar Lander
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Reinforcement Learning Application implemented with PyTorch and Python
+                                    </p>
+                                </li>
+                                <li class="project-item interactive-element">
+                                    <h3 class="project-title">
+                                        <a href="#" target="_blank">
+                                            SecurePrune
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Research-oriented prototype for machine unlearning using PyTorch and NumPy
+                                    </p>
+                                </li>
+</ul>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">Education</h2>
+                            <div class="education-item">
+                                <h3>M.Sc. in Information Technology</h3>
+                                <p>EAIT, University of Queensland</p>
+                                <p>Brisbane, Australia</p>
+                                <p>2023 – 2025.6 (expected)</p>
+                                <p>GPA: 5.9/7</p>
+                                <ul class="education-details">
+                                    <li>Research area: Machine Learning, AI Security</li>
+                                    <li>Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence</li>
+</ul>
+                            </div>
+                            <div class="education-item">
+                                <h3>B.Sc. in International Economics and Trade</h3>
+                                <p>School of Business, Shantou University</p>
+                                <p>Shantou, China</p>
+                                <p>2019 – 2023</p>
+                            </div>
+                        </div>
+
+                        <!-- Publications Section -->
+                        <div class="glass-card">
+                            <h2 class="section-title">Publications</h2>
+                            <div class="publication-item">
+                                <h3>AI Model Modulation with Logits Redistribution</h3>
+                                <p class="publication-authors">Zihan Wang*, Zhongkui Ma*, Xinguo Feng, Zhiyang Mei, Ethan Ma, Derui Wang, Minhui Xue, Guangdong Bai</p>
+                                <p class="publication-venue">Proceedings of the ACM Web Conference (WWW '25), 2025</p>
+                                <a href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" class="publication-link">
+                                    <i class="fas fa-external-link-alt"></i> View Paper
+                                </a>
+                            </div>
+                        </div>
+</div>
+
+                    <!-- CV Download Section -->
+                    <section class="cv-section fade-in">
+                        <h2 class="section-title">Download My CV</h2>
+                        <p>Get a detailed overview of my experience and skills</p>
+                        <a href="/files/CV.pdf" class="cv-button interactive-element" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+            // Add ripple effect to interactive elements
+            document.querySelectorAll('.interactive-element').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    element.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 1000);
+                });
+            });
+
+            // 添加按钮展开动画
+            document.addEventListener('DOMContentLoaded', function() {
+                const emailLink = document.querySelector('.email-link');
+                const phoneLink = document.querySelector('.phone-link');
+                
+                function handleLinkClick(e, link, text) {
+                    e.preventDefault();
+                    const content = link.querySelector('.social-link-content');
+                    const icon = link.querySelector('i');
+                    const textSpan = link.querySelector('.social-link-text');
+                    
+                    if (link.classList.contains('expanded')) {
+                        // 收起
+                        link.classList.remove('expanded');
+                        textSpan.textContent = text;
+                        setTimeout(() => {
+                            link.href = link.classList.contains('email-link') ? 
+                                'mailto:magicyoung63@yahoo.com' : 
+                                'tel:+61403813564';
+                        }, 300);
+                    } else {
+                        // 展开
+                        link.classList.add('expanded');
+                        textSpan.textContent = link.classList.contains('email-link') ? 
+                            'magicyoung63@yahoo.com' : 
+                            '+61 403813564';
+                        link.href = '#';
+                    }
+                }
+
+                emailLink.addEventListener('click', (e) => handleLinkClick(e, emailLink, 'Email'));
+                phoneLink.addEventListener('click', (e) => handleLinkClick(e, phoneLink, 'Phone'));
+            });
+        </script>
+
+        <footer id="footer" class="footer">
+    <div class="copyright">
+                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+    </div>
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+    <script type="text/javascript" src="/js/about.js"></script>
+    <style>
+        /* 更新技能卡片样式 */
+        .skills-card {
+            grid-column: 1 / -1;
+            margin-bottom: 2rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            color: #2c3e50;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.15);
+        }
+
+        /* 更新按钮样式 */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 调整 zhiyangmei 高度 */
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 4px solid #fff;
+        }
+
+        /* 深色模式样式更新 */
+        .dark .skill-category {
+            background: rgba(30, 30, 30, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .skill-category h3 {
+            color: #e0e0e0;
+            border-bottom-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .skill-tag {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
+            color: #e0e0e0;
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .skill-tag:hover {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.25), rgba(41, 128, 185, 0.25));
+        }
+
+        .dark .social-link {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .skill-tags {
+                gap: 0.8rem;
+            }
+
+            .skill-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 更新 profile-name 样式 */
+        .profile-name {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin: 0;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
+            line-height: 1.2;
+            min-height: 4rem;
+            display: block;
+        }
+
+        /* 更新 CV section 样式 */
+        .cv-section {
+            margin-top: 9rem;
+            margin-bottom: 4rem;
+            padding: 3.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 更新 CV 按钮样式 */
+        .cv-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+
+        .cv-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .cv-button:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* 深色模式样式更新 */
+        .dark .cv-section {
+            background: rgba(30, 30, 30, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .cv-button {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
+            color: #e0e0e0;
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .cv-button:hover {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.25), rgba(41, 128, 185, 0.25));
+            color: #3498db;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .cv-section {
+                margin-top: 4rem;
+                margin-bottom: 3rem;
+                padding: 2.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

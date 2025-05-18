@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Curtis Mei">
+    <meta name="description" content="Curtis の Home">
+    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
+    <title>Collections | Curtis の Home</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/tocbot.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
+                    <div class="menu navbar-right">
+                            <a class="menu-item" href="/archives">Posts</a>
+                            <a class="menu-item" href="/products">Products</a>
+                            <a class="menu-item" href="/collection">Collections</a>
+                            <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                            <a href="/">Curtis の Home</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                    <a class="menu-item" href="/archives">Posts</a>
+                    <a class="menu-item" href="/products">Products</a>
+                    <a class="menu-item" href="/tag">Tags</a>
+                    <a class="menu-item" href="/collection">Collections</a>
+                    <a class="menu-item" href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+
+        <div class="main">
+            <div class="container">
+                <h2 class="post-title">收集一些好玩有趣的项目</h2>
+                <div class="collections-container">
+                    <div class="category-card">
+                        <h2 class="category-title">
+                            <i class="fab fa-github"></i>
+                            GitHub 相关
+                        </h2>
+                        <div class="links-grid">
+                            <div class="link-item">
+                                <a href="https://github.com/2016rshah/githubchart-api" target="_blank" rel="noopener">
+                                    <i class="fas fa-chart-line"></i>
+                                    GitHub Chart API
+                                </a>
+                                <div class="link-description">为你的 GitHub 贡献度生成一个图片</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.com/tholman/github-corners" target="_blank" rel="noopener">
+                                    <i class="fas fa-code-branch"></i>
+                                    GitHub Corners
+                                </a>
+                                <div class="link-description">"Fork me on GitHub" 漂亮标识图</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://buttons.github.io" target="_blank" rel="noopener">
+                                    <i class="fas fa-star"></i>
+                                    GitHub Buttons
+                                </a>
+                                <div class="link-description">生成 GitHub Follow, Star 按钮</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.com/pomber/git-history" target="_blank" rel="noopener">
+                                    <i class="fas fa-history"></i>
+                                    Git History
+                                </a>
+                                <div class="link-description">动态显示 Git Commit 历史的平台</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank" rel="noopener">
+                                    <i class="fas fa-chart-bar"></i>
+                                    GitHub Readme Stats
+                                </a>
+                                <div class="link-description">在 Redmine 中动态生成 GitHub 统计信息</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://issuehunt.io/" target="_blank" rel="noopener">
+                                    <i class="fas fa-hands-helping"></i>
+                                    IssueHunt
+                                </a>
+                                <div class="link-description">开源打赏平台，为解决 Issue 的人提供一笔奖金</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://hellogithub.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-rocket"></i>
+                                    HelloGitHub
+                                </a>
+                                <div class="link-description">分享、推广 GitHub 上有意思、高质量的项目</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.com/github-changelog-generator/github-changelog-generator" target="_blank" rel="noopener">
+                                    <i class="fas fa-list-alt"></i>
+                                    github-changelog-generator
+                                </a>
+                                <div class="link-description">自动根据项目的 Issue, PR 等信息生成 change log</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://styleguide.github.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-paint-brush"></i>
+                                    GitHub Style Guide
+                                </a>
+                                <div class="link-description">Ruby, Css, JavaScript style guide</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.githubassets.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-download"></i>
+                                    GitHub Assets
+                                </a>
+                                <div class="link-description">获取 GitHub 官方使用的资源</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <h2 class="category-title">
+                            <i class="fas fa-tools"></i>
+                            效率工具
+                        </h2>
+                        <div class="links-grid">
+                            <div class="link-item">
+                                <a href="https://github.com/t9tio/tomato-pie" target="_blank" rel="noopener">
+                                    <i class="fas fa-clock"></i>
+                                    Tomato Pie
+                                </a>
+                                <div class="link-description">番茄工作法的 Chrome 插件</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://modao.cc/" target="_blank" rel="noopener">
+                                    <i class="fas fa-pencil-ruler"></i>
+                                    墨刀
+                                </a>
+                                <div class="link-description">一个很棒的在线产品原型设计平台</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://shimo.im" target="_blank" rel="noopener">
+                                    <i class="fas fa-file-alt"></i>
+                                    石墨文档
+                                </a>
+                                <div class="link-description">文档实时协同平台，来记录你的学习、工作吧</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="http://www.peise.net/tools/color/online.html" target="_blank" rel="noopener">
+                                    <i class="fas fa-palette"></i>
+                                    在线配色方案自动生成器
+                                </a>
+                                <div class="link-description">挑选在不同亮度下的颜色</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://www.processon.com" target="_blank" rel="noopener">
+                                    <i class="fas fa-project-diagram"></i>
+                                    ProcessOn
+                                </a>
+                                <div class="link-description">一个 UI 很漂亮的在线作图平台，支持流程图、思维导图等等</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://docsmall.com/gif-compress" target="_blank" rel="noopener">
+                                    <i class="fas fa-compress-arrows-alt"></i>
+                                    docsmall
+                                </a>
+                                <div class="link-description">一个免费易用的在线图片压缩平台</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://favicon.io/" target="_blank" rel="noopener">
+                                    <i class="fas fa-icons"></i>
+                                    favicon.io
+                                </a>
+                                <div class="link-description">一个精致的网站图标生成平台</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://www.svgrepo.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-vector-square"></i>
+                                    SVG Repo
+                                </a>
+                                <div class="link-description">Search, explore, edit and share open licensed SVG vectors</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://www.ownthink.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-brain"></i>
+                                    思知
+                                </a>
+                                <div class="link-description">对外开放接口的中文知识图谱平台</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://undraw.co/" target="_blank" rel="noopener">
+                                    <i class="fas fa-draw-polygon"></i>
+                                    unDraw
+                                </a>
+                                <div class="link-description">免费精美的矢量图平台</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://getavataaars.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-user-circle"></i>
+                                    Avataaars generator
+                                </a>
+                                <div class="link-description">卡通头像生成工具</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.com/asdf-vm/asdf" target="_blank" rel="noopener">
+                                    <i class="fas fa-code"></i>
+                                    asdf
+                                </a>
+                                <div class="link-description">多语言版本控制工具</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <h2 class="category-title">
+                            <i class="fas fa-server"></i>
+                            DevOps
+                        </h2>
+                        <div class="links-grid">
+                            <div class="link-item">
+                                <a href="https://github.com/evilmartians/terraforming-rails/tree/master/examples/dockerdev" target="_blank" rel="noopener">
+                                    <i class="fab fa-docker"></i>
+                                    Docker for Rails development
+                                </a>
+                                <div class="link-description">为 Rails 开发搭建 Docker 环境</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://github.com/capistrano/capistrano" target="_blank" rel="noopener">
+                                    <i class="fas fa-rocket"></i>
+                                    Capistrano
+                                </a>
+                                <div class="link-description">自动化部署工具，与 Rails 集成十分方便</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://certbot.eff.org/" target="_blank" rel="noopener">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Certbot
+                                </a>
+                                <div class="link-description">自动签发 Let's Encrypt SSL 证书的工具</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <h2 class="category-title">
+                            <i class="fas fa-heart"></i>
+                            让生活更加多彩
+                        </h2>
+                        <div class="links-grid">
+                            <div class="link-item">
+                                <a href="https://www.xiachufang.com/" target="_blank" rel="noopener">
+                                    <i class="fas fa-utensils"></i>
+                                    下厨房
+                                </a>
+                                <div class="link-description">不知做什么菜时就上这儿吧</div>
+                            </div>
+                            <div class="link-item">
+                                <a href="https://www.gotokeep.com" target="_blank" rel="noopener">
+                                    <i class="fas fa-running"></i>
+                                    Keep
+                                </a>
+                                <div class="link-description">现在起开始记录跑步</div>
+                            </div>
+                        </div>
+</div>
+
+                    <div class="category-card">
+                        <h2 class="category-title">
+                            <i class="fas fa-book-reader"></i>
+                            收获启示的文章
+                        </h2>
+                        <div class="links-grid">
+                            <div class="link-item">
+                                <a href="https://zhuanlan.zhihu.com/p/77361802" target="_blank" rel="noopener">
+                                    <i class="fas fa-lightbulb"></i>
+                                    我是如何通过开源项目月入 10 万的？
+                                </a>
+                                <div class="link-description">GitHub Daily 分享的开源项目经验</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" class="footer">
+    <div class="copyright">
+                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+    </div>
+
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+    <style>
+        /* 标题样式 */
+        .post-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 2rem 0;
+            color: #2c3e50;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 9px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .post-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0.1;
+            animation: gradient 3s ease infinite;
+        }
+
+        .post-title::after {
+            content: '|';
+            position: absolute;
+            right: -10px;
+            animation: blink 1s step-end infinite;
+            color: #3498db;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px rgba(52, 152, 219, 0.2),
+                           0 0 10px rgba(52, 152, 219, 0.2),
+                           0 0 15px rgba(52, 152, 219, 0.2);
+            }
+            to {
+                box-shadow: 0 0 10px rgba(52, 152, 219, 0.4),
+                           0 0 20px rgba(52, 152, 219, 0.4),
+                           0 0 30px rgba(52, 152, 219, 0.4);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* 深色模式样式 */
+        .dark .post-title {
+            color: #e0e0e0;
+            background: rgba(30, 30, 30, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .post-title::before {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            opacity: 0.2;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2rem;
+                margin: 1.5rem 0;
+            }
+        }
+
+        /* 主容器样式 */
+        .collections-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 分类卡片样式 */
+        .category-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
+        }
+
+        /* 分类标题样式 */
+        .category-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-title i {
+            font-size: 1.8rem;
+            color: #3498db;
+        }
+
+        /* 链接列表样式 */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .link-item {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .link-item a:hover {
+            color: #3498db;
+        }
+
+        .link-item i {
+            font-size: 1.2rem;
+            color: #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .link-item:hover i {
+            transform: translateX(3px);
+        }
+
+        .link-description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-left: 2rem;
+        }
+
+        /* 深色模式样式 */
+        .dark .category-card {
+            background: rgba(30, 30, 30, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .category-title {
+            color: #e0e0e0;
+            border-bottom-color: rgba(52, 152, 219, 0.3);
+        }
+
+        .dark .link-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .link-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .link-item a {
+            color: #e0e0e0;
+        }
+
+        .dark .link-description {
+            color: #95a5a6;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .category-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .category-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .category-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .category-card:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+    </style>
+
+    <script>
+        // 添加标题打字效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.post-title');
+            const text = title.textContent;
+            title.textContent = '';
+            let i = 0;
+
+            function typeWriter() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+
+            // 开始打字效果
+            setTimeout(typeWriter, 500);
+        });
+
+        // 添加链接项的动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const linkItems = document.querySelectorAll('.link-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            linkItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'all 0.3s ease-out';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

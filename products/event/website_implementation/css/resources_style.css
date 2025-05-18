@@ -1,0 +1,122 @@
+/* background setting*/
+body {
+    background-color: #f5f7fa;
+    /* Remove background image */
+}
+
+/* hightlight where we are */
+#resources4 {
+    color: orange;
+}
+
+.card-container {
+    display: flex;
+    /* Allows the cards to wrap to the next line if there isn't enough space */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    margin: 20px;
+    background-color: #758a99;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* Prevents the card from shrinking if there's not enough space */
+    flex-shrink: 0;
+}
+
+.card .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* default big image */
+.card .photo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/* zoom in when hovering */
+.card:hover .photo {
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* a small circle */
+    /* Creates a gradient that fades from transparent to black */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Adds a gradient overlay to the photo for aesthetic and readability reasons */
+.card .photo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, #222);
+}
+
+.card h1 {
+    position: absolute;
+    top: 370px;
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+.card:hover h1 {
+    top: 170px;
+}
+
+.card h2{
+    margin-top: 220px;
+    width: 90%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.card a {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* learn more button */
+.more {
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 32px;
+    border-radius: 8px;
+}
+
+.more:hover {
+    scale: 1.3;
+}
+
+/* for tablet and phones in landscape */
+@media (max-width: 1194px) {
+    
+}
+
+/* for mobile screen */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }  
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Curtis Mei">
+    <meta name="description" content="Curtis の Home">
+    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
+    <title>Products | Curtis の Home</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Dark mode styles */
+        .dark .product-title,
+        .dark .product-description,
+        .dark .post-title {
+            color: #e0e0e0 !important;
+        }
+
+        .dark .product-card {
+            background: rgba(30, 30, 30, 0.7) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .dark .product-card:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .dark .product-link {
+            background: rgba(52, 152, 219, 0.2) !important;
+            color: #3498db !important;
+        }
+
+        .dark .product-link:hover {
+            background: rgba(52, 152, 219, 0.3) !important;
+            color: #2980b9 !important;
+        }
+
+        /* Light mode styles (existing styles) */
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+        }
+
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .product-link i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
+                    <div class="menu navbar-right">
+                        <a class="menu-item" href="/archives">Posts</a>
+                        <a class="menu-item" href="/products">Products</a>
+                        <a class="menu-item" href="/collection">Collections</a>
+                        <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="navbar-mobile" id="nav-mobile">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div>
+                            <a href="/">Curtis の Home</a>
+                        </div>
+                        <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+                    </div>
+                    <div class="menu" id="mobile-menu">
+                        <a class="menu-item" href="/archives">Posts</a>
+                        <a class="menu-item" href="/products">Products</a>
+                        <a class="menu-item" href="/tag">Tags</a>
+                        <a class="menu-item" href="/collection">Collections</a>
+                        <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div class="container">
+                <div class="products-container">
+                    <h2 class="post-title">Products</h2>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="/images/products/event.png" alt="Mindful Retreat" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Mindful Retreat</h3>
+                                <p class="product-description">A modern event website for mindfulness retreats, featuring responsive design and interactive elements.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/7140-My-event-website" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="/products/event/index.html" target="_blank" class="product-link">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="/images/products/portfolio.gif" alt="GreenGo Portfolio" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">GreenGo Portfolio</h3>
+                                <p class="product-description">A portfolio website for GreenGo, an online information platform for biking enthusiasts.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/My-Portfolio" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="/products/GreenGo/Portfolio/portfolio.html" target="_blank" class="product-link">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="/images/products/scan_me.png" alt="Scan Me" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Scan Me</h3>
+                                <p class="product-description">An online QR code generator for restaurants to facilitate contactless payments.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/ScanMe" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="/images/products/dqn.gif" alt="DQN Implementation" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">DQN Implementation</h3>
+                                <p class="product-description">Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="/images/products/gowalla.png" alt="Gowalla Explorer" class="product-image">
+                            <div class="product-content">
+                                <h3 class="product-title">Gowalla Explorer</h3>
+                                <p class="product-description">A full-stack web application for exploring and analyzing location-based check-in data from the Gowalla dataset with interactive mapping and trajectory visualization.</p>
+                                <div class="product-links">
+                                    <a href="https://github.com/CurtisYoung18/Gowalla-Explorer" target="_blank" class="product-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+</body>
+</html>

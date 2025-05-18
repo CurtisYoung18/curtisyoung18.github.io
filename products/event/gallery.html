@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- responsive nav bar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>The Mindful Retreat</title>
+
+    <!-- Change the font-style to match the homepage-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- link to css -->
+    <link rel="stylesheet" href="website_implementation/css/general_styles.css">
+    <link rel="stylesheet" href="website_implementation/css/gallery_styles.css">
+</head>
+
+<body>
+    <header aria-label="Website navigation header">
+        <!-- the navigation bar -->
+        <div class="navbar" aria-label="Main navigation bar">
+            <div class="logo"><a href="index.html" aria-label="Home page link">The Mindful Retreat</a></div>
+            <ul class="links" aria-label="Primary navigation links">
+                <li><a href="about.html" id="about1">About</a></li>
+                <li><a href="gallery.html" id="gallery2">Gallery</a></li>
+                <li><a href="community.html" id="community3">Community</a></li>
+                <li><a href="resources.html" id="resources4">Resources</a></li>
+            </ul>
+            <a href="#" class="action_btn" aria-label="Search button">Search</a>
+            <div class="toggle_btn" aria-label="Menu toggle button">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <!-- responsive menu -->
+        <div class="dropdown_menu" aria-label="Responsive dropdown menu">
+            <li><a href="about.html" id="about1">About</a></li>
+            <li><a href="gallery.html" id="gallery2">Gallery</a></li>
+            <li><a href="community.html" id="community3">Community</a></li>
+            <li><a href="resources.html" id="resources4">Resources</a></li>
+            <li><a href="#" class="action_btn">Search</a></li>
+        </div>
+    </header>
+
+    <!-- the main content-gallery-container -->
+    <div class="gallery-container" aria-label="Photo gallery">
+        <figure class="gallery-item" id="gallery-item-1" aria-label="Gallery image 1">
+            <img src="website_implementation/media/gallery_1.jpg" class="gallery-img"
+                alt="An image of two hands hugging a tree." loading="lazy" tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-2" aria-label="Gallery image 2">
+            <img src="website_implementation/media/gallery_2.jpg" class="gallery-img"
+                alt="An image of a row of windmills generating electricity." loading="lazy" tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-3" aria-label="Gallery image 3">
+            <img src="website_implementation/media/gallery_3.jpg" class="gallery-img"
+                alt="An image of holding a seedling in both hands." loading="lazy" tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-4" aria-label="Gallery image 4">
+            <img src="website_implementation/media/gallery_4.jpg" class="gallery-img"
+                alt="An image of a slogan saying 'all you need is less'." loading="lazy" tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-5" aria-label="Gallery image 5">
+            <img src="website_implementation/media/gallery_5.jpg" class="gallery-img"
+                alt="An image of a modern building full of plants." tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-6" aria-label="Gallery image 6">
+            <img src="website_implementation/media/gallery_6.jpg" class="gallery-img"
+                alt="An image of a bike with a tag saying 'share more, consume less'." loading="lazy" tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-7" aria-label="Gallery image 7">
+            <img src="website_implementation/media/gallery_7.jpg" class="gallery-img"
+                alt="An image of a hand hold a coffee contained by a cup made with sustainable materias." loading="lazy" tabindex="0" role="button">
+        </figure>
+        <figure class="gallery-item" id="gallery-item-8" aria-label="Gallery image 8">
+            <img src="website_implementation/media/gallery_8.jpg" class="gallery-img"
+                alt="An image of some tooth brushes made by sustainable materials." loading="lazy" tabindex="0" role="button">
+        </figure>
+    </div>
+
+    <script src="website_implementation/js/gallery.js"></script>
+    <script src="website_implementation/js/site_interactions.js"></script>
+    <script src="website_implementation/js/res_nav.js"></script>
+
+</body>
+
+</html>
