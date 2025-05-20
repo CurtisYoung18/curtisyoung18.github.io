@@ -12,31 +12,6 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Dark mode styles */
-        .dark .product-title,
-        .dark .product-description,
-        .dark .post-title {
-            color: #e0e0e0 !important;
-        }
-
-        .dark .product-card {
-            background: rgba(30, 30, 30, 0.7) !important;
-            border-color: rgba(255, 255, 255, 0.1) !important;
-        }
-
-        .dark .product-card:hover {
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-        }
-
-        .dark .product-link {
-            background: rgba(52, 152, 219, 0.2) !important;
-            color: #3498db !important;
-        }
-
-        .dark .product-link:hover {
-            background: rgba(52, 152, 219, 0.3) !important;
-            color: #2980b9 !important;
-        }
 
         /* Light mode styles (existing styles) */
         .products-container {
@@ -176,7 +151,70 @@
             display: flex;
             gap: 1rem;
         }
+
+        /* 下拉菜单样式 */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            margin: 0 auto;
+            width: 92vw;
+            max-width: 340px;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(31,38,135,0.18);
+            z-index: 1001;
+            flex-direction: column;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .dropdown-menu.active {
+            display: flex;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(8px);
+        }
+        .dropdown-menu .menu-item {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            margin: 0.1rem 0;
+        }
+        .dropdown-menu .menu-item:hover {
+            background: rgba(52,152,219,0.12);
+            color: #3498db;
+        }
+        @media (min-width: 769px) {
+            .navbar-mobile { display: none; }
+        }
     </style>
+    <script>
+        var mobileBtn = function f() {
+            var dropdown = document.getElementById("mobile-dropdown-menu");
+            if (dropdown.classList.contains("active")) {
+                dropdown.classList.remove("active");
+            } else {
+                dropdown.classList.add("active");
+            }
+        }
+        // 点击菜单外部关闭下拉
+        document.addEventListener('click', function(event) {
+            var toggle = document.getElementById("mobile-menu-toggle");
+            var dropdown = document.getElementById("mobile-dropdown-menu");
+            if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -194,17 +232,16 @@
             </nav>
 
             <nav class="navbar-mobile" id="nav-mobile">
-                <div class="container">
+                <div class="container" style="position:relative;">
                     <div class="navbar-header">
                         <div>
                             <a href="/">Curtis の Home</a>
                         </div>
-                        <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+                        <div class="menu-toggle" onclick="mobileBtn()" id="mobile-menu-toggle">&#9776; Menu</div>
                     </div>
-                    <div class="menu" id="mobile-menu">
+                    <div class="dropdown-menu" id="mobile-dropdown-menu">
                         <a class="menu-item" href="/archives">Posts</a>
                         <a class="menu-item" href="/products">Products</a>
-                        <a class="menu-item" href="/tag">Tags</a>
                         <a class="menu-item" href="/collection">Collections</a>
                         <a class="menu-item" href="/about">About</a>
                     </div>

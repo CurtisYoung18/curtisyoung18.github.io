@@ -1427,3 +1427,52 @@ header label {
     border-radius: 8px;
     margin-bottom: 1.5rem;
 }
+
+/* 移动端下拉菜单样式 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin: 0 auto;
+    width: 92vw;
+    max-width: 340px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.18);
+    z-index: 1001;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dropdown-menu.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(8px);
+}
+
+.dropdown-menu .menu-item {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin: 0.1rem 0;
+}
+
+.dropdown-menu .menu-item:hover {
+    background: rgba(52,152,219,0.12);
+    color: #3498db;
+}
+
+@media (min-width: 769px) {
+    .navbar-mobile { display: none; }
+}
