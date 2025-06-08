@@ -234,10 +234,10 @@
                     <section class="cv-section fade-in">
                         <h2 class="section-title">Download My CV</h2>
                         <p>Get a detailed overview of my experience and skills</p>
-                        <a href="/files/Zhiyang_Mei_Resume.pdf" class="cv-button interactive-element" download>
+                        <a href="/files/Zhiyang_Mei_Resume.pdf" class="cv-button interactive-element" id="english-cv" download>
                             <i class="fas fa-download"></i> Download CV
                         </a>
-                        <a href="/files/CV_CN.pdf" class="cv-button interactive-element" download>
+                        <a href="/files/CV_CN.pdf" class="cv-button interactive-element" id="chinese-cv" download>
                             <i class="fas fa-download"></i> 下载中文简历
                         </a>
                     </section>
@@ -321,7 +321,7 @@
     </div>
 </footer>
     </div>
-    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
     <script type="text/javascript" src="/js/about.js"></script>
     <style>
         /* 更新技能卡片样式 */
@@ -470,6 +470,14 @@
             display: block;
         }
 
+        #english-cv {
+            margin-right: 1rem;
+        }
+
+        #chinese-cv {
+            margin-left: 1rem;
+        }
+        
         /* 更新 CV section 样式 */
         .cv-section {
             margin-top: 9rem;
