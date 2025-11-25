@@ -127,14 +127,16 @@
             color: #34495e;
             line-height: 1.8;
             margin-bottom: 2rem;
+            white-space: normal;
         }
 
         .product-description-word {
-            display: inline-block;
+            display: inline;
             opacity: 0;
             filter: blur(10px);
             transform: translateY(5px);
             transition: all 0.2s ease;
+            white-space: pre;
         }
 
         .product-description-word.visible {
@@ -398,8 +400,12 @@
                 words.forEach((word, index) => {
                     const span = document.createElement('span');
                     span.className = 'product-description-word';
-                    span.textContent = word + ' ';
+                    span.textContent = word;
                     productDescription.appendChild(span);
+                    // Add space after each word (except the last one)
+                    if (index < words.length - 1) {
+                        productDescription.appendChild(document.createTextNode(' '));
+                    }
                     setTimeout(() => {
                         span.classList.add('visible');
                     }, index * 20);
