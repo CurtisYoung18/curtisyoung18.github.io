@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 渲染示例</title>
+    
+    <!-- GitHub Markdown CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    
+    <!-- DOMPurify (安全过滤) -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    
+    <!-- Marked (Markdown 解析器) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f6f8fa;
+        }
+        
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        
+        .markdown-body {
+            padding: 45px;
+        }
+        
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+        
+        /* 暗色主题支持 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0d1117;
+            }
+            .container {
+                background: #161b22;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article class="markdown-body" id="markdown-content">
+            <!-- Markdown 内容将在这里渲染 -->
+        </article>
+    </div>
+
+    <script>
+        // 配置 marked
+        marked.setOptions({
+            breaks: true,        // 支持换行
+            gfm: true,           // GitHub Flavored Markdown
+            headerIds: true,     // 为标题添加 ID
+            mangle: false,       // 不混淆邮箱地址
+            pedantic: false,
+            sanitize: false,     // 不使用内置的 sanitize（我们用 DOMPurify）
+            smartLists: true,    // 智能列表
+            smartypants: false,
+            highlight: function(code, lang) {
+                // 使用 highlight.js 高亮代码
+                if (lang && hljs.getLanguage(lang)) {
+                    try {
+                        return hljs.highlight(code, { language: lang }).value;
+                    } catch (err) {}
+                }
+                return hljs.highlightAuto(code).value;
+            }
+        });
+
+        // 示例 Markdown 内容
+        const markdownText = `# Markdown 渲染示例
+
+这是一个使用 **marked** + **github-markdown-css** + **highlight.js** 的完整示例。
+
+## 功能特性
+
+- ✅ GitHub Flavored Markdown 支持
+- ✅ 代码语法高亮
+- ✅ 安全的 HTML 过滤
+- ✅ 响应式设计
+- ✅ 暗色主题支持
+
+## 代码示例
+
+### JavaScript
+\`\`\`javascript
+function greet(name) {
+    return \`Hello, \${name}!\`;
+}
+
+console.log(greet('World'));
+\`\`\`
+
+### Python
+\`\`\`python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+\`\`\`
+
+## 数学公式（如果使用 KaTeX）
+
+行内公式：$E = mc^2$
+
+块级公式：
+$$
+\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}
+$$
+
+## 表格
+
+| 功能 | 库名 | 用途 |
+|------|------|------|
+| Markdown 解析 | marked | 将 Markdown 转换为 HTML |
+| 样式 | github-markdown-css | GitHub 风格的样式 |
+| 代码高亮 | highlight.js | 语法高亮 |
+
+## 引用
+
+> 这是一个引用块
+> 
+> 可以包含多行内容
+
+## 链接和图片
+
+[GitHub](https://github.com)
+
+![示例图片](https://via.placeholder.com/400x200)
+
+## 列表
+
+1. 第一项
+2. 第二项
+3. 第三项
+
+- 无序列表项 1
+- 无序列表项 2
+- 无序列表项 3
+
+## 任务列表
+
+- [x] 已完成的任务
+- [ ] 未完成的任务
+
+## 强调
+
+*斜体文本*
+**粗体文本**
+***粗斜体文本***
+~~删除线文本~~
+
+## 水平线
+
+---
+
+## 脚注
+
+这是一个脚注引用[^1]
+
+[^1]: 这是脚注的内容
+`;
+
+        // 渲染 Markdown
+        function renderMarkdown(markdown) {
+            // 解析 Markdown 为 HTML
+            const html = marked.parse(markdown);
+            
+            // 安全过滤（防止 XSS）
+            const cleanHtml = DOMPurify.sanitize(html, {
+                ALLOWED_TAGS: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'em', 'u', 's', 'code', 'pre', 'blockquote', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'a', 'img', 'hr', 'br', 'span', 'div'],
+                ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id', 'target', 'rel']
+            });
+            
+            // 插入到页面
+            document.getElementById('markdown-content').innerHTML = cleanHtml;
+            
+            // 高亮所有代码块（marked 已经处理了，但确保一下）
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        }
+
+        // 如果要从文件加载 Markdown
+        async function loadMarkdownFromFile(url) {
+            try {
+                const response = await fetch(url);
+                const markdown = await response.text();
+                renderMarkdown(markdown);
+            } catch (error) {
+                console.error('加载 Markdown 文件失败:', error);
+            }
+        }
+
+        // 初始化：渲染示例内容
+        renderMarkdown(markdownText);
+
+        // 使用示例：从文件加载
+        // loadMarkdownFromFile('/path/to/your/file.md');
+    </script>
+</body>
+</html>
+

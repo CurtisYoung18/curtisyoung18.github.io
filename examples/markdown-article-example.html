@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 文章示例</title>
+    
+    <!-- 引入必要的 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    
+    <!-- 引入必要的 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    
+    <!-- 引入我们的工具 -->
+    <script src="/js/markdown-renderer.js"></script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f6f8fa;
+        }
+        
+        .article-container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .article-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+            color: #24292f;
+        }
+        
+        .article-meta {
+            color: #656d76;
+            font-size: 0.9rem;
+        }
+        
+        .article-content {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            padding: 45px;
+        }
+        
+        @media (max-width: 767px) {
+            .article-content {
+                padding: 15px;
+            }
+            .article-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* 暗色主题 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0d1117;
+            }
+            .article-header,
+            .article-content {
+                background: #161b22;
+            }
+            .article-title {
+                color: #f0f6fc;
+            }
+            .article-meta {
+                color: #8b949e;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <header class="article-header">
+            <h1 class="article-title">关于客服场景 Agent 可维护性的一点思考</h1>
+            <div class="article-meta">
+                <span>2025-11-24</span> · 
+                <span>AI, Machine-Learning, Technology</span>
+            </div>
+        </header>
+        
+        <article class="article-content" id="markdown-content">
+            <!-- 方式一：从 data-markdown 属性加载文件 -->
+            <!-- <div data-markdown="/archives/2025/11/关于客服场景 Agent 可维护性的一点思考.md"></div> -->
+            
+            <!-- 方式二：直接渲染 Markdown 文本 -->
+            <div id="content-placeholder"></div>
+        </article>
+    </div>
+
+    <script>
+        // 示例：直接渲染 Markdown 文本
+        const markdownText = `# 关于客服场景 Agent 可维护性的一点思考
+
+## 1. 引言：低代码浪潮下的隐形债务
+
+在 ToB 低代码平台领域，**AI 客服** 已成为 Agent 落地的核心场景。企业通过可视化的拖拉拽组件，将垂直业务知识库（RAG）、数据库查询（Database Query）和外部工具（Function Calling）封装成 Agent，极大地降低了 AI 应用的构建门槛。
+
+然而，这种"快速搭建"的便利性背后，往往隐藏着巨大的**工程维护债务**。随着交付深入，简单的 Demo 变成了复杂的生产系统，我们发现了一个严峻的问题：**初期的低代码红利，正在被后期高昂的维护成本所吞噬。**
+
+## 2. 痛点诊断：陷入 "Prompt Debt"（提示词技术债）
+
+在实际交付中，我们面临一个难以持续维护的困境：我们试图用 **"通用逻辑 + 穷举补丁"** 的方式来对抗 **"无限的长尾场景"**。
+
+### 2.1 真实 Case Study：一个"退款问题"的崩坏之路
+
+为了形象说明这个问题，我们可以复盘一个真实的电商客服场景演变：
+
+- **阶段一（上线初期）**：
+  System Prompt 写着：\`"你是客服助手，请根据知识库回答问题，态度要亲切。"\`
+  知识库里有一条通用的《售后服务协议》。
+  *结果*：运行良好。
+
+- **阶段二（由于幻觉导致的第一块补丁）**：
+  客户投诉：AI 居然答应了给"数字虚拟商品"退款。
+  *修改*：开发人员在 System Prompt 里加了一句：\`Restrictions: 严禁通过虚拟商品的退款申请。\`
+
+## 3. 代码示例
+
+\`\`\`python
+def process_refund(order_id, user_level):
+    if user_level == "VIP" and is_system_fault(order_id):
+        return approve_refund(order_id)
+    return reject_refund(order_id)
+\`\`\`
+
+\`\`\`javascript
+const handleRefund = (orderId, userLevel) => {
+    if (userLevel === 'VIP' && isSystemFault(orderId)) {
+        return approveRefund(orderId);
+    }
+    return rejectRefund(orderId);
+};
+\`\`\`
+
+## 4. 表格示例
+
+| 方案 | 优点 | 缺点 |
+|------|------|------|
+| 微调 | 固化风格 | 维护成本高 |
+| 长上下文 | 开发简单 | 成本昂贵 |
+| 分层架构 | 可维护性强 | 需要设计 |
+
+## 5. 引用
+
+> 客服 Agent 的可维护性问题，本质上是**复杂度管理**问题。
+
+## 6. 链接
+
+- [GitHub](https://github.com)
+- [论文链接](https://example.com)
+
+---
+
+*本文完*
+`;
+
+        // 渲染 Markdown
+        window.renderMarkdown(markdownText, '#content-placeholder');
+        
+        // 或者从文件加载：
+        // window.loadAndRenderMarkdown('/archives/2025/11/关于客服场景 Agent 可维护性的一点思考.md', '#content-placeholder');
+    </script>
+</body>
+</html>
+
