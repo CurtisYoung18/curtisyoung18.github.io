@@ -22,16 +22,31 @@
         .back-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #3498db;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: #2c3e50;
             text-decoration: none;
             margin-bottom: 2rem;
-            font-size: 1rem;
-            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .back-button:hover {
             transform: translateX(-5px);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark mode */
+        .dark .back-button {
+            color: #ecf0f1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .products-grid {
@@ -266,8 +281,8 @@
         <div class="main">
             <div class="container">
                 <div class="animated-products-container">
-                    <a href="/products/" class="back-button">
-                        <i class="fas fa-arrow-left"></i> Back to Products
+                    <a href="/products/" class="back-button" title="Back to Products">
+                        <i class="fas fa-arrow-left"></i>
                     </a>
 
                     <div class="products-grid">
@@ -295,7 +310,7 @@
 
         <footer id="footer" class="footer">
             <div class="copyright">
-                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+                <span>© Curtis Mei</span>
             </div>
         </footer>
     </div>
