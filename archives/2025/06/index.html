@@ -11,63 +11,8 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/archives/style.css">
-    <!-- Markdown 渲染相关 CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <script src="/js/script.js"></script>
     <script src="/js/tocbot.min.js"></script>
-    <!-- Markdown 渲染相关 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-    <script src="/js/markdown-renderer.js"></script>
-    <style>
-        #markdown-content.markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        #markdown-content.markdown-body pre {
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            padding: 16px;
-            overflow-x: auto;
-        }
-        #markdown-content.markdown-body code {
-            background-color: rgba(175, 184, 193, 0.2);
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 85%;
-        }
-        #markdown-content.markdown-body pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-        #markdown-content.markdown-body blockquote {
-            border-left: 4px solid #dfe2e5;
-            padding: 0 1em;
-            color: #6a737d;
-        }
-        @media (prefers-color-scheme: dark) {
-            #markdown-content.markdown-body {
-                color: #c9d1d9;
-            }
-            #markdown-content.markdown-body pre {
-                background-color: #161b22;
-            }
-            #markdown-content.markdown-body code {
-                background-color: rgba(110, 118, 129, 0.4);
-            }
-            #markdown-content.markdown-body blockquote {
-                border-left-color: #30363d;
-                color: #8b949e;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -92,11 +37,6 @@
                         <span class="gofav-header-date">2025-06-01</span>
                         <span class="gofav-header-category">Games, Life</span>
                     </div>
-                </div>
-
-                <!-- Markdown 内容区域 -->
-                <div class="gofav-card post-content" id="markdown-content">
-                    <!-- Markdown 内容将在这里渲染 -->
                 </div>
 
                 <!-- 游戏类型标签 -->
@@ -489,7 +429,7 @@
         </div>
         <footer id="footer" class="footer">
             <div class="copyright">
-                <span>© Curtis Mei</span>
+                <span>© Curtis Mei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
             </div>
         </footer>
     </div>
@@ -761,11 +701,6 @@
     </style>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.6" zindex="-2" count="520"></script>
     <script>
-        // 加载 Markdown 内容
-        window.addEventListener('DOMContentLoaded', function() {
-            window.loadAndRenderMarkdown('/archives/2025/06/游戏游玩记录_README.md', '#markdown-content');
-        });
-        
         function toggleGameDetails() {
             const gameCategories = document.getElementById('gameCategories');
             const toggleBtn = document.querySelector('.toggle-details-btn');
