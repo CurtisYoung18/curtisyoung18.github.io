@@ -118,10 +118,143 @@
     font-weight: 500;
 }
 
+/* Code block styles */
+.gofav-card code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 0.9em;
+    background: #f1f3f5;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    color: #e83e8c;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.code-block-wrapper {
+    position: relative;
+    margin: 1.5rem 0;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+}
+
+.code-block-wrapper pre {
+    margin: 0;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.code-block-wrapper code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+.code-copy-btn {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #495057;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.code-copy-btn:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #212529;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.code-copy-btn:active {
+    transform: scale(0.95);
+}
+
+.code-copy-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+}
+
+.code-copy-btn.copied {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.code-copy-btn.copied .copy-text::after {
+    content: "已复制";
+}
+
+.code-copy-btn .copy-text::after {
+    content: "复制";
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .code-block-wrapper {
+        background: #1e1e1e;
+        border-color: #333;
+    }
+    
+    .code-block-wrapper pre,
+    .code-block-wrapper code {
+        color: #d4d4d4;
+    }
+    
+    .code-copy-btn {
+        background: #2d2d2d;
+        border-color: #444;
+        color: #d4d4d4;
+    }
+    
+    .code-copy-btn:hover {
+        background: #3d3d3d;
+        border-color: #555;
+    }
+    
+    .code-copy-btn.copied {
+        background: #1e4620;
+        border-color: #2d5a2f;
+        color: #90ee90;
+    }
+}
+
 /* Responsive styles */
 @media (max-width: 700px) {
     .gofav-card { padding: 1.1rem 0.5rem; }
     .gofav-intro { margin-top: 1.2rem; }
     .gofav-header-card { padding: 1rem 0.7rem; }
     .gofav-header-title { font-size: 1.2rem; }
+    .code-block-wrapper pre {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+    .code-copy-btn {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+    }
+    .code-copy-btn .copy-text {
+        display: none;
+    }
 } 

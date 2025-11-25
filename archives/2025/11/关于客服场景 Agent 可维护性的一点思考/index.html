@@ -150,7 +150,15 @@
                         <li>高可维护性：只需维护一个清洗过的业务规则库，而不是维护一个层层堆叠的 Prompt 屎山。</li>
                     </ol>
                     <p>我们甚至可以将规则库映射到 Prompt 中，形成一个通用的<strong>动态指令模板</strong>：</p>
-                    <pre><code>&lt;System_Instruction&gt;
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text">复制</span>
+                        </button>
+                        <pre><code>&lt;System_Instruction&gt;
   You are a professional customer service agent.
   
   # Dynamic Workflow Execution
@@ -177,6 +185,7 @@
   
   Response: [Your final answer to user]
 &lt;/System_Instruction&gt;</code></pre>
+                    </div>
                     <p>这种方式将"思考路径"（CoT）固定下来，而将"思考内容"（Policies）动态化，实现了架构的解耦。</p>
                 </div>
 
@@ -250,6 +259,54 @@
         </footer>
     </div>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.querySelector('code');
+            const text = code.textContent || code.innerText;
+            
+            // 使用 Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    // 显示成功反馈
+                    button.classList.add('copied');
+                    const originalText = button.querySelector('.copy-text');
+                    setTimeout(function() {
+                        button.classList.remove('copied');
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('复制失败:', err);
+                    fallbackCopy(text, button);
+                });
+            } else {
+                // 降级方案
+                fallbackCopy(text, button);
+            }
+        }
+        
+        function fallbackCopy(text, button) {
+            // 创建临时 textarea
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                button.classList.add('copied');
+                setTimeout(function() {
+                    button.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动选择文本复制');
+            }
+            
+            document.body.removeChild(textarea);
+        }
+    </script>
 </body>
 </html>
 
