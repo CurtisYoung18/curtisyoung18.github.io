@@ -11,8 +11,63 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/archives/style.css">
+    <!-- Markdown 渲染相关 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <script src="/js/script.js"></script>
     <script src="/js/tocbot.min.js"></script>
+    <!-- Markdown 渲染相关 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <script src="/js/markdown-renderer.js"></script>
+    <style>
+        #article-content.markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        #article-content.markdown-body pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+            overflow-x: auto;
+        }
+        #article-content.markdown-body code {
+            background-color: rgba(175, 184, 193, 0.2);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+        }
+        #article-content.markdown-body pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        #article-content.markdown-body blockquote {
+            border-left: 4px solid #dfe2e5;
+            padding: 0 1em;
+            color: #6a737d;
+        }
+        @media (prefers-color-scheme: dark) {
+            #article-content.markdown-body {
+                color: #c9d1d9;
+            }
+            #article-content.markdown-body pre {
+                background-color: #161b22;
+            }
+            #article-content.markdown-body code {
+                background-color: rgba(110, 118, 129, 0.4);
+            }
+            #article-content.markdown-body blockquote {
+                border-left-color: #30363d;
+                color: #8b949e;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -38,31 +93,8 @@
                         <span class="gofav-header-category">Music, Life</span>
                     </div>
                 </div>
-                <div class="gofav-card">
-                    <h2>歌单灵感</h2>
-                    <p>"Go Fav"诞生于我对音乐的热爱。无论是清晨的第一缕阳光，还是深夜的独自敲代码，这些歌单里的旋律总能带来灵感与陪伴。风格涵盖华语流行、独立、爵士、电子、Lo-fi等，适合专注、放松、旅行、发呆等各种场景。</p>
-                </div>
-                <div class="gofav-card">
-                    <h2>精选曲目</h2>
-                    <ul class="gofav-tracks">
-                        <li>每天每天 <span>· Khalil Fong</span></li>
-                        <li>普通朋友 <span>· David Tao</span></li>
-                        <li>Necklace <span>· Barrett Marshall, Ivoris</span></li>
-                        <li>愛是一本書 <span>· Eason Chan</span></li>
-                        <li>The Look Of Love <span>· Saskia Bruin</span></li>
-                        <li>Can I Have the Day With You <span>· Sam Ock, Michelle</span></li>
-                        <li>Lay Down <span>· Sarah Proctor</span></li>
-                        <li>Can't Complain <span>· Relient K</span></li>
-                        <li>Stay <span>· Ghostly Kisses</span></li>
-                        <li>magnolia <span>· keshi</span></li>
-                    </ul>
-                    <div class="gofav-quote">"音乐是生活的底色，也是灵感的源泉。"</div>
-                </div>
-                <div class="gofav-card">
-                    <h2>在线收听</h2>
-                    <div class="gofav-player-wrap">
-                        <iframe style="border-radius:16px;width:100%;max-width:700px;box-shadow:0 2px 12px rgba(44,62,80,0.10);" src="https://open.spotify.com/embed/playlist/0d2EH2txLjdI4UYOizFIr8?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-                    </div>
+                <div class="gofav-card post-content" id="article-content">
+                    <!-- Markdown 内容将在这里渲染 -->
                 </div>
             </div>
         </div>
@@ -73,5 +105,10 @@
         </footer>
     </div>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            window.loadAndRenderMarkdown('/archives/2024/12/15/my-first-post/我的音乐收藏.md', '#article-content');
+        });
+    </script>
 </body>
 </html> 
