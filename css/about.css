@@ -456,28 +456,6 @@
     }
 }
 
-/* 添加滚动条样式 */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #3498db, #2980b9);
-    border-radius: 4px;
-}
-
-.dark ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #2980b9, #3498db);
-}
 
 /* 内容卡片样式 */
 .content-section {
