@@ -1201,30 +1201,52 @@
     }
     
     .apple-modal-content {
-        max-width: 90%;
-        width: calc(100% - 2rem);
-        padding: 1.25rem;
+        max-width: 320px;
+        width: calc(100% - 3rem);
+        padding: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+    }
+
+    .apple-modal-close {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
     }
 
     .modal-project-image {
-        border-radius: 10px;
-        margin-bottom: 0.75rem;
+        border-radius: 8px;
+        margin-bottom: 0.6rem;
+        max-height: 180px;
+        object-fit: cover;
+    }
+
+    .modal-project-category {
+        font-size: 0.65rem;
+        margin-bottom: 0.25rem;
     }
     
     .modal-project-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .modal-project-description {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
     }
 
     .modal-project-links {
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
 
     .modal-project-link {
-        padding: 0.45rem 0.9rem;
-        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        border-radius: 15px;
     }
 } 
