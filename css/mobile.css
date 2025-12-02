@@ -1,0 +1,255 @@
+/* Mobile Responsive Styles for All Pages */
+
+/* Products Page Mobile Styles */
+@media (max-width: 768px) {
+    .products-container {
+        padding: 2rem 1rem;
+    }
+
+    .products-header h2 {
+        font-size: 2rem;
+    }
+
+    .products-header p {
+        font-size: 1rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .category-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .category-card p {
+        font-size: 0.95rem;
+    }
+
+    .animated-products-container {
+        padding: 2rem 1rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .products-image-container {
+        height: 250px;
+    }
+
+    .product-name {
+        font-size: 1.5rem;
+    }
+
+    .product-description {
+        font-size: 1rem;
+    }
+
+    .product-controls {
+        justify-content: center;
+    }
+
+    .product-links {
+        flex-direction: column;
+    }
+
+    .product-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Home Page Mobile Styles */
+@media (max-width: 768px) {
+    .intro {
+        padding: 2rem 1rem;
+    }
+
+    .avatar img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nickname {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .link-item {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Archives Page Mobile Styles */
+@media (max-width: 768px) {
+    .archive {
+        padding: 1rem;
+    }
+
+    .archive-year {
+        margin-bottom: 2rem;
+    }
+
+    .archive-year h3 {
+        font-size: 1.5rem;
+    }
+
+    .archive-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .archive-item-title {
+        font-size: 1.1rem;
+    }
+
+    .archive-item-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .gofav-header-card {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .gofav-header-title {
+        font-size: 1.3rem;
+    }
+
+    .gofav-card {
+        padding: 1.5rem 1rem;
+        margin: 1rem 0;
+    }
+
+    .gofav-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .gofav-card p {
+        font-size: 1rem;
+    }
+
+    .code-block-wrapper {
+        margin: 1rem 0;
+    }
+
+    .code-block-wrapper pre {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .code-copy-btn {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        top: 0.6rem;
+        right: 0.6rem;
+    }
+
+    .code-copy-btn .copy-text {
+        display: none;
+    }
+}
+
+/* Collection Page Mobile Styles */
+@media (max-width: 768px) {
+    .collection-container {
+        padding: 2rem 1rem;
+    }
+
+    .collection-header h1 {
+        font-size: 2rem;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .collection-item {
+        padding: 1.5rem;
+    }
+}
+
+/* General Mobile Optimizations */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Improve touch targets */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Better spacing */
+    section {
+        margin: 2rem 0;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .products-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .product-name {
+        font-size: 1.25rem;
+    }
+
+    .gofav-header-title {
+        font-size: 1.1rem;
+    }
+
+    .gofav-card h2 {
+        font-size: 1.1rem;
+    }
+}
+

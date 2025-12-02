@@ -891,6 +891,7 @@
     height: 100%;
     z-index: 1000;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .apple-modal.active {
@@ -898,6 +899,7 @@
     align-items: flex-start;
     justify-content: center;
     padding: 2rem 1rem;
+    overflow-y: auto;
 }
 
 .apple-modal-backdrop {
@@ -909,6 +911,7 @@
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1001;
+    cursor: pointer;
 }
 
 .apple-modal-content {
@@ -921,6 +924,7 @@
     padding: 2rem;
     margin: 2rem auto;
     animation: modalFadeIn 0.3s ease;
+    cursor: default;
 }
 
 .dark .apple-modal-content {
@@ -1054,25 +1058,144 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+    }
+
+    .profile-section {
+        padding: 1.5rem;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-description {
+        font-size: 1rem;
+        padding-left: 0;
+        border-left: none;
+        text-align: left;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .education-item {
+        padding-bottom: 1rem;
+    }
+
+    .education-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .publication-item {
+        padding: 1rem;
+    }
+
+    .publication-item h3 {
+        font-size: 1.1rem;
+    }
+
     .cv-section {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
     }
 
     .cv-button {
         width: 100%;
         justify-content: center;
+        margin: 0.5rem 0;
+    }
+
+    #english-cv,
+    #chinese-cv {
+        margin: 0.5rem 0;
     }
     
+    .apple-carousel-container {
+        margin-top: 1rem;
+    }
+
+    .apple-carousel-track {
+        padding: 1rem 0;
+        gap: 0.75rem;
+    }
+
+    .apple-card {
+        flex: 0 0 200px;
+        height: 280px;
+    }
+
+    .apple-card-content {
+        padding: 1.5rem;
+    }
+
+    .apple-card-title {
+        font-size: 1.1rem;
+    }
+
     .apple-carousel-controls {
         padding-right: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .apple-carousel-btn {
+        width: 36px;
+        height: 36px;
     }
     
+    .apple-modal.active {
+        padding: 1rem 0.5rem;
+    }
+
     .apple-modal-content {
         padding: 1.5rem;
-        margin: 1rem;
+        margin: 1rem 0;
+        border-radius: 16px;
+    }
+
+    .apple-modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 28px;
+        height: 28px;
     }
     
     .modal-project-title {
         font-size: 1.5rem;
+    }
+
+    .modal-project-description {
+        font-size: 1rem;
+    }
+
+    .modal-project-links {
+        flex-direction: column;
+    }
+
+    .modal-project-link {
+        width: 100%;
+        justify-content: center;
     }
 } 

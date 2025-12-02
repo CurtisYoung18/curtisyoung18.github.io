@@ -10,6 +10,7 @@
     <title>About | Curtis の Home</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mobile.css">
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="/js/script.js"></script>
@@ -438,8 +439,13 @@
                     closeModal.addEventListener('click', closeModalFunc);
                 }
                 if (modal) {
+                    const backdrop = modal.querySelector('.apple-modal-backdrop');
+                    if (backdrop) {
+                        backdrop.addEventListener('click', closeModalFunc);
+                    }
                     modal.addEventListener('click', (e) => {
-                        if (e.target === modal || e.target.classList.contains('apple-modal-backdrop')) {
+                        // 如果点击的是模态框本身（不是内容区域），则关闭
+                        if (e.target === modal) {
                             closeModalFunc();
                         }
                     });
