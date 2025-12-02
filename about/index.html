@@ -440,15 +440,27 @@
                 }
                 if (modal) {
                     const backdrop = modal.querySelector('.apple-modal-backdrop');
+                    const modalContent = modal.querySelector('.apple-modal-content');
+                    
+                    // 点击backdrop关闭
                     if (backdrop) {
                         backdrop.addEventListener('click', closeModalFunc);
                     }
+                    
+                    // 点击模态框外部（但不是内容区域）关闭
                     modal.addEventListener('click', (e) => {
-                        // 如果点击的是模态框本身（不是内容区域），则关闭
-                        if (e.target === modal) {
+                        // 如果点击的是模态框本身或backdrop，则关闭
+                        if (e.target === modal || e.target === backdrop) {
                             closeModalFunc();
                         }
                     });
+                    
+                    // 阻止内容区域的点击事件冒泡
+                    if (modalContent) {
+                        modalContent.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                        });
+                    }
                 }
 
                 // Card click handlers
