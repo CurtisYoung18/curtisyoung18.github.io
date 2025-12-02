@@ -74,13 +74,19 @@
                             <img src="/images/profile.png" alt="Curtis Mei" class="profile-image">
                             <div class="profile-info">
                                 <h1 class="profile-name">Zhiyang Mei</h1>
+                                <p class="profile-title">Agent Deployment Engineer</p>
+                                <p class="profile-location"><i class="fas fa-map-marker-alt"></i> Shenzhen, China</p>
                                 <br>
                                 <p class="profile-description">
-                                    I am a Master's student at the University of Queensland, specializing in Machine Learning and AI Security. 
-                                    With a strong foundation in both software development and research, I focus on creating innovative solutions 
-                                    in AI security and machine learning applications. My experience spans across web development, 
-                                    reinforcement learning, and AI model security research.
+                                    I am an Agent Deployment Engineer based in Shenzhen, specializing in bringing AI agents to real-world applications. 
+                                    I hold a Master's degree in Information Technology from the University of Queensland.
+                                    With a strong foundation in both software development and machine learning, I focus on creating robust and scalable AI solutions.
+                                    My expertise spans across AI agent deployment, web development, and reinforcement learning.
                                 </p>
+                                <div class="profile-badges">
+                                    <span class="badge"><i class="fas fa-graduation-cap"></i> Master's in IT (UQ)</span>
+                                    <span class="badge"><i class="fas fa-language"></i> PTE Academic 79+</span>
+                                </div>
                                 <div class="social-links">
                                     <a href="https://github.com/CurtisYoung18" target="_blank" class="social-link">
                                         <div class="social-link-content">
@@ -201,12 +207,12 @@
                                 <h3>M.Sc. in Information Technology</h3>
                                 <p>EAIT, University of Queensland</p>
                                 <p>Brisbane, Australia</p>
-                                <p>2023.7 – 2025.7 </p>
+                                <p>2023.7 – 2025.7 (Graduated)</p>
                                 <p>GPA: 6.1 /7</p>
                                 <ul class="education-details">
                                     <li>Research area: Machine Learning, AI Security</li>
                                     <li>Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence</li>
-</ul>
+                                </ul>
                             </div>
                             <div class="education-item">
                                 <h3>B.Sc. in International Economics and Trade</h3>
@@ -460,15 +466,66 @@
             font-size: 2.5rem;
             color: #2c3e50;
             margin: 0;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(45deg, #2c3e50, #3498db);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradient 8s ease infinite;
             line-height: 1.2;
-            min-height: 4rem;
             display: block;
         }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: #3498db;
+            font-weight: 500;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .profile-location {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.2rem 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: #2980b9;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        /* 深色模式适配 */
+        .dark .profile-title {
+            color: #5dade2;
+        }
+        
+        .dark .profile-location {
+            color: #aab7b8;
+        }
+
+        .dark .badge {
+            background: rgba(52, 152, 219, 0.15);
+            color: #5dade2;
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+
 
         #english-cv {
             margin-right: 1rem;
