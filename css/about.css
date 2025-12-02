@@ -539,44 +539,95 @@
     border-radius: 3px;
 }
 
-/* 项目列表样式 */
+/* 项目列表样式优化 - Grid 布局 */
 .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     list-style: none;
     padding: 0;
 }
 
 .project-item {
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 0;
+    padding: 1.8rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-item:hover {
-    transform: translateX(10px);
-    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(52, 152, 219, 0.3);
 }
 
 .project-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .project-title a {
     color: #2c3e50;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
     transition: color 0.3s ease;
 }
 
-.project-title a:hover {
+.project-title a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3498db;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.project-item:hover .project-title a {
     color: #3498db;
 }
 
+.project-item:hover .project-title a::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 .project-description {
-    font-size: 0.9rem;
-    color: #7f8c8d;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* 装饰性图标 */
+.project-item::before {
+    content: '\f09b'; /* GitHub icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    color: rgba(44, 62, 80, 0.05);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover::before {
+    color: rgba(52, 152, 219, 0.1);
+    transform: scale(1.2) rotate(15deg);
 }
 
 /* 教育经历样式 */
@@ -754,24 +805,45 @@
 
 .dark .profile-description,
 .dark .section-title,
-.dark .project-title a,
 .dark .education-item h3,
 .dark .publication-authors {
     color: #e0e0e0;
 }
 
-.dark .project-description,
 .dark .education-details li,
 .dark .publication-venue {
     color: #b0b0b0;
 }
 
 .dark .project-item {
-    background: rgba(40, 40, 40, 0.5);
+    background: rgba(40, 40, 40, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dark .project-item:hover {
-    background: rgba(50, 50, 50, 0.8);
+    background: rgba(50, 50, 50, 0.9);
+    border-color: rgba(52, 152, 219, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark .project-title a {
+    color: #ecf0f1;
+}
+
+.dark .project-item:hover .project-title a {
+    color: #3498db;
+}
+
+.dark .project-description {
+    color: #b0b0b0;
+}
+
+.dark .project-item::before {
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.dark .project-item:hover::before {
+    color: rgba(52, 152, 219, 0.15);
 }
 
 /* 响应式设计 */
