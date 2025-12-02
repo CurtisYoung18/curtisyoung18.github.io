@@ -112,73 +112,6 @@
 
                     <!-- Content Sections -->
                     <div class="content-section">
-                        <!-- Projects Section -->
-                        <div class="glass-card fade-in">
-                            <h2 class="section-title">Featured Projects</h2>
-                            <ul class="project-list">
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
-                                        <a href="https://github.com/UQ-Trust-Lab/AIM" target="_blank">
-                                            AI Model Modulation with Logits Redistribution
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        Research Paper: A novel model modulation paradigm enabling a single model to exhibit diverse behaviors to meet specific end requirements.
-                                    </p>
-                                </li>
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
-                                        <a href="https://github.com/CurtisYoung18/Eml_process_platform" target="_blank">
-                                            Email Processing System
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        A system that cleans emails using code and LLMs and uploads cleaned data to RAG knowledge base for user interaction.
-                                    </p>
-                                </li>
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
-                                        <a href="https://github.com/CurtisYoung18/v0-poc" target="_blank">
-                                            Food Poisoning Questionnaire System
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        Helps nursing teams generate, revise and manage questionnaires, and analyze data using LLM chat.
-                                    </p>
-                                </li>
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
-                                        <a href="https://github.com/CurtisYoung18/minzheng-tong-demo" target="_blank">
-                                            Chat & Manage Housing Fund
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        Allows users to chat with LLMs to manage (query and withdraw) their housing fund.
-                                    </p>
-                                </li>
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
-                                        <a href="https://v0-i-gaming.vercel.app" target="_blank">
-                                            Live chat Widget integration
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        Integration of live chat widgets into AI customer service systems for better user-AI interaction.
-                                    </p>
-                                </li>
-                                <li class="project-item interactive-element">
-                                    <h3 class="project-title">
-                                        <a href="https://github.com/CurtisYoung18/RL-DQN" target="_blank">
-                                            DQN Implementation
-                                        </a>
-                                    </h3>
-                                    <p class="project-description">
-                                        Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-
                         <!-- Education Section -->
                         <div class="glass-card fade-in">
                             <h2 class="section-title">Education</h2>
@@ -202,7 +135,7 @@
                         </div>
 
                         <!-- Publications Section -->
-                        <div class="glass-card">
+                        <div class="glass-card fade-in">
                             <h2 class="section-title">Publications</h2>
                             <div class="publication-item">
                                 <h3>AI Model Modulation with Logits Redistribution</h3>
@@ -211,6 +144,84 @@
                                 <a href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" class="publication-link">
                                     <i class="fas fa-external-link-alt"></i> View Paper
                                 </a>
+                            </div>
+                        </div>
+
+                        <!-- Projects Section - Apple Cards Carousel Style -->
+                        <div class="glass-card fade-in">
+                            <h2 class="section-title">Featured Projects</h2>
+                            <div class="apple-carousel-container">
+                                <div class="apple-carousel" id="appleCarousel">
+                                    <div class="apple-carousel-track" id="carouselTrack">
+                                        <div class="apple-card" data-index="0">
+                                            <div class="apple-card-image" style="background-image: url('/images/products/AIM.png');"></div>
+                                            <div class="apple-card-overlay"></div>
+                                            <div class="apple-card-content">
+                                                <p class="apple-card-category">Research Paper</p>
+                                                <h3 class="apple-card-title">AI Model Modulation with Logits Redistribution</h3>
+                                            </div>
+                                        </div>
+                                        <div class="apple-card" data-index="1">
+                                            <div class="apple-card-image" style="background-image: url('/images/products/eml_process.png');"></div>
+                                            <div class="apple-card-overlay"></div>
+                                            <div class="apple-card-content">
+                                                <p class="apple-card-category">Data Cleaning</p>
+                                                <h3 class="apple-card-title">Email Processing System</h3>
+                                            </div>
+                                        </div>
+                                        <div class="apple-card" data-index="2">
+                                            <div class="apple-card-image" style="background-image: url('/images/products/food_posioning.png');"></div>
+                                            <div class="apple-card-overlay"></div>
+                                            <div class="apple-card-content">
+                                                <p class="apple-card-category">Function Integration</p>
+                                                <h3 class="apple-card-title">Food Poisoning Questionnaire System</h3>
+                                            </div>
+                                        </div>
+                                        <div class="apple-card" data-index="3">
+                                            <div class="apple-card-image" style="background-image: url('/images/products/gjj.png');"></div>
+                                            <div class="apple-card-overlay"></div>
+                                            <div class="apple-card-content">
+                                                <p class="apple-card-category">Function Integration</p>
+                                                <h3 class="apple-card-title">Chat & Manage Housing Fund</h3>
+                                            </div>
+                                        </div>
+                                        <div class="apple-card" data-index="4">
+                                            <div class="apple-card-image" style="background-image: url('/images/products/widget.gif');"></div>
+                                            <div class="apple-card-overlay"></div>
+                                            <div class="apple-card-content">
+                                                <p class="apple-card-category">Function Integration</p>
+                                                <h3 class="apple-card-title">Live chat Widget integration</h3>
+                                            </div>
+                                        </div>
+                                        <div class="apple-card" data-index="5">
+                                            <div class="apple-card-image" style="background-image: url('/images/products/dqn.gif');"></div>
+                                            <div class="apple-card-overlay"></div>
+                                            <div class="apple-card-content">
+                                                <p class="apple-card-category">Reinforcement Learning</p>
+                                                <h3 class="apple-card-title">DQN Implementation</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="apple-carousel-controls">
+                                    <button class="apple-carousel-btn" id="prevBtn" aria-label="Previous">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                    <button class="apple-carousel-btn" id="nextBtn" aria-label="Next">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Modal for project details -->
+                            <div class="apple-modal" id="projectModal">
+                                <div class="apple-modal-backdrop"></div>
+                                <div class="apple-modal-content">
+                                    <button class="apple-modal-close" id="closeModal">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <div class="apple-modal-body" id="modalBody"></div>
+                                </div>
                             </div>
                         </div>
 </div>
@@ -283,20 +294,170 @@
                         setTimeout(() => {
                             link.href = link.classList.contains('email-link') ? 
                                 'mailto:magicyoung63@yahoo.com' : 
-                                'tel:+8618371722591';
+                                'tel:+86 18371722591';
                         }, 300);
                     } else {
                         // 展开
                         link.classList.add('expanded');
                         textSpan.textContent = link.classList.contains('email-link') ? 
                             'magicyoung63@yahoo.com' : 
-                            'tel:+8618371722591';
+                            'tel:+86 18371722591';
                         link.href = '#';
                     }
                 }
 
                 emailLink.addEventListener('click', (e) => handleLinkClick(e, emailLink, 'Email'));
                 phoneLink.addEventListener('click', (e) => handleLinkClick(e, phoneLink, 'Phone'));
+
+                // Apple Cards Carousel functionality
+                const carouselTrack = document.getElementById('carouselTrack');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const cards = document.querySelectorAll('.apple-card');
+                const modal = document.getElementById('projectModal');
+                const closeModal = document.getElementById('closeModal');
+                const modalBody = document.getElementById('modalBody');
+
+                const projects = [
+                    {
+                        name: "AI Model Modulation with Logits Redistribution",
+                        category: "Research Paper",
+                        description: "We propose Aim, a novel model modulation paradigm that enables a single model to exhibit diverse behaviors to meet the specific end requirements.",
+                        image: "/images/products/AIM.png",
+                        links: [
+                            { url: "https://github.com/UQ-Trust-Lab/AIM", text: "GitHub", icon: "fab fa-github", class: "github" },
+                            { url: "https://dl.acm.org/doi/10.1145/3696410.3714737", text: "DOI", icon: "fas fa-external-link-alt" }
+                        ]
+                    },
+                    {
+                        name: "Email Processing System",
+                        category: "Data Cleaning",
+                        description: "A system that cleans emails using code and LLMs and upload the cleaned emails to the RAG knowledge base for users to chat with.",
+                        image: "/images/products/eml_process.png",
+                        links: [
+                            { url: "https://github.com/CurtisYoung18/Eml_process_platform", text: "GitHub", icon: "fab fa-github", class: "github" }
+                        ]
+                    },
+                    {
+                        name: "Food Poisoning Questionnaire System",
+                        category: "Function Integration",
+                        description: "A system that helps nursing team to generate, revise and manage food poisoning questionnaires as well as analyze the data from the questionnaire using chat with LLMs.",
+                        image: "/images/products/food_posioning.png",
+                        links: [
+                            { url: "https://github.com/CurtisYoung18/v0-poc", text: "GitHub", icon: "fab fa-github", class: "github" },
+                            { url: "https://gptbots-poc.vercel.app", text: "Demo", icon: "fas fa-external-link-alt" }
+                        ]
+                    },
+                    {
+                        name: "Chat & Manage Housing Fund",
+                        category: "Function Integration",
+                        description: "A system that allows users to chat with LLMs to manage (query and withdraw) their housing fund.",
+                        image: "/images/products/gjj.png",
+                        links: [
+                            { url: "https://github.com/CurtisYoung18/minzheng-tong-demo", text: "GitHub", icon: "fab fa-github", class: "github" },
+                            { url: "https://v0-minzheng-tong-demo.vercel.app", text: "Demo", icon: "fas fa-external-link-alt" }
+                        ]
+                    },
+                    {
+                        name: "Live chat Widget integration for AI Customer Service",
+                        category: "Function Integration",
+                        description: "A system that integrates several live chat widgets into an AI customer service system, allowing better interaction between users and the AI.",
+                        image: "/images/products/widget.gif",
+                        links: [
+                            { url: "https://v0-i-gaming.vercel.app", text: "Demo", icon: "fas fa-external-link-alt" }
+                        ]
+                    },
+                    {
+                        name: "DQN Implementation",
+                        category: "Reinforcement Learning",
+                        description: "Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch.",
+                        image: "/images/products/dqn.gif",
+                        links: [
+                            { url: "https://github.com/CurtisYoung18/RL-DQN", text: "GitHub", icon: "fab fa-github", class: "github" }
+                        ]
+                    }
+                ];
+
+                function checkScrollability() {
+                    if (carouselTrack) {
+                        const { scrollLeft, scrollWidth, clientWidth } = carouselTrack;
+                        if (prevBtn) prevBtn.disabled = scrollLeft <= 0;
+                        if (nextBtn) nextBtn.disabled = scrollLeft >= scrollWidth - clientWidth - 10;
+                    }
+                }
+
+                function scrollCarousel(direction) {
+                    if (!carouselTrack) return;
+                    const scrollAmount = window.innerWidth < 768 ? 240 : 400;
+                    carouselTrack.scrollBy({
+                        left: direction === 'left' ? -scrollAmount : scrollAmount,
+                        behavior: 'smooth'
+                    });
+                }
+
+                function openModal(index) {
+                    const project = projects[index];
+                    if (!project || !modal || !modalBody) return;
+
+                    modalBody.innerHTML = `
+                        <img src="${project.image}" alt="${project.name}" class="modal-project-image">
+                        <p class="modal-project-category">${project.category}</p>
+                        <h3 class="modal-project-title">${project.name}</h3>
+                        <p class="modal-project-description">${project.description}</p>
+                        <div class="modal-project-links">
+                            ${project.links.map(link => `
+                                <a href="${link.url}" target="_blank" class="modal-project-link ${link.class || ''}">
+                                    <i class="${link.icon}"></i> ${link.text}
+                                </a>
+                            `).join('')}
+                        </div>
+                    `;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeModalFunc() {
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+
+                // Event listeners
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => scrollCarousel('left'));
+                }
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => scrollCarousel('right'));
+                }
+                if (carouselTrack) {
+                    carouselTrack.addEventListener('scroll', checkScrollability);
+                    checkScrollability();
+                }
+                if (closeModal) {
+                    closeModal.addEventListener('click', closeModalFunc);
+                }
+                if (modal) {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal || e.target.classList.contains('apple-modal-backdrop')) {
+                            closeModalFunc();
+                        }
+                    });
+                }
+
+                // Card click handlers
+                cards.forEach((card, index) => {
+                    card.addEventListener('click', () => openModal(index));
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (modal && modal.classList.contains('active')) {
+                        if (e.key === 'Escape') {
+                            closeModalFunc();
+                        }
+                    }
+                });
             });
         </script>
 

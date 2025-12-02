@@ -1,8 +1,5 @@
 # 👋 Hi, I'm Zhiyang Mei (Curtis)
 
-![Profile Views](https://komarev.com/ghpvc/?username=curtisyoung18&color=blue)
-![GitHub followers](https://img.shields.io/github/followers/curtisyoung18?label=Follow&style=social)
-
 ---
 
 🚀 **M.Sc. Student in Information Technology | AI Researcher | Full-Stack Developer**

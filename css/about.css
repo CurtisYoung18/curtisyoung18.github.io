@@ -481,8 +481,8 @@
 
 /* 内容卡片样式 */
 .content-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -539,96 +539,7 @@
     border-radius: 3px;
 }
 
-/* 项目列表样式优化 - Grid 布局 */
-.project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-}
-
-.project-item {
-    margin-bottom: 0;
-    padding: 1.8rem;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-item:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-color: rgba(52, 152, 219, 0.3);
-}
-
-.project-title {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-.project-title a {
-    color: #2c3e50;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s ease;
-}
-
-.project-title a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #3498db;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-}
-
-.project-item:hover .project-title a {
-    color: #3498db;
-}
-
-.project-item:hover .project-title a::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-.project-description {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
-    flex-grow: 1;
-}
-
-/* 装饰性图标 */
-.project-item::before {
-    content: '\f09b'; /* GitHub icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    top: 1.2rem;
-    right: 1.2rem;
-    font-size: 1.5rem;
-    color: rgba(44, 62, 80, 0.05);
-    transition: all 0.3s ease;
-}
-
-.project-item:hover::before {
-    color: rgba(52, 152, 219, 0.1);
-    transform: scale(1.2) rotate(15deg);
-}
+/* Old project list styles removed - now using Apple Cards Carousel */
 
 /* 教育经历样式 */
 .education-item {
@@ -815,35 +726,330 @@
     color: #b0b0b0;
 }
 
-.dark .project-item {
-    background: rgba(40, 40, 40, 0.6);
-    border-color: rgba(255, 255, 255, 0.1);
+/* Dark mode styles for Apple Cards Carousel are included above */
+
+/* Apple Cards Carousel Styles */
+.apple-carousel-container {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
 }
 
-.dark .project-item:hover {
-    background: rgba(50, 50, 50, 0.9);
-    border-color: rgba(52, 152, 219, 0.4);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+.apple-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-.dark .project-title a {
-    color: #ecf0f1;
+.apple-carousel-track {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.dark .project-item:hover .project-title a {
+.apple-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.apple-card {
+    position: relative;
+    flex: 0 0 224px;
+    height: 320px;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: #f5f5f7;
+}
+
+@media (min-width: 768px) {
+    .apple-card {
+        flex: 0 0 384px;
+        height: 640px;
+    }
+}
+
+.apple-card:hover {
+    transform: translateY(-5px);
+}
+
+.apple-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.apple-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 50%, transparent 100%);
+    z-index: 2;
+}
+
+.apple-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: 3;
+    color: white;
+}
+
+.apple-card-category {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+    .apple-card-category {
+        font-size: 1rem;
+    }
+}
+
+.apple-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+    .apple-card-title {
+        font-size: 1.875rem;
+    }
+}
+
+.apple-carousel-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-right: 2rem;
+}
+
+.apple-carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f5f5f7;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.apple-carousel-btn:hover:not(:disabled) {
+    background: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.apple-carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.dark .apple-carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.dark .apple-carousel-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dark .apple-card {
+    background: #1a1a1a;
+}
+
+/* Modal Styles */
+.apple-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.apple-modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.apple-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+}
+
+.apple-modal-content {
+    position: relative;
+    z-index: 1002;
+    max-width: 896px;
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 2rem auto;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.dark .apple-modal-content {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.apple-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.dark .apple-modal-close {
+    background: white;
+    color: black;
+}
+
+.apple-modal-close:hover {
+    transform: scale(1.1);
+}
+
+.apple-modal-body {
+    padding-top: 1rem;
+}
+
+.modal-project-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.modal-project-category {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.dark .modal-project-category {
+    color: #999;
+}
+
+.modal-project-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.dark .modal-project-title {
+    color: #e0e0e0;
+}
+
+.modal-project-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.dark .modal-project-description {
+    color: #ccc;
+}
+
+.modal-project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(52, 152, 219, 0.1);
     color: #3498db;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.dark .project-description {
-    color: #b0b0b0;
+.modal-project-link:hover {
+    background: rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
 }
 
-.dark .project-item::before {
-    color: rgba(255, 255, 255, 0.03);
+.modal-project-link.github {
+    background: rgba(36, 41, 46, 0.1);
+    color: #24292e;
 }
 
-.dark .project-item:hover::before {
-    color: rgba(52, 152, 219, 0.15);
+.dark .modal-project-link.github {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.modal-project-link.github:hover {
+    background: rgba(36, 41, 46, 0.15);
+}
+
+.dark .modal-project-link.github:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* 响应式设计 */
@@ -855,5 +1061,18 @@
     .cv-button {
         width: 100%;
         justify-content: center;
+    }
+    
+    .apple-carousel-controls {
+        padding-right: 1rem;
+    }
+    
+    .apple-modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .modal-project-title {
+        font-size: 1.5rem;
     }
 } 
