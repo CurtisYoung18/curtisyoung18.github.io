@@ -928,13 +928,22 @@
 .apple-modal-content {
     position: relative;
     z-index: 1002;
-    max-width: 900px;
-    width: calc(100% - 3rem);
-    background: transparent;
-    padding: 0;
-    margin: 3rem auto 5rem;
-    animation: modalFadeIn 0.4s ease;
+    max-width: 480px;
+    width: calc(100% - 4rem);
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: modalFadeIn 0.3s ease;
     cursor: default;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+.dark .apple-modal-content {
+    background: #1a1a1a;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes modalFadeIn {
@@ -949,56 +958,57 @@
 }
 
 .apple-modal-close {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 36px;
-    height: 36px;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.08);
     border: none;
-    color: #333;
+    color: #666;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
     z-index: 1003;
+    font-size: 0.75rem;
 }
 
 .apple-modal-close:hover {
-    background: rgba(0, 0, 0, 0.15);
-    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
 }
 
 .dark .apple-modal-close {
     background: rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
+    color: #ccc;
 }
 
 .dark .apple-modal-close:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .apple-modal-body {
     padding: 0;
 }
 
-/* Modal content - clean style like Research Paper card */
+/* Modal content - compact preview style */
 .modal-project-image {
     width: 100%;
-    border-radius: 20px;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .modal-project-category {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #888;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
 }
 
 .dark .modal-project-category {
@@ -1006,11 +1016,11 @@
 }
 
 .modal-project-title {
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     color: #1a1a1a;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .dark .modal-project-title {
@@ -1018,10 +1028,10 @@
 }
 
 .modal-project-description {
-    font-size: 1.15rem;
-    line-height: 1.9;
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: #555;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .dark .modal-project-description {
@@ -1030,28 +1040,27 @@
 
 .modal-project-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
 }
 
 .modal-project-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.9rem 1.8rem;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
     background: #1a1a1a;
     color: white;
     text-decoration: none;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    transition: all 0.2s ease;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
 }
 
 .modal-project-link:hover {
     background: #333;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 .dark .modal-project-link {
@@ -1192,38 +1201,30 @@
     }
     
     .apple-modal-content {
+        max-width: 90%;
         width: calc(100% - 2rem);
-        margin: 4rem auto 3rem;
-    }
-
-    .apple-modal-close {
-        top: 1rem;
-        right: 1rem;
-        width: 32px;
-        height: 32px;
+        padding: 1.25rem;
     }
 
     .modal-project-image {
-        border-radius: 12px;
-        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
     }
     
     .modal-project-title {
-        font-size: 1.75rem;
+        font-size: 1.1rem;
     }
 
     .modal-project-description {
-        font-size: 1rem;
-        line-height: 1.7;
+        font-size: 0.85rem;
     }
 
     .modal-project-links {
-        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .modal-project-link {
-        width: 100%;
-        justify-content: center;
-        padding: 0.85rem 1.5rem;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.75rem;
     }
 } 
