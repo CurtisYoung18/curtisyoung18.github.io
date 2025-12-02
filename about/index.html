@@ -671,20 +671,23 @@
                 margin-top: 4rem;
                 margin-bottom: 3rem;
                 padding: 1.5rem;
+                box-sizing: border-box;
             }
 
             .cv-button {
                 display: flex !important;
-                width: 100%;
+                width: calc(100% - 1rem) !important;
+                max-width: 280px;
                 justify-content: center;
-                margin: 0.6rem 0 !important;
+                margin: 0.6rem auto !important;
                 padding: 0.9rem 1.5rem;
+                box-sizing: border-box;
             }
 
             #english-cv,
             #chinese-cv {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
         }
     </style>
