@@ -213,19 +213,8 @@
                                     </button>
                                 </div>
                             </div>
-                            
-                            <!-- Modal for project details -->
-                            <div class="apple-modal" id="projectModal">
-                                <div class="apple-modal-backdrop"></div>
-                                <div class="apple-modal-content">
-                                    <button class="apple-modal-close" id="closeModal">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                    <div class="apple-modal-body" id="modalBody"></div>
-                                </div>
-                            </div>
                         </div>
-</div>
+                    </div>
 
                     <!-- CV Download Section -->
                     <section class="cv-section fade-in">
@@ -414,13 +403,12 @@
                         </div>
                     `;
                     modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
+                    // 不禁用背景滚动，让页面可以继续滚动
                 }
 
                 function closeModalFunc() {
                     if (modal) {
                         modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
                     }
                 }
 
@@ -485,6 +473,18 @@
     </div>
 </footer>
     </div>
+
+    <!-- Modal moved outside wrapper for proper positioning -->
+    <div class="apple-modal" id="projectModal">
+        <div class="apple-modal-backdrop"></div>
+        <div class="apple-modal-content">
+            <button class="apple-modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="apple-modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
     <script type="text/javascript" src="/js/about.js"></script>
     <style>
