@@ -602,15 +602,6 @@
             margin-left: 0.5rem;
         }
 
-        @media (max-width: 768px) {
-            #english-cv,
-            #chinese-cv {
-                margin: 0.5rem 0;
-                display: block;
-                width: 100%;
-            }
-        }
-        
         /* 更新 CV section 样式 */
         .cv-section {
             margin-top: 9rem;
@@ -679,7 +670,21 @@
             .cv-section {
                 margin-top: 4rem;
                 margin-bottom: 3rem;
-                padding: 2.5rem;
+                padding: 1.5rem;
+            }
+
+            .cv-button {
+                display: flex !important;
+                width: 100%;
+                justify-content: center;
+                margin: 0.6rem 0 !important;
+                padding: 0.9rem 1.5rem;
+            }
+
+            #english-cv,
+            #chinese-cv {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
         }
     </style>
