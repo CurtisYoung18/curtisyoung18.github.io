@@ -925,11 +925,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10000;
-    max-width: 420px;
+    max-width: 500px;
     width: calc(100% - 3rem);
     background: white;
     border-radius: 16px;
-    padding: 1.25rem;
+    padding: 1.5rem;
     animation: modalPopIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     cursor: default;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
@@ -1148,20 +1148,17 @@
     }
 
     .cv-section {
-        padding: 2rem 1.5rem;
-        margin-top: 4rem;
+        padding: 1.5rem 1rem;
+        margin-top: 3rem;
         margin-bottom: 2rem;
     }
 
     .cv-button {
         width: 100%;
         justify-content: center;
-        margin: 0.5rem 0;
-    }
-
-    #english-cv,
-    #chinese-cv {
-        margin: 0.5rem 0;
+        margin: 0.5rem 0 !important;
+        display: flex;
+        padding: 0.8rem 1.5rem;
     }
     
     .apple-carousel-container {

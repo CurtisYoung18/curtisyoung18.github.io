@@ -595,11 +595,20 @@
 
 
         #english-cv {
-            margin-right: 1rem;
+            margin-right: 0.5rem;
         }
 
         #chinese-cv {
-            margin-left: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            #english-cv,
+            #chinese-cv {
+                margin: 0.5rem 0;
+                display: block;
+                width: 100%;
+            }
         }
         
         /* 更新 CV section 样式 */
