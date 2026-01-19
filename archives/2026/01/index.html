@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Curtis Mei">
+    <meta name="description" content="从 HuggingFace smolagents 文档出发，聊聊什么是 Agent 以及 Tool Calling 的设计哲学">
+    <meta name="keywords" content="AI, Agent, Tool Calling, smolagents, LLM, Technology">
+    <title>从 smolagents 聊 Agent 与 Tool Calling | Curtis の Home</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/archives/style.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/tocbot.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
+                    <div class="menu navbar-right">
+                        <a class="menu-item" href="/archives">Posts</a>
+                        <a class="menu-item" href="/products">Products</a>
+                        <a class="menu-item" href="/collection">Collections</a>
+                        <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="container">
+                <div class="gofav-header-card">
+                    <div class="gofav-header-title">从 smolagents 聊 Agent 与 Tool Calling</div>
+                    <div class="gofav-header-meta">
+                        <span class="gofav-header-date">2026-01-19</span>
+                        <span class="gofav-header-category">AI, Agent, LLM</span>
+                    </div>
+                </div>
+                
+                <div class="gofav-card">
+                    <h2>1. 引言：Agent 到底是什么？</h2>
+                    <p>最近读了 HuggingFace 的 <strong>smolagents</strong> 文档<sup><a href="#ref1">[1]</a></sup>，里面对 "What are agents?" 有一段非常清晰的阐述。简单来说：<strong>Agent 是一种让 LLM 输出能够控制程序流程的系统</strong>——不再仅仅是"生成文本"，而是"做决策、调工具、执行动作"。</p>
+                    <p>这让我想起之前写的那篇关于客服场景 Agent 可维护性的文章。当时我们聊的是 "Prompt Debt"（提示词技术债），本质上就是在追问：当 Agent 越来越复杂，我们该如何管理它的行为？</p>
+                    <p>今天换个角度，从 smolagents 的设计哲学出发，聊聊 <strong>Agent 的本质</strong> 以及 <strong>Tool Calling 的工程实践</strong>。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>2. Agent 是一个光谱，而非二元开关</h2>
+                    <p>smolagents 文档中有一个很有洞见的观点：<strong>Agent 不是一个非此即彼的概念，而是一个连续的光谱。</strong></p>
+                    
+                    <h3>2.1 从简单到复杂的演进</h3>
+                    <ul>
+                        <li><strong>Level 0 - 纯生成</strong>：LLM 接收输入，输出文本。没有任何流程控制。这是最基础的 ChatBot。</li>
+                        <li><strong>Level 1 - 条件路由</strong>：LLM 的输出决定走哪条分支（比如"这是投诉还是咨询？"），本质上是一个 Router。</li>
+                        <li><strong>Level 2 - 单步工具调用</strong>：LLM 决定调用哪个外部工具（Function Calling），执行一次，返回结果。</li>
+                        <li><strong>Level 3 - 多步 Agent</strong>：LLM 在一个循环中持续决策——"思考 → 行动 → 观察 → 再思考"，直到任务完成。这就是 ReAct 范式<sup><a href="#ref2">[2]</a></sup>。</li>
+                        <li><strong>Level 4 - Multi-Agent</strong>：多个 Agent 协作，甚至一个 Agent 可以启动另一个 Agent。</li>
+                    </ul>
+                    <p>这个光谱的启示在于：<strong>不是所有场景都需要 Level 4 的复杂度</strong>。很多时候，一个简单的 Level 2（单步工具调用）就够了，过度设计反而会增加维护成本。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>3. Tool Calling：Agent 的"手"</h2>
+                    <p>如果说 LLM 是 Agent 的"大脑"，那 Tool Calling 就是它的"手"。smolagents 把这块讲得很透彻，核心要素有三个：</p>
+                    
+                    <h3>3.1 工具描述（Tool Description）</h3>
+                    <p>每个工具需要一份清晰的"说明书"，告诉 LLM：</p>
+                    <ul>
+                        <li>这个工具能做什么（功能描述）</li>
+                        <li>需要什么参数（输入格式）</li>
+                        <li>会返回什么（输出格式）</li>
+                    </ul>
+                    <p>写得好的工具描述，LLM 一看就知道什么时候该用、怎么用。写得差的，要么被误用，要么被忽略。</p>
+
+                    <h3>3.2 调用格式（Action Format）</h3>
+                    <p>LLM 要"说出"它想调用什么工具、传什么参数。smolagents 支持两种格式：</p>
+                    <ul>
+                        <li><strong>JSON 格式</strong>：结构化、易解析，但 token 消耗略高。</li>
+                        <li><strong>Code 格式</strong>：直接生成 Python 代码片段，灵活度更高，但需要沙箱执行。</li>
+                    </ul>
+                    <p>选哪种取决于场景。对于客服场景，我倾向于 JSON——更可控、更容易做日志和审计。</p>
+
+                    <div class="image-wrapper" style="margin: 1.5rem 0; text-align: center;">
+                        <img src="/images/posts/tool calling.gif" alt="Tool Calling 流程示意" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-top: 0.8rem;">▲ Tool Calling 的执行流程：LLM 决策 → 工具调用 → 结果返回 → 继续推理</p>
+                    </div>
+
+                    <h3>3.3 解析器（Parser）</h3>
+                    <p>LLM 的输出是文本，需要一个 Parser 把它转成可执行的指令。这里有个坑：<strong>LLM 不总是乖乖按格式输出</strong>。</p>
+                    <p>解决方案通常有两个：</p>
+                    <ol>
+                        <li><strong>Prompt 约束</strong>：在 System Prompt 里反复强调输出格式，用 Few-shot 示例加强。</li>
+                        <li><strong>容错解析</strong>：Parser 要能处理一些"差不多对"的输出，比如多余的空格、字段顺序不对等。</li>
+                    </ol>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>4. 记忆（Memory）：Agent 的"上下文管理"</h2>
+                    <p>对于多步 Agent，<strong>Memory</strong> 是不可或缺的组件。它存储了：</p>
+                    <ul>
+                        <li>对话历史</li>
+                        <li>之前的工具调用结果</li>
+                        <li>中间推理过程</li>
+                    </ul>
+                    <p>smolagents 的设计思路是：每一步循环都把历史信息拼进 Prompt，让 LLM "看到" 之前发生了什么，从而做出连贯的决策。</p>
+                    
+                    <h3>4.1 Memory 的工程挑战</h3>
+                    <p>理想很美好，现实有几个坑：</p>
+                    <ul>
+                        <li><strong>Context 膨胀</strong>：多轮对话后，历史信息越来越长，Token 消耗剧增，还可能触发 "Lost in the Middle" 问题<sup><a href="#ref3">[3]</a></sup>。</li>
+                        <li><strong>信息筛选</strong>：不是所有历史都重要。需要一套策略来决定保留什么、丢弃什么。</li>
+                        <li><strong>状态一致性</strong>：Memory 里存的信息要和外部系统（比如数据库、订单状态）保持同步。</li>
+                    </ul>
+                    <p>我的做法是：<strong>分层存储</strong>。核心事实（用户身份、订单号）放在 Short-term Memory，长期知识放在 RAG 里检索。两者分开管理，各司其职。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>5. 错误处理：设计时就要假设 Agent 会出错</h2>
+                    <p>smolagents 文档里有句话我很认同：<strong>"Since LLM outputs are unpredictable, you should expect errors."</strong></p>
+                    <p>Agent 系统的错误来源有很多：</p>
+                    <ul>
+                        <li>LLM 输出格式不对，Parser 解析失败</li>
+                        <li>工具调用超时或返回异常</li>
+                        <li>LLM 的推理逻辑本身就错了（幻觉）</li>
+                    </ul>
+                    
+                    <h3>5.1 实用的错误处理策略</h3>
+                    <ol>
+                        <li><strong>重试机制</strong>：对于格式错误，可以把错误信息反馈给 LLM，让它"再来一次"。</li>
+                        <li><strong>Fallback 路径</strong>：关键场景要有兜底方案——比如转人工、返回标准话术。</li>
+                        <li><strong>日志与监控</strong>：记录每一步的输入输出，出问题时能快速定位。</li>
+                    </ol>
+                    <p>这和我之前说的 "确定性护栏（Deterministic Guardrails）" 是一脉相承的——<strong>在 Agent 的灵活性和系统的可控性之间，找到平衡点</strong>。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>6. 什么时候不该用 Agent？</h2>
+                    <p>smolagents 文档也提醒了这一点：<strong>Agent 不是银弹</strong>。以下场景，传统的 if/else 逻辑可能更合适：</p>
+                    <ul>
+                        <li><strong>流程完全确定</strong>：用户请求的类型有限，每种类型的处理路径都能预先定义好。</li>
+                        <li><strong>对延迟敏感</strong>：多步 Agent 需要多次 LLM 调用，延迟会累积。</li>
+                        <li><strong>对可靠性要求极高</strong>：LLM 的输出本质上是概率性的，某些场景（金融、医疗）容不得任何差错。</li>
+                    </ul>
+                    <p>我的判断标准是：<strong>如果能用规则覆盖 80% 的场景，那就先用规则</strong>。把 Agent 留给那些真正需要"智能判断"的长尾问题。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>7. 结语</h2>
+                    <p>从 smolagents 的设计哲学回看，Agent 系统的核心挑战其实是：<strong>如何在 LLM 的灵活性与工程系统的可控性之间取得平衡</strong>。</p>
+                    <ul>
+                        <li><strong>Tool Calling</strong> 赋予了 Agent 与外部世界交互的能力，但也带来了格式约束、错误处理的复杂度。</li>
+                        <li><strong>Memory</strong> 让 Agent 能够"记住"上下文，但也需要精细的管理策略来控制成本和保持一致性。</li>
+                        <li><strong>多步推理</strong> 让 Agent 能够处理复杂任务，但也增加了延迟和不确定性。</li>
+                    </ul>
+                    <p>最终的答案不是"用不用 Agent"，而是<strong>"在这个光谱上，我的场景应该站在哪个位置"</strong>。</p>
+
+                    <hr>
+
+                    <h3>References</h3>
+                    <ol id="references">
+                        <li id="ref1">Hugging Face. (2025). smolagents - Introduction to Agents. <a href="https://huggingface.co/docs/smolagents/conceptual_guides/intro_agents" target="_blank">https://huggingface.co/docs/smolagents/conceptual_guides/intro_agents</a></li>
+                        <li id="ref2">Yao, S., et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. <em>ICLR</em>.</li>
+                        <li id="ref3">Liu, N. F., et al. (2024). Lost in the Middle: How Language Models Use Long Contexts. <em>TACL</em>.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                <span>© Curtis Mei</span>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
+</body>
+</html>
