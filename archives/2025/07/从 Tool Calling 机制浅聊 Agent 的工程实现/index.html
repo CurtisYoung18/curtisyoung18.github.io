@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Curtis Mei">
+    <meta name="description" content="从 Tool Calling 机制聊 Agent 的工程实现">
+    <meta name="keywords" content="AI, Agent, Tool Calling, LLM, Technology">
+    <title>从 Tool Calling 机制浅聊 Agent 的工程实现 | Curtis の Home</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/archives/style.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/tocbot.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
+                    <div class="menu navbar-right">
+                        <a class="menu-item" href="/archives">Posts</a>
+                        <a class="menu-item" href="/products">Products</a>
+                        <a class="menu-item" href="/collection">Collections</a>
+                        <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="container">
+                <div class="gofav-header-card">
+                    <div class="gofav-header-title">从 Tool Calling 机制浅聊 Agent 的工程实现</div>
+                    <div class="gofav-header-meta">
+                        <span class="gofav-header-date">2025-07-22</span>
+                        <span class="gofav-header-category">AI, Agent, LLM</span>
+                    </div>
+                </div>
+                
+                <div class="gofav-card">
+                    <h2>1. 引言：Agent 是怎么"动手"的？</h2>
+                    <p>最近在研究各种 Agent 框架的实现，一个核心问题浮现出来：<strong>LLM 是怎么可靠地调用外部工具的？</strong></p>
+                    <p>这听起来简单——不就是让模型输出个 JSON 吗？但深入下去会发现，这里面藏着从"学术 Demo"到"生产系统"的鸿沟。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>2. 两种 Tool Calling 范式</h2>
+                    
+                    <h3>2.1 文本解析式（经典 ReAct）</h3>
+                    <p>2022 年 ReAct 论文<sup><a href="#ref1">[1]</a></sup>提出的原始方案是<strong>纯文本解析</strong>：</p>
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text"></span>
+                        </button>
+                        <pre><code>Thought: 我需要查询用户的订单状态
+Action: query_order[user_id=12345]
+Observation: 订单已发货，预计明天送达
+Thought: 信息足够了，可以回复用户
+Action: finish[您的订单已发货，预计明天送达]</code></pre>
+                    </div>
+                    <p>系统用正则表达式解析 <code>Action: tool_name[params]</code>，提取工具名和参数。</p>
+                    <p><strong>问题在于</strong>：LLM 不总是乖乖按格式输出。它可能输出：</p>
+                    <ul>
+                        <li><code>Action: query_order(user_id=12345)</code> —— 括号错了</li>
+                        <li><code>Action: QueryOrder[user_id=12345]</code> —— 大小写不对</li>
+                        <li><code>我觉得应该查询一下订单 Action: query_order[...]</code> —— 格式对但位置不对</li>
+                    </ul>
+                    <p>于是你开始写越来越复杂的正则，处理各种边界情况。这就是<strong>解析地狱</strong>。</p>
+
+                    <h3>2.2 API 原生式（现代方案）</h3>
+                    <p>OpenAI 在 2023 年推出 Function Calling，后来演变为 Tool Use。核心思路是：<strong>不要让模型"自由发挥"，而是在解码层面约束输出</strong>。</p>
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text"></span>
+                        </button>
+                        <pre><code>response = client.chat.completions.create(
+    model="gpt-4",
+    messages=messages,
+    tools=[{
+        "type": "function",
+        "function": {
+            "name": "query_order",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "user_id": {"type": "string"}
+                }
+            }
+        }
+    }],
+    tool_choice="auto"
+)</code></pre>
+                    </div>
+                    <p>模型返回的不是自由文本，而是<strong>结构化对象</strong>：</p>
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text"></span>
+                        </button>
+                        <pre><code>{
+  "tool_calls": [{
+    "id": "call_abc123",
+    "function": {
+      "name": "query_order",
+      "arguments": "{\"user_id\": \"12345\"}"
+    }
+  }]
+}</code></pre>
+                    </div>
+                    <p><strong>这是怎么保证的？</strong> 不是靠 Prompt 祈祷，而是<strong>约束解码（Constrained Decoding）</strong>。模型在生成每个 token 时，只有符合 JSON Schema 的 token 才会被允许。这是在模型推理层面做的硬约束。</p>
+
+                    <h3>2.3 对比总结</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                        <thead>
+                            <tr style="background: #f5f8fa;">
+                                <th style="padding: 0.8rem; border: 1px solid #e0e0e0; text-align: left;">维度</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e0e0e0; text-align: left;">文本解析式</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e0e0e0; text-align: left;">API 原生式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">可靠性</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">依赖 Prompt + 正则容错</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">解码层硬约束，接近 100%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">开发成本</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">需要写复杂的 Parser</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">直接用 SDK</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">灵活性</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">高（可以自定义任意格式）</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">受限于 API 支持的 Schema</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">适用场景</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">开源模型、学术研究</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">生产系统、商业 API</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>结论</strong>：如果用 OpenAI、Anthropic、Moonshot 等商业 API，直接用原生 Tool Calling。只有在用开源模型（如 Llama、Qwen）且它们不支持 Function Calling 时，才考虑文本解析。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>3. 上下文管理：Agent 的"记忆"难题</h2>
+                    <p>当 Agent 需要多步推理时，历史信息会不断累积。一个复杂任务可能需要 10+ 轮工具调用，每轮都有输入输出，Context 很快就会爆炸。</p>
+
+                    <h3>3.1 Claude Code 的做法</h3>
+                    <p>根据 Anthropic 的技术文档<sup><a href="#ref2">[2]</a></sup>，Claude Code 采用<strong>自动压缩</strong>机制：</p>
+                    <ol>
+                        <li><strong>监控阈值</strong>：当 Token 使用达到 ~95% 时触发</li>
+                        <li><strong>注入总结请求</strong>：暂停当前操作，让 Claude 自己总结</li>
+                        <li><strong>结构化摘要</strong>：生成包含"已完成/关键决策/下一步"的 <code>&lt;summary&gt;</code></li>
+                        <li><strong>替换历史</strong>：用摘要替换详细的对话历史</li>
+                        <li><strong>继续执行</strong>：释放 Token 空间后恢复</li>
+                    </ol>
+                    <p>用户也可以手动触发 <code>/compact</code> 命令主动压缩。</p>
+
+                    <h3>3.2 Cursor 的做法</h3>
+                    <p>Cursor 面对的挑战更大——它要处理整个代码库。它的策略是<strong>分层管理</strong>：</p>
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text"></span>
+                        </button>
+                        <pre><code>┌─────────────────────────────────────┐
+│  系统 Prompt + 工具定义（~30%）      │  ← 固定开销
+├─────────────────────────────────────┤
+│  RAG 检索结果（动态）                │  ← 只取相关片段
+├─────────────────────────────────────┤
+│  当前文件上下文（动态）              │  ← 大文件只发 outline
+├─────────────────────────────────────┤
+│  对话历史（可压缩）                  │  ← 达到阈值时总结
+└─────────────────────────────────────┘</code></pre>
+                    </div>
+                    <p>关键技巧：</p>
+                    <ul>
+                        <li><strong>大文件处理</strong>：不发全文，只发 outline + 光标附近的代码</li>
+                        <li><strong>显式引用</strong>：<code>@file</code> 强制包含特定文件，绕过智能筛选</li>
+                        <li><strong>向量检索</strong>：代码库预先 Embedding，只检索语义相关的片段</li>
+                    </ul>
+
+                    <h3>3.3 工程启示</h3>
+                    <p>上下文管理的核心矛盾是：<strong>信息完整性 vs Token 成本</strong>。</p>
+                    <p>我的实践经验是采用<strong>分层策略</strong>：</p>
+                    <ol>
+                        <li><strong>Short-term Memory</strong>：当前任务的关键事实（用户 ID、订单号），永远保留</li>
+                        <li><strong>Working Memory</strong>：最近几轮的工具调用结果，定期压缩</li>
+                        <li><strong>Long-term Memory</strong>：历史知识放 RAG，按需检索</li>
+                    </ol>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>4. 错误处理：生产系统的必修课</h2>
+                    <p>即使用了 API 原生 Tool Calling，工程上仍然要处理各种异常：</p>
+
+                    <h3>4.1 常见错误类型</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                        <thead>
+                            <tr style="background: #f5f8fa;">
+                                <th style="padding: 0.8rem; border: 1px solid #e0e0e0; text-align: left;">错误类型</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e0e0e0; text-align: left;">原因</th>
+                                <th style="padding: 0.8rem; border: 1px solid #e0e0e0; text-align: left;">处理策略</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">参数缺失</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">模型推理不完整</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">重试 + 错误信息反馈</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">工具不存在</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">幻觉出不存在的工具</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">返回可用工具列表</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">执行超时</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">外部 API 慢</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">超时机制 + 降级方案</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">结果解析失败</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">工具返回非预期格式</td>
+                                <td style="padding: 0.8rem; border: 1px solid #e0e0e0;">容错解析 + 默认值</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>4.2 重试机制</h3>
+                    <p>一个实用的模式是<strong>错误反馈重试</strong>：</p>
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text"></span>
+                        </button>
+                        <pre><code>def execute_with_retry(tool_call, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            return execute_tool(tool_call)
+        except ToolError as e:
+            # 把错误信息反馈给 LLM，让它修正
+            messages.append({
+                "role": "tool",
+                "content": f"[错误]: {e.message}，请检查参数后重试"
+            })
+            # 重新调用 LLM
+            response = call_llm(messages)
+            tool_call = response.tool_calls[0]
+    
+    return fallback_response()</code></pre>
+                    </div>
+
+                    <h3>4.3 确定性护栏</h3>
+                    <p>对于高风险操作（删除文件、执行危险命令），不能完全信任 LLM 的判断：</p>
+                    <div class="code-block-wrapper">
+                        <button class="code-copy-btn" onclick="copyCode(this)" title="复制代码">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text"></span>
+                        </button>
+                        <pre><code>DANGEROUS_COMMANDS = ['rm -rf', 'DROP TABLE', 'format']
+
+def bash_tool(command: str) -> str:
+    # 硬编码的安全检查，不依赖 LLM
+    if any(danger in command for danger in DANGEROUS_COMMANDS):
+        return "[拒绝]: 该命令被安全策略禁止"
+    
+    return subprocess.run(command, ...)</code></pre>
+                    </div>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>5. 什么时候不该用 Tool Calling？</h2>
+                    <p>Tool Calling 不是 Silver Bullet。以下场景可能不需要：</p>
+                    <ul>
+                        <li><strong>纯对话场景</strong>：聊天机器人不需要调用外部工具</li>
+                        <li><strong>单步查询</strong>：用户问"北京天气"，直接调 API 返回即可，不需要 Agent 循环</li>
+                        <li><strong>延迟敏感</strong>：每次工具调用都增加延迟，高频低延迟场景慎用</li>
+                    </ul>
+                    <p>我的判断标准：<strong>如果任务需要"观察结果 → 调整策略 → 再次行动"的循环，才用 Agent；否则用简单的 API 调用链</strong>。</p>
+                </div>
+
+                <div class="gofav-card">
+                    <h2>6. 结语</h2>
+                    <p>从 Tool Calling 的实现细节可以看出，Agent 系统的工程挑战远不止"让 LLM 更聪明"这么简单。</p>
+                    <ul>
+                        <li><strong>可靠性</strong>需要 API 层面的结构化约束，而非 Prompt 祈祷</li>
+                        <li><strong>可扩展性</strong>需要精细的上下文管理，而非暴力塞 Token</li>
+                        <li><strong>可维护性</strong>需要分层的错误处理，而非祈祷不出错</li>
+                    </ul>
+                    <p>这些工程细节，往往是 Demo 和生产系统之间的真正鸿沟。</p>
+
+                    <hr>
+
+                    <h3>References</h3>
+                    <ol id="references">
+                        <li id="ref1">Yao, S., et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. <em>ICLR</em>.</li>
+                        <li id="ref2">Anthropic. (2025). Tool Use - Automatic Context Compaction. <a href="https://platform.claude.com/cookbook/tool-use-automatic-context-compaction" target="_blank">https://platform.claude.com/cookbook/tool-use-automatic-context-compaction</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                <span>© Curtis Mei</span>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.querySelector('code');
+            const text = code.textContent || code.innerText;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    button.classList.add('copied');
+                    setTimeout(function() {
+                        button.classList.remove('copied');
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('复制失败:', err);
+                    fallbackCopy(text, button);
+                });
+            } else {
+                fallbackCopy(text, button);
+            }
+        }
+        
+        function fallbackCopy(text, button) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                button.classList.add('copied');
+                setTimeout(function() {
+                    button.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动选择文本复制');
+            }
+            
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
