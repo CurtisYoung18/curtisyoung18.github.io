@@ -1,3 +1,6 @@
+/* Import Typora theme styles */
+@import url('/css/post-typora.css');
+
 /* Common styles for archive posts */
 .gofav-intro {
     margin-top: 2.5rem;

@@ -39,13 +39,13 @@
                     </div>
                 </div>
                 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>1. 引言：Agent 是怎么"动手"的？</h2>
                     <p>最近在研究各种 Agent 框架的实现，一个核心问题浮现出来：<strong>LLM 是怎么可靠地调用外部工具的？</strong></p>
                     <p>这听起来简单——不就是让模型输出个 JSON 吗？但深入下去会发现，这里面藏着从"学术 Demo"到"生产系统"的鸿沟。</p>
                 </div>
 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>2. 两种 Tool Calling 范式</h2>
                     
                     <h3>2.1 文本解析式（经典 ReAct）</h3>
@@ -157,7 +157,7 @@ Action: finish[您的订单已发货，预计明天送达]</code></pre>
                     <p><strong>结论</strong>：如果用 OpenAI、Anthropic、Moonshot 等商业 API，直接用原生 Tool Calling。只有在用开源模型（如 Llama、Qwen）且它们不支持 Function Calling 时，才考虑文本解析。</p>
                 </div>
 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>3. 上下文管理：Agent 的"记忆"难题</h2>
                     <p>当 Agent 需要多步推理时，历史信息会不断累积。一个复杂任务可能需要 10+ 轮工具调用，每轮都有输入输出，Context 很快就会爆炸。</p>
 
@@ -209,7 +209,7 @@ Action: finish[您的订单已发货，预计明天送达]</code></pre>
                     </ol>
                 </div>
 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>4. 错误处理：生产系统的必修课</h2>
                     <p>即使用了 API 原生 Tool Calling，工程上仍然要处理各种异常：</p>
 
@@ -294,7 +294,7 @@ def bash_tool(command: str) -> str:
                     </div>
                 </div>
 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>5. 什么时候不该用 Tool Calling？</h2>
                     <p>Tool Calling 不是 Silver Bullet。以下场景可能不需要：</p>
                     <ul>
@@ -305,7 +305,7 @@ def bash_tool(command: str) -> str:
                     <p>我的判断标准：<strong>如果任务需要"观察结果 → 调整策略 → 再次行动"的循环，才用 Agent；否则用简单的 API 调用链</strong>。</p>
                 </div>
 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>6. 结语</h2>
                     <p>从 Tool Calling 的实现细节可以看出，Agent 系统的工程挑战远不止"让 LLM 更聪明"这么简单。</p>
                     <ul>

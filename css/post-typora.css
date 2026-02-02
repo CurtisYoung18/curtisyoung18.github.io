@@ -1,0 +1,475 @@
+/* Post Typora Theme - Based on phycat-prussian theme */
+/* This CSS applies Typora-style formatting to all posts */
+
+/* MiSans Font Face */
+@font-face {
+    font-family: 'MiSans';
+    src: url('/fonts/misans/MiSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('/fonts/misans/MiSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiSans';
+    src: url('/fonts/misans/MiSans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    /* 标题后小图标 */
+    --h1-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.8 29.714v0c-1.371 0-2.514-1.143-2.514-2.514v0c0-1.371 1.143-2.514 2.514-2.514v0c1.371 0 2.514 1.143 2.514 2.514v0c0.114 1.371-1.029 2.514-2.514 2.514z'/></svg>") no-repeat center;
+    --h2-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>") no-repeat center;
+    --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+    --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+    --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+    --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+
+    /* 文档背景样式 */
+    --bg-shape-cross: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L15 15M30 0L15 15M0 30L15 15M30 30L15 15' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+    --bg-style: var(--bg-shape-cross);
+
+    /* 标题主色：深邃的普鲁士蓝 */
+    --head-title-color: #1D4E89;
+    
+    /* H2 渐变 */
+    --head-title-h2-color: #fff;
+    --head-title-h2-background: linear-gradient(to right, #6BA3CC, #1D4E89, #6BA3CC);
+    
+    /* 元素颜色 */
+    --element-color: #1D4E89;
+    --element-color-deep: #003153;
+    --element-color-shallow: #6BA3CC;
+    --element-color-so-shallow: #E1EDF5;
+    --element-color-soo-shallow: #F0F6FA;
+    --glass-bg-color: #b7d8ff15;
+
+    /* 行内代码 */
+    --element-color-linecode: #0F3057;
+    --element-color-linecode-background: #EBF5FA;
+}
+
+/* Post content container - Typora style */
+.post-content {
+    font-family: 'MiSans', Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    line-height: 2.25;
+    color: #000;
+    letter-spacing: 1.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    position: relative;
+    z-index: 0;
+}
+
+.post-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-color: var(--element-color);
+    opacity: 0.08;
+    -webkit-mask-image: var(--bg-style);
+    mask-image: var(--bg-style);
+    -webkit-mask-size: 20px 20px;
+    mask-size: 20px 20px;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    border-radius: 20px;
+}
+
+/* Paragraph styles */
+.post-content p {
+    color: #333;
+    margin: 10px 0;
+    font-size: 1rem;
+    word-spacing: 2px;
+}
+
+/* H1 styling */
+.post-content h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1em auto 0.8em;
+    line-height: 1.4;
+    width: fit-content;
+    min-width: 120px;
+    color: #222;
+    position: relative;
+    padding-bottom: 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    border-bottom: none;
+}
+
+.post-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--head-title-h2-background);
+    background-size: 100% auto;
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.post-content h1:hover {
+    color: var(--head-title-color);
+    transform: translateY(-2px);
+}
+
+.post-content h1:hover::after {
+    width: 100%;
+}
+
+/* H2 styling - gradient pill */
+.post-content h2 {
+    color: var(--head-title-h2-color);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    width: fit-content;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: var(--head-title-h2-background);
+    background-size: 200% auto;
+    background-position: 0 center;
+    box-shadow: 0 2px 5px rgba(61, 184, 211, 0.15);
+    transition: background-position 0.5s ease-out, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.post-content h2:hover {
+    background-position: 100% center;
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(61, 184, 211, 0.35);
+}
+
+/* H3 styling - left border */
+.post-content h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.post-content h3::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 61%;
+    border-radius: 4px;
+    background-color: var(--head-title-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.post-content h3:hover {
+    padding-left: 18px;
+    color: var(--head-title-color);
+    cursor: pointer;
+}
+
+.post-content h3:hover::before {
+    height: 66%;
+    background-color: var(--head-title-color);
+    width: 7px;
+}
+
+/* H4 styling - dot prefix */
+.post-content h4 {
+    margin: 20px 0;
+    font-size: 1.15rem;
+    text-align: left;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.post-content h4::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: var(--head-title-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 1px solid;
+    vertical-align: inherit;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.post-content h4:hover::before {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 4px var(--element-color-soo-shallow);
+}
+
+.post-content h4:hover,
+.post-content h5:hover,
+.post-content h6:hover {
+    color: var(--element-color-deep);
+    transform: translateX(6px);
+}
+
+/* H5 styling - hollow dot */
+.post-content h5 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.post-content h5::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 2px solid;
+    vertical-align: inherit;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.post-content h5:hover::before {
+    background-color: var(--head-title-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 3px var(--element-color-soo-shallow);
+}
+
+/* H6 styling - dash prefix */
+.post-content h6 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.post-content h6::before {
+    content: "-";
+    color: var(--head-title-color);
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: inherit;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.post-content h6:hover::before {
+    transform: scaleX(1.8) translateX(1px);
+    font-weight: 700;
+}
+
+/* Inline code */
+.post-content code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--element-color-linecode);
+    background-color: var(--element-color-linecode-background);
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    word-break: break-word;
+}
+
+/* Code block */
+.post-content pre {
+    background-color: var(--element-color-soo-shallow);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--element-color-so-shallow);
+}
+
+.post-content pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Blockquote */
+.post-content blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--element-color);
+    background: var(--element-color-soo-shallow);
+    border-radius: 0 8px 8px 0;
+    color: #555;
+}
+
+.post-content blockquote p {
+    margin: 0.5rem 0;
+}
+
+/* Lists */
+.post-content ul,
+.post-content ol {
+    padding-left: 2rem;
+    margin: 1rem 0;
+}
+
+.post-content li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.post-content ul li::marker {
+    color: var(--element-color);
+}
+
+.post-content ol li::marker {
+    color: var(--element-color);
+    font-weight: 600;
+}
+
+/* Links */
+.post-content a {
+    color: var(--element-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.post-content a:hover {
+    color: var(--element-color-deep);
+    border-bottom-color: var(--element-color);
+}
+
+/* Tables */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-content table th {
+    background: var(--element-color);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.post-content table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--element-color-so-shallow);
+}
+
+.post-content table tr:last-child td {
+    border-bottom: none;
+}
+
+.post-content table tr:hover td {
+    background: var(--element-color-soo-shallow);
+}
+
+/* Horizontal rule */
+.post-content hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--element-color-shallow), transparent);
+    margin: 2rem 0;
+}
+
+/* Images */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Strong and emphasis */
+.post-content strong {
+    color: var(--element-color-deep);
+    font-weight: 600;
+}
+
+.post-content em {
+    color: #666;
+}
+
+/* Sup (footnotes) */
+.post-content sup {
+    font-size: 0.75em;
+}
+
+.post-content sup a {
+    color: var(--element-color);
+    text-decoration: none;
+    padding: 0 2px;
+}
+
+/* Footnotes area */
+.post-content .footnotes-area,
+.post-content .references {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--element-color-so-shallow);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Mark/highlight */
+.post-content mark {
+    background: var(--element-color-so-shallow);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* Selection */
+.post-content ::selection {
+    background: var(--element-color-so-shallow);
+    color: var(--element-color-deep);
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+    .post-content {
+        line-height: 2;
+        letter-spacing: 0.5px;
+    }
+
+    .post-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .post-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .post-content pre {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}
