@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -11,6 +11,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/archives/style.css">
+    <link rel="stylesheet" href="/css/post-typora.css">
     <script src="/js/script.js"></script>
     <script src="/js/tocbot.min.js"></script>
 </head>
@@ -39,14 +40,12 @@
                     </div>
                 </div>
                 
-                <div class="gofav-card">
+                <div class="gofav-card post-content">
                     <h2>1. 引言：Agent 到底是什么？</h2>
                     <p>最近读了 HuggingFace 的 <strong>smolagents</strong> 文档<sup><a href="#ref1">[1]</a></sup>，里面对 "What are agents?" 有一段非常清晰的阐述。简单来说：<strong>Agent 是一种让 LLM 输出能够控制程序流程的系统</strong>——不再仅仅是"生成文本"，而是"做决策、调工具、执行动作"。</p>
                     <p>这让我想起之前写的那篇关于客服场景 Agent 可维护性的文章。当时我们聊的是 "Prompt Debt"（提示词技术债），本质上就是在追问：当 Agent 越来越复杂，我们该如何管理它的行为？</p>
                     <p>今天换个角度，从 smolagents 的设计哲学出发，聊聊 <strong>Agent 的本质</strong> 以及 <strong>Tool Calling 的工程实践</strong>。</p>
-                </div>
 
-                <div class="gofav-card">
                     <h2>2. Agent 是一个光谱，而非二元开关</h2>
                     <p>smolagents 文档中有一个很有洞见的观点：<strong>Agent 不是一个非此即彼的概念，而是一个连续的光谱。</strong></p>
                     
@@ -59,9 +58,7 @@
                         <li><strong>Level 4 - Multi-Agent</strong>：多个 Agent 协作，甚至一个 Agent 可以启动另一个 Agent。</li>
                     </ul>
                     <p>这个光谱的启示在于：<strong>不是所有场景都需要 Level 4 的复杂度</strong>。很多时候，一个简单的 Level 2（单步工具调用）就够了，过度设计反而会增加维护成本。</p>
-                </div>
 
-                <div class="gofav-card">
                     <h2>3. Tool Calling：Agent 的"手"</h2>
                     <p>如果说 LLM 是 Agent 的"大脑"，那 Tool Calling 就是它的"手"。smolagents 把这块讲得很透彻，核心要素有三个：</p>
                     
@@ -94,9 +91,7 @@
                         <li><strong>Prompt 约束</strong>：在 System Prompt 里反复强调输出格式，用 Few-shot 示例加强。</li>
                         <li><strong>容错解析</strong>：Parser 要能处理一些"差不多对"的输出，比如多余的空格、字段顺序不对等。</li>
                     </ol>
-                </div>
 
-                <div class="gofav-card">
                     <h2>4. 记忆（Memory）：Agent 的"上下文管理"</h2>
                     <p>对于多步 Agent，<strong>Memory</strong> 是不可或缺的组件。它存储了：</p>
                     <ul>
@@ -114,9 +109,7 @@
                         <li><strong>状态一致性</strong>：Memory 里存的信息要和外部系统（比如数据库、订单状态）保持同步。</li>
                     </ul>
                     <p>我的做法是：<strong>分层存储</strong>。核心事实（用户身份、订单号）放在 Short-term Memory，长期知识放在 RAG 里检索。两者分开管理，各司其职。</p>
-                </div>
 
-                <div class="gofav-card">
                     <h2>5. 错误处理：设计时就要假设 Agent 会出错</h2>
                     <p>smolagents 文档里有句话我很认同：<strong>"Since LLM outputs are unpredictable, you should expect errors."</strong></p>
                     <p>Agent 系统的错误来源有很多：</p>
@@ -133,9 +126,7 @@
                         <li><strong>日志与监控</strong>：记录每一步的输入输出，出问题时能快速定位。</li>
                     </ol>
                     <p>这和我之前说的 "确定性护栏（Deterministic Guardrails）" 是一脉相承的——<strong>在 Agent 的灵活性和系统的可控性之间，找到平衡点</strong>。</p>
-                </div>
 
-                <div class="gofav-card">
                     <h2>6. 什么时候不该用 Agent？</h2>
                     <p>smolagents 文档也提醒了这一点：<strong>Agent 不是银弹</strong>。以下场景，传统的 if/else 逻辑可能更合适：</p>
                     <ul>
@@ -144,9 +135,7 @@
                         <li><strong>对可靠性要求极高</strong>：LLM 的输出本质上是概率性的，某些场景（金融、医疗）容不得任何差错。</li>
                     </ul>
                     <p>我的判断标准是：<strong>如果能用规则覆盖 80% 的场景，那就先用规则</strong>。把 Agent 留给那些真正需要"智能判断"的长尾问题。</p>
-                </div>
 
-                <div class="gofav-card">
                     <h2>7. 结语</h2>
                     <p>从 smolagents 的设计哲学回看，Agent 系统的核心挑战其实是：<strong>如何在 LLM 的灵活性与工程系统的可控性之间取得平衡</strong>。</p>
                     <ul>
@@ -159,7 +148,7 @@
                     <hr>
 
                     <h3>References</h3>
-                    <ol id="references">
+                    <ol class="references">
                         <li id="ref1">Hugging Face. (2025). smolagents - Introduction to Agents. <a href="https://huggingface.co/docs/smolagents/conceptual_guides/intro_agents" target="_blank">https://huggingface.co/docs/smolagents/conceptual_guides/intro_agents</a></li>
                         <li id="ref2">Yao, S., et al. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. <em>ICLR</em>.</li>
                         <li id="ref3">Liu, N. F., et al. (2024). Lost in the Middle: How Language Models Use Long Contexts. <em>TACL</em>.</li>

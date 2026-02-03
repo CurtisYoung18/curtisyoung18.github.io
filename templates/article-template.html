@@ -1,104 +1,19 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-    <meta name="description" content="{{ARTICLE_DESCRIPTION}}">
-    <meta name="keywords" content="{{ARTICLE_KEYWORDS}}">
-    <title>{{ARTICLE_TITLE}} | Curtis の Home</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <title>{{TITLE}} | Curtis の Home</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/archives/style.css">
-    <!-- Markdown 渲染相关 CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/css/post-typora.css">
     <script src="/js/script.js"></script>
     <script src="/js/tocbot.min.js"></script>
-    <!-- Markdown 渲染相关 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-    <script src="/js/markdown-renderer.js"></script>
-    <style>
-        /* 确保 Markdown 内容正确显示 */
-        #article-content.markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        #article-content.markdown-body pre {
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            padding: 16px;
-            overflow-x: auto;
-        }
-        
-        #article-content.markdown-body code {
-            background-color: rgba(175, 184, 193, 0.2);
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-size: 85%;
-        }
-        
-        #article-content.markdown-body pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-        
-        #article-content.markdown-body blockquote {
-            border-left: 4px solid #dfe2e5;
-            padding: 0 1em;
-            color: #6a737d;
-        }
-        
-        #article-content.markdown-body table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 1em 0;
-        }
-        
-        #article-content.markdown-body table th,
-        #article-content.markdown-body table td {
-            border: 1px solid #dfe2e5;
-            padding: 6px 13px;
-        }
-        
-        #article-content.markdown-body table th {
-            background-color: #f6f8fa;
-            font-weight: 600;
-        }
-        
-        /* 暗色主题支持 */
-        @media (prefers-color-scheme: dark) {
-            #article-content.markdown-body {
-                color: #c9d1d9;
-            }
-            #article-content.markdown-body pre {
-                background-color: #161b22;
-            }
-            #article-content.markdown-body code {
-                background-color: rgba(110, 118, 129, 0.4);
-            }
-            #article-content.markdown-body blockquote {
-                border-left-color: #30363d;
-                color: #8b949e;
-            }
-            #article-content.markdown-body table th,
-            #article-content.markdown-body table td {
-                border-color: #30363d;
-            }
-            #article-content.markdown-body table th {
-                background-color: #161b22;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -118,17 +33,15 @@
         <div class="main">
             <div class="container">
                 <div class="gofav-header-card">
-                    <div class="gofav-header-title">{{ARTICLE_TITLE}}</div>
+                    <div class="gofav-header-title">{{TITLE}}</div>
                     <div class="gofav-header-meta">
-                        <span class="gofav-header-date">{{ARTICLE_DATE}}</span>
-                        <span class="gofav-header-category">{{ARTICLE_CATEGORY}}</span>
+                        <span class="gofav-header-date">{{DATE}}</span>
+                        <span class="gofav-header-category">{{CATEGORY}}</span>
                     </div>
                 </div>
-                <div class="gofav-card post-content" id="article-content">
-                    <!-- Markdown 内容将在这里渲染 -->
-                    <div style="text-align: center; padding: 2rem; color: #7f8c8d;">
-                        <p>正在加载文章内容...</p>
-                    </div>
+                
+                <div class="gofav-card post-content">
+                    {{CONTENT}}
                 </div>
             </div>
         </div>
@@ -139,18 +52,5 @@
         </footer>
     </div>
     <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
-    <script>
-        // 从 Markdown 文件加载并渲染
-        // 使用方法：将 {{MARKDOWN_FILE_PATH}} 替换为实际的 Markdown 文件路径
-        window.addEventListener('DOMContentLoaded', function() {
-            const markdownFile = '{{MARKDOWN_FILE_PATH}}';
-            if (markdownFile && markdownFile !== '{{MARKDOWN_FILE_PATH}}') {
-                window.loadAndRenderMarkdown(markdownFile, '#article-content');
-            } else {
-                document.getElementById('article-content').innerHTML = '<p style="text-align: center; color: #e74c3c;">请设置 Markdown 文件路径</p>';
-            }
-        });
-    </script>
 </body>
 </html>
-
