@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Curtis Mei">
+    <meta name="description" content="游戏游玩记录与心得分享">
+    <meta name="keywords" content="游戏, Steam, Gaming, Life">
+    <title>我玩过的游戏：Steam游戏库记录 | Curtis の Home</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/archives/style.css">
+    <link rel="stylesheet" href="/css/post-typora.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/tocbot.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
+                    <div class="menu navbar-right">
+                        <a class="menu-item" href="/archives">Posts</a>
+                        <a class="menu-item" href="/products">Products</a>
+                        <a class="menu-item" href="/collection">Collections</a>
+                        <a class="menu-item" href="/about">About</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="container">
+                <div class="gofav-header-card">
+                    <div class="gofav-header-title">我玩过的游戏：个人游戏库记录</div>
+                    <div class="gofav-header-meta">
+                        <span class="gofav-header-date">2025-06-01</span>
+                        <span class="gofav-header-category">Games, Life</span>
+                    </div>
+                </div>
+
+                <!-- 游戏类型标签 -->
+                <div class="gofav-card post-content">
+                    <h2>游戏类型与时长</h2>
+                    <ul class="gofav-tracks">
+                        <li>MOBA类 <span>· 4000+h</span></li>
+                        <li>策略类 <span>· 1223.5h</span></li>
+                        <li>体育类 <span>· 644.8h</span></li>
+                        <li>动作类 <span>· 372.4h</span></li>
+                        <li>工具类 <span>· 173h</span></li>
+                        <li>射击类 <span>· 101.5h</span></li>
+                        <li>开放世界 <span>· 94.7h</span></li>
+                        <li>独立游戏 <span>· 36.3h</span></li>
+                        <li>赛车类 <span>· 37.4h</span></li>
+                        <li>合作游戏 <span>· 19.8h</span></li>
+                    </ul>
+                    
+                    <!-- 具体游戏列表 -->
+                    <div class="game-details">
+                        <div class="game-details-header">
+                            <h3>完整游戏库详情</h3>
+                            <button class="toggle-details-btn" onclick="toggleGameDetails()">
+                                <span class="toggle-text">展开详情</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="game-categories" id="gameCategories" style="display: none;">
+                            <div class="category-section">
+                                <h4>MOBA & 竞技类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>英雄联盟 <span>· 2000+h · 翡翠段位</span></li>
+                                    <li>云顶之弈 <span>· 包含在LOL时长 · 铂金段位</span></li>
+                                    <li>王者荣耀 <span>· 2000+h · 荣耀王者51星</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>策略 & 卡牌类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>帝国时代4 <span>· 980h · 85/130成就</span></li>
+                                    <li>杀戮尖塔 <span>· 200+h · Xbox平台</span></li>
+                                    <li>冰汽时代 <span>· 43.3h · 42/115成就</span></li>
+                                    <li>王国保卫战5 <span>· 8.2h · 31/80成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>体育类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>NBA 2K21 <span>· 271h · 33/50成就</span></li>
+                                    <li>NBA 2K20 <span>· 234h · 37/50成就</span></li>
+                                    <li>NBA 2K23 <span>· 70.9h · 21/50成就</span></li>
+                                    <li>NBA 2K25 <span>· 38.6h · 8/46成就</span></li>
+                                    <li>NBA 2K22 <span>· 25.8h · 15/50成就</span></li>
+                                    <li>NBA 2K24 <span>· 4.5h</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>动作类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>只狼：影逝二度 <span>· 111h · 32/34成就</span></li>
+                                    <li>师父 <span>· 71.9h · 46/61成就</span></li>
+                                    <li>黑神话：悟空 <span>· 45.3h · 65/81成就</span></li>
+                                    <li>对马岛之魂 <span>· 40.4h · 34/77成就</span></li>
+                                    <li>战地风云5 <span>· 38.6h · 8/21成就</span></li>
+                                    <li>荣誉战魂 <span>· 13.2h</span></li>
+                                    <li>中土世界：战争之影 <span>· 6.7h · 5/72成就</span></li>
+                                    <li>街头霸王6 <span>· 6.5h · 6/43成就</span></li>
+                                    <li>最后的战役：劫后余生 <span>· 11.7h · 35/69成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>射击类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>绝地求生 <span>· 95.6h · 16/37成就</span></li>
+                                    <li>CS2 <span>· 5.9h · 18/167成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>开放世界类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>侠盗猎车手V <span>· 94.7h · 14/77成就</span></li>
+                                    <li>荒野大镖客2 <span>· 3.9h · 2/51成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>赛车类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>极品飞车20：热度 <span>· 30+h · Xbox平台</span></li>
+                                    <li>极限竞速：地平线5 <span>· 7.4h · 22/164成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>独立游戏类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>潜水员戴夫 <span>· 5.8h · 9/43成就</span></li>
+                                    <li>双人成行 <span>· 50h</span></li>
+                                    <li>哈迪斯 <span>· 10.9h · 6/49成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>角色扮演类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>艾尔登法环 <span>· 9.4h · 3/42成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>工具类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>Wallpaper Engine <span>· 173h · 6/17成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>益智类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>杯杯倒满 <span>· 15.6h · 21/59成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>合作/休闲类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>胡闹厨房2 <span>· 10.1h · 17/54成就</span></li>
+                                    <li>胡闹厨房 <span>· 9.7h · 10/12成就</span></li>
+                                    <li>猛兽派对 <span>· 8.5h · 16/102成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>冒险类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>这是我的战争 <span>· 12.8h · 15/59成就</span></li>
+                                    <li>FIFA 23 <span>· 3.3h · 1/39成就</span></li>
+                                </ul>
+                            </div>
+                            <div class="category-section">
+                                <h4>休闲类</h4>
+                                <ul class="gofav-tracks game-list">
+                                    <li>LoveChoice 拣爱 <span>· 3.2h · 18/20成就</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Steam 个人资料 -->
+                <div class="gofav-card post-content">
+                    <h2>我的游戏档案</h2>
+                    <div class="gofav-player-wrap">
+                        <iframe src="https://www.xiaoheihe.cn/account/steam_personal_page/home?userid=28918898&steam_id=76561198422741633&heybox_id=28918898" width="100%" height="400" frameborder="0" style="border-radius:16px;box-shadow:0 2px 12px rgba(44,62,80,0.10);"></iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏展示区域 -->
+                <div class="games-showcase">
+                    <div class="games-grid">
+                        <!-- 英雄联盟 & 云顶之弈 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/lol.png" alt="League of Legends" class="game-logo">
+                                <div class="game-info">
+                                    <h3>英雄联盟 & 云顶之弈</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">2000+小时</span>
+                                        <span class="achievements">峡谷翡翠 · 云顶铂金</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">全球最受欢迎的MOBA游戏，峡谷征战让我体验到了团队合作的精髓。云顶之弈的策略博弈更是锻炼了我的决策能力。从青铜到翡翠的路程充满挑战与成长。</p>
+                            <div class="game-meta">
+                                <span class="genre">MOBA · 策略</span>
+                            </div>
+                        </div>
+
+                        <!-- 王者荣耀 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/wzry.png" alt="Honor of Kings" class="game-logo">
+                                <div class="game-info">
+                                    <h3>王者荣耀</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">2000+小时</span>
+                                        <span class="achievements">荣耀王者51星</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">国民级MOBA手游，移动端的竞技体验同样精彩。从星耀到荣耀王者的每一颗星都承载着无数次的拼搏，51星的成就见证了我在移动端MOBA的实力。</p>
+                            <div class="game-meta">
+                                <span class="genre">MOBA · 竞技</span>
+                            </div>
+                        </div>
+
+                        <!-- 帝国时代4 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/aoe4.png" alt="Age of Empires IV" class="game-logo">
+                                <div class="game-info">
+                                    <h3>帝国时代4</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">1200+小时</span>
+                                        <span class="achievements">85/130成就</span>
+                                        <span class="completion-rate">Rank solo｜multi 双征服者</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">中世纪背景的即时战略游戏巨作，建设、征战与技术发展兼具。作为RTS爱好者，这款游戏让我重新找回了指挥千军万马的快感，每一场战役都需要精密的策略规划。</p>
+                            <div class="game-meta">
+                                <span class="genre">策略 · RTS</span>
+                            </div>
+                        </div>
+
+                        <!-- NBA 2K系列 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/nba2k.png" alt="NBA 2K Series" class="game-logo">
+                                <div class="game-info">
+                                    <h3>NBA 2K系列</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">644.8小时总计</span>
+                                        <span class="achievements">2K20-2K25全系列</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">NBA官方授权篮球模拟游戏系列，从2K20到2K25每一代都有独特体验。生涯模式让我体验从街头到NBA的完整旅程，MyTeam模式更是让我组建梦幻阵容的乐趣所在。</p>
+                            <div class="game-meta">
+                                <span class="genre">体育 · 篮球</span>
+                            </div>
+                        </div>
+
+                        <!-- 金铲铲 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/jinchanchan.png" alt="Jianqianqian" class="game-logo">
+                                <div class="game-info">
+                                    <h3>金铲铲之战</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">100+小时</span>
+                                        <span class="completion-rate">超凡大师1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">金铲铲是一款自走棋游戏，玩家需要通过收集和升级英雄来组建最强的阵容。游戏玩法简单易懂，但是要想取得胜利需要一定的策略和运气。</p>
+                            <div class="game-meta">
+                                <span class="genre">自走棋 · 策略</span>
+                            </div>
+                        </div>
+                        <!-- 杀戮尖塔 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/slayspires.png" alt="Slay the Spire" class="game-logo">
+                                <div class="game-info">
+                                    <h3>杀戮尖塔</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">200+小时</span>
+                                        <span class="achievements">Xbox版本</span>
+                                        <span class="completion-rate">多角色通关</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">Roguelike卡牌游戏的神作，每一次攀登都是全新的体验。策略性的卡牌组合与随机性的完美结合，让我在Xbox上度过了无数个夜晚，每一局都充满变数和挑战。</p>
+                            <div class="game-meta">
+                                <span class="genre">策略 · 卡牌 · Roguelike</span>
+                            </div>
+                        </div>
+
+
+                        <!-- 只狼：影逝二度 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/sekiro.png" alt="Sekiro" class="game-logo">
+                                <div class="game-info">
+                                    <h3>只狼：影逝二度</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">111小时</span>
+                                        <span class="achievements">32/34成就</span>
+                                        <span class="completion-rate">主线完成 ｜ Boss连战全通</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">魂系动作游戏，以日本战国为背景，挑战极高操作技巧。每一次死亡都是学习，每一次胜利都是成长。这款游戏教会了我坚持与专注的重要性。</p>
+                            <div class="game-meta">
+                                <span class="genre">动作 · 魂系</span>
+                            </div>
+                        </div>
+
+                        <!-- 绝地求生 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/pubg.png" alt="PUBG" class="game-logo">
+                                <div class="game-info">
+                                    <h3>绝地求生</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">95.6小时</span>
+                                        <span class="achievements">16/37成就</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">大逃杀射击游戏，生存与策略并重。在这个充满紧张感的战场上，每一个决策都关乎生死，团队协作是制胜的关键。</p>
+                            <div class="game-meta">
+                                <span class="genre">射击 · 大逃杀</span>
+                            </div>
+                        </div>
+
+                        <!-- 侠盗猎车手V -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/gta5.png" alt="GTA V" class="game-logo">
+                                <div class="game-info">
+                                    <h3>侠盗猎车手V</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">94.7小时</span>
+                                        <span class="achievements">14/77成就</span>
+                                        <span class="completion-rate">主线完成</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">犯罪题材开放世界动作游戏，自由度极高。洛圣都的每一个角落都充满惊喜，无论是剧情模式还是在线模式都让人欲罢不能。</p>
+                            <div class="game-meta">
+                                <span class="genre">开放世界 · 动作</span>
+                            </div>
+                        </div>
+
+                        <!-- 师父 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/sifu.png" alt="Sifu" class="game-logo">
+                                <div class="game-info">
+                                    <h3>师父</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">71.9小时</span>
+                                        <span class="achievements">46/61成就</span>
+                                        <span class="completion-rate">大师难度通关 | 竞技场全3🌟</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">以功夫为核心的第三人称动作游戏，死亡后年龄增加机制。独特的年龄系统让每一次战斗都充满策略性，武术动作设计令人惊艳。</p>
+                            <div class="game-meta">
+                                <span class="genre">动作 · 功夫</span>
+                            </div>
+                        </div>
+
+                        <!-- 极限竞速：地平线4-5系列 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/horizon.png" alt="Horizon" class="game-logo">
+                                <div class="game-info">
+                                    <h3>极限竞速：地平线系列</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">100+小时</span>
+                                        <span class="achievements">steam+Xbox版本</span>
+                                        <span class="completion-rate">完成度: 60%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">极限竞速系列是微软的招牌赛车游戏，以其丰富的车辆选择、精美的画面和流畅的驾驶体验而闻名。从地平线4到地平线5，每一作都让我沉浸在驾驶的乐趣中。</p>
+                            <div class="game-meta">
+                                <span class="genre">开放世界 · 竞速</span>
+
+                            </div>
+                        </div>
+                        
+                        <!-- 极品飞车20 -->
+                        <div class="game-card">
+                            <div class="game-header">
+                                <img src="/archives/2025/06/我玩过的游戏/logo/nfs21.png" alt="Need for Speed Heat" class="game-logo">
+                                <div class="game-info">
+                                    <h3>极品飞车21：热度</h3>
+                                    <div class="game-stats">
+                                        <span class="playtime">30+小时</span>
+                                        <span class="achievements">Xbox版本</span>
+                                        <span class="completion-rate">主线完成</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="game-description">回归街头赛车本质的极品飞车作品，白天合法竞速，夜晚非法飙车的双重体验。在Xbox上感受极速与激情，每一次追逐都让肾上腺素飙升。</p>
+                            <div class="game-meta">
+                                <span class="genre">赛车 · 竞速</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gofav-card" style="margin-top: 2rem; width: 100%;">
+                    <h2>游戏感悟</h2>
+                    <p>游戏不仅仅是娱乐，更是一种艺术形式和文化表达。从策略游戏中学会思考与规划，从动作游戏中体验坚持与挑战，从体育游戏中感受团队与竞技精神。每一款游戏都是一段独特的体验，丰富着我的生活。</p>
+                    <blockquote>
+                        <div class="gofav-quote">"游戏是第九艺术，它融合了视觉、音乐、叙事和交互，创造出独一无二的沉浸体验。"</div>
+                    </blockquote>
+                    <p>作为一名开发者，我也从游戏设计中汲取灵感，思考如何创造更好的用户体验。游戏教会了我关于反馈机制、用户引导和交互设计的重要原则。</p>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                <span>© Curtis Mei</span>
+            </div>
+        </footer>
+    </div>
+
+    <style>
+        .games-showcase {
+            margin: 2rem 0;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .game-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.10);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(44,62,80,0.15);
+        }
+
+        .game-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .game-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin-right: 1rem;
+            object-fit: cover;
+            background: #f5f8fa;
+            border: 2px solid #eee;
+        }
+
+        .game-info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .playtime {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .achievements {
+            color: #e67e22;
+            font-weight: 500;
+        }
+
+        .game-description {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .completion-rate {
+            color: #27ae60;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .genre {
+            background: #f1f2f6;
+            color: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 游戏详情样式 */
+        .game-details {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .game-details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .game-details h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .toggle-details-btn {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .toggle-details-btn:hover {
+            background: linear-gradient(45deg, #2980b9, #27ae60);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .toggle-details-btn.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .game-categories {
+            display: grid;
+            gap: 1.5rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .game-categories.show {
+            display: grid;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-section {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 1.2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .category-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(44,62,80,0.08);
+        }
+
+        .category-section h4 {
+            font-size: 1rem;
+            color: #34495e;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .game-list {
+            margin: 0;
+        }
+
+        .game-list li {
+            font-size: 0.95rem;
+            padding: 0.4em 0.9em;
+            margin: 0.4rem 0.3rem 0.4rem 0;
+            background: white;
+            box-shadow: 0 2px 6px rgba(44,62,80,0.06);
+        }
+
+        .game-list li:hover {
+            background: #eef7ff;
+            box-shadow: 0 4px 12px rgba(44,62,80,0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .game-card {
+                padding: 1rem;
+            }
+
+            .game-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .game-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .game-stats {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .game-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .game-categories {
+                gap: 1rem;
+            }
+
+            .category-section {
+                padding: 1rem;
+            }
+
+            .game-list li {
+                font-size: 0.9rem;
+                margin: 0.3rem 0.2rem 0.3rem 0;
+            }
+
+            .game-details-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .toggle-details-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+                align-self: flex-start;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.6" zindex="-2" count="520"></script>
+    <script>
+        function toggleGameDetails() {
+            const gameCategories = document.getElementById('gameCategories');
+            const toggleBtn = document.querySelector('.toggle-details-btn');
+            const toggleText = document.querySelector('.toggle-text');
+            const toggleIcon = document.querySelector('.toggle-icon');
+            
+            if (gameCategories.style.display === 'none') {
+                gameCategories.style.display = 'grid';
+                gameCategories.classList.add('show');
+                toggleBtn.classList.add('expanded');
+                toggleText.textContent = '收起详情';
+                toggleIcon.textContent = '▲';
+            } else {
+                gameCategories.style.display = 'none';
+                gameCategories.classList.remove('show');
+                toggleBtn.classList.remove('expanded');
+                toggleText.textContent = '展开详情';
+                toggleIcon.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

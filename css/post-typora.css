@@ -56,6 +56,16 @@
     --element-color-linecode-background: #EBF5FA;
 }
 
+/* Apply MiSans to header title */
+.gofav-header-title {
+    font-family: 'MiSans', "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600;
+}
+
+.gofav-header-meta {
+    font-family: 'MiSans', "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 /* Post content container - Typora style */
 .post-content {
     font-family: 'MiSans', Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -67,6 +77,11 @@
     text-align: left;
     position: relative;
     z-index: 0;
+}
+
+/* Ensure all text in post uses MiSans except code */
+.post-content *:not(code):not(pre) {
+    font-family: inherit;
 }
 
 .post-content::before {
