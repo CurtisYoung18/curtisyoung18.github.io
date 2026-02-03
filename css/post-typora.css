@@ -321,18 +321,19 @@
     word-break: break-word;
 }
 
-/* Code block - with grid pattern background */
+/* Code block - macOS window style with grid pattern background */
 .post-content pre {
     position: relative;
     background-color: var(--element-color-soo-shallow);
-    border-radius: 16px;
-    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem 1.2rem 1.5rem;
     overflow-x: auto;
     margin: 1.2rem 0;
     border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+/* Grid pattern background */
 .post-content pre::before {
     content: "";
     position: absolute;
@@ -352,7 +353,23 @@
     mask-repeat: repeat;
     -webkit-mask-position: center;
     mask-position: center;
-    border-radius: 16px;
+    border-radius: 12px;
+}
+
+/* macOS window dots */
+.post-content pre::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 12px;
+    height: 12px;
+    background: #FF5F56;
+    border-radius: 50%;
+    box-shadow: 
+        20px 0 0 #FFBD2E,
+        40px 0 0 #27C93F;
+    z-index: 2;
 }
 
 .post-content pre code {
