@@ -372,34 +372,49 @@
     z-index: 2;
 }
 
-/* Copy button */
+/* Copy button - hidden by default, show on hover */
 .post-content pre .copy-btn {
     position: absolute;
-    top: 8px;
+    top: 10px;
     right: 12px;
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    color: #666;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #888;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
     z-index: 3;
+    opacity: 0;
+    transform: translateY(-2px);
     transition: all 0.2s ease;
-    font-family: 'MiSans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Show button on pre hover */
+.post-content pre:hover .copy-btn {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .post-content pre .copy-btn:hover {
     background: #fff;
-    color: var(--element-color);
-    border-color: var(--element-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.post-content pre .copy-btn:active {
+    transform: scale(0.95);
 }
 
 .post-content pre .copy-btn.copied {
-    background: var(--element-color);
+    background: #27C93F;
     color: #fff;
-    border-color: var(--element-color);
+    opacity: 1;
 }
 
 .post-content pre code {

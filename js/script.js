@@ -54,7 +54,7 @@ function initCodeCopyButtons() {
         // Create copy button
         var copyBtn = document.createElement('button');
         copyBtn.className = 'copy-btn';
-        copyBtn.textContent = '复制';
+        copyBtn.textContent = 'Copy';
         
         // Add click handler
         copyBtn.addEventListener('click', function() {
@@ -81,11 +81,11 @@ function initCodeCopyButtons() {
 
 // Show "Copied!" feedback
 function showCopied(btn) {
-    btn.textContent = '已复制!';
+    btn.textContent = 'Copied!';
     btn.classList.add('copied');
     
     setTimeout(function() {
-        btn.textContent = '复制';
+        btn.textContent = 'Copy';
         btn.classList.remove('copied');
     }, 2000);
 }
@@ -103,9 +103,9 @@ function fallbackCopy(text, btn) {
         document.execCommand('copy');
         showCopied(btn);
     } catch (err) {
-        btn.textContent = '复制失败';
+        btn.textContent = 'Failed';
         setTimeout(function() {
-            btn.textContent = '复制';
+            btn.textContent = 'Copy';
         }, 2000);
     }
     
