@@ -40,5 +40,74 @@ document.ready(
         if (window.localStorage) {
             window.localStorage.removeItem('theme');
         }
+
+        // Add copy buttons to code blocks
+        initCodeCopyButtons();
     }
 );
+
+// Code block copy button functionality
+function initCodeCopyButtons() {
+    var codeBlocks = document.querySelectorAll('.post-content pre');
+    
+    codeBlocks.forEach(function(pre) {
+        // Create copy button
+        var copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = '复制';
+        
+        // Add click handler
+        copyBtn.addEventListener('click', function() {
+            var code = pre.querySelector('code');
+            var text = code ? code.textContent : pre.textContent;
+            
+            // Copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showCopied(copyBtn);
+                }).catch(function() {
+                    fallbackCopy(text, copyBtn);
+                });
+            } else {
+                fallbackCopy(text, copyBtn);
+            }
+        });
+        
+        // Add button to pre element
+        pre.style.position = 'relative';
+        pre.appendChild(copyBtn);
+    });
+}
+
+// Show "Copied!" feedback
+function showCopied(btn) {
+    btn.textContent = '已复制!';
+    btn.classList.add('copied');
+    
+    setTimeout(function() {
+        btn.textContent = '复制';
+        btn.classList.remove('copied');
+    }, 2000);
+}
+
+// Fallback copy method for older browsers
+function fallbackCopy(text, btn) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopied(btn);
+    } catch (err) {
+        btn.textContent = '复制失败';
+        setTimeout(function() {
+            btn.textContent = '复制';
+        }, 2000);
+    }
+    
+    document.body.removeChild(textarea);
+}
