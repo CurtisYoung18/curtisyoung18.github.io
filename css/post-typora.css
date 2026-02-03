@@ -321,22 +321,49 @@
     word-break: break-word;
 }
 
-/* Code block */
+/* Code block - with grid pattern background */
 .post-content pre {
+    position: relative;
     background-color: var(--element-color-soo-shallow);
-    border-radius: 12px;
-    padding: 1rem 1.2rem;
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
     overflow-x: auto;
-    margin: 1rem 0;
-    border: 1px solid var(--element-color-so-shallow);
+    margin: 1.2rem 0;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.post-content pre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-color: var(--element-color);
+    opacity: 0.06;
+    -webkit-mask-image: var(--bg-style);
+    mask-image: var(--bg-style);
+    -webkit-mask-size: 20px 20px;
+    mask-size: 20px 20px;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    border-radius: 16px;
 }
 
 .post-content pre code {
+    position: relative;
+    z-index: 1;
     background: transparent;
     padding: 0;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #333;
+    display: block;
 }
 
 /* Blockquote */
