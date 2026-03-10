@@ -66,7 +66,11 @@
         .products-image-container {
             position: relative;
             height: 400px;
+            min-height: 400px;
+            max-height: 400px;
             width: 100%;
+            clip-path: inset(0 round 0px);
+            align-self: start;
         }
 
         .product-image-wrapper {
@@ -79,6 +83,7 @@
             transform: scale(0.9) rotateY(0deg);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1;
+            overflow: hidden;
         }
 
         .product-image-wrapper.active {
@@ -88,23 +93,25 @@
         }
 
         .product-image-wrapper.prev {
-            opacity: 0.7;
-            transform: scale(0.95) rotateY(-10deg);
-            z-index: 2;
+            opacity: 0;
+            transform: scale(0.9) rotateY(-10deg);
+            z-index: 1;
         }
 
         .product-image-wrapper.next {
-            opacity: 0.7;
-            transform: scale(0.95) rotateY(10deg);
-            z-index: 2;
+            opacity: 0;
+            transform: scale(0.9) rotateY(10deg);
+            z-index: 1;
         }
 
         .product-image {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            object-position: center 25%;
             border-radius: 24px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            display: block;
         }
 
         .products-content {
@@ -345,9 +352,9 @@
                 ]
             },
             {
-                name: "MY_MAP - 智能地图助手",
+                name: "MY_MAP - Intelligent Map Assistant",
                 category: "AI Agent / MCP",
-                description: "AI 驱动的智能地图助手，支持全国路线规划和沿途 POI 推荐。使用自然语言描述出行需求，AI 理解并规划最佳行程，支持途经点、距离、时间和过路费估算，并智能推荐沿途餐厅、咖啡厅、加油站等服务设施。",
+                description: "An AI-driven intelligent map assistant that supports nationwide route planning and POI recommendations along the way. Users can describe their travel needs in natural language, and the AI understands and plans the best itinerary.",
                 image: "/images/products/my_map.png",
                 links: [
                     { url: "https://github.com/CurtisYoung18/MY_MAP", text: "GitHub", icon: "fab fa-github", class: "github" },
