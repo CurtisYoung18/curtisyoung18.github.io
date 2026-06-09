@@ -15,6 +15,8 @@ Default model: `deepseek-v4-flash`
 
 The Worker keeps the model configurable through `DEEPSEEK_MODEL`, so it can be changed without touching the static site.
 
+The frontend sends the active site language (`en` or `zh`) with each request, and the Worker instructs DeepSeek to answer in that language.
+
 ## Cloudflare Worker Setup
 
 1. Create a Worker and paste the code from:

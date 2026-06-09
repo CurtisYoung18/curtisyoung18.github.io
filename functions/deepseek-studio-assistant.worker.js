@@ -81,6 +81,7 @@ async function readRequest(request) {
   const query = String(body.query || "").trim();
   const page = String(body.page || "").trim().slice(0, 120);
   const path = String(body.path || "").trim().slice(0, 120);
+  const language = String(body.language || "en").trim().slice(0, 12);
 
   if (!query) {
     return { error: "Query is required." };
@@ -90,7 +91,7 @@ async function readRequest(request) {
     return { error: "Query is too long. Keep it under 600 characters." };
   }
 
-  return { query, page, path };
+  return { query, page, path, language };
 }
 
 export default {
@@ -135,7 +136,7 @@ export default {
             role: "system",
             content: [
               "You are Curtis Studio's concise portfolio assistant.",
-              "Answer in the same language as the visitor when possible.",
+              input.language === "zh" ? "Answer in Simplified Chinese." : "Answer in English.",
               "Use only the supplied studio context. If unsure, say what page to open next.",
               "Keep answers to 1-3 short sentences. Prefer concrete project recommendations.",
               SITE_CONTEXT

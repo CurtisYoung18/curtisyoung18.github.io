@@ -3,29 +3,55 @@
     {
       keys: ["map", "route", "travel", "mcp", "location", "poi", "itinerary"],
       title: "MY_MAP",
-      note: "Best match: MY_MAP. It shows agentic route planning, POI recommendation, and map workflows with real product UI."
+      note: {
+        en: "Best match: MY_MAP. It shows agentic route planning, POI recommendation, and map workflows with real product UI.",
+        zh: "最相关：MY_MAP。它展示了 Agent 路线规划、POI 推荐和带真实产品 UI 的地图工作流。"
+      }
     },
     {
       keys: ["chat", "support", "customer", "widget", "handoff", "service"],
       title: "Live Chat Widget Integration",
-      note: "Best match: Live Chat Widget Integration. It is the strongest case for AI customer service, handoff, and embedded support UI."
+      note: {
+        en: "Best match: Live Chat Widget Integration. It is the strongest case for AI customer service, handoff, and embedded support UI.",
+        zh: "最相关：Live Chat Widget Integration。它最能体现 AI 客服、人工交接和嵌入式支持界面。"
+      }
     },
     {
       keys: ["health", "questionnaire", "triage", "diagnostic", "food", "poisoning", "form"],
       title: "Food Poisoning Questionnaire System",
-      note: "Best match: Food Poisoning Questionnaire System. It demonstrates structured intake, safety-aware outputs, and workflow guidance."
+      note: {
+        en: "Best match: Food Poisoning Questionnaire System. It demonstrates structured intake, safety-aware outputs, and workflow guidance.",
+        zh: "最相关：Food Poisoning Questionnaire System。它展示了结构化采集、安全感知输出和流程指引。"
+      }
     },
     {
       keys: ["model", "evaluation", "research", "aim", "modulation", "logits", "paper"],
       title: "AI Model Modulation",
-      note: "Best match: AI Model Modulation. It anchors the studio in research-backed AI systems and evaluation thinking."
+      note: {
+        en: "Best match: AI Model Modulation. It anchors the studio in research-backed AI systems and evaluation thinking.",
+        zh: "最相关：AI Model Modulation。它让工作室有研究支撑，也体现了模型评估思维。"
+      }
     },
     {
       keys: ["email", "rag", "knowledge", "cleaning", "document", "pipeline"],
       title: "Email Processing System",
-      note: "Best match: Email Processing System. It is useful for RAG ingestion, cleaning pipelines, and knowledge-base preparation."
+      note: {
+        en: "Best match: Email Processing System. It is useful for RAG ingestion, cleaning pipelines, and knowledge-base preparation.",
+        zh: "最相关：Email Processing System。它适合 RAG 摄取、清洗管线和知识库准备场景。"
+      }
     }
   ];
+
+  function currentLanguage() {
+    return window.CurtisStudioI18n && window.CurtisStudioI18n.lang
+      ? window.CurtisStudioI18n.lang()
+      : "en";
+  }
+
+  function message(value) {
+    if (typeof value === "string") return value;
+    return value[currentLanguage()] || value.en;
+  }
 
   function closestHint(query) {
     var normalized = query.toLowerCase();
@@ -45,7 +71,10 @@
 
     return best || {
       title: "Studio Method",
-      note: "I would start with a short workflow map: user input, tool layer, knowledge layer, response constraints, and success metric."
+      note: {
+        en: "I would start with a short workflow map: user input, tool layer, knowledge layer, response constraints, and success metric.",
+        zh: "我会先画一张短工作流图：用户输入、工具层、知识层、回复约束和成功指标。"
+      }
     };
   }
 
@@ -61,8 +90,10 @@
   function localAnswer(query) {
     var hint = closestHint(query);
     return query
-      ? hint.note
-      : "Try: customer support handoff, RAG ingestion, route planning, or diagnostic intake.";
+      ? message(hint.note)
+      : currentLanguage() === "zh"
+        ? "可以试试：客服转人工、RAG 摄取、路线规划，或诊断采集。"
+        : "Try: customer support handoff, RAG ingestion, route planning, or diagnostic intake.";
   }
 
   async function askStudioAI(query, form) {
@@ -85,6 +116,7 @@
           query: query,
           page: pageLabel(),
           path: window.location.pathname,
+          language: currentLanguage(),
           source: form.getAttribute("data-response") || "studio-command"
         })
       });
@@ -117,7 +149,7 @@
       form.classList.add("is-active");
       form.classList.add("is-loading");
       response.textContent = query && aiConfig().endpoint
-        ? "Asking DeepSeek v4 flash..."
+        ? currentLanguage() === "zh" ? "正在询问 DeepSeek v4 flash..." : "Asking DeepSeek v4 flash..."
         : localAnswer(query);
 
       try {
