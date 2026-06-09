@@ -8,9 +8,9 @@ const SITE_CONTEXT = `
 Curtis Studio is the portfolio and personal studio of Zhiyang Mei / Curtis, an agent deployment engineer based in Shenzhen.
 
 Positioning:
-- AI systems with interface taste.
-- Builds production AI systems, RAG pipelines, tool-calling workflows, customer-service AI, and product prototypes.
-- Prefers clear product surfaces, reliable tool layers, and evaluation in real workflows.
+- Agent systems and product UI beyond the demo.
+- Works on tool calls, RAG, retrieval failures, handoff rules, evaluation traces, customer-service AI, and product prototypes.
+- Prefers concrete workflow maps, reliable tool layers, and interfaces that make AI behavior understandable.
 
 Core work:
 - MY_MAP: agentic route planning, POI recommendation, map workflows, RAG + agent system.

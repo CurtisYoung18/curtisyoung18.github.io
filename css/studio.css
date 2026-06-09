@@ -434,6 +434,11 @@ input {
   animation: studioDrift 9s ease-in-out infinite;
 }
 
+.studio-aperture-photo img {
+  object-position: 52% 50%;
+  filter: saturate(0.74) contrast(1.04) brightness(0.98);
+}
+
 .studio-aperture::after {
   content: "";
   position: absolute;
@@ -992,6 +997,12 @@ input {
     font-size: clamp(42px, 12vw, 58px);
     max-width: min(100%, 330px);
     overflow-wrap: break-word;
+  }
+
+  html[data-studio-lang="zh"] .studio-title {
+    max-width: min(100%, 354px);
+    font-size: clamp(39px, 10.4vw, 44px);
+    line-height: 1.02;
   }
 
   .studio-description {

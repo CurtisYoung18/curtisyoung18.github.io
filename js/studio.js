@@ -4,40 +4,40 @@
       keys: ["map", "route", "travel", "mcp", "location", "poi", "itinerary"],
       title: "MY_MAP",
       note: {
-        en: "Best match: MY_MAP. It shows agentic route planning, POI recommendation, and map workflows with real product UI.",
-        zh: "最相关：MY_MAP。它展示了 Agent 路线规划、POI 推荐和带真实产品 UI 的地图工作流。"
+        en: "Start with MY_MAP: route planning, POI suggestions, and agent routing wrapped in a real interface.",
+        zh: "可以从 MY_MAP 看起：路线规划、POI 推荐、Agent 调度，最后都落在一个真实界面里。"
       }
     },
     {
       keys: ["chat", "support", "customer", "widget", "handoff", "service"],
       title: "Live Chat Widget Integration",
       note: {
-        en: "Best match: Live Chat Widget Integration. It is the strongest case for AI customer service, handoff, and embedded support UI.",
-        zh: "最相关：Live Chat Widget Integration。它最能体现 AI 客服、人工交接和嵌入式支持界面。"
+        en: "Read the live chat widget case if you care about the messy middle: support AI, handoff, and an interface that has to fit into an existing site.",
+        zh: "如果你关心客服 AI 的真实中间层，可以看 live chat widget：转人工、嵌入现有网站、以及不能打扰用户的界面。"
       }
     },
     {
       keys: ["health", "questionnaire", "triage", "diagnostic", "food", "poisoning", "form"],
       title: "Food Poisoning Questionnaire System",
       note: {
-        en: "Best match: Food Poisoning Questionnaire System. It demonstrates structured intake, safety-aware outputs, and workflow guidance.",
-        zh: "最相关：Food Poisoning Questionnaire System。它展示了结构化采集、安全感知输出和流程指引。"
+        en: "The food poisoning system is about structured intake: asking enough, not overreaching, and leaving the next step clear.",
+        zh: "食物中毒问卷系统讲的是结构化采集：问够信息，不越界判断，并把下一步说清楚。"
       }
     },
     {
       keys: ["model", "evaluation", "research", "aim", "modulation", "logits", "paper"],
       title: "AI Model Modulation",
       note: {
-        en: "Best match: AI Model Modulation. It anchors the studio in research-backed AI systems and evaluation thinking.",
-        zh: "最相关：AI Model Modulation。它让工作室有研究支撑，也体现了模型评估思维。"
+        en: "AI Model Modulation is the research side of the studio: model behavior, evaluation, and what can be controlled below the prompt layer.",
+        zh: "AI Model Modulation 是这个 studio 的研究侧：模型行为、评估，以及 prompt 之下还能控制什么。"
       }
     },
     {
       keys: ["email", "rag", "knowledge", "cleaning", "document", "pipeline"],
       title: "Email Processing System",
       note: {
-        en: "Best match: Email Processing System. It is useful for RAG ingestion, cleaning pipelines, and knowledge-base preparation.",
-        zh: "最相关：Email Processing System。它适合 RAG 摄取、清洗管线和知识库准备场景。"
+        en: "Email Processing is the RAG plumbing piece: cleaning messy archives before anyone asks the model to retrieve from them.",
+        zh: "Email Processing 是 RAG 的管道活：先把混乱邮件清干净，再谈让模型检索。"
       }
     }
   ];
@@ -72,8 +72,8 @@
     return best || {
       title: "Studio Method",
       note: {
-        en: "I would start with a short workflow map: user input, tool layer, knowledge layer, response constraints, and success metric.",
-        zh: "我会先画一张短工作流图：用户输入、工具层、知识层、回复约束和成功指标。"
+        en: "I would draw the ugly workflow first: user input, tools, knowledge, failure boundary, and how the result gets checked.",
+        zh: "我会先把最难看的流程画出来：用户输入、工具、知识库、失败边界，以及结果怎么验。"
       }
     };
   }
@@ -92,8 +92,8 @@
     return query
       ? message(hint.note)
       : currentLanguage() === "zh"
-        ? "可以试试：客服转人工、RAG 摄取、路线规划，或诊断采集。"
-        : "Try: customer support handoff, RAG ingestion, route planning, or diagnostic intake.";
+        ? "可以问：客服转人工、RAG 检索缺失、路线规划，或者 Agent 为什么会偷懒不用工具。"
+        : "Try asking about support handoff, retrieval misses, route planning, or why agents avoid tools.";
   }
 
   async function askStudioAI(query, form) {
