@@ -2,695 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-    <meta name="description" content="Curtis の Home">
-    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-    <title>About | Curtis の Home</title>
+    <meta name="description" content="About Curtis Studio: AI systems, product interfaces, research, and studio method by Zhiyang Mei.">
+    <meta name="keywords" content="Curtis Studio, Zhiyang Mei, AI Agent, Product Engineering, Studio Method">
+    <title>About | Curtis Studio</title>
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/mobile.css">
-    <link rel="stylesheet" href="/css/about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="/js/script.js"></script>
-    <script src="/js/tocbot.min.js"></script>
+    <link rel="stylesheet" href="/css/studio.css">
+    <script defer src="/js/studio-ai-config.js"></script>
+    <script defer src="/js/studio.js"></script>
 </head>
-<body>
-    <div class="wrapper">
-        <header>
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
-                    <div class="menu navbar-right">
-                            <a class="menu-item" href="/archives">Posts</a>
-                            <a class="menu-item" href="/products">Products</a>
-                            <a class="menu-item" href="/collection">Collections</a>
-                            <a class="menu-item" href="/about">About</a>
-                    </div>
-                </div>
-            </nav>
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container" style="position:relative;">
-            <div class="navbar-header">
+<body class="studio-body">
+    <div class="studio-shell">
+        <header class="studio-nav" aria-label="Primary navigation">
+            <a class="studio-brand" href="/" aria-label="Curtis Studio home">
+                <span class="studio-brand-dot" aria-hidden="true"></span>
+                <span>Curtis Studio</span>
+            </a>
+            <div class="studio-nav-right">
+                <button class="studio-mode" type="button" data-studio-mode aria-pressed="false">[ Studio Mode ]</button>
+                <nav class="studio-nav-links" aria-label="Site links">
+                    <a href="/products">Work</a>
+                    <a href="/archives">Log</a>
+                    <a href="/about" aria-current="page">About</a>
+                </nav>
+                <span class="studio-grid-mark" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </span>
+            </div>
+        </header>
+
+        <main class="studio-work studio-page">
+            <section class="studio-work-hero studio-page-hero" aria-labelledby="about-title">
                 <div>
-                    <a href="/">Curtis の Home</a>
+                    <p class="studio-kicker">Studio Method</p>
+                    <h1 id="about-title">I turn AI workflows into usable systems.</h1>
                 </div>
-                <div class="menu-toggle" onclick="mobileBtn()" id="mobile-menu-toggle">&#9776; Menu</div>
-            </div>
-            <div class="dropdown-menu" id="mobile-dropdown-menu">
-                <a class="menu-item" href="/archives">Posts</a>
-                <a class="menu-item" href="/products">Products</a>
-                <a class="menu-item" href="/collection">Collections</a>
-                <a class="menu-item" href="/about">About</a>
-            </div>
-        </div>
-    </nav>
-</header>
-<script>
-    var mobileBtn = function f() {
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (dropdown.classList.contains("active")) {
-            dropdown.classList.remove("active");
-        } else {
-            dropdown.classList.add("active");
-        }
-    }
-    // 点击菜单外部关闭下拉
-    document.addEventListener('click', function(event) {
-        var toggle = document.getElementById("mobile-menu-toggle");
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
-            dropdown.classList.remove("active");
-        }
-    });
-</script>
-        <div class="main">
-            <div class="container">
-                <div class="about-container">
-                    <!-- Profile Section -->
-                    <section class="profile-section fade-in">
-                        <div class="profile-header">
-                            <img src="/images/profile.png" alt="Curtis Mei" class="profile-image">
-                            <div class="profile-info">
-                                <h1 class="profile-name">Zhiyang Mei</h1>
-                                <p class="profile-location"><i class="fas fa-map-marker-alt"></i> Shenzhen, China</p>
-                                <br>
-                                <p class="profile-description">
-                                    I am an Agent Deployment Engineer based in Shenzhen, specializing in bringing AI agents to real-world applications. 
-                                    I hold a Master's degree in Information Technology from the University of Queensland.
-                                    With a strong foundation in both software development and machine learning, I focus on creating robust and scalable AI solutions.
-                                    My expertise spans across AI agent deployment, web development, and reinforcement learning.
-                                </p>
-                                <div class="profile-badges">
-                                    <span class="badge"><i class="fas fa-graduation-cap"></i> Master's in IT (UQ)</span>
-                                    <span class="badge"><i class="fas fa-language"></i> PTE Academic 65+</span>
-                                </div>
-                                <div class="social-links">
-                                    <a href="https://github.com/CurtisYoung18" target="_blank" class="social-link">
-                                        <div class="social-link-content">
-                                            <i class="fab fa-github"></i>
-                                            <span class="social-link-text">GitHub</span>
-                                        </div>
-                                    </a>
-                                    <a href="mailto:magicyoung63@yahoo.com" class="social-link email-link">
-                                        <div class="social-link-content">
-                                            <i class="fas fa-envelope"></i>
-                                            <span class="social-link-text">Email</span>
-                                        </div>
-                                    </a>
-                                    <a href="tel:+61403813564" class="social-link phone-link">
-                                        <div class="social-link-content">
-                                            <i class="fas fa-phone"></i>
-                                            <span class="social-link-text">Phone</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                <div>
+                    <p class="studio-work-intro">
+                        I am Zhiyang Mei, an agent deployment engineer based in Shenzhen.
+                        Curtis Studio is the public surface for my AI systems work: product UI,
+                        RAG pipelines, tool-calling workflows, evaluation, and production handoff.
+                    </p>
+                    <form class="studio-command" data-studio-command data-response="studio-about-response">
+                        <span class="studio-command-label" aria-hidden="true">&gt;</span>
+                        <input type="search" name="studio-query" aria-label="Ask about Curtis Studio" placeholder="Ask about method...">
+                        <button type="submit" aria-label="Ask">↵</button>
+                    </form>
+                    <div class="studio-response" id="studio-about-response" role="status" aria-live="polite"></div>
+                </div>
+            </section>
 
-                    <!-- Content Sections -->
-                    <div class="content-section">
-                        <!-- Education Section -->
-                        <div class="glass-card fade-in">
-                            <h2 class="section-title">Education</h2>
-                            <div class="education-item">
-                                <h3>M.Sc. in Information Technology</h3>
-                                <p>EAIT, University of Queensland</p>
-                                <p>Brisbane, Australia</p>
-                                <p>2023.7 – 2025.7 (Graduated)</p>
-                                <p>GPA: 6.1 /7</p>
-                                <ul class="education-details">
-                                    <li>Research area: Machine Learning, AI Security</li>
-                                    <li>Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence</li>
-                                </ul>
-                            </div>
-                            <div class="education-item">
-                                <h3>B.Sc. in International Economics and Trade</h3>
-                                <p>School of Business, Shantou University</p>
-                                <p>Shantou, China</p>
-                                <p>2019 – 2023</p>
-                            </div>
-                        </div>
-
-                        <!-- Publications Section -->
-                        <div class="glass-card fade-in">
-                            <h2 class="section-title">Publications</h2>
-                            <div class="publication-item">
-                                <h3>AI Model Modulation with Logits Redistribution</h3>
-                                <p class="publication-authors">Zihan Wang*, Zhongkui Ma*, Xinguo Feng, Zhiyang Mei, Ethan Ma, Derui Wang, Minhui Xue, Guangdong Bai</p>
-                                <p class="publication-venue">Proceedings of the ACM Web Conference (WWW '25), 2025</p>
-                                <a href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" class="publication-link">
-                                    <i class="fas fa-external-link-alt"></i> View Paper
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projects Section - Apple Cards Carousel Style -->
-                        <div class="glass-card fade-in">
-                            <h2 class="section-title">Featured Projects</h2>
-                            <div class="apple-carousel-container">
-                                <div class="apple-carousel" id="appleCarousel">
-                                    <div class="apple-carousel-track" id="carouselTrack">
-                                        <div class="apple-card" data-index="0">
-                                            <div class="apple-card-image" style="background-image: url('/images/products/AIM.png');"></div>
-                                            <div class="apple-card-overlay"></div>
-                                            <div class="apple-card-content">
-                                                <p class="apple-card-category">Research Paper</p>
-                                                <h3 class="apple-card-title">AI Model Modulation with Logits Redistribution</h3>
-                                            </div>
-                                        </div>
-                                        <div class="apple-card" data-index="1">
-                                            <div class="apple-card-image" style="background-image: url('/images/products/eml_process.png');"></div>
-                                            <div class="apple-card-overlay"></div>
-                                            <div class="apple-card-content">
-                                                <p class="apple-card-category">Data Cleaning</p>
-                                                <h3 class="apple-card-title">Email Processing System</h3>
-                                            </div>
-                                        </div>
-                                        <div class="apple-card" data-index="2">
-                                            <div class="apple-card-image" style="background-image: url('/images/products/food_posioning.png');"></div>
-                                            <div class="apple-card-overlay"></div>
-                                            <div class="apple-card-content">
-                                                <p class="apple-card-category">Function Integration</p>
-                                                <h3 class="apple-card-title">Food Poisoning Questionnaire System</h3>
-                                            </div>
-                                        </div>
-                                        <div class="apple-card" data-index="3">
-                                            <div class="apple-card-image" style="background-image: url('/images/products/gjj.png');"></div>
-                                            <div class="apple-card-overlay"></div>
-                                            <div class="apple-card-content">
-                                                <p class="apple-card-category">Function Integration</p>
-                                                <h3 class="apple-card-title">Chat & Manage Housing Fund</h3>
-                                            </div>
-                                        </div>
-                                        <div class="apple-card" data-index="4">
-                                            <div class="apple-card-image" style="background-image: url('/images/products/widget.gif');"></div>
-                                            <div class="apple-card-overlay"></div>
-                                            <div class="apple-card-content">
-                                                <p class="apple-card-category">Function Integration</p>
-                                                <h3 class="apple-card-title">Live chat Widget integration</h3>
-                                            </div>
-                                        </div>
-                                        <div class="apple-card" data-index="5">
-                                            <div class="apple-card-image" style="background-image: url('/images/products/dqn.gif');"></div>
-                                            <div class="apple-card-overlay"></div>
-                                            <div class="apple-card-content">
-                                                <p class="apple-card-category">Reinforcement Learning</p>
-                                                <h3 class="apple-card-title">DQN Implementation</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="apple-carousel-controls">
-                                    <button class="apple-carousel-btn" id="prevBtn" aria-label="Previous">
-                                        <i class="fas fa-arrow-left"></i>
-                                    </button>
-                                    <button class="apple-carousel-btn" id="nextBtn" aria-label="Next">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+            <section class="studio-profile-grid" aria-labelledby="profile-title">
+                <article class="studio-profile-panel">
+                    <p class="studio-kicker">01 Profile</p>
+                    <h2 id="profile-title">Zhiyang Mei / Curtis</h2>
+                    <p>
+                        I build AI-facing product systems with a bias toward clear interfaces,
+                        reliable tool layers, and workflows that survive contact with real users.
+                    </p>
+                    <div class="studio-fact-list" aria-label="Profile facts">
+                        <div><span>Base</span><strong>Shenzhen, China</strong></div>
+                        <div><span>Focus</span><strong>Agent deployment, RAG, product UI</strong></div>
+                        <div><span>Education</span><strong>M.Sc. IT, University of Queensland</strong></div>
+                        <div><span>Research</span><strong>Machine learning, AI security</strong></div>
                     </div>
+                    <div class="studio-contact-links" aria-label="Contact links">
+                        <a href="mailto:magicyoung63@yahoo.com">Email ↗</a>
+                        <a href="https://github.com/CurtisYoung18" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a href="/products">Selected Work ↗</a>
+                    </div>
+                </article>
 
-                    <!-- CV Download Section (hidden) -->
-                    <section class="cv-section fade-in" style="display: none;">
-                        <h2 class="section-title">Download My CV</h2>
-                        <p>Get a detailed overview of my experience and skills</p>
-                        <a href="/files/Zhiyang_Mei_Resume.pdf" class="cv-button interactive-element" id="english-cv" download>
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                        <a href="/files/CV_CN.pdf" class="cv-button interactive-element" id="chinese-cv" download>
-                            <i class="fas fa-download"></i> 下载中文简历
-                        </a>
-                    </section>
-                    
+                <div class="studio-method-list" aria-label="Studio method steps">
+                    <article class="studio-method-card">
+                        <span>01</span>
+                        <h3>Map the workflow</h3>
+                        <p>Start from the user's job, failure modes, human handoff, and the data needed to make the AI useful.</p>
+                    </article>
+                    <article class="studio-method-card">
+                        <span>02</span>
+                        <h3>Define the tool layer</h3>
+                        <p>Shape APIs, retrieval, database actions, and guardrails before polishing prompts or UI states.</p>
+                    </article>
+                    <article class="studio-method-card">
+                        <span>03</span>
+                        <h3>Design the interface contract</h3>
+                        <p>Make the system explain what it knows, what it did, and what the user can safely do next.</p>
+                    </article>
+                    <article class="studio-method-card">
+                        <span>04</span>
+                        <h3>Evaluate in context</h3>
+                        <p>Test with real flows: retrieval misses, tool errors, ambiguous user intent, and escalation boundaries.</p>
+                    </article>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <script>
-            // Intersection Observer for fade-in animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            // Observe all fade-in elements
-            document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-
-            // Add ripple effect to interactive elements
-            document.querySelectorAll('.interactive-element').forEach(element => {
-                element.addEventListener('click', function(e) {
-                    const rect = element.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const ripple = document.createElement('span');
-                    ripple.style.left = `${x}px`;
-                    ripple.style.top = `${y}px`;
-                    
-                    element.appendChild(ripple);
-                    
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 1000);
-                });
-            });
-
-            // 添加按钮展开动画
-            document.addEventListener('DOMContentLoaded', function() {
-                const emailLink = document.querySelector('.email-link');
-                const phoneLink = document.querySelector('.phone-link');
-                
-                function handleLinkClick(e, link, text) {
-                    e.preventDefault();
-                    const content = link.querySelector('.social-link-content');
-                    const icon = link.querySelector('i');
-                    const textSpan = link.querySelector('.social-link-text');
-                    
-                    if (link.classList.contains('expanded')) {
-                        // 收起
-                        link.classList.remove('expanded');
-                        textSpan.textContent = text;
-                        setTimeout(() => {
-                            link.href = link.classList.contains('email-link') ? 
-                                'mailto:magicyoung63@yahoo.com' : 
-                                'tel:+86 18371722591';
-                        }, 300);
-                    } else {
-                        // 展开
-                        link.classList.add('expanded');
-                        textSpan.textContent = link.classList.contains('email-link') ? 
-                            'magicyoung63@yahoo.com' : 
-                            'tel:+86 18371722591';
-                        link.href = '#';
-                    }
-                }
-
-                emailLink.addEventListener('click', (e) => handleLinkClick(e, emailLink, 'Email'));
-                phoneLink.addEventListener('click', (e) => handleLinkClick(e, phoneLink, 'Phone'));
-
-                // Apple Cards Carousel functionality
-                const carouselTrack = document.getElementById('carouselTrack');
-                const prevBtn = document.getElementById('prevBtn');
-                const nextBtn = document.getElementById('nextBtn');
-                const cards = document.querySelectorAll('.apple-card');
-                const modal = document.getElementById('projectModal');
-                const closeModal = document.getElementById('closeModal');
-                const modalBody = document.getElementById('modalBody');
-
-                const projects = [
-                    {
-                        name: "AI Model Modulation with Logits Redistribution",
-                        category: "Research Paper",
-                        description: "We propose Aim, a novel model modulation paradigm that enables a single model to exhibit diverse behaviors to meet the specific end requirements.",
-                        image: "/images/products/AIM.png",
-                        links: [
-                            { url: "https://github.com/UQ-Trust-Lab/AIM", text: "GitHub", icon: "fab fa-github", class: "github" },
-                            { url: "https://dl.acm.org/doi/10.1145/3696410.3714737", text: "DOI", icon: "fas fa-external-link-alt" }
-                        ]
-                    },
-                    {
-                        name: "Email Processing System",
-                        category: "Data Cleaning",
-                        description: "A system that cleans emails using code and LLMs and upload the cleaned emails to the RAG knowledge base for users to chat with.",
-                        image: "/images/products/eml_process.png",
-                        links: [
-                            { url: "https://github.com/CurtisYoung18/Eml_process_platform", text: "GitHub", icon: "fab fa-github", class: "github" }
-                        ]
-                    },
-                    {
-                        name: "Food Poisoning Questionnaire System",
-                        category: "Function Integration",
-                        description: "A system that helps nursing team to generate, revise and manage food poisoning questionnaires as well as analyze the data from the questionnaire using chat with LLMs.",
-                        image: "/images/products/food_posioning.png",
-                        links: [
-                            { url: "https://github.com/CurtisYoung18/v0-poc", text: "GitHub", icon: "fab fa-github", class: "github" },
-                            { url: "https://gptbots-poc.vercel.app", text: "Demo", icon: "fas fa-external-link-alt" }
-                        ]
-                    },
-                    {
-                        name: "Chat & Manage Housing Fund",
-                        category: "Function Integration",
-                        description: "A system that allows users to chat with LLMs to manage (query and withdraw) their housing fund.",
-                        image: "/images/products/gjj.png",
-                        links: [
-                            { url: "https://github.com/CurtisYoung18/minzheng-tong-demo", text: "GitHub", icon: "fab fa-github", class: "github" },
-                            { url: "https://v0-minzheng-tong-demo.vercel.app", text: "Demo", icon: "fas fa-external-link-alt" }
-                        ]
-                    },
-                    {
-                        name: "Live chat Widget integration for AI Customer Service",
-                        category: "Function Integration",
-                        description: "A system that integrates several live chat widgets into an AI customer service system, allowing better interaction between users and the AI.",
-                        image: "/images/products/widget.gif",
-                        links: [
-                            { url: "https://v0-i-gaming.vercel.app", text: "Demo", icon: "fas fa-external-link-alt" }
-                        ]
-                    },
-                    {
-                        name: "DQN Implementation",
-                        category: "Reinforcement Learning",
-                        description: "Implementation of Deep Q-Network (DQN) beyond Cartpole and Lunar Lander using PyTorch.",
-                        image: "/images/products/dqn.gif",
-                        links: [
-                            { url: "https://github.com/CurtisYoung18/RL-DQN", text: "GitHub", icon: "fab fa-github", class: "github" }
-                        ]
-                    }
-                ];
-
-                function checkScrollability() {
-                    if (carouselTrack) {
-                        const { scrollLeft, scrollWidth, clientWidth } = carouselTrack;
-                        if (prevBtn) prevBtn.disabled = scrollLeft <= 0;
-                        if (nextBtn) nextBtn.disabled = scrollLeft >= scrollWidth - clientWidth - 10;
-                    }
-                }
-
-                function scrollCarousel(direction) {
-                    if (!carouselTrack) return;
-                    const scrollAmount = window.innerWidth < 768 ? 240 : 400;
-                    carouselTrack.scrollBy({
-                        left: direction === 'left' ? -scrollAmount : scrollAmount,
-                        behavior: 'smooth'
-                    });
-                }
-
-                function openModal(index) {
-                    const project = projects[index];
-                    if (!project || !modal || !modalBody) return;
-
-                    modalBody.innerHTML = `
-                        <img src="${project.image}" alt="${project.name}" class="modal-project-image">
-                        <p class="modal-project-category">${project.category}</p>
-                        <h3 class="modal-project-title">${project.name}</h3>
-                        <p class="modal-project-description">${project.description}</p>
-                        <div class="modal-project-links">
-                            ${project.links.map(link => `
-                                <a href="${link.url}" target="_blank" class="modal-project-link ${link.class || ''}">
-                                    <i class="${link.icon}"></i> ${link.text}
-                                </a>
-                            `).join('')}
+            <section class="studio-page-section" aria-labelledby="credentials-title">
+                <div class="studio-section-heading">
+                    <p class="studio-kicker">02 Credentials</p>
+                    <h2 id="credentials-title">Research-backed, product-facing.</h2>
+                </div>
+                <div class="studio-credential-list">
+                    <article class="studio-credential-item">
+                        <span class="studio-work-number">PUB</span>
+                        <div>
+                            <h3>AI Model Modulation with Logits Redistribution</h3>
+                            <p>Proceedings of the ACM Web Conference, WWW 2025.</p>
                         </div>
-                    `;
-                    modal.classList.add('active');
-                    // 不禁用背景滚动，让页面可以继续滚动
-                }
+                        <a href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" rel="noopener">Paper ↗</a>
+                    </article>
+                    <article class="studio-credential-item">
+                        <span class="studio-work-number">MSc</span>
+                        <div>
+                            <h3>Information Technology</h3>
+                            <p>EAIT, University of Queensland. GPA 6.1 / 7. Advanced software engineering, databases, AI.</p>
+                        </div>
+                        <span>2023.7 - 2025.7</span>
+                    </article>
+                    <article class="studio-credential-item">
+                        <span class="studio-work-number">BSc</span>
+                        <div>
+                            <h3>International Economics and Trade</h3>
+                            <p>School of Business, Shantou University.</p>
+                        </div>
+                        <span>2019 - 2023</span>
+                    </article>
+                </div>
+            </section>
 
-                function closeModalFunc() {
-                    if (modal) {
-                        modal.classList.remove('active');
-                    }
-                }
+            <section class="studio-page-section studio-signal-section" aria-labelledby="signals-title">
+                <div class="studio-section-heading">
+                    <p class="studio-kicker">03 Signals</p>
+                    <h2 id="signals-title">What this studio is good for.</h2>
+                </div>
+                <div class="studio-stack studio-signal-stack">
+                    <span>Agent Deployment</span>
+                    <span>RAG Pipelines</span>
+                    <span>Tool Calling</span>
+                    <span>Customer Service AI</span>
+                    <span>Product UI</span>
+                    <span>Workflow Design</span>
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>PostgreSQL</span>
+                    <span>Evaluation</span>
+                    <span>AI Security</span>
+                    <span>Prototyping</span>
+                </div>
+            </section>
+        </main>
 
-                // Event listeners
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => scrollCarousel('left'));
-                }
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => scrollCarousel('right'));
-                }
-                if (carouselTrack) {
-                    carouselTrack.addEventListener('scroll', checkScrollability);
-                    checkScrollability();
-                }
-                if (closeModal) {
-                    closeModal.addEventListener('click', closeModalFunc);
-                }
-                if (modal) {
-                    const backdrop = modal.querySelector('.apple-modal-backdrop');
-                    const modalContent = modal.querySelector('.apple-modal-content');
-                    
-                    // 点击backdrop关闭
-                    if (backdrop) {
-                        backdrop.addEventListener('click', closeModalFunc);
-                    }
-                    
-                    // 点击模态框外部（但不是内容区域）关闭
-                    modal.addEventListener('click', (e) => {
-                        // 如果点击的是模态框本身或backdrop，则关闭
-                        if (e.target === modal || e.target === backdrop) {
-                            closeModalFunc();
-                        }
-                    });
-                    
-                    // 阻止内容区域的点击事件冒泡
-                    if (modalContent) {
-                        modalContent.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                        });
-                    }
-                }
-
-                // Card click handlers
-                cards.forEach((card, index) => {
-                    card.addEventListener('click', () => openModal(index));
-                });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (modal && modal.classList.contains('active')) {
-                        if (e.key === 'Escape') {
-                            closeModalFunc();
-                        }
-                    }
-                });
-            });
-        </script>
-
-        <footer id="footer" class="footer">
-    <div class="copyright">
-                <span>© Curtis Mei</span>
+        <footer class="studio-footer">
+            <span>© 2026 Curtis Studio</span>
+            <span class="studio-monogram">C/S</span>
+            <span class="studio-footer-right">Systems, prototypes, and notes</span>
+        </footer>
     </div>
-</footer>
-    </div>
-
-    <!-- Modal moved outside wrapper for proper positioning -->
-    <div class="apple-modal" id="projectModal">
-        <div class="apple-modal-backdrop"></div>
-        <div class="apple-modal-content">
-            <button class="apple-modal-close" id="closeModal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="apple-modal-body" id="modalBody"></div>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
-    <script type="text/javascript" src="/js/about.js"></script>
-    <style>
-        /* 更新按钮样式 */
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            color: #2c3e50;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        /* 调整 zhiyangmei 高度 */
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 4px solid #fff;
-        }
-
-        /* 深色模式样式更新 */
-        .dark .social-link {
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .dark .social-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .profile-image {
-                width: 200px;
-                height: 200px;
-            }
-        }
-
-        /* 更新 profile-name 样式 */
-        .profile-name {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin: 0;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(45deg, #2c3e50, #3498db);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient 8s ease infinite;
-            line-height: 1.2;
-            display: block;
-        }
-
-        .profile-location {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .profile-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.2rem 0;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: rgba(52, 152, 219, 0.1);
-            color: #2980b9;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid rgba(52, 152, 219, 0.2);
-        }
-
-        /* 深色模式适配 */
-        .dark .profile-location {
-            color: #aab7b8;
-        }
-
-        .dark .badge {
-            background: rgba(52, 152, 219, 0.15);
-            color: #5dade2;
-            border-color: rgba(52, 152, 219, 0.3);
-        }
-
-
-        #english-cv {
-            margin-right: 0.5rem;
-        }
-
-        #chinese-cv {
-            margin-left: 0.5rem;
-        }
-
-        /* 更新 CV section 样式 */
-        .cv-section {
-            margin-top: 9rem;
-            margin-bottom: 4rem;
-            padding: 3.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* 更新 CV 按钮样式 */
-        .cv-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
-            color: #2c3e50;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(52, 152, 219, 0.2);
-            backdrop-filter: blur(5px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cv-button:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
-            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
-            color: #3498db;
-        }
-
-        .cv-button i {
-            transition: transform 0.3s ease;
-        }
-
-        .cv-button:hover i {
-            transform: translateY(-2px);
-        }
-
-        /* 深色模式样式更新 */
-        .dark .cv-section {
-            background: rgba(30, 30, 30, 0.8);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .dark .cv-button {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
-            color: #e0e0e0;
-            border-color: rgba(52, 152, 219, 0.3);
-        }
-
-        .dark .cv-button:hover {
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.25), rgba(41, 128, 185, 0.25));
-            color: #3498db;
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .cv-section {
-                margin-top: 4rem;
-                margin-bottom: 3rem;
-                padding: 1.5rem;
-                box-sizing: border-box;
-            }
-
-            .cv-button {
-                display: flex !important;
-                width: calc(100% - 1rem) !important;
-                max-width: 280px;
-                justify-content: center;
-                margin: 0.6rem auto !important;
-                padding: 0.9rem 1.5rem;
-                box-sizing: border-box;
-            }
-
-            #english-cv,
-            #chinese-cv {
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-        }
-    </style>
 </body>
 </html>
-

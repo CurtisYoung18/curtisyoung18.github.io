@@ -1,347 +1,204 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-
-
-
-    <meta name="description" content="Curtis の Home">
-
-
-    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-
-
-<title>Posts | Curtis の Home</title>
-
-
-
+    <meta name="description" content="Curtis Studio log: notes on AI agents, tool calling, product design, and personal collections.">
+    <meta name="keywords" content="Curtis Studio, AI Agent, Tool Calling, Product Design, Blog">
+    <title>Log | Curtis Studio</title>
     <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/studio.css">
+    <script defer src="/js/studio-ai-config.js"></script>
+    <script defer src="/js/studio.js"></script>
+</head>
+<body class="studio-body">
+    <div class="studio-shell">
+        <header class="studio-nav" aria-label="Primary navigation">
+            <a class="studio-brand" href="/" aria-label="Curtis Studio home">
+                <span class="studio-brand-dot" aria-hidden="true"></span>
+                <span>Curtis Studio</span>
+            </a>
+            <div class="studio-nav-right">
+                <button class="studio-mode" type="button" data-studio-mode aria-pressed="false">[ Studio Mode ]</button>
+                <nav class="studio-nav-links" aria-label="Site links">
+                    <a href="/products">Work</a>
+                    <a href="/archives" aria-current="page">Log</a>
+                    <a href="/about">About</a>
+                </nav>
+                <span class="studio-grid-mark" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </span>
+            </div>
+        </header>
 
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/mobile.css">
-    
-
-
-<meta name="generator" content="Hexo 4.2.1"></head>
-<body>
-    <div class="wrapper">
-        <header>
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
-                    <div class="menu navbar-right">
-                        <a class="menu-item" href="/archives">Posts</a>
-                        <a class="menu-item" href="/products">Products</a>
-                        <a class="menu-item" href="/collection">Collections</a>
-                        <a class="menu-item" href="/about">About</a>
-                    </div>
-        
-                </div>
-            </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container" style="position:relative;">
-            <div class="navbar-header">
+        <main class="studio-work studio-page">
+            <section class="studio-work-hero studio-page-hero" aria-labelledby="log-title">
                 <div>
-                    <a href="/">Curtis の Home</a>
+                    <p class="studio-kicker">Studio Log</p>
+                    <h1 id="log-title">Notes from the studio floor.</h1>
                 </div>
-                <div class="menu-toggle" onclick="mobileBtn()" id="mobile-menu-toggle">&#9776; Menu</div>
-            </div>
-            <div class="dropdown-menu" id="mobile-dropdown-menu">
-                <a class="menu-item" href="/archives">Posts</a>
-                <a class="menu-item" href="/products">Products</a>
-                <a class="menu-item" href="/collection">Collections</a>
-                <a class="menu-item" href="/about">About</a>
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (dropdown.classList.contains("active")) {
-            dropdown.classList.remove("active");
-        } else {
-            dropdown.classList.add("active");
-        }
-    }
-    // 点击菜单外部关闭下拉
-    document.addEventListener('click', function(event) {
-        var toggle = document.getElementById("mobile-menu-toggle");
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
-            dropdown.classList.remove("active");
-        }
-    });
-</script>
-        <div class="main">
-            <div class="post-wrap archive">
-                <div class="archive-header">
-                    <p>Thoughts, experiences, and insights</p>
+                <div>
+                    <p class="studio-work-intro">
+                        A running archive of agent engineering notes, product design observations,
+                        and personal collections. The AI systems posts are the strongest signal:
+                        tool calling, maintainability, support workflows, and failure analysis.
+                    </p>
+                    <form class="studio-command" data-studio-command data-response="studio-log-response">
+                        <span class="studio-command-label" aria-hidden="true">&gt;</span>
+                        <input type="search" name="studio-query" aria-label="Search studio notes" placeholder="Ask which note to read...">
+                        <button type="submit" aria-label="Search">↵</button>
+                    </form>
+                    <div class="studio-response" id="studio-log-response" role="status" aria-live="polite"></div>
                 </div>
+            </section>
 
-                <div class="archive-content">
-                    <!-- 2026 -->
-                    <div class="archive-year">
-                        <h3>2026</h3>
-                        <div class="archive-list">
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2026/02/当 Agent 学会偷懒：一次 Tool Calling 失效的排查实录/index.html">
-                                    <span class="archive-item-title">当 Agent 学会偷懒：一次 Tool Calling 失效的排查实录</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2026-02-02</span>
-                                        <span class="archive-item-category">AI, Agent, LLM</span>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2026/01/从 smolagents 聊 Agent 与 Tool Calling/index.html">
-                                    <span class="archive-item-title">从 smolagents 聊 Agent 与 Tool Calling</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2026-01-19</span>
-                                        <span class="archive-item-category">AI, Agent, LLM</span>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-                    </div>
-                    <!-- 2025 -->
-                    <div class="archive-year">
-                        <h3>2025</h3>
-                        <div class="archive-list">
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2025/11/关于客服场景 Agent 可维护性的一点思考/index.html">
-                                    <span class="archive-item-title">关于客服场景 Agent 可维护性的一点思考</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2025-11-24</span>
-                                        <span class="archive-item-category">AI, Machine-Learning, Technology</span>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2025/07/从 Tool Calling 机制浅聊 Agent 的工程实现/index.html">
-                                    <span class="archive-item-title">从 Tool Calling 机制浅聊 Agent 的工程实现</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2025-07-22</span>
-                                        <span class="archive-item-category">AI, Agent, LLM</span>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2025/06/我玩过的游戏/index.html">
-                                    <span class="archive-item-title">我玩过的游戏</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2025-06-01</span>
-                                        <span class="archive-item-category">Games, Life</span>
-                                    </div>
-                                </a>
-                            </article>
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2025/05/产品设计与用户体验/index.html">
-                                    <span class="archive-item-title">产品设计与用户体验：不仅是设计，更是感受</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2025-05-01</span>
-                                        <span class="archive-item-category">Product-Design, User-Experience</span>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-                    </div>
-                    <!-- 2024 -->
-                    <div class="archive-year">
-                        <h3>2024</h3>
-                        <div class="archive-list">
-                            
-
-                            <article class="archive-item">
-                                <a class="archive-item-link" href="/archives/2024/12/我的音乐收藏/index.html">
-                                    <span class="archive-item-title">我的音乐收藏：Go Fav 歌单背后的故事</span>
-                                    <div class="archive-item-meta">
-                                        <span class="archive-item-date">2024-12-15</span>
-                                        <span class="archive-item-category">Music, Life</span>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-                    </div>
+            <section aria-label="Log filters">
+                <div class="studio-filter-bar">
+                    <button class="is-active" type="button" data-work-filter="all">All</button>
+                    <button type="button" data-work-filter="systems">Agent Systems</button>
+                    <button type="button" data-work-filter="design">Design</button>
+                    <button type="button" data-work-filter="personal">Personal</button>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <style>
-            .archive-header {
-                text-align: center;
-                margin: 4rem 0 5rem;
-                padding: 3rem 2rem;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border-radius: 20px;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            }
+            <section class="studio-work-list studio-log-list" aria-label="Studio log entries">
+                <article class="studio-work-item studio-log-item" data-work-category="systems">
+                    <span class="studio-work-number">2026.02</span>
+                    <div class="studio-work-title">
+                        <h2>当 Agent 学会偷懒：一次 Tool Calling 失效的排查实录</h2>
+                        <p>Tool calling failure analysis from a real agent workflow.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        A practical debugging note about when an agent avoids tools, why that matters, and how to trace the behavior.
+                    </p>
+                    <div class="studio-stack">
+                        <span>AI</span><span>Agent</span><span>Tool Calling</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2026/02/当 Agent 学会偷懒：一次 Tool Calling 失效的排查实录/index.html">Read ↗</a>
+                    </div>
+                </article>
 
-            .archive-header h1 {
-                font-size: 3.2rem;
-                color: #2c3e50;
-                margin-bottom: 1.5rem;
-                background: linear-gradient(45deg, #2c3e50, #3498db);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                letter-spacing: 1px;
-            }
+                <article class="studio-work-item studio-log-item" data-work-category="systems">
+                    <span class="studio-work-number">2026.01</span>
+                    <div class="studio-work-title">
+                        <h2>从 smolagents 聊 Agent 与 Tool Calling</h2>
+                        <p>A closer look at agent structure through smolagents.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        An engineering-oriented explanation of how tools, model reasoning, and execution loops fit together.
+                    </p>
+                    <div class="studio-stack">
+                        <span>AI</span><span>Agent</span><span>LLM</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2026/01/从 smolagents 聊 Agent 与 Tool Calling/index.html">Read ↗</a>
+                    </div>
+                </article>
 
-            .archive-header p {
-                font-size: 1.4rem;
-                color: #7f8c8d;
-                line-height: 1.6;
-                max-width: 600px;
-                margin: 0 auto;
-            }
+                <article class="studio-work-item studio-log-item" data-work-category="systems">
+                    <span class="studio-work-number">2025.11</span>
+                    <div class="studio-work-title">
+                        <h2>关于客服场景 Agent 可维护性的一点思考</h2>
+                        <p>Maintainability notes for customer-service agent systems.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        Useful for support AI: handoff boundaries, product ownership, and keeping behavior understandable.
+                    </p>
+                    <div class="studio-stack">
+                        <span>Customer AI</span><span>Agent Ops</span><span>Workflow</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2025/11/关于客服场景 Agent 可维护性的一点思考/index.html">Read ↗</a>
+                    </div>
+                </article>
 
-            .archive-year {
-                margin-bottom: 2rem;
-            }
+                <article class="studio-work-item studio-log-item" data-work-category="systems">
+                    <span class="studio-work-number">2025.07</span>
+                    <div class="studio-work-title">
+                        <h2>从 Tool Calling 机制浅聊 Agent 的工程实现</h2>
+                        <p>Engineering notes on tool calling as the core agent interface.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        Connects model output, function signatures, tool execution, and product-side safety expectations.
+                    </p>
+                    <div class="studio-stack">
+                        <span>Tool Calling</span><span>Architecture</span><span>LLM</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2025/07/从 Tool Calling 机制浅聊 Agent 的工程实现/index.html">Read ↗</a>
+                    </div>
+                </article>
 
-            .archive-year h3 {
-                font-size: 1.8rem;
-                color: #2c3e50;
-                margin-bottom: 1rem;
-                padding-bottom: 0.5rem;
-                border-bottom: 2px solid #eee;
-            }
+                <article class="studio-work-item studio-log-item" data-work-category="design">
+                    <span class="studio-work-number">2025.05</span>
+                    <div class="studio-work-title">
+                        <h2>产品设计与用户体验：不仅是设计，更是感受</h2>
+                        <p>Product design notes on interface feeling and user perception.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        A useful companion to the studio's interface direction: systems need taste, not only capability.
+                    </p>
+                    <div class="studio-stack">
+                        <span>Product Design</span><span>UX</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2025/05/产品设计与用户体验/index.html">Read ↗</a>
+                    </div>
+                </article>
 
-            .archive-list {
-                display: grid;
-                gap: 1rem;
-            }
+                <article class="studio-work-item studio-log-item" data-work-category="personal">
+                    <span class="studio-work-number">2025.06</span>
+                    <div class="studio-work-title">
+                        <h2>我玩过的游戏</h2>
+                        <p>A personal catalogue of games and play memories.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        A softer archive item that keeps the site personal rather than only professional.
+                    </p>
+                    <div class="studio-stack">
+                        <span>Games</span><span>Life</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2025/06/我玩过的游戏/index.html">Read ↗</a>
+                    </div>
+                </article>
 
-            .archive-item {
-                background: white;
-                border-radius: 10px;
-                overflow: hidden;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
+                <article class="studio-work-item studio-log-item" data-work-category="personal">
+                    <span class="studio-work-number">2024.12</span>
+                    <div class="studio-work-title">
+                        <h2>我的音乐收藏：Go Fav 歌单背后的故事</h2>
+                        <p>Music collection notes and the story behind Go Fav.</p>
+                    </div>
+                    <p class="studio-log-summary">
+                        <span class="studio-work-label">Signal</span>
+                        A personal collection page that adds texture to the studio identity.
+                    </p>
+                    <div class="studio-stack">
+                        <span>Music</span><span>Life</span>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/archives/2024/12/我的音乐收藏/index.html">Read ↗</a>
+                    </div>
+                </article>
+            </section>
+        </main>
 
-            .archive-item:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            .archive-item-link {
-                display: block;
-                padding: 1.5rem;
-                text-decoration: none;
-                color: inherit;
-            }
-
-            .archive-item-title {
-                font-size: 1.2rem;
-                color: #2c3e50;
-                font-weight: 500;
-                display: block;
-                margin-bottom: 0.5rem;
-            }
-
-            .archive-item-meta {
-                display: flex;
-                gap: 1rem;
-                font-size: 0.9rem;
-                color: #7f8c8d;
-            }
-
-            .archive-item-category {
-                color: #3498db;
-            }
-
-            /* Dark mode styles */
-            .dark .archive-header {
-                background: rgba(30, 30, 30, 0.8);
-                border-color: rgba(255, 255, 255, 0.1);
-            }
-
-            .dark .archive-header h1 {
-                background: linear-gradient(45deg, #3498db, #2ecc71);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            .dark .archive-header p {
-                color: #bdc3c7;
-            }
-
-            .dark .archive-year h3 {
-                color: #ecf0f1;
-                border-bottom-color: #34495e;
-            }
-
-            .dark .archive-item {
-                background: rgba(30, 30, 30, 0.7);
-            }
-
-            .dark .archive-item-title {
-                color: #ecf0f1;
-            }
-
-            .dark .archive-item-meta {
-                color: #bdc3c7;
-            }
-
-            .dark .archive-item-category {
-                color: #3498db;
-            }
-
-            /* Responsive styles */
-            @media (max-width: 768px) {
-                .archive-header {
-                    margin: 3rem 0 4rem;
-                    padding: 2rem 1.5rem;
-                }
-
-                .archive-header h1 {
-                    font-size: 2.5rem;
-                }
-
-                .archive-header p {
-                    font-size: 1.2rem;
-                }
-
-                .archive-year h3 {
-                    font-size: 1.5rem;
-                }
-
-                .archive-item-meta {
-                    flex-direction: column;
-                    gap: 0.3rem;
-                }
-            }
-        </style>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Curtis Mei</span>
+        <footer class="studio-footer">
+            <span>© 2026 Curtis Studio</span>
+            <span class="studio-monogram">C/S</span>
+            <span class="studio-footer-right">Logbook for agent systems and interface notes</span>
+        </footer>
     </div>
-</footer>
-    </div>
-    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
 </body>
 </html>
-

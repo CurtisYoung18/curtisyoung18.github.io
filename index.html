@@ -1,168 +1,110 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-
-
-
-    <meta name="description" content="Curtis の Home">
-
-
-    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-
-
-<title>Curtis の Home</title>
-
-
-
+    <meta name="description" content="Curtis Studio designs and ships production AI systems with interface taste.">
+    <meta name="keywords" content="Curtis Studio, AI Agent, RAG, Tool Calling, Product Engineering, Portfolio">
+    <title>Curtis Studio</title>
     <link rel="icon" href="/favicon.ico">
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/mobile.css">
-    
-        
-    
-
-
-<meta name="generator" content="Hexo 4.2.1">
-    
+    <link rel="stylesheet" href="/css/studio.css">
+    <script defer src="/js/studio-ai-config.js"></script>
+    <script defer src="/js/studio.js"></script>
 </head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
-            <div class="menu navbar-right">
-                <a class="menu-item" href="/archives">Posts</a>
-                <a class="menu-item" href="/products">Products</a>
-                <a class="menu-item" href="/collection">Collections</a>
-                <a class="menu-item" href="/about">About</a>
+<body class="studio-body">
+    <div class="studio-shell">
+        <header class="studio-nav" aria-label="Primary navigation">
+            <a class="studio-brand" href="/" aria-label="Curtis Studio home">
+                <span class="studio-brand-dot" aria-hidden="true"></span>
+                <span>Curtis Studio</span>
+            </a>
+            <div class="studio-nav-right">
+                <button class="studio-mode" type="button" data-studio-mode aria-pressed="false">[ Studio Mode ]</button>
+                <nav class="studio-nav-links" aria-label="Site links">
+                    <a href="/products">Work</a>
+                    <a href="/archives">Log</a>
+                    <a href="/about">About</a>
+                </nav>
+                <span class="studio-grid-mark" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </span>
             </div>
+        </header>
 
-        </div>
-    </nav>
+        <main class="studio-hero">
+            <section class="studio-copy" aria-labelledby="studio-title">
+                <p class="studio-kicker">AI Systems Studio</p>
+                <h1 class="studio-title" id="studio-title">AI systems<br>with interface taste<span class="studio-pulse">.</span></h1>
+                <p class="studio-description">
+                    I design and build production AI systems from agent deployment to RAG pipelines,
+                    tool-calling workflows, and customer interfaces that actually work.
+                </p>
 
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container" style="position:relative;">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Curtis の Home</a>
+                <a class="studio-update" href="/archives">
+                    <strong>2026.06</strong>
+                    <span>Now building agent-facing product systems</span>
+                    <b aria-hidden="true">↗</b>
+                </a>
+
+                <form class="studio-command" data-studio-command data-response="studio-home-response">
+                    <span class="studio-command-label" aria-hidden="true">&gt;</span>
+                    <input type="search" name="studio-query" aria-label="Ask Curtis Studio" placeholder="Ask the studio what to build next...">
+                    <button type="submit" aria-label="Ask">↵</button>
+                </form>
+                <div class="studio-response" id="studio-home-response" role="status" aria-live="polite"></div>
+
+                <div class="studio-index" aria-label="Studio sections">
+                    <a class="studio-index-row" href="/products">
+                        <span class="studio-index-number">01</span>
+                        <span class="studio-index-title">Systems <small>Shipped AI systems in production</small></span>
+                        <span class="studio-index-arrow" aria-hidden="true">→</span>
+                        <span class="studio-system-list" aria-label="Featured systems">
+                            <span><em>01</em><b>MY_MAP</b><em>// RAG + Agent</em></span>
+                            <span><em>02</em><b>Live Chat Widget Integration</b><em>// Support AI</em></span>
+                            <span><em>03</em><b>Food Poisoning Questionnaire System</b><em>// Diagnostic AI</em></span>
+                            <span><em>04</em><b>AI Model Modulation</b><em>// Evaluation</em></span>
+                        </span>
+                    </a>
+                    <a class="studio-index-row" href="/products/development/">
+                        <span class="studio-index-number">02</span>
+                        <span class="studio-index-title">Prototypes <small>Interfaces, tools, and product experiments</small></span>
+                        <span class="studio-index-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="studio-index-row" href="/archives">
+                        <span class="studio-index-number">03</span>
+                        <span class="studio-index-title">Notes <small>Thinking, patterns, and engineering observations</small></span>
+                        <span class="studio-index-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="studio-index-row" href="/about">
+                        <span class="studio-index-number">04</span>
+                        <span class="studio-index-title">Studio Method <small>How I design, build, and ship</small></span>
+                        <span class="studio-index-arrow" aria-hidden="true">→</span>
+                    </a>
                 </div>
-                <div class="menu-toggle" onclick="mobileBtn()" id="mobile-menu-toggle">&#9776; Menu</div>
-            </div>
-            <div class="dropdown-menu" id="mobile-dropdown-menu">
-                <a class="menu-item" href="/archives">Posts</a>
-                <a class="menu-item" href="/products">Products</a>
-                <a class="menu-item" href="/collection">Collections</a>
-                <a class="menu-item" href="/about">About</a>
-            </div>
-        </div>
-    </nav>
+            </section>
 
-</header>
-<script>
-    var mobileBtn = function f() {
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (dropdown.classList.contains("active")) {
-            dropdown.classList.remove("active");
-        } else {
-            dropdown.classList.add("active");
-        }
-    }
-    // 点击菜单外部关闭下拉
-    document.addEventListener('click', function(event) {
-        var toggle = document.getElementById("mobile-menu-toggle");
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
-            dropdown.classList.remove("active");
-        }
-    });
-</script>
-        <div class="main">
-            
-    <div class="container">
-    <div class="intro">
-        <div class="avatar">
-            <a href="/about"><img src="/images/profile.JPG"></a>
-        </div>
-        <div class="nickname">Curtis</div>
-        <div class="description"><p><span class="typing-effect">🚀 Agent Deployment Engineer | Software Engineer | Open Source Enthusiast</span></p>
-</div>
-        <div class="links">
-            
-                
-                    <a class="link-item" title="Blog" href="/archives">
-                        
-                        
-                            <i class="iconfont icon-blog"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Resume" href="/about">
-                        
-                        
-                            <i class="iconfont icon-resume"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Instagram" href="https://www.instagram.com/magicyoung63" target="_blank" rel="noopener">
-                        
-                        
-                            <i class="iconfont icon-instagram"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Github" href="https://github.com/CurtisYoung18" target="_blank" rel="noopener">
-                        
-                            <i class="iconfont icon-github"></i>
-                        
-                    </a>
-                
-                    <!-- <a class="link-item" title="LinkedIn" href="https://www.linkedin.com/in/curtis-mei" target="_blank" rel="noopener">
-                        
-                            <i class="iconfont icon-linkedin"></i>
-                        
-                    </a> -->
-                
-                    <a class="link-item" title="Contact" href="/contact">
-                        
-                            <i class="iconfont icon-contact"></i>
-                        
-                    </a>
-                
-        </div>
-    </div>
-</div>
+            <aside class="studio-visual" aria-label="AI system visual">
+                <div class="studio-aperture">
+                    <img src="/images/studio/system-aperture.png" alt="Atmospheric AI agent workflow scene with user input, tool layer, knowledge layer, agent, and response modules.">
+                </div>
+                <div class="studio-orbit" aria-hidden="true">
+                    <span>01</span>
+                    <span>02</span>
+                    <span>03</span>
+                    <span>04</span>
+                </div>
+            </aside>
+        </main>
 
-
-        </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Curtis Mei</span>
+        <footer class="studio-footer">
+            <span>© 2026 Curtis Studio</span>
+            <span class="studio-monogram">C/S</span>
+            <span class="studio-footer-right">Shenzhen · Shanghai · UTC+8</span>
+        </footer>
     </div>
-</footer>
-    </div>
-    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
 </body>
 </html>
-

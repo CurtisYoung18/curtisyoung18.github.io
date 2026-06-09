@@ -2,310 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-    <meta name="description" content="Curtis の Home">
-    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-    <title>Products | Curtis の Home</title>
+    <meta name="description" content="Selected AI systems, prototypes, and product engineering work by Curtis Studio.">
+    <meta name="keywords" content="Curtis Studio, AI Projects, Agent Systems, RAG, Product Engineering">
+    <title>Work | Curtis Studio</title>
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/mobile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .products-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .products-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .products-header h2 {
-            font-size: 3.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .products-header p {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .category-card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            height: 500px;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
-
-        .category-card:hover::before {
-            opacity: 1;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(52, 152, 219, 0.3);
-            border-color: rgba(52, 152, 219, 0.4);
-        }
-
-        .category-image {
-            width: 100%;
-            height: 60%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .category-card:hover .category-image {
-            transform: scale(1.1);
-        }
-
-        .category-content {
-            position: relative;
-            padding: 2rem;
-            z-index: 2;
-            height: 40%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .category-title {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin: 0 0 1rem 0;
-            font-weight: 700;
-        }
-
-        .category-description {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .category-arrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #3498db;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .category-arrow {
-            transform: translateX(10px);
-        }
-
-        .category-arrow i {
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .category-arrow i {
-            transform: translateX(5px);
-        }
-
-        /* Dark mode support */
-        .dark .category-content {
-            background: rgba(30, 30, 30, 0.95);
-        }
-
-        .dark .category-title {
-            color: #ecf0f1;
-        }
-
-        .dark .category-description {
-            color: #bdc3c7;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .categories-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .category-card {
-                height: 400px;
-            }
-
-            .products-header h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* 下拉菜单样式 */
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100%;
-            margin: 0 auto;
-            width: 92vw;
-            max-width: 340px;
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(31,38,135,0.18);
-            z-index: 1001;
-            flex-direction: column;
-            padding: 1rem 0.5rem;
-            transition: opacity 0.3s, transform 0.3s;
-            opacity: 0;
-            pointer-events: none;
-        }
-        .dropdown-menu.active {
-            display: flex;
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(8px);
-        }
-        .dropdown-menu .menu-item {
-            font-size: 1.1rem;
-            color: #2c3e50;
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-            margin: 0.1rem 0;
-        }
-        .dropdown-menu .menu-item:hover {
-            background: rgba(52,152,219,0.12);
-            color: #3498db;
-        }
-        @media (min-width: 769px) {
-            .navbar-mobile { display: none; }
-        }
-    </style>
-    <script>
-        var mobileBtn = function f() {
-            var dropdown = document.getElementById("mobile-dropdown-menu");
-            if (dropdown.classList.contains("active")) {
-                dropdown.classList.remove("active");
-            } else {
-                dropdown.classList.add("active");
-            }
-        }
-        document.addEventListener('click', function(event) {
-            var toggle = document.getElementById("mobile-menu-toggle");
-            var dropdown = document.getElementById("mobile-dropdown-menu");
-            if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.remove("active");
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="/css/studio.css">
+    <script defer src="/js/studio-ai-config.js"></script>
+    <script defer src="/js/studio.js"></script>
 </head>
-<body>
-    <div class="wrapper">
-        <header>
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
-                    <div class="menu navbar-right">
-                        <a class="menu-item" href="/archives">Posts</a>
-                        <a class="menu-item" href="/products">Products</a>
-                        <a class="menu-item" href="/collection">Collections</a>
-                        <a class="menu-item" href="/about">About</a>
-                    </div>
-                </div>
-            </nav>
-
-            <nav class="navbar-mobile" id="nav-mobile">
-                <div class="container" style="position:relative;">
-                    <div class="navbar-header">
-                        <div>
-                            <a href="/">Curtis の Home</a>
-                        </div>
-                        <div class="menu-toggle" onclick="mobileBtn()" id="mobile-menu-toggle">&#9776; Menu</div>
-                    </div>
-                    <div class="dropdown-menu" id="mobile-dropdown-menu">
-                        <a class="menu-item" href="/archives">Posts</a>
-                        <a class="menu-item" href="/products">Products</a>
-                        <a class="menu-item" href="/collection">Collections</a>
-                        <a class="menu-item" href="/about">About</a>
-                    </div>
-                </div>
-            </nav>
+<body class="studio-body">
+    <div class="studio-shell">
+        <header class="studio-nav" aria-label="Primary navigation">
+            <a class="studio-brand" href="/" aria-label="Curtis Studio home">
+                <span class="studio-brand-dot" aria-hidden="true"></span>
+                <span>Curtis Studio</span>
+            </a>
+            <div class="studio-nav-right">
+                <button class="studio-mode" type="button" data-studio-mode aria-pressed="false">[ Studio Mode ]</button>
+                <nav class="studio-nav-links" aria-label="Site links">
+                    <a href="/products" aria-current="page">Work</a>
+                    <a href="/archives">Log</a>
+                    <a href="/about">About</a>
+                </nav>
+                <span class="studio-grid-mark" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </span>
+            </div>
         </header>
 
-        <div class="main">
-            <div class="container">
-                <div class="products-container">
-                    <div class="products-header">
-                        <h2>Products</h2>
-                        <p>Explore my projects across AI research and web development</p>
-                    </div>
-                    <div class="categories-grid">
-                        <a href="/products/ai/" class="category-card">
-                            <img src="/images/products/AIM.png" alt="AI Projects" class="category-image">
-                            <div class="category-content">
-                                <h3 class="category-title">AI Related</h3>
-                                <p class="category-description">Research and Deployment projects in artificial intelligence, machine learning, and agent systems.</p>
-                                <span class="category-arrow">
-                                    Explore <i class="fas fa-arrow-right"></i>
-                                </span>
-                            </div>
-                        </a>
-                        <a href="/products/development/" class="category-card">
-                            <img src="/images/products/portfolio.png" alt="Development Projects" class="category-image">
-                            <div class="category-content">
-                                <h3 class="category-title">Development Related</h3>
-                                <p class="category-description">Full-stack web applications, tools, and platforms built with modern technologies.</p>
-                                <span class="category-arrow">
-                                    Explore <i class="fas fa-arrow-right"></i>
-                                </span>
-                            </div>
-                        </a>
-                    </div>
+        <main class="studio-work">
+            <section class="studio-work-hero" aria-labelledby="work-title">
+                <div>
+                    <p class="studio-kicker">Selected Work</p>
+                    <h1 id="work-title">Systems for real-world AI work.</h1>
                 </div>
-            </div>
-        </div>
+                <div>
+                    <p class="studio-work-intro">
+                        A curated index of agent interfaces, RAG pipelines, tool-calling workflows,
+                        and product prototypes. Each piece is framed by the problem it solves,
+                        the stack behind it, and the result it is meant to create.
+                    </p>
+                    <form class="studio-command" data-studio-command data-response="studio-work-response">
+                        <span class="studio-command-label" aria-hidden="true">&gt;</span>
+                        <input type="search" name="studio-query" aria-label="Find a relevant case study" placeholder="Find a case study...">
+                        <button type="submit" aria-label="Find">↵</button>
+                    </form>
+                    <div class="studio-response" id="studio-work-response" role="status" aria-live="polite"></div>
+                </div>
+            </section>
 
-        <footer id="footer" class="footer">
-            <div class="copyright">
-                <span>© Curtis Mei</span>
-            </div>
+            <section aria-label="Work filters">
+                <div class="studio-filter-bar">
+                    <button class="is-active" type="button" data-work-filter="all">All</button>
+                    <button type="button" data-work-filter="systems">Agent Systems</button>
+                    <button type="button" data-work-filter="prototype">Product Prototypes</button>
+                    <button type="button" data-work-filter="research">Research</button>
+                </div>
+            </section>
+
+            <section class="studio-work-list" aria-label="Selected case studies">
+                <article class="studio-work-item" data-work-category="systems">
+                    <span class="studio-work-number">01</span>
+                    <div class="studio-work-title">
+                        <h2>MY_MAP</h2>
+                        <p>AI-powered mapping assistant for plan creation, route intelligence, and location-aware recommendations.</p>
+                    </div>
+                    <p class="studio-work-problem">
+                        <span class="studio-work-label">Problem</span>
+                        Travel planning is fragmented across maps, notes, routes, and personal constraints.
+                    </p>
+                    <div>
+                        <span class="studio-work-label">Stack</span>
+                        <div class="studio-stack">
+                            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>OpenAI</span><span>Leaflet</span>
+                        </div>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="https://my-map-curtis.vercel.app/assistant/intro" target="_blank" rel="noopener">Demo ↗</a>
+                        <a href="https://github.com/CurtisYoung18/MY_MAP" target="_blank" rel="noopener">GitHub ↗</a>
+                    </div>
+                </article>
+
+                <article class="studio-work-item" data-work-category="systems">
+                    <span class="studio-work-number">02</span>
+                    <div class="studio-work-title">
+                        <h2>Live Chat Widget Integration</h2>
+                        <p>Embeddable AI chat for websites with knowledge-base answers, handoff, and customer-service workflows.</p>
+                    </div>
+                    <p class="studio-work-problem">
+                        <span class="studio-work-label">Problem</span>
+                        Support teams need an AI layer that can answer, route, and escalate without breaking the existing site.
+                    </p>
+                    <div>
+                        <span class="studio-work-label">Stack</span>
+                        <div class="studio-stack">
+                            <span>Next.js</span><span>OpenAI</span><span>Widget UI</span><span>RAG</span><span>Vercel</span>
+                        </div>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="https://v0-i-gaming.vercel.app" target="_blank" rel="noopener">Demo ↗</a>
+                    </div>
+                </article>
+
+                <article class="studio-work-item" data-work-category="systems">
+                    <span class="studio-work-number">03</span>
+                    <div class="studio-work-title">
+                        <h2>Food Poisoning Questionnaire System</h2>
+                        <p>Conversational intake and questionnaire management for health triage and structured risk guidance.</p>
+                    </div>
+                    <p class="studio-work-problem">
+                        <span class="studio-work-label">Problem</span>
+                        Users need clear guidance while nursing teams need safer, more complete structured intake data.
+                    </p>
+                    <div>
+                        <span class="studio-work-label">Stack</span>
+                        <div class="studio-stack">
+                            <span>FastAPI</span><span>OpenAI</span><span>PostgreSQL</span><span>RAG</span><span>Docker</span>
+                        </div>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="https://gptbots-poc.vercel.app" target="_blank" rel="noopener">Demo ↗</a>
+                        <a href="https://github.com/CurtisYoung18/v0-poc" target="_blank" rel="noopener">GitHub ↗</a>
+                    </div>
+                </article>
+
+                <article class="studio-work-item" data-work-category="research">
+                    <span class="studio-work-number">04</span>
+                    <div class="studio-work-title">
+                        <h2>AI Model Modulation</h2>
+                        <p>Research-backed model modulation with logits redistribution for controlled model behaviors.</p>
+                    </div>
+                    <p class="studio-work-problem">
+                        <span class="studio-work-label">Problem</span>
+                        Teams need consistent model behavior across complex contexts without relying only on prompt wording.
+                    </p>
+                    <div>
+                        <span class="studio-work-label">Stack</span>
+                        <div class="studio-stack">
+                            <span>Python</span><span>PyTorch</span><span>Evaluation</span><span>WWW 2025</span>
+                        </div>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" rel="noopener">Paper ↗</a>
+                        <a href="https://github.com/UQ-Trust-Lab/AIM" target="_blank" rel="noopener">GitHub ↗</a>
+                    </div>
+                </article>
+
+                <article class="studio-work-item" data-work-category="systems">
+                    <span class="studio-work-number">05</span>
+                    <div class="studio-work-title">
+                        <h2>Email Processing System</h2>
+                        <p>Cleaning and transforming email archives into RAG-ready knowledge-base material.</p>
+                    </div>
+                    <p class="studio-work-problem">
+                        <span class="studio-work-label">Problem</span>
+                        Raw email data is noisy, inconsistent, and hard to retrieve from without a reliable preparation pipeline.
+                    </p>
+                    <div>
+                        <span class="studio-work-label">Stack</span>
+                        <div class="studio-stack">
+                            <span>Python</span><span>LLM</span><span>RAG</span><span>Data Cleaning</span>
+                        </div>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="https://github.com/CurtisYoung18/Eml_process_platform" target="_blank" rel="noopener">GitHub ↗</a>
+                    </div>
+                </article>
+
+                <article class="studio-work-item" data-work-category="prototype">
+                    <span class="studio-work-number">06</span>
+                    <div class="studio-work-title">
+                        <h2>GreenGo / Portfolio Systems</h2>
+                        <p>Product interface experiments across community platforms, data views, and full-stack web prototypes.</p>
+                    </div>
+                    <p class="studio-work-problem">
+                        <span class="studio-work-label">Problem</span>
+                        Early products need convincing interface prototypes before engineering and product decisions harden.
+                    </p>
+                    <div>
+                        <span class="studio-work-label">Stack</span>
+                        <div class="studio-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
+                        </div>
+                    </div>
+                    <div class="studio-work-actions">
+                        <a href="/products/development/">Explore ↗</a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="studio-lab-panel" aria-label="Studio method">
+                <h2>From ambiguous workflow to shipped AI surface.</h2>
+                <div>
+                    <p>
+                        The studio method is intentionally small: map the workflow, define the tool and knowledge layers,
+                        design the interface contract, then evaluate whether the system actually helps users complete the job.
+                    </p>
+                    <p>
+                        The next version of this page can connect the command bar to a real AI assistant that answers from
+                        project notes, case studies, and implementation logs.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="studio-footer">
+            <span>© 2026 Curtis Studio</span>
+            <span class="studio-monogram">C/S</span>
+            <span class="studio-footer-right">Available for AI systems and product prototypes</span>
         </footer>
     </div>
-    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="299"></script>
 </body>
 </html>
