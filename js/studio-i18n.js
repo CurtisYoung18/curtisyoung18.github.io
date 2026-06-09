@@ -120,13 +120,7 @@
     "Logbook for agent systems and interface notes": "Agent 系统与界面笔记的日志簿"
   };
 
-  var zhAttributes = {
-    "Ask about agents, RAG, or support workflows...": "问 Agent、RAG 或客服流程...",
-    "Ask the studio what to build next...": "问工作室下一步该构建什么...",
-    "Find a case study...": "查找相关案例...",
-    "Ask about method...": "询问方法...",
-    "Ask which note to read...": "询问该读哪篇笔记..."
-  };
+  var zhAttributes = {};
 
   var titles = {
     "/": { en: "Curtis Studio", zh: "Curtis Studio | AI 系统工作室" },

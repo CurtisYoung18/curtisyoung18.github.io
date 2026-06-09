@@ -2,14 +2,6 @@
 
 > Current site direction: Curtis Studio, a personal studio for AI systems with interface taste.
 
-## Studio AI
-
-The command bars on the homepage, Work, About, and Log pages can call DeepSeek through a secure proxy. Because this is a static GitHub Pages site, never put the API key in browser JavaScript.
-
-- Frontend config: `js/studio-ai-config.js`
-- Worker proxy template: `functions/deepseek-studio-assistant.worker.js`
-- Setup notes: `docs/deepseek-ai.md`
-
 ---
 
 🚀 **M.Sc. Student in Information Technology | AI Researcher | Full-Stack Developer**
