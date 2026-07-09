@@ -5,100 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Curtis Mei">
-    <meta name="description" content="Curtis Studio is Zhiyang Mei's personal studio for agent systems, RAG workflows, and product interfaces that hold up outside the demo.">
-    <meta name="keywords" content="Curtis Studio, AI Agent, RAG, Tool Calling, Product Engineering, Portfolio">
+    <meta name="description" content="Curtis Mei builds AI agent systems, RAG workflows, product interfaces, and small tools that turn messy AI work into usable software.">
+    <meta name="keywords" content="Curtis Mei, Curtis Studio, AI Agent, RAG, Tool Calling, Product Engineering, Personal Website">
+    <meta property="og:title" content="Curtis Studio">
+    <meta property="og:description" content="AI systems, product interfaces, engineering notes, and personal collections by Curtis Mei.">
+    <meta property="og:image" content="/images/hero/rain-window-boy-poster.png">
+    <meta property="og:type" content="website">
     <title>Curtis Studio</title>
-    <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/studio.css">
-    <script defer src="/js/studio-i18n.js"></script>
-    <script defer src="/js/studio.js"></script>
+    
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/curtis-avatar-favicon-20260707.png?v=20260707-11">
+    <link rel="shortcut icon" href="/favicon.ico?v=20260707-11">
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/hero/curtis-avatar-favicon-20260707.png?v=20260707-11">
+<link rel="preload" as="video" href="/images/hero/rain-window-boy-loop.mp4" type="video/mp4">
+    <script defer src="/js/studio-i18n.js?v=20260707-1"></script>
+    <script defer src="/js/studio.js?v=20260707-2"></script>
+    <link rel="stylesheet" href="/css/studio.css?v=20260707-15">
 </head>
-<body class="studio-body">
-    <div class="studio-shell">
-        <header class="studio-nav" aria-label="Primary navigation">
-            <a class="studio-brand" href="/" aria-label="Curtis Studio home">
-                <span class="studio-brand-dot" aria-hidden="true"></span>
-                <span>Curtis Studio</span>
+<body class="studio-body studio-home-body">
+    <main class="studio-home-page">
+        <header class="studio-topbar">
+            <a class="studio-update-notice" href="/archives/2026/02/%E5%BD%93%20Agent%20%E5%AD%A6%E4%BC%9A%E5%81%B7%E6%87%92%EF%BC%9A%E4%B8%80%E6%AC%A1%20Tool%20Calling%20%E5%A4%B1%E6%95%88%E7%9A%84%E6%8E%92%E6%9F%A5%E5%AE%9E%E5%BD%95/">
+                <span class="studio-update-date">2026.02</span>
+                <span class="studio-update-text">Latest note</span>
+                <span class="studio-update-link">Tool calling failure analysis</span>
             </a>
-            <div class="studio-nav-right">
-                <button class="studio-mode" type="button" data-studio-mode aria-pressed="false">[ Studio Mode ]</button>
-                <nav class="studio-nav-links" aria-label="Site links">
-                    <a href="/products">Work</a>
-                    <a href="/archives">Log</a>
-                    <a href="/about">About</a>
-                </nav>
-                <span class="studio-grid-mark" aria-hidden="true">
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
-                </span>
-            </div>
+            <div class="studio-topbar-controls studio-nav-right" aria-label="Page controls"></div>
         </header>
 
-        <main class="studio-hero">
-            <section class="studio-copy" aria-labelledby="studio-title">
-                <p class="studio-kicker">Agent systems / product UI</p>
-                <h1 class="studio-title" id="studio-title">AI agents,<br>beyond the demo<span class="studio-pulse">.</span></h1>
-                <p class="studio-description">
-                    I work on the unglamorous parts that decide whether an AI product can ship:
-                    tool calls, retrieval misses, handoff rules, evaluation traces, and the interface
-                    details users actually touch.
-                </p>
+        <section class="studio-intro" aria-labelledby="studio-title">
+            <h1 id="studio-title">Curtis Mei</h1>
+            <p>
+                AI systems, product prototypes, and tooling for agent workflows. I turn
+                messy RAG, tool-calling, evaluation, and support flows into small software
+                surfaces people can actually use. Based in Shenzhen - nice to meet you.
+            </p>
 
-                <a class="studio-update" href="/archives">
-                    <strong>2026.06</strong>
-                    <span>Turning agent workflows into product surfaces</span>
-                    <b aria-hidden="true">↗</b>
+            <nav class="studio-social-links" aria-label="Social links">
+                <a class="studio-social-link" href="https://github.com/curtisyoung18" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">⌘</span>
+                    <span class="studio-social-name">GitHub</span>
                 </a>
+                <span class="studio-social-divider" aria-hidden="true">·</span>
+                <a class="studio-social-link" href="/about/">
+                    <span aria-hidden="true">C</span>
+                    <span class="studio-social-name">About</span>
+                </a>
+                <span class="studio-social-divider" aria-hidden="true">·</span>
+                <a class="studio-social-link" href="mailto:meizhiyang@gmail.com">
+                    <span aria-hidden="true">@</span>
+                    <span class="studio-social-name">Email</span>
+                </a>
+            </nav>
+        </section>
 
-                <div class="studio-index" aria-label="Studio sections">
-                    <a class="studio-index-row" href="/products">
-                        <span class="studio-index-number">01</span>
-                        <span class="studio-index-title">Systems <small>Agent work that has left the notebook</small></span>
-                        <span class="studio-index-arrow" aria-hidden="true">→</span>
-                        <span class="studio-system-list" aria-label="Featured systems">
-                            <span><em>01</em><b>MY_MAP</b><em>// RAG + Agent</em></span>
-                            <span><em>02</em><b>Live Chat Widget Integration</b><em>// Support AI</em></span>
-                            <span><em>03</em><b>Food Poisoning Questionnaire System</b><em>// Diagnostic AI</em></span>
-                            <span><em>04</em><b>AI Model Modulation</b><em>// Evaluation</em></span>
-                        </span>
-                    </a>
-                    <a class="studio-index-row" href="/products/development/">
-                        <span class="studio-index-number">02</span>
-                        <span class="studio-index-title">Prototypes <small>Small interfaces for messy workflows</small></span>
-                        <span class="studio-index-arrow" aria-hidden="true">→</span>
-                    </a>
-                    <a class="studio-index-row" href="/archives">
-                        <span class="studio-index-number">03</span>
-                        <span class="studio-index-title">Notes <small>Debug logs and product thinking</small></span>
-                        <span class="studio-index-arrow" aria-hidden="true">→</span>
-                    </a>
-                    <a class="studio-index-row" href="/about">
-                        <span class="studio-index-number">04</span>
-                        <span class="studio-index-title">Studio Method <small>How fuzzy AI work becomes shipped behavior</small></span>
-                        <span class="studio-index-arrow" aria-hidden="true">→</span>
-                    </a>
+        <section class="studio-crystal-globe-container" aria-label="Curtis Studio rainy workspace animation">
+            <div class="studio-crystal-globe-safe-area" id="feather-viewport" data-feather-viewport aria-label="Interactive feathered viewport">
+                <div class="studio-feather-viewport-inner">
+                    <div class="studio-feather-contents">
+                        <div class="studio-feather-layer studio-feather-sharp">
+                            <video autoplay loop muted playsinline poster="/images/hero/rain-window-boy-poster.png">
+                                <source src="/images/hero/rain-window-boy-loop.webm" type="video/webm">
+                                <source src="/images/hero/rain-window-boy-loop.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <canvas class="studio-feather-layer studio-feather-stars" data-feather-stars aria-hidden="true"></canvas>
+                    </div>
+                    <div class="studio-feather-layer studio-feather-veil" aria-hidden="true"></div>
                 </div>
-            </section>
+            </div>
+            <p class="studio-hero-caption">"Tools should feel quiet when they work, and honest when they fail."</p>
+        </section>
 
-            <aside class="studio-visual" aria-label="Curtis Studio profile visual">
-                <div class="studio-aperture studio-aperture-photo">
-                    <img src="/images/profile.png" alt="Zhiyang Mei at The Web Conference 2025 in Sydney.">
-                </div>
-                <div class="studio-orbit" aria-hidden="true">
-                    <span>01</span>
-                    <span>02</span>
-                    <span>03</span>
-                    <span>04</span>
-                </div>
-            </aside>
-        </main>
+        <section class="studio-home-section" aria-labelledby="studio-projects">
+            <div class="studio-section-header">
+                <h2 id="studio-projects" class="studio-section-label">01 Projects</h2>
+                <span class="studio-section-rule" aria-hidden="true"></span>
+            </div>
+            <article class="studio-project">
+                <a href="/products/">MY_MAP</a>
+                <p>AI-powered mapping assistant for plan creation, route intelligence, and location-aware recommendations.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/products/">Live Chat Widget Integration</a>
+                <p>Embeddable AI support chat with knowledge-base answers, handoff, and customer-service workflows.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/products/">Food Poisoning Questionnaire System</a>
+                <p>Conversational intake and questionnaire management for health triage and structured risk guidance.</p>
+            </article>
+        </section>
 
-        <footer class="studio-footer">
-            <span>© 2026 Curtis Studio</span>
-            <span class="studio-monogram">C/S</span>
-            <span class="studio-footer-right">Shenzhen · Shanghai · UTC+8</span>
-        </footer>
-    </div>
+        <section class="studio-home-section" aria-labelledby="studio-experiments">
+            <div class="studio-section-header">
+                <h2 id="studio-experiments" class="studio-section-label">02 Experiments</h2>
+                <span class="studio-section-rule" aria-hidden="true"></span>
+            </div>
+            <article class="studio-project">
+                <a href="/products/">AI Model Modulation</a>
+                <p>Research-backed model behavior control with logits redistribution and evaluation-facing framing.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/products/">Email Processing System</a>
+                <p>Cleaning and transforming email archives into retrieval-ready knowledge-base material.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/products/development/">GreenGo / Portfolio Systems</a>
+                <p>Interface experiments across community platforms, data views, and full-stack web prototypes.</p>
+            </article>
+        </section>
+
+        <section class="studio-home-section" aria-labelledby="studio-writings">
+            <div class="studio-section-header">
+                <h2 id="studio-writings" class="studio-section-label">03 Writings</h2>
+                <span class="studio-section-rule" aria-hidden="true"></span>
+            </div>
+            <article class="studio-project">
+                <a href="/archives/2026/02/%E5%BD%93%20Agent%20%E5%AD%A6%E4%BC%9A%E5%81%B7%E6%87%92%EF%BC%9A%E4%B8%80%E6%AC%A1%20Tool%20Calling%20%E5%A4%B1%E6%95%88%E7%9A%84%E6%8E%92%E6%9F%A5%E5%AE%9E%E5%BD%95/">When an agent learns to be lazy</a>
+                <p>A practical debugging note about tool calling failures in a real agent workflow.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/archives/2026/01/%E4%BB%8E%20smolagents%20%E8%81%8A%20Agent%20%E4%B8%8E%20Tool%20Calling/">From smolagents to agents and tool calling</a>
+                <p>An engineering-oriented look at how tools, model reasoning, and execution loops fit together.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/archives/2025/07/%E4%BB%8E%20Tool%20Calling%20%E6%9C%BA%E5%88%B6%E6%B5%85%E8%81%8A%20Agent%20%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%AE%9E%E7%8E%B0/">Tool calling as an agent interface</a>
+                <p>Engineering notes on function signatures, execution loops, and product-side safety expectations.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/archives/2025/11/%E5%85%B3%E4%BA%8E%E5%AE%A2%E6%9C%8D%E5%9C%BA%E6%99%AF%20Agent%20%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">Maintainability notes for support agents</a>
+                <p>Handoff boundaries, product ownership, and keeping support AI understandable.</p>
+            </article>
+        </section>
+
+        <section class="studio-home-section" aria-labelledby="studio-personal">
+            <div class="studio-section-header">
+                <h2 id="studio-personal" class="studio-section-label">04 What Shapes Me</h2>
+                <span class="studio-section-rule" aria-hidden="true"></span>
+            </div>
+            <article class="studio-project">
+                <a href="/archives/2025/05/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">Product design and user experience</a>
+                <p>Product design notes on interface feeling, user perception, and why capability still needs taste.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/archives/2025/06/%E6%88%91%E7%8E%A9%E8%BF%87%E7%9A%84%E6%B8%B8%E6%88%8F/">Games I have played</a>
+                <p>A softer archive of play memories and interface taste beyond work.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/archives/2024/12/%E6%88%91%E7%9A%84%E9%9F%B3%E4%B9%90%E6%94%B6%E8%97%8F/">Music collection</a>
+                <p>Notes on music, collection habits, and the small tools around them.</p>
+            </article>
+            <article class="studio-project">
+                <a href="/collection/">Collection</a>
+                <p>Personal shelves, references, and fragments that shape the studio identity.</p>
+            </article>
+        </section>
+
+        <section class="studio-home-section studio-contact-card" aria-labelledby="studio-contact">
+            <div class="studio-section-header">
+                <h2 id="studio-contact" class="studio-section-label">Contact</h2>
+                <span class="studio-section-rule" aria-hidden="true"></span>
+            </div>
+            <p>
+                If you want to talk about AI systems, product prototypes, or a workflow
+                that needs to become software, write to me. I read carefully.
+            </p>
+            <div class="studio-contact-links">
+                <a href="mailto:meizhiyang@gmail.com">meizhiyang@gmail.com</a>
+                <a href="https://github.com/curtisyoung18" target="_blank" rel="noopener noreferrer">github.com/curtisyoung18</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
