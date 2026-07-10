@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="MY_MAP case study: a natural-language route planning and POI recommendation assistant by Curtis Young.">
+  <meta name="theme-color" content="#081017">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MY_MAP Case Study | Curtis Young">
+  <meta property="og:description" content="From travel intent to an annotated, actionable route.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/my_map.png">
+  <link rel="canonical" href="https://curtisyoung18.github.io/products/my-map/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>MY_MAP Case Study | Curtis Young</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
+    }
+  </script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body
+  class="site-page case-page"
+  data-page="work"
+  data-title-en="MY_MAP Case Study | Curtis Young"
+  data-title-zh="MY_MAP 项目案例 | Curtis Young"
+  data-description-en="MY_MAP is a natural-language route planning and POI recommendation assistant."
+  data-description-zh="MY_MAP 是一款支持自然语言路线规划与沿途 POI 推荐的智能地图助手。"
+>
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="content-container case-hero__inner">
+          <aside class="case-rail" aria-label="Case index">
+            <span class="meta-text">CASE 01</span>
+            <div class="case-rail__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </aside>
+          <div>
+            <div class="case-intro reveal">
+              <div>
+                <p class="eyebrow">2026 · AI AGENT / MAPS</p>
+                <h1 class="display-title case-title" id="case-title">MY_MAP</h1>
+                <p class="case-subtitle"><span data-lang="en">Intelligent Map Assistant</span><span data-lang="zh">智能地图助手</span></p>
+                <p class="case-summary"><span data-lang="en">Natural-language route planning and POI discovery across China, designed to move from a loosely expressed travel need to a route a person can actually use.</span><span data-lang="zh">支持全国范围的自然语言路线规划与 POI 推荐，把模糊的出行需求转化为真正可执行的路线。</span></p>
+              </div>
+              <figure class="case-screen">
+                <img src="/images/products/my_map.png" alt="MY_MAP interface showing route planning and along-the-way recommendations">
+              </figure>
+              <div class="case-facts">
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
+                  <dd><span data-lang="en">AI Agent Engineering</span><span data-lang="zh">AI Agent 工程</span></dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
+                  <dd>Next.js · TypeScript · MapLibre</dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Services</span><span data-lang="zh">服务</span></dt>
+                  <dd>MiniMax · AMap API</dd>
+                </dl>
+                <div class="case-links">
+                  <a class="text-link" href="https://my-map-curtis.vercel.app/assistant/intro" target="_blank" rel="noopener"><span data-lang="en">Live demo</span><span data-lang="zh">在线演示</span><span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="https://github.com/CurtisYoung18/MY_MAP" target="_blank" rel="noopener">GitHub <span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-principles" aria-label="Project summary">
+        <div class="content-container case-principles__grid">
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">01</span>
+            <h2><span data-lang="en">Problem</span><span data-lang="zh">问题</span></h2>
+            <p><span data-lang="en">Conventional map tools expect structured inputs. Real travel requests arrive as incomplete sentences, preferences, and changing constraints.</span><span data-lang="zh">传统地图工具依赖结构化输入，而真实出行请求通常是残缺句子、偏好与不断变化的约束。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">02</span>
+            <h2><span data-lang="en">Approach</span><span data-lang="zh">方法</span></h2>
+            <p><span data-lang="en">Use an AI interaction layer to interpret intent, then call deterministic map services for geocoding, routing, and POI search.</span><span data-lang="zh">由 AI 交互层理解意图，再调用确定性的地图服务完成地理编码、路径规划与 POI 搜索。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">03</span>
+            <h2><span data-lang="en">Result</span><span data-lang="zh">结果</span></h2>
+            <p><span data-lang="en">One conversation produces an annotated route with distance, time, toll estimates, waypoints, and useful stops along the way.</span><span data-lang="zh">一次对话即可生成带距离、时间、过路费、途经点与沿途服务推荐的标注路线。</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-story surface-paper" aria-labelledby="story-title">
+        <div class="content-container">
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Intent first</span><span data-lang="zh">从意图开始</span></p>
+              <h2 id="story-title"><span data-lang="en">Make the input human.</span><span data-lang="zh">让输入保持自然。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">A user can ask, “From Shenzhen Nanshan Science Park to Longhua Dalang, via Bao'an Shajing,” without learning a form or breaking the request into fields. The assistant extracts origin, destination, waypoints, and service preferences before route construction.</span><span data-lang="zh">用户可以直接说“从深圳南山科技园到龙华大浪，途经宝安沙井”，无需学习表单或拆分字段。助手会先提取起点、终点、途经点与服务偏好，再开始规划。</span></p>
+              <div class="process-list">
+                <div class="process-item"><span class="meta-text work-index">01</span><strong><span data-lang="en">Interpret places and constraints</span><span data-lang="zh">解析地点与约束</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">02</span><strong><span data-lang="en">Build and visualize the route</span><span data-lang="zh">构建并可视化路线</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">03</span><strong><span data-lang="en">Enrich the journey with POIs</span><span data-lang="zh">用 POI 丰富沿途体验</span></strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Engineering boundary</span><span data-lang="zh">工程边界</span></p>
+              <h2><span data-lang="en">Let models interpret. Let services calculate.</span><span data-lang="zh">让模型理解，让服务计算。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">The model handles language and intent. AMap services handle route geometry, duration, distance, toll estimates, and search results. MapLibre GL owns the visual representation. Keeping these responsibilities explicit makes the system easier to inspect and evolve.</span><span data-lang="zh">模型负责语言与意图，高德服务负责路线几何、时长、距离、过路费估算与搜索结果，MapLibre GL 负责可视化。明确职责边界，让系统更容易检查与演进。</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="content-container">
+          <a class="case-next__link" href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" rel="noopener">
+            <span><span class="meta-text"><span data-lang="en">Next project</span><span data-lang="zh">下一个项目</span></span><strong>AIM</strong></span>
+            <span class="button__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
+</body>
+</html>

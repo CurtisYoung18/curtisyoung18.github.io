@@ -1,168 +1,226 @@
-<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html lang="en" data-language="en">
 <head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="author" content="Curtis Mei">
-
-
-
-    <meta name="description" content="Curtis の Home">
-
-
-    <meta name="keywords" content="CurtisMei, Portfolio, Blog, Software Developer, Machine Learning">
-
-
-<title>Curtis の Home</title>
-
-
-
-    <link rel="icon" href="/favicon.ico">
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/mobile.css">
-    
-        
-    
-
-
-<meta name="generator" content="Hexo 4.2.1">
-    
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Curtis の Home</a></div>
-            <div class="menu navbar-right">
-                <a class="menu-item" href="/archives">Posts</a>
-                <a class="menu-item" href="/products">Products</a>
-                <a class="menu-item" href="/collection">Collections</a>
-                <a class="menu-item" href="/about">About</a>
-            </div>
-
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container" style="position:relative;">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Curtis の Home</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()" id="mobile-menu-toggle">&#9776; Menu</div>
-            </div>
-            <div class="dropdown-menu" id="mobile-dropdown-menu">
-                <a class="menu-item" href="/archives">Posts</a>
-                <a class="menu-item" href="/products">Products</a>
-                <a class="menu-item" href="/collection">Collections</a>
-                <a class="menu-item" href="/about">About</a>
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (dropdown.classList.contains("active")) {
-            dropdown.classList.remove("active");
-        } else {
-            dropdown.classList.add("active");
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="Curtis Young builds reliable AI agents, product systems, and digital experiences.">
+  <meta name="keywords" content="Curtis Young, AI Agents, Agent Deployment Engineer, Software Engineer, Portfolio">
+  <meta name="theme-color" content="#081017">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Curtis Young | Agent Deployment Engineer">
+  <meta property="og:description" content="AI agents, product systems, and digital spaces.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/hero/rain-window-boy-poster.png">
+  <meta property="og:url" content="https://curtisyoung18.github.io/">
+  <link rel="canonical" href="https://curtisyoung18.github.io/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="preload" href="/images/hero/rain-window-boy-poster.png" as="image">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Curtis Young | Agent Deployment Engineer</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
     }
-    // 点击菜单外部关闭下拉
-    document.addEventListener('click', function(event) {
-        var toggle = document.getElementById("mobile-menu-toggle");
-        var dropdown = document.getElementById("mobile-dropdown-menu");
-        if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
-            dropdown.classList.remove("active");
-        }
-    });
-</script>
-        <div class="main">
-            
-    <div class="container">
-    <div class="intro">
-        <div class="avatar">
-            <a href="/about"><img src="/images/profile.JPG"></a>
+  </script>
+  <script src="/js/script.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Zhiyang Mei",
+      "alternateName": "Curtis Young",
+      "url": "https://curtisyoung18.github.io/",
+      "jobTitle": "Agent Deployment Engineer",
+      "sameAs": ["https://github.com/CurtisYoung18"]
+    }
+  </script>
+</head>
+<body
+  class="site-page home-page"
+  data-page="home"
+  data-title-en="Curtis Young | Agent Deployment Engineer"
+  data-title-zh="Curtis Young | AI Agent 部署工程师"
+  data-description-en="Curtis Young builds reliable AI agents, product systems, and digital experiences."
+  data-description-zh="Curtis Young 专注于可靠的 AI Agent、产品系统与数字体验。"
+>
+  <a class="skip-link" href="#main-content">
+    <span data-lang="en">Skip to content</span>
+    <span data-lang="zh">跳到正文</span>
+  </a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="home-hero" aria-labelledby="home-title">
+        <div class="home-hero__media" aria-hidden="true">
+          <video autoplay muted loop playsinline poster="/images/hero/rain-window-boy-poster.png">
+            <source src="/images/hero/rain-window-boy-loop.webm" type="video/webm">
+            <source src="/images/hero/rain-window-boy-loop.mp4" type="video/mp4">
+            <img src="/images/hero/rain-window-boy-poster.png" alt="">
+          </video>
         </div>
-        <div class="nickname">Curtis</div>
-        <div class="description"><p><span class="typing-effect">🚀 Agent Deployment Engineer | Software Engineer | Open Source Enthusiast</span></p>
-</div>
-        <div class="links">
-            
-                
-                    <a class="link-item" title="Blog" href="/archives">
-                        
-                        
-                            <i class="iconfont icon-blog"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Resume" href="/about">
-                        
-                        
-                            <i class="iconfont icon-resume"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Instagram" href="https://www.instagram.com/magicyoung63" target="_blank" rel="noopener">
-                        
-                        
-                            <i class="iconfont icon-instagram"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Github" href="https://github.com/CurtisYoung18" target="_blank" rel="noopener">
-                        
-                            <i class="iconfont icon-github"></i>
-                        
-                    </a>
-                
-                    <!-- <a class="link-item" title="LinkedIn" href="https://www.linkedin.com/in/curtis-mei" target="_blank" rel="noopener">
-                        
-                            <i class="iconfont icon-linkedin"></i>
-                        
-                    </a> -->
-                
-                    <a class="link-item" title="Contact" href="/contact">
-                        
-                            <i class="iconfont icon-contact"></i>
-                        
-                    </a>
-                
-        </div>
-    </div>
-</div>
+        <div class="home-hero__content">
+          <div class="home-copy reveal">
+            <p class="eyebrow">
+              <span data-lang="en">Agent Deployment Engineer</span>
+              <span data-lang="zh">AI Agent 部署工程师</span>
+            </p>
+            <h1 class="home-title" id="home-title"><span>Curtis</span><span>Young</span></h1>
+            <p class="home-tagline">
+              <span data-lang="en">AI agents, product systems, digital spaces.</span>
+              <span data-lang="zh">AI Agent、产品系统与数字空间。</span>
+            </p>
+            <div class="home-actions">
+              <a class="button button--primary" href="/products/">
+                <span data-lang="en">View work</span>
+                <span data-lang="zh">查看作品</span>
+                <span class="button__arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="button button--outline-dark" href="/about/#contact">
+                <span data-lang="en">Contact</span>
+                <span data-lang="zh">联系我</span>
+              </a>
+            </div>
+          </div>
 
+          <div class="home-identity reveal">
+            <a class="home-identity__portrait" href="/about/" aria-label="About Curtis Young">
+              <img src="/images/hero/curtis-portrait-retouched.png" alt="Portrait of Curtis Young">
+            </a>
+            <div class="home-identity__meta">
+              <span data-lang="en">Shenzhen</span><span data-lang="zh">深圳</span>
+              <i aria-hidden="true"></i>
+              <span data-lang="en">AI agents</span><span data-lang="zh">AI Agent</span>
+              <i aria-hidden="true"></i>
+              <span data-lang="en">Software</span><span data-lang="zh">软件工程</span>
+            </div>
+          </div>
 
+          <div class="home-featured" aria-label="Featured work">
+            <a class="project-row" href="/products/my-map/">
+              <span class="project-row__thumb"><img src="/images/products/my_map.png" alt="MY_MAP route planning interface"></span>
+              <span>
+                <strong class="project-row__title">MY_MAP</strong>
+                <span class="project-row__category">
+                  <span data-lang="en">AI Agent / Maps</span>
+                  <span data-lang="zh">AI Agent / 地图</span>
+                </span>
+              </span>
+              <span class="button__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="project-row" href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" rel="noopener">
+              <span class="project-row__thumb"><img src="/images/products/AIM.png" alt="AIM logits redistribution research visual"></span>
+              <span>
+                <strong class="project-row__title">AIM</strong>
+                <span class="project-row__category">
+                  <span data-lang="en">Research / ACM Web 2025</span>
+                  <span data-lang="zh">研究 / ACM Web 2025</span>
+                </span>
+              </span>
+              <span class="button__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Curtis Mei</span>
-    </div>
-</footer>
-    </div>
-    <script type="text/javascript" src="/js/canvas-nest.js" color="0,0,0" opacity="0.3" zindex="-2" count="99"></script>
+      </section>
+
+      <section class="manifesto surface-paper" aria-labelledby="manifesto-title">
+        <div class="content-container">
+          <div class="manifesto__header reveal">
+            <div>
+              <p class="eyebrow">
+                <span data-lang="en">What I build</span>
+                <span data-lang="zh">我在构建什么</span>
+              </p>
+              <h2 class="section-title" id="manifesto-title">
+                <span data-lang="en">Systems that think. Interfaces that endure.</span>
+                <span data-lang="zh">会思考的系统，经得住使用的界面。</span>
+              </h2>
+            </div>
+            <p class="manifesto__intro">
+              <span data-lang="en">I work where model behavior meets software constraints: shaping agent workflows, connecting tools, and turning prototypes into dependable products.</span>
+              <span data-lang="zh">我关注模型行为与软件约束交汇的位置：设计 Agent 工作流、连接工具，并把原型变成可靠产品。</span>
+            </p>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-item reveal">
+              <span class="focus-item__number meta-text">01</span>
+              <h3><span data-lang="en">Agent deployment</span><span data-lang="zh">Agent 部署</span></h3>
+              <p><span data-lang="en">Tool use, context design, failure recovery, and the operational details that make agents useful.</span><span data-lang="zh">围绕工具调用、上下文设计、故障恢复与生产运行细节，让 Agent 真正可用。</span></p>
+            </article>
+            <article class="focus-item reveal">
+              <span class="focus-item__number meta-text">02</span>
+              <h3><span data-lang="en">Product systems</span><span data-lang="zh">产品系统</span></h3>
+              <p><span data-lang="en">Full-stack applications that connect complex workflows to clear, repeatable user actions.</span><span data-lang="zh">把复杂工作流转换为清晰、可重复操作的全栈产品。</span></p>
+            </article>
+            <article class="focus-item reveal">
+              <span class="focus-item__number meta-text">03</span>
+              <h3><span data-lang="en">Applied research</span><span data-lang="zh">应用研究</span></h3>
+              <p><span data-lang="en">Research prototypes spanning model modulation, reinforcement learning, and responsible AI behavior.</span><span data-lang="zh">探索模型调制、强化学习与负责任 AI 行为的研究原型。</span></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-showcase" aria-labelledby="selected-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Selected work</span><span data-lang="zh">精选作品</span></p>
+              <h2 class="section-title" id="selected-title"><span data-lang="en">Built for real use.</span><span data-lang="zh">为真实使用而构建。</span></h2>
+            </div>
+            <a class="text-link" href="/products/"><span data-lang="en">All projects</span><span data-lang="zh">全部项目</span><span class="text-link__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="showcase-grid reveal">
+            <a class="showcase-item" href="/products/my-map/">
+              <span class="showcase-item__image"><img src="/images/products/my_map.png" alt="MY_MAP intelligent route planning interface"></span>
+              <span class="showcase-item__content">
+                <span class="meta-text">AI AGENT / MAPS</span>
+                <h3>MY_MAP</h3>
+                <p><span data-lang="en">Natural-language route planning and useful POI recommendations across China.</span><span data-lang="zh">用自然语言完成全国路线规划与沿途 POI 推荐。</span></p>
+              </span>
+            </a>
+            <a class="showcase-item" href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" rel="noopener">
+              <span class="showcase-item__image"><img src="/images/products/AIM.png" alt="AIM model modulation research graphic"></span>
+              <span class="showcase-item__content">
+                <span class="meta-text">RESEARCH / 2025</span>
+                <h3>AIM</h3>
+                <p><span data-lang="en">Model modulation through logits redistribution, published at ACM Web 2025.</span><span data-lang="zh">通过 Logits 重分布实现模型调制，发表于 ACM Web 2025。</span></p>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-notes surface-paper" aria-labelledby="latest-notes-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Field notes</span><span data-lang="zh">实践笔记</span></p>
+              <h2 class="section-title" id="latest-notes-title"><span data-lang="en">What the system taught me.</span><span data-lang="zh">系统教给我的事。</span></h2>
+            </div>
+            <a class="text-link" href="/archives/"><span data-lang="en">Read all notes</span><span data-lang="zh">阅读全部文章</span><span class="text-link__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="home-note-list reveal">
+            <a class="note-row" href="/archives/2026/02/当 Agent 学会偷懒：一次 Tool Calling 失效的排查实录/">
+              <span class="note-row__date meta-text">2026.02.02</span>
+              <span class="note-row__title"><span data-lang="en">When an Agent Learns to Cut Corners</span><span data-lang="zh">当 Agent 学会偷懒：一次 Tool Calling 失效的排查实录</span></span>
+              <span class="note-row__category meta-text">AI · AGENT · LLM</span>
+              <span class="button__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="note-row" href="/archives/2025/11/关于客服场景 Agent 可维护性的一点思考/">
+              <span class="note-row__date meta-text">2025.11.24</span>
+              <span class="note-row__title"><span data-lang="en">Maintainability in Customer-Service Agents</span><span data-lang="zh">关于客服场景 Agent 可维护性的一点思考</span></span>
+              <span class="note-row__category meta-text">AI · SYSTEMS</span>
+              <span class="button__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
 </body>
 </html>
-
