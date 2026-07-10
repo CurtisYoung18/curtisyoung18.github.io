@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="Intera case study: a self-hosted AgentOps platform for customer-service AI agents.">
+  <meta name="theme-color" content="#071714">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Intera Case Study | Curtis Young">
+  <meta property="og:description" content="From model reasoning to auditable customer-service operations.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/intera/customer-handoff-poster.jpg">
+  <link rel="canonical" href="https://curtisyoung18.github.io/products/intera/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="preload" href="/images/products/intera/customer-handoff-poster.jpg" as="image">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Intera Case Study | Curtis Young</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
+    }
+  </script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body
+  class="site-page case-page intera-case"
+  data-page="work"
+  data-title-en="Intera Case Study | Curtis Young"
+  data-title-zh="Intera 项目案例 | Curtis Young"
+  data-description-en="Intera is a self-hosted AgentOps platform for building, testing, and operating customer-service AI agents."
+  data-description-zh="Intera 是一个用于构建、测试与运营客服 AI Agent 的自托管 AgentOps 平台。"
+>
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="content-container case-hero__inner">
+          <aside class="case-rail" aria-label="Case index">
+            <span class="meta-text">CASE 01</span>
+            <div class="case-rail__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </aside>
+          <div>
+            <div class="case-intro reveal">
+              <div>
+                <p class="eyebrow">2026 · AGENTOPS</p>
+                <h1 class="display-title case-title" id="case-title">Intera</h1>
+                <p class="case-subtitle"><span data-lang="en">Customer-Service AgentOps Platform</span><span data-lang="zh">客服 AgentOps 平台</span></p>
+                <p class="case-summary"><span data-lang="en">Self-hosted AgentOps for customer service: build and test agents, route work through Procedures, guard Tools with Hooks, inspect evidence, and hand off to humans.</span><span data-lang="zh">面向客服的自托管 AgentOps：构建与测试 Agent，以 Procedure 路由任务，用 Hook 约束 Tool，检查证据并交接人工。</span></p>
+              </div>
+              <figure class="case-screen intera-case__screen">
+                <img src="/images/products/intera/customer-handoff-poster.jpg" alt="Intera demonstration showing a customer conversation, tool calls, and agent reasoning">
+              </figure>
+              <div class="case-facts">
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
+                  <dd><span data-lang="en">Product &amp; Agent Runtime Engineering</span><span data-lang="zh">产品与 Agent Runtime 工程</span></dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
+                  <dd>Next.js 15 · TypeScript · Prisma</dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Runtime</span><span data-lang="zh">运行环境</span></dt>
+                  <dd>PostgreSQL · Self-hosted</dd>
+                </dl>
+                <div class="case-links">
+                  <a class="text-link" href="https://demo.anytrans.ai/" target="_blank" rel="noopener"><span data-lang="en">Live console</span><span data-lang="zh">线上 Console</span><span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="#films"><span data-lang="en">Watch films</span><span data-lang="zh">观看演示</span><span class="text-link__arrow" aria-hidden="true">↓</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-principles" aria-label="Project summary">
+        <div class="content-container case-principles__grid">
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">01</span>
+            <h2><span data-lang="en">Problem</span><span data-lang="zh">问题</span></h2>
+            <p><span data-lang="en">A fluent chatbot is not yet a dependable service operation. Prompt-only agents drift, hide their decisions, and break precisely when a customer needs evidence or escalation.</span><span data-lang="zh">能流畅聊天，还不等于可靠客服。只靠 Prompt 的 Agent 会漂移、隐藏决策过程，并常在客户最需要证据或升级处理时失效。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">02</span>
+            <h2><span data-lang="en">Approach</span><span data-lang="zh">方法</span></h2>
+            <p><span data-lang="en">Keep one owner Agent in control, then surround it with typed Procedures, Tools, Hooks, dynamic context, trace evidence, Scenarios, and durable HumanTasks.</span><span data-lang="zh">让一个主 Agent 保持判断权，再以类型化 Procedure、Tool、Hook、动态上下文、Trace、Scenario 与持久化 HumanTask 构成控制层。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">03</span>
+            <h2><span data-lang="en">Result</span><span data-lang="zh">结果</span></h2>
+            <p><span data-lang="en">A deployed operator console spanning Build, Release, Conversations, and Human Handoff, with a separate runtime service and agent-scoped operational evidence.</span><span data-lang="zh">形成覆盖 Build、Release、Conversations 与 Human Handoff 的线上运营 Console，并以独立 Runtime 服务和 Agent 级运行证据支撑日常交付。</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="intera-films" id="films" aria-labelledby="films-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Runtime demonstrations</span><span data-lang="zh">Runtime 演示</span></p>
+              <h2 class="section-title" id="films-title"><span data-lang="en">Reasoning you can inspect.</span><span data-lang="zh">看得见的推理与执行。</span></h2>
+            </div>
+            <p class="intera-films__intro"><span data-lang="en">Two synthetic demonstrations expose the system beneath the reply: evidence gathering, dynamic context, Tool and Hook decisions, structured input, and human transfer.</span><span data-lang="zh">两支合成演示把回复背后的系统展开：证据收集、动态上下文、Tool 与 Hook 决策、结构化补充信息和人工转接。</span></p>
+          </div>
+          <div class="intera-film-grid reveal">
+            <figure class="intera-film">
+              <video controls playsinline preload="metadata" poster="/images/products/intera/customer-handoff-poster.jpg" aria-label="Intera customer-service and human handoff demonstration">
+                <source src="/images/products/intera/customer-handoff.mp4" type="video/mp4">
+              </video>
+              <figcaption><span class="meta-text">01 · 00:42</span><strong><span data-lang="en">Customer conversation to HumanTask</span><span data-lang="zh">从客户对话到 HumanTask</span></strong><span><span data-lang="en">Tool evidence, a structured follow-up form, and a handoff note that lets a human continue with context.</span><span data-lang="zh">工具证据、结构化补充表单，以及让人工带着上下文继续处理的交接备注。</span></span></figcaption>
+            </figure>
+            <figure class="intera-film">
+              <video controls playsinline preload="metadata" poster="/images/products/intera/context-runtime-poster.jpg" aria-label="Intera context engineering runtime demonstration">
+                <source src="/images/products/intera/context-runtime.mp4" type="video/mp4">
+              </video>
+              <figcaption><span class="meta-text">02 · 01:00</span><strong><span data-lang="en">Context Engineering at runtime</span><span data-lang="zh">Runtime 中的 Context Engineering</span></strong><span><span data-lang="en">A cacheable core of System Prompt, Procedure, Tools and Hooks, paired with a dynamic tail that changes as evidence arrives.</span><span data-lang="zh">可缓存的 System Prompt、Procedure、Tool 与 Hook，配合随证据变化而更新的动态 Prompt Tail。</span></span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-story surface-paper" aria-labelledby="architecture-title">
+        <div class="content-container">
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Product boundary</span><span data-lang="zh">产品边界</span></p>
+              <h2 id="architecture-title"><span data-lang="en">A control plane, not another chatbot.</span><span data-lang="zh">不是另一个聊天机器人，而是控制平面。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">Intera keeps the Agent as the single owner of the customer turn while the surrounding platform makes configuration, execution, release, and evidence explicit. The Console is organized around Build and Operate; the runtime remains a separate service boundary.</span><span data-lang="zh">Intera 让主 Agent 对客户回合保持单一所有权，同时由外围平台显式管理配置、执行、发布与证据。Console 围绕 Build 与 Operate 组织，Runtime 则保持独立服务边界。</span></p>
+              <div class="intera-runtime-map" role="img" aria-label="Intera AgentOps architecture centered on the ProcedureRun runtime">
+                <div class="intera-runtime-map__top"><span>Build Studio</span><span>ConfigPilot</span><span>Release</span></div>
+                <div class="intera-runtime-map__flow"><span>Channels</span><i aria-hidden="true">→</i><strong>ProcedureRun Runtime</strong><i aria-hidden="true">→</i><span>Human Handoff</span></div>
+                <div class="intera-runtime-map__bottom"><span>Procedures</span><span>Tools + Hooks</span><span>Memory + Trace</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Context engineering</span><span data-lang="zh">上下文工程</span></p>
+              <h2><span data-lang="en">Keep the core stable. Let the tail move.</span><span data-lang="zh">稳定核心，让 Tail 随运行变化。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">The model receives a cache-friendly prefix for identity, service boundaries, the active Procedure, and available Tools and Hooks. Only the ProcedureRun tail changes between turns: current step, facts, blockers, evidence, and the next expected action.</span><span data-lang="zh">模型收到适合缓存的前缀，包含身份、服务边界、当前 Procedure，以及可用 Tool 与 Hook。每轮只替换 ProcedureRun Tail：当前步骤、事实、阻塞项、证据与下一步行动。</span></p>
+              <div class="context-stack">
+                <div><span class="meta-text">01 · STABLE</span><strong>System Prompt</strong><small><span data-lang="en">Identity, tone, boundaries</span><span data-lang="zh">身份、语气与边界</span></small></div>
+                <div><span class="meta-text">02 · STABLE</span><strong>Procedure + Tools + Hooks</strong><small><span data-lang="en">Business process and executable capabilities</span><span data-lang="zh">业务过程与可执行能力</span></small></div>
+                <div><span class="meta-text">03 · DYNAMIC</span><strong>ProcedureRun Tail</strong><small><span data-lang="en">Facts, evidence, blockers, next action</span><span data-lang="zh">事实、证据、阻塞项与下一步</span></small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Operational truth</span><span data-lang="zh">运行事实</span></p>
+              <h2><span data-lang="en">Evidence before confidence.</span><span data-lang="zh">先有证据，再谈信心。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">A useful AgentOps system must explain more than the final answer. Intera records the runtime path, keeps customer-visible transcripts separate from privileged debug evidence, validates behavior with repeatable Scenarios, and turns unresolved work into a durable HumanTask.</span><span data-lang="zh">有用的 AgentOps 系统不能只展示最终回答。Intera 记录 Runtime 路径，将客户可见对话与高权限 Debug 证据分开，以可重复 Scenario 验证行为，并把未解决工作变成持久化 HumanTask。</span></p>
+              <div class="process-list">
+                <div class="process-item"><span class="meta-text work-index">01</span><strong><span data-lang="en">Inspect trace, Tool, Hook, token, and latency evidence</span><span data-lang="zh">检查 Trace、Tool、Hook、Token 与延迟证据</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">02</span><strong><span data-lang="en">Run repeatable Scenarios before release</span><span data-lang="zh">发布前运行可重复 Scenario</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">03</span><strong><span data-lang="en">Review typed draft changes and rollback paths</span><span data-lang="zh">审查类型化草稿变更与回滚路径</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">04</span><strong><span data-lang="en">Hand unresolved work to a human with context intact</span><span data-lang="zh">保留上下文，把未解决工作交给人工</span></strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="content-container">
+          <a class="case-next__link" href="/products/my-map/">
+            <span><span class="meta-text"><span data-lang="en">Next project</span><span data-lang="zh">下一个项目</span></span><strong>MY_MAP</strong></span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
+</body>
+</html>
