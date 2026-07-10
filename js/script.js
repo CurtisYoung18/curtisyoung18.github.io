@@ -72,8 +72,7 @@
     var links = [
       { key: "work", href: "/products/", en: "Work", zh: "作品" },
       { key: "notes", href: "/archives/", en: "Notes", zh: "文章" },
-      { key: "about", href: "/about/", en: "About", zh: "关于" },
-      { key: "contact", href: "/about/#contact", en: "Contact", zh: "联系" }
+      { key: "about", href: "/about/", en: "About", zh: "关于" }
     ];
     var nav = links.map(function (link) {
       var current = activePage === link.key || activePage === "contact" && link.key === "about";
