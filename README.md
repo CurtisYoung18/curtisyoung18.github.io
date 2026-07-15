@@ -1,77 +1,46 @@
-# 👋 Hi, I'm Zhiyang Mei (Curtis)
+# Curtis Young · Zhiyang Mei
 
----
+I work at the intersection of enterprise AI support, solution discovery, and hands-on agent delivery. My focus is the last mile between a capable model and a system teams can trust: workflow design, tool and data integration, evaluation, failure handling, and rollout.
 
-🚀 **M.Sc. Student in Information Technology | AI Researcher | Full-Stack Developer**
+Based in Shenzhen, China.
 
-Currently pursuing my Master's degree at the University of Queensland, focusing on Machine Learning and AI Security. Passionate about developing innovative solutions and contributing to cutting-edge research in artificial intelligence.
+## Focus
 
-## 📚 Education
+- **Enterprise AI discovery** — translating stakeholder needs and real workflows into technical scope and measurable success criteria.
+- **Agent solution delivery** — connecting models, tools, data, APIs, and interfaces into working systems.
+- **Evaluation and operations** — making model behavior inspectable through scenarios, traces, evidence, and human handoff.
+- **Product feedback loops** — turning deployment friction into reusable patterns and clearer product decisions.
 
-### University of Queensland
-**M.Sc. in Information Technology** (2023 - 2025.6 expected)
-- Research Area: Machine Learning, AI Security
-- Core Courses: Advanced Software Engineering, Discrete Mathematics, Advanced Database System, Artificial Intelligence
+## Selected work
 
-### Shantou University
-**B.Sc. in International Economics and Trade** (2019 - 2023)
+### [Intera](https://curtisyoung18.github.io/products/intera/)
 
-## 📝 Publications
+An end-to-end, self-hosted AgentOps delivery for customer service. Intera connects agent configuration, Procedures, Tools, Hooks, evaluation, release, operational evidence, and durable human handoff.
 
-**AI Model Modulation with Logits Redistribution** (2025)
-- Published in Proceedings of the ACM Web Conference (WWW '25)
-- Co-authored with Zihan Wang, Zhongkui Ma, et al.
-- [DOI: 10.1145/3696410.3714737](https://dl.acm.org/doi/10.1145/3696410.3714737)
+`Next.js` · `TypeScript` · `Prisma` · `PostgreSQL` · `AgentOps`
 
-## 🌟 Featured Projects
+### [MY_MAP](https://curtisyoung18.github.io/products/my-map/)
 
-### AI & Machine Learning
-- **[SecurePrune](https://github.com/curtisyoung18/SecurePrune)**
-  - Research-oriented prototype for machine unlearning
-  - Implemented using PyTorch and NumPy
-  - Focuses on secure model pruning and data removal
+An AI-to-API solution that translates loosely expressed travel needs into deterministic map actions, route plans, and along-the-way recommendations.
 
-- **[DQN beyond Cartpole and Lunar Lander](https://github.com/curtisyoung18/DQN)**
-  - Advanced Reinforcement Learning application
-  - Built with PyTorch and Python
-  - Extends Deep Q-Network implementations
+`Next.js` · `TypeScript` · `MapLibre` · `MiniMax` · `AMap API`
 
-### Web Development
-- **[GreenGo](https://curtisyoung18.github.io/products/GreenGo/Portfolio/portfolio.html)**
-  - Comprehensive web application
-  - Technologies: HTML, CSS, JavaScript, PHP
-  - Features modern UI/UX design and responsive layout
+## Research
 
-- **[Scan Me](https://github.com/curtisyoung18/ScanMe)**
-  - Online Order System
-  - Full-stack development with HTML, CSS, JavaScript, PHP, Java
-  - Database integration with MySQL
+**AI Model Modulation with Logits Redistribution**
 
-## 💡 Skills & Tools
+The ACM Web Conference 2025 · Sydney, Australia
 
-### Languages
-![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white)
-![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=white)
-![SQL](https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
+[DOI](https://dl.acm.org/doi/10.1145/3696410.3714737) · [Code](https://github.com/UQ-Trust-Lab/AIM)
 
-### Frameworks & Tools
-![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?logo=pytorch&logoColor=white)
-![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)
-![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=white)
-![LaTeX](https://img.shields.io/badge/-LaTeX-008080?logo=latex&logoColor=white)
-![VSCode](https://img.shields.io/badge/-VSCode-007ACC?logo=visual-studio-code&logoColor=white)
-![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white)
+## Education
 
-## 📫 Connect with Me
+**M.Sc. Information Technology**, The University of Queensland · 2025
 
-- Website: [curtisyoung18.github.io](https://curtisyoung18.github.io)
-- Email: [zhiyang.mei@student.uq.edu.au](mailto:zhiyang.mei@student.uq.edu.au)
-- Phone: [+61 403813564](tel:+61403813564)
-- GitHub: [@curtisyoung18](https://github.com/curtisyoung18)
+GPA 6.1 / 7
 
----
+## Contact
 
-> *"Bridging the gap between academic research and practical applications in AI and software development."*
+- [Portfolio](https://curtisyoung18.github.io)
+- [GitHub](https://github.com/CurtisYoung18)
+- [Email](mailto:magicyoung63@yahoo.com)
