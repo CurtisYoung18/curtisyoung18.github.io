@@ -107,7 +107,8 @@
         '<div class="site-footer__links">' +
           '<a href="https://github.com/CurtisYoung18" target="_blank" rel="noopener">GitHub</a>' +
           '<a href="mailto:magicyoung63@yahoo.com">Email</a>' +
-          '<a href="/files/Zhiyang_Mei_Resume.pdf">' + bilingual("CV", "简历") + "</a>" +
+          '<a href="/files/Curtis_Resume_EN.pdf" data-lang="en">CV</a>' +
+          '<a href="/files/Curtis_Resume_CN.pdf" data-lang="zh">简历</a>' +
         "</div>" +
       "</div>"
     );
