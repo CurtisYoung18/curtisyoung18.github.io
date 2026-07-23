@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Curtis Young">
-  <meta name="description" content="Intera case study: a self-hosted AgentOps platform for customer-service AI agents.">
+  <meta name="description" content="Intera case study: an AgentOps system for inspecting, evaluating, releasing, and operating customer-service AI agents.">
   <meta name="theme-color" content="#071714">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Intera Case Study | Curtis Young">
-  <meta property="og:description" content="From model reasoning to auditable customer-service operations.">
+  <meta property="og:description" content="Runtime state, evaluation evidence, release control, and human handoff around a customer-service Agent.">
   <meta property="og:image" content="https://curtisyoung18.github.io/images/products/intera/customer-handoff-poster.jpg">
   <link rel="canonical" href="https://curtisyoung18.github.io/products/intera/">
   <link rel="icon" href="/favicon.ico">
@@ -31,8 +31,8 @@
   data-page="work"
   data-title-en="Intera Case Study | Curtis Young"
   data-title-zh="Intera 项目案例 | Curtis Young"
-  data-description-en="Intera is a self-hosted AgentOps platform for building, testing, and operating customer-service AI agents."
-  data-description-zh="Intera 是一个用于构建、测试与运营客服 AI Agent 的自托管 AgentOps 平台。"
+  data-description-en="Intera is an AgentOps system for inspecting, evaluating, releasing, and operating customer-service AI agents."
+  data-description-zh="Intera 是一个用于检查、评测、发布与运营客服 AI Agent 的 AgentOps 系统。"
 >
   <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
   <div class="site-shell">
@@ -50,7 +50,7 @@
                 <p class="eyebrow">2026 · AGENTOPS</p>
                 <h1 class="display-title case-title" id="case-title">Intera</h1>
                 <p class="case-subtitle"><span data-lang="en">Customer-Service AgentOps Platform</span><span data-lang="zh">客服 AgentOps 平台</span></p>
-                <p class="case-summary"><span data-lang="en">An end-to-end AgentOps delivery for customer service: shape workflows, build and test agents, release safely, inspect operational evidence, and hand unresolved work to humans.</span><span data-lang="zh">面向客服场景的端到端 AgentOps 交付：梳理工作流，构建与测试 Agent，安全发布，检查运行证据，并把未解决任务交接人工。</span></p>
+                <p class="case-summary"><span data-lang="en">A product layer around a customer-service Agent that makes runtime state, evaluation evidence, release control, and human handoff explicit.</span><span data-lang="zh">围绕客服 Agent 构建的产品层，把运行状态、评测证据、发布控制与人工接管显式化。</span></p>
               </div>
               <figure class="case-screen intera-case__screen">
                 <img src="/images/products/intera/customer-handoff-poster.jpg" alt="Intera demonstration showing a customer conversation, tool calls, and agent reasoning">
@@ -58,15 +58,15 @@
               <div class="case-facts">
                 <dl class="case-fact">
                   <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
-                  <dd><span data-lang="en">End-to-End AI Product Delivery</span><span data-lang="zh">端到端 AI 产品交付</span></dd>
+                  <dd><span data-lang="en">Product design · Agent delivery</span><span data-lang="zh">产品设计 · Agent 交付</span></dd>
                 </dl>
                 <dl class="case-fact">
-                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
-                  <dd>Next.js 15 · TypeScript · Prisma</dd>
+                  <dt class="meta-text"><span data-lang="en">System</span><span data-lang="zh">系统</span></dt>
+                  <dd>Next.js · TypeScript · PostgreSQL</dd>
                 </dl>
                 <dl class="case-fact">
-                  <dt class="meta-text"><span data-lang="en">Runtime</span><span data-lang="zh">运行环境</span></dt>
-                  <dd>PostgreSQL · Self-hosted</dd>
+                  <dt class="meta-text"><span data-lang="en">Evidence</span><span data-lang="zh">运行证据</span></dt>
+                  <dd>Trace · Scenarios · HumanTask</dd>
                 </dl>
                 <div class="case-links">
                   <a class="text-link" href="https://demo.anytrans.ai/" target="_blank" rel="noopener"><span data-lang="en">Live console</span><span data-lang="zh">线上 Console</span><span class="text-link__arrow" aria-hidden="true">↗</span></a>
@@ -82,18 +82,18 @@
         <div class="content-container case-principles__grid">
           <article class="case-principle reveal">
             <span class="meta-text work-index">01</span>
-            <h2><span data-lang="en">Problem</span><span data-lang="zh">问题</span></h2>
+            <h2><span data-lang="en">Failure mode</span><span data-lang="zh">失效模式</span></h2>
             <p><span data-lang="en">A fluent chatbot is not yet a dependable service operation. Prompt-only agents drift, hide their decisions, and break precisely when a customer needs evidence or escalation.</span><span data-lang="zh">能流畅聊天，还不等于可靠客服。只靠 Prompt 的 Agent 会漂移、隐藏决策过程，并常在客户最需要证据或升级处理时失效。</span></p>
           </article>
           <article class="case-principle reveal">
             <span class="meta-text work-index">02</span>
-            <h2><span data-lang="en">Approach</span><span data-lang="zh">方法</span></h2>
+            <h2><span data-lang="en">System design</span><span data-lang="zh">系统设计</span></h2>
             <p><span data-lang="en">Keep one owner Agent in control, then surround it with typed Procedures, Tools, Hooks, dynamic context, trace evidence, Scenarios, and durable HumanTasks.</span><span data-lang="zh">让一个主 Agent 保持判断权，再以类型化 Procedure、Tool、Hook、动态上下文、Trace、Scenario 与持久化 HumanTask 构成控制层。</span></p>
           </article>
           <article class="case-principle reveal">
             <span class="meta-text work-index">03</span>
-            <h2><span data-lang="en">Result</span><span data-lang="zh">结果</span></h2>
-            <p><span data-lang="en">A deployed operator console spanning Build, Release, Conversations, and Human Handoff, with a separate runtime service and agent-scoped operational evidence.</span><span data-lang="zh">形成覆盖 Build、Release、Conversations 与 Human Handoff 的线上运营 Console，并以独立 Runtime 服务和 Agent 级运行证据支撑日常交付。</span></p>
+            <h2><span data-lang="en">Working evidence</span><span data-lang="zh">可运行证据</span></h2>
+            <p><span data-lang="en">A working operator console spanning Build, Release, Conversations, and Human Handoff, backed by a separate runtime service and agent-scoped evidence.</span><span data-lang="zh">形成覆盖 Build、Release、Conversations 与 Human Handoff 的可运行 Console，并以独立 Runtime 服务和 Agent 级证据支撑验证。</span></p>
           </article>
         </div>
       </section>
@@ -103,9 +103,9 @@
           <div class="section-heading-row reveal">
             <div>
               <p class="eyebrow"><span data-lang="en">Runtime demonstrations</span><span data-lang="zh">Runtime 演示</span></p>
-              <h2 class="section-title" id="films-title"><span data-lang="en">Reasoning you can inspect.</span><span data-lang="zh">看得见的推理与执行。</span></h2>
+              <h2 class="section-title" id="films-title"><span data-lang="en">Runtime, not just responses.</span><span data-lang="zh">不只看回复，更要看运行过程。</span></h2>
             </div>
-            <p class="intera-films__intro"><span data-lang="en">Two synthetic demonstrations expose the system beneath the reply: evidence gathering, dynamic context, Tool and Hook decisions, structured input, and human transfer.</span><span data-lang="zh">两支合成演示把回复背后的系统展开：证据收集、动态上下文、Tool 与 Hook 决策、结构化补充信息和人工转接。</span></p>
+              <p class="intera-films__intro"><span data-lang="en">Two synthetic demonstrations expose the system beneath the reply: evidence gathering, dynamic context, Tool and Hook decisions, structured input, and human transfer.</span><span data-lang="zh">两支合成演示把回复背后的系统展开：证据收集、动态上下文、Tool 与 Hook 决策、结构化补充信息和人工转接。</span></p>
           </div>
           <div class="intera-film-grid reveal">
             <figure class="intera-film">
@@ -176,8 +176,8 @@
 
       <section class="case-next">
         <div class="content-container">
-          <a class="case-next__link" href="/products/my-map/">
-            <span><span class="meta-text"><span data-lang="en">Next project</span><span data-lang="zh">下一个项目</span></span><strong>MY_MAP</strong></span>
+          <a class="case-next__link" href="/products/#research">
+            <span><span class="meta-text"><span data-lang="en">Next evidence</span><span data-lang="zh">下一项证据</span></span><strong>WWW 2025 Research</strong></span>
             <span class="button__arrow" aria-hidden="true">→</span>
           </a>
         </div>
