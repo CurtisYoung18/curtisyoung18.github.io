@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Curtis Young">
-  <meta name="description" content="Intera case study: an AgentOps system for inspecting, evaluating, releasing, and operating customer-service AI agents.">
+  <meta name="description" content="Intera case study: a customer-service loop-agent architecture and production SaaS control plane that reduced observed human handoff from about 65% to 35.7%.">
   <meta name="theme-color" content="#071714">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Intera Case Study | Curtis Young">
-  <meta property="og:description" content="Runtime state, evaluation evidence, release control, and human handoff around a customer-service Agent.">
-  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/intera/customer-handoff-poster.jpg">
+  <meta property="og:description" content="A production customer-service loop agent and SaaS control plane, built and deployed for customer use.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/intera/production-handoff.png">
   <link rel="canonical" href="https://curtisyoung18.github.io/products/intera/">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
   <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
-  <link rel="preload" href="/images/products/intera/customer-handoff-poster.jpg" as="image">
+  <link rel="preload" href="/images/products/intera/production-handoff.png" as="image">
   <link rel="stylesheet" href="/css/site.css">
   <title>Intera Case Study | Curtis Young</title>
   <script>
@@ -31,8 +31,8 @@
   data-page="work"
   data-title-en="Intera Case Study | Curtis Young"
   data-title-zh="Intera 项目案例 | Curtis Young"
-  data-description-en="Intera is an AgentOps system for inspecting, evaluating, releasing, and operating customer-service AI agents."
-  data-description-zh="Intera 是一个用于检查、评测、发布与运营客服 AI Agent 的 AgentOps 系统。"
+  data-description-en="Intera is a production customer-service loop agent and SaaS control plane that reduced observed human handoff from about 65% to 35.7%."
+  data-description-zh="Intera 是一套已交付客户商用的客服 Loop Agent 与 SaaS 控制平台，将转人工率从原平台约 65% 降至 35.7%。"
 >
   <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
   <div class="site-shell">
@@ -49,16 +49,16 @@
               <div>
                 <p class="eyebrow">2026 · AGENTOPS</p>
                 <h1 class="display-title case-title" id="case-title">Intera</h1>
-                <p class="case-subtitle"><span data-lang="en">Customer-Service AgentOps Platform</span><span data-lang="zh">客服 AgentOps 平台</span></p>
-                <p class="case-summary"><span data-lang="en">A product layer around a customer-service Agent that makes runtime state, evaluation evidence, release control, and human handoff explicit.</span><span data-lang="zh">围绕客服 Agent 构建的产品层，把运行状态、评测证据、发布控制与人工接管显式化。</span></p>
+                <p class="case-subtitle"><span data-lang="en">Customer-Service Loop Agent &amp; SaaS Control Plane</span><span data-lang="zh">客服 Loop Agent 与 SaaS 控制平台</span></p>
+                <p class="case-summary"><span data-lang="en">I proposed the loop-agent architecture, built the SaaS product through AI-assisted full-stack delivery, and deployed it for customer use. Production handoff fell from about 65% on the previous platform to 35.7%.</span><span data-lang="zh">我提出 Loop Agent 架构，以 AI 辅助全栈开发完成 SaaS 产品并部署给客户使用；生产环境转人工率从原平台约 65% 降至 35.7%。</span></p>
               </div>
               <figure class="case-screen intera-case__screen">
-                <img src="/images/products/intera/customer-handoff-poster.jpg" alt="Intera demonstration showing a customer conversation, tool calls, and agent reasoning">
+                <img src="/images/products/intera/production-handoff.png" alt="Intera production dashboard showing human handoff rate, queues, notes, and transfer timelines">
               </figure>
               <div class="case-facts">
                 <dl class="case-fact">
                   <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
-                  <dd><span data-lang="en">Product design · Agent delivery</span><span data-lang="zh">产品设计 · Agent 交付</span></dd>
+                  <dd><span data-lang="en">Architecture · Product · AI-assisted full-stack delivery</span><span data-lang="zh">架构 · 产品 · AI 辅助全栈交付</span></dd>
                 </dl>
                 <dl class="case-fact">
                   <dt class="meta-text"><span data-lang="en">System</span><span data-lang="zh">系统</span></dt>
@@ -66,7 +66,7 @@
                 </dl>
                 <dl class="case-fact">
                   <dt class="meta-text"><span data-lang="en">Evidence</span><span data-lang="zh">运行证据</span></dt>
-                  <dd>Trace · Scenarios · HumanTask</dd>
+                  <dd><span data-lang="en">14,358 sessions · 35.7% handoff</span><span data-lang="zh">14,358 会话 · 35.7% 转人工</span></dd>
                 </dl>
                 <div class="case-links">
                   <a class="text-link" href="https://demo.anytrans.ai/" target="_blank" rel="noopener"><span data-lang="en">Live console</span><span data-lang="zh">线上 Console</span><span class="text-link__arrow" aria-hidden="true">↗</span></a>
@@ -82,18 +82,18 @@
         <div class="content-container case-principles__grid">
           <article class="case-principle reveal">
             <span class="meta-text work-index">01</span>
-            <h2><span data-lang="en">Failure mode</span><span data-lang="zh">失效模式</span></h2>
-            <p><span data-lang="en">A fluent chatbot is not yet a dependable service operation. Prompt-only agents drift, hide their decisions, and break precisely when a customer needs evidence or escalation.</span><span data-lang="zh">能流畅聊天，还不等于可靠客服。只靠 Prompt 的 Agent 会漂移、隐藏决策过程，并常在客户最需要证据或升级处理时失效。</span></p>
+            <h2><span data-lang="en">Business problem</span><span data-lang="zh">业务问题</span></h2>
+            <p><span data-lang="en">The previous platform handed roughly 65% of conversations to people. Prompt-only execution made multi-step service flows difficult to inspect, recover, and improve.</span><span data-lang="zh">原平台约 65% 的会话需要转人工；只靠 Prompt 的执行方式让多步骤客服流程难以检查、恢复和持续优化。</span></p>
           </article>
           <article class="case-principle reveal">
             <span class="meta-text work-index">02</span>
-            <h2><span data-lang="en">System design</span><span data-lang="zh">系统设计</span></h2>
-            <p><span data-lang="en">Keep one owner Agent in control, then surround it with typed Procedures, Tools, Hooks, dynamic context, trace evidence, Scenarios, and durable HumanTasks.</span><span data-lang="zh">让一个主 Agent 保持判断权，再以类型化 Procedure、Tool、Hook、动态上下文、Trace、Scenario 与持久化 HumanTask 构成控制层。</span></p>
+            <h2><span data-lang="en">Architecture change</span><span data-lang="zh">架构重构</span></h2>
+            <p><span data-lang="en">I proposed a loop-agent model: keep one owner Agent in control, then combine typed Procedures, Tools, Hooks, dynamic context, trace evidence, and durable HumanTasks around it.</span><span data-lang="zh">我提出 Loop Agent 模型：让一个主 Agent 保持判断权，并以类型化 Procedure、Tool、Hook、动态上下文、Trace 与持久化 HumanTask 构成运行闭环。</span></p>
           </article>
           <article class="case-principle reveal">
             <span class="meta-text work-index">03</span>
-            <h2><span data-lang="en">Working evidence</span><span data-lang="zh">可运行证据</span></h2>
-            <p><span data-lang="en">A working operator console spanning Build, Release, Conversations, and Human Handoff, backed by a separate runtime service and agent-scoped evidence.</span><span data-lang="zh">形成覆盖 Build、Release、Conversations 与 Human Handoff 的可运行 Console，并以独立 Runtime 服务和 Agent 级证据支撑验证。</span></p>
+            <h2><span data-lang="en">Production result</span><span data-lang="zh">生产结果</span></h2>
+            <p><span data-lang="en">After I implemented and deployed the new SaaS system, observed handoff reached 35.7% across 14,358 sessions. The work helped drive a new company-level loop-agent type for customer-service scenarios.</span><span data-lang="zh">我完成 SaaS 系统实施并部署后，14,358 个生产会话的转人工率降至 35.7%；该实践进一步推动公司推出面向客服场景的新 Loop Agent 类型。</span></p>
           </article>
         </div>
       </section>
@@ -103,22 +103,68 @@
           <div class="section-heading-row reveal">
             <div>
               <p class="eyebrow"><span data-lang="en">Runtime demonstrations</span><span data-lang="zh">Runtime 演示</span></p>
-              <h2 class="section-title" id="films-title"><span data-lang="en">Runtime, not just responses.</span><span data-lang="zh">不只看回复，更要看运行过程。</span></h2>
+              <h2 class="section-title" id="films-title"><span data-lang="en">From runtime trace to production workflow.</span><span data-lang="zh">从运行轨迹到真实客服流程。</span></h2>
             </div>
-              <p class="intera-films__intro"><span data-lang="en">Two synthetic demonstrations expose the system beneath the reply: evidence gathering, dynamic context, Tool and Hook decisions, structured input, and human transfer.</span><span data-lang="zh">两支合成演示把回复背后的系统展开：证据收集、动态上下文、Tool 与 Hook 决策、结构化补充信息和人工转接。</span></p>
+              <p class="intera-films__intro"><span data-lang="en">The first film isolates the handoff mechanism. The second is a real 3:58 deposit-not-received demo, from tool evidence and structured input to the operator console.</span><span data-lang="zh">第一支演示拆解人工接管机制；第二支是 3 分 58 秒的“存款未到账”真实 Demo，从工具取证、结构化补充信息一直运行到运营后台。</span></p>
           </div>
           <div class="intera-film-grid reveal">
             <figure class="intera-film">
               <video controls playsinline preload="metadata" poster="/images/products/intera/customer-handoff-poster.jpg" aria-label="Intera customer-service and human handoff demonstration">
                 <source src="/images/products/intera/customer-handoff.mp4" type="video/mp4">
               </video>
-              <figcaption><span class="meta-text">01 · 00:42</span><strong><span data-lang="en">Customer conversation to HumanTask</span><span data-lang="zh">从客户对话到 HumanTask</span></strong><span><span data-lang="en">Tool evidence, a structured follow-up form, and a handoff note that lets a human continue with context.</span><span data-lang="zh">工具证据、结构化补充表单，以及让人工带着上下文继续处理的交接备注。</span></span></figcaption>
+              <figcaption><span class="meta-text">01 · 00:42 · CONCEPT FLOW</span><strong><span data-lang="en">Customer conversation to HumanTask</span><span data-lang="zh">从客户对话到 HumanTask</span></strong><span><span data-lang="en">Tool evidence, a structured follow-up form, and a handoff note that lets a human continue with context.</span><span data-lang="zh">工具证据、结构化补充表单，以及让人工带着上下文继续处理的交接备注。</span></span></figcaption>
             </figure>
             <figure class="intera-film">
-              <video controls playsinline preload="metadata" poster="/images/products/intera/context-runtime-poster.jpg" aria-label="Intera context engineering runtime demonstration">
-                <source src="/images/products/intera/context-runtime.mp4" type="video/mp4">
+              <video controls playsinline preload="metadata" poster="/images/products/intera/deposit-not-received-poster.jpg" aria-label="Real Intera deposit-not-received customer-service demonstration">
+                <source src="/images/products/intera/deposit-not-received-demo.mp4" type="video/mp4">
               </video>
-              <figcaption><span class="meta-text">02 · 01:00</span><strong><span data-lang="en">Context Engineering at runtime</span><span data-lang="zh">Runtime 中的 Context Engineering</span></strong><span><span data-lang="en">A cacheable core of System Prompt, Procedure, Tools and Hooks, paired with a dynamic tail that changes as evidence arrives.</span><span data-lang="zh">可缓存的 System Prompt、Procedure、Tool 与 Hook，配合随证据变化而更新的动态 Prompt Tail。</span></span></figcaption>
+              <figcaption><span class="meta-text">02 · 03:58 · LIVE DEMO</span><strong><span data-lang="en">Deposit not received, end to end</span><span data-lang="zh">存款未到账：端到端真实 Demo</span></strong><span><span data-lang="en">The Agent gathers deposit and transaction evidence, creates a case, requests structured input, continues the investigation, and hands unresolved work to an operator with context intact.</span><span data-lang="zh">Agent 查询存款与交易证据、创建 Case、收集结构化信息、继续调查，并在无法自动解决时把完整上下文交给运营人员。</span></span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="intera-production surface-paper" aria-labelledby="production-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Production SaaS</span><span data-lang="zh">商用 SaaS</span></p>
+              <h2 class="section-title" id="production-title"><span data-lang="en">Built by me. Shipped to customers.</span><span data-lang="zh">亲自构建，交付客户商用。</span></h2>
+            </div>
+            <p class="intera-production__intro"><span data-lang="en">These are production interface captures, not concept renders. I scoped the control plane, designed the operating model, and used AI-assisted development to build and deploy the SaaS system around the new loop-agent architecture.</span><span data-lang="zh">以下均为客户实际商用的 SaaS 界面截图，并非概念稿。我完成控制平台范围定义、运营模型设计，并以 AI 辅助开发方式围绕新 Loop Agent 架构构建和部署整套 SaaS 系统。</span></p>
+          </div>
+
+          <div class="intera-impact reveal" aria-label="Intera production impact">
+            <div class="intera-impact__metric intera-impact__metric--before">
+              <span class="meta-text"><span data-lang="en">Previous platform</span><span data-lang="zh">原平台</span></span>
+              <strong>≈65%</strong>
+              <small><span data-lang="en">human handoff</span><span data-lang="zh">转人工率</span></small>
+            </div>
+            <span class="intera-impact__arrow" aria-hidden="true">→</span>
+            <div class="intera-impact__metric intera-impact__metric--after">
+              <span class="meta-text"><span data-lang="en">After rollout</span><span data-lang="zh">新架构上线后</span></span>
+              <strong>35.7%</strong>
+              <small><span data-lang="en">across 14,358 sessions</span><span data-lang="zh">覆盖 14,358 个会话</span></small>
+            </div>
+            <div class="intera-impact__outcome">
+              <span class="meta-text"><span data-lang="en">Company outcome</span><span data-lang="zh">公司级推动</span></span>
+              <strong><span data-lang="en">Loop-agent became a new agent type for customer-service scenarios.</span><span data-lang="zh">推动 Loop Agent 成为面向客服场景的新 Agent 类型。</span></strong>
+              <p><span data-lang="en">A 29.3 percentage-point reduction in observed handoff, with the operating model productized beyond one customer deployment.</span><span data-lang="zh">生产转人工率下降 29.3 个百分点，并把单一客户实践沉淀为可复用的公司级产品类型。</span></p>
+            </div>
+          </div>
+
+          <div class="intera-production-gallery reveal">
+            <figure class="intera-production-shot intera-production-shot--wide">
+              <img src="/images/products/intera/production-handoff.png" loading="lazy" decoding="async" alt="Intera production human handoff dashboard with session count, handoff rate, queue, operator notes, and transfer timeline">
+              <figcaption><strong><span data-lang="en">Human handoff command center</span><span data-lang="zh">人工接管指挥台</span></strong><span><span data-lang="en">14,358 sessions, 5,123 handoffs, a 35.7% handoff rate, and the operational context needed to continue each case.</span><span data-lang="zh">14,358 个会话、5,123 次转接、35.7% 转人工率，并保留人工继续处理每个 Case 所需的完整上下文。</span></span></figcaption>
+            </figure>
+            <figure class="intera-production-shot">
+              <img src="/images/products/intera/production-conversations.png" loading="lazy" decoding="async" alt="Intera production conversation operations dashboard with ProcedureRun and transfer status">
+              <figcaption><strong><span data-lang="en">Conversation operations</span><span data-lang="zh">会话运营后台</span></strong><span><span data-lang="en">Search, ProcedureRun state, message volume, trace context, and transfer status in one operating view.</span><span data-lang="zh">在同一运营视图中查看检索、ProcedureRun 状态、消息量、Trace 上下文与转接状态。</span></span></figcaption>
+            </figure>
+            <figure class="intera-production-shot">
+              <img src="/images/products/intera/production-runtime.png" loading="lazy" decoding="async" alt="Intera customer-service runtime investigating a deposit-not-received case with structured input and tool checks">
+              <figcaption><strong><span data-lang="en">Investigation at runtime</span><span data-lang="zh">运行中的问题调查</span></strong><span><span data-lang="en">Structured input, order and payment-channel checks, and an iterative investigation that stays visible while the Agent works.</span><span data-lang="zh">结构化补充信息、订单与支付渠道检查，以及 Agent 工作过程中持续可见的迭代调查。</span></span></figcaption>
             </figure>
           </div>
         </div>
