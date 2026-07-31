@@ -19,6 +19,8 @@ An end-to-end, self-hosted AgentOps delivery for customer service. Intera connec
 
 `Next.js` · `TypeScript` · `Prisma` · `PostgreSQL` · `AgentOps`
 
+[Source code](https://github.com/CurtisYoung18/intera-agent)
+
 ### [MY_MAP](https://curtisyoung18.github.io/products/my-map/)
 
 An AI-to-API solution that translates loosely expressed travel needs into deterministic map actions, route plans, and along-the-way recommendations.
