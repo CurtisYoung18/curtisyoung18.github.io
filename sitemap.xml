@@ -13,7 +13,31 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://curtisyoung18.github.io/products/kivo/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://curtisyoung18.github.io/products/aim/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curtisyoung18.github.io/products/food-poisoning/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curtisyoung18.github.io/products/email-processing/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curtisyoung18.github.io/products/customer-service-widget/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://curtisyoung18.github.io/products/my-map/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curtisyoung18.github.io/products/dqn/</loc>
     <priority>0.8</priority>
   </url>
   <url>

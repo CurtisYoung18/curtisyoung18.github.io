@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="AI Customer-Service Widget case study: a LiveChat and GPTBots integration for text, rich messages, interactive actions, and human handoff.">
+  <meta name="theme-color" content="#0c171e">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Customer-Service Widget Case Study | Curtis Young">
+  <meta property="og:description" content="A working integration layer connecting an AI agent to a real customer-site chat surface.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/widget.gif">
+  <link rel="canonical" href="https://curtisyoung18.github.io/products/customer-service-widget/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="preload" href="/images/products/widget.gif" as="image">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>AI Customer-Service Widget Case Study | Curtis Young</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
+    }
+  </script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body
+  class="site-page case-page portfolio-case widget-case"
+  data-page="work"
+  data-title-en="AI Customer-Service Widget Case Study | Curtis Young"
+  data-title-zh="AI 客服聊天组件项目案例 | Curtis Young"
+  data-description-en="A LiveChat and GPTBots integration for text, rich messages, interactive actions, and human handoff."
+  data-description-zh="一套连接 LiveChat 与 GPTBots 的客服集成方案，支持文本、富消息、交互操作与人工接管。"
+>
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="content-container case-hero__inner">
+          <aside class="case-rail" aria-label="Case index">
+            <span class="meta-text">CASE 06</span>
+            <div class="case-rail__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </aside>
+          <div>
+            <div class="case-intro reveal">
+              <div>
+                <p class="eyebrow">2025 · CUSTOMER-SERVICE INTEGRATION</p>
+                <h1 class="display-title case-title" id="case-title"><span data-lang="en">AI Widget</span><span data-lang="zh">AI 客服组件</span></h1>
+                <p class="case-subtitle"><span data-lang="en">LiveChat × GPTBots Integration Layer</span><span data-lang="zh">LiveChat × GPTBots 集成层</span></p>
+                <p class="case-summary"><span data-lang="en">A working integration prototype that connects a website chat surface to an AI agent, preserves conversation identity across systems, converts structured agent output into interactive UI, and supports escalation to people.</span><span data-lang="zh">一套可运行集成原型：把网站聊天界面连接至 AI Agent，跨系统保持会话身份，把结构化输出转为交互组件，并支持升级至人工处理。</span></p>
+              </div>
+              <figure class="case-screen portfolio-case__screen">
+                <a class="case-image-link" href="/images/products/widget.gif" target="_blank" rel="noopener" aria-label="Open original AI customer-service widget demonstration">
+                  <img src="/images/products/widget.gif" alt="LiveChat customer-service widget running over a gaming website and displaying guided registration content">
+                </a>
+              </figure>
+              <div class="case-facts">
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
+                  <dd><span data-lang="en">Integration design · Solution prototype · AI-assisted delivery</span><span data-lang="zh">集成设计 · 方案原型 · AI 辅助交付</span></dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
+                  <dd>Next.js · TypeScript · Python</dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Systems</span><span data-lang="zh">连接系统</span></dt>
+                  <dd>LiveChat · GPTBots · Vercel</dd>
+                </dl>
+                <div class="case-links">
+                  <a class="text-link" href="https://v0-i-gaming.vercel.app" target="_blank" rel="noopener"><span data-lang="en">Live demo</span><span data-lang="zh">在线演示</span><span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="https://github.com/CurtisYoung18/v0-i-gaming" target="_blank" rel="noopener">GitHub <span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-principles" aria-label="Project summary">
+        <div class="content-container case-principles__grid">
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">01</span>
+            <h2><span data-lang="en">Integration problem</span><span data-lang="zh">集成问题</span></h2>
+            <p><span data-lang="en">An AI agent can answer correctly and still fail delivery if its output cannot reach the customer’s existing chat surface or be continued by a human team.</span><span data-lang="zh">即便 AI Agent 回答正确，如果输出无法进入客户现有聊天界面，或无法由人工团队继续处理，交付仍然失败。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">02</span>
+            <h2><span data-lang="en">Interface contract</span><span data-lang="zh">接口契约</span></h2>
+            <p><span data-lang="en">The agent emits typed widget JSON. A mapping layer validates it and converts it into LiveChat cards, quick replies, buttons, or plain text.</span><span data-lang="zh">Agent 输出带类型的 Widget JSON；映射层完成校验，并转为 LiveChat 卡片、快捷回复、按钮或普通文本。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">03</span>
+            <h2><span data-lang="en">Working outcome</span><span data-lang="zh">落地结果</span></h2>
+            <p><span data-lang="en">The demo supports guided registration, promotions, recommendations, payment choices, ordinary conversation, and human transfer in one embedded surface.</span><span data-lang="zh">同一嵌入界面支持注册引导、活动推荐、游戏推荐、支付方式、普通对话与人工转接。</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-band" aria-labelledby="widget-flow-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Message route</span><span data-lang="zh">消息链路</span></p>
+              <h2 class="section-title" id="widget-flow-title"><span data-lang="en">Keep one conversation intact across four systems.</span><span data-lang="zh">跨越四个系统，保持同一段会话完整。</span></h2>
+            </div>
+            <p class="portfolio-band__intro"><span data-lang="en">The durable spine is the LiveChat chat ID. It follows each message through the webhook, agent workflow, mapping middleware, and return API so the response reaches the correct customer thread.</span><span data-lang="zh">整条链路的主干是 LiveChat chat ID。它随消息经过 Webhook、Agent Workflow、映射中间件与回传 API，确保回复进入正确的客户会话。</span></p>
+          </div>
+
+          <div class="portfolio-system-grid reveal">
+            <article class="portfolio-system-card">
+              <span class="meta-text">01 · RECEIVE</span>
+              <strong><span data-lang="en">LiveChat webhook</span><span data-lang="zh">接收 Webhook</span></strong>
+              <p><span data-lang="en">Capture chat ID, thread ID, user identity, and message text from the incoming event.</span><span data-lang="zh">从入站事件中提取 chat ID、thread ID、用户身份与消息文本。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">02 · DECIDE</span>
+              <strong><span data-lang="en">GPTBots workflow</span><span data-lang="zh">Agent 决策</span></strong>
+              <p><span data-lang="en">The agent chooses between text, a typed interactive widget, a tool-backed answer, or escalation.</span><span data-lang="zh">Agent 在文本、带类型交互组件、工具型回答或升级处理之间做出选择。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">03 · MAP</span>
+              <strong><span data-lang="en">Middleware contract</span><span data-lang="zh">中间件转换</span></strong>
+              <p><span data-lang="en">Validate the payload and translate product-level widget types into LiveChat Rich Message structures.</span><span data-lang="zh">校验 Payload，并把产品级 Widget 类型转换成 LiveChat Rich Message 结构。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">04 · RETURN</span>
+              <strong><span data-lang="en">Render or hand off</span><span data-lang="zh">渲染或转人工</span></strong>
+              <p><span data-lang="en">Send the response to the originating chat, or preserve context for a human operator to continue.</span><span data-lang="zh">把回复发回原始会话，或保留上下文交由人工继续处理。</span></p>
+            </article>
+          </div>
+
+          <figure class="portfolio-figure reveal">
+            <a class="case-image-link" href="/images/products/widget.gif" target="_blank" rel="noopener" aria-label="Open original AI customer-service widget demonstration">
+              <img src="/images/products/widget.gif" loading="lazy" decoding="async" alt="Animated LiveChat widget demonstrating AI-guided registration in a customer website">
+            </a>
+            <figcaption>
+              <span class="meta-text"><span data-lang="en">Embedded proof</span><span data-lang="zh">嵌入式验证</span></span>
+              <strong><span data-lang="en">The agent works where the customer already is.</span><span data-lang="zh">让 Agent 出现在客户已有的界面中。</span></strong>
+              <span><span data-lang="en">The website remains the product surface; the AI layer adds guided content and actions without forcing users into a separate assistant application.</span><span data-lang="zh">网站仍是产品界面；AI 层在其中增加引导内容与交互操作，无需把用户带到独立助手应用。</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-story surface-paper" aria-labelledby="widget-contract-title">
+        <div class="content-container">
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Typed output</span><span data-lang="zh">类型化输出</span></p>
+              <h2 id="widget-contract-title"><span data-lang="en">Treat rich UI as an API contract, not model prose.</span><span data-lang="zh">把富交互当作 API 契约，而不是模型自由文本。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">The model selects a widget type and fills a constrained schema. The application owns parsing, validation, mapping, and rendering. This boundary makes interactive responses inspectable and gives the system a plain-text fallback when structured output is invalid.</span><span data-lang="zh">模型选择 Widget 类型并填充受限 Schema；应用负责解析、校验、映射与渲染。这个边界让交互回复可检查，并在结构化输出无效时保留普通文本回退。</span></p>
+            </div>
+          </div>
+
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Human continuity</span><span data-lang="zh">人工连续性</span></p>
+              <h2><span data-lang="en">Escalation is part of the architecture.</span><span data-lang="zh">人工接管从一开始就是架构的一部分。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">The same routing identity used for automated replies also anchors transfer. When the agent cannot complete the request, the conversation can move to an operator without opening a new thread or losing the customer’s message history.</span><span data-lang="zh">自动回复使用的同一会话身份也用于转接。当 Agent 无法完成请求时，会话可以进入人工队列，而无需创建新线程或丢失客户消息历史。</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="content-container">
+          <a class="case-next__link" href="/products/my-map/">
+            <span><span class="meta-text"><span data-lang="en">Next case study</span><span data-lang="zh">下一个项目案例</span></span><strong>MY_MAP</strong></span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
+</body>
+</html>

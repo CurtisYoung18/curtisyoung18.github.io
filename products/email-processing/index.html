@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="Email Processing System case study: a code-and-LLM pipeline that turns overlapping email archives into a deduplicated, queryable RAG knowledge base.">
+  <meta name="theme-color" content="#101426">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Email Processing System Case Study | Curtis Young">
+  <meta property="og:description" content="From overlapping .eml archives to structured knowledge and conversational retrieval.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/eml_process.png">
+  <link rel="canonical" href="https://curtisyoung18.github.io/products/email-processing/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="preload" href="/images/products/eml_process.png" as="image">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>Email Processing System Case Study | Curtis Young</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
+    }
+  </script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body
+  class="site-page case-page email-case"
+  data-page="work"
+  data-title-en="Email Processing System Case Study | Curtis Young"
+  data-title-zh="邮件处理系统项目案例 | Curtis Young"
+  data-description-en="A code-and-LLM pipeline that turns overlapping email archives into a deduplicated, queryable RAG knowledge base."
+  data-description-zh="一套结合确定性代码与 LLM 的邮件处理管线，把重复邮件档案转化为去重、结构化且可查询的 RAG 知识库。"
+>
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="content-container case-hero__inner">
+          <aside class="case-rail" aria-label="Case index">
+            <span class="meta-text">CASE 05</span>
+            <div class="case-rail__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </aside>
+          <div>
+            <div class="case-intro reveal">
+              <div>
+                <p class="eyebrow">2025 · RAG PIPELINE</p>
+                <h1 class="display-title case-title" id="case-title">Email<br>Processing</h1>
+                <p class="case-subtitle"><span data-lang="en">Archive-to-RAG Knowledge System</span><span data-lang="zh">从邮件档案到 RAG 知识系统</span></p>
+                <p class="case-summary"><span data-lang="en">I built an operator-facing pipeline that converts overlapping .eml archives into deduplicated Markdown, uses an LLM to extract business facts, and publishes the result into a conversational knowledge base.</span><span data-lang="zh">我构建了一套面向运营人员的处理管线：把高度重复的 .eml 邮件档案转为去重 Markdown，再由 LLM 提取业务事实，最终发布到可对话知识库。</span></p>
+              </div>
+              <figure class="case-screen email-case__screen">
+                <a class="case-image-link" href="/images/products/eml_process.png" target="_blank" rel="noopener" aria-label="Open original Email Processing Management screenshot">
+                  <img src="/images/products/eml_process.png" alt="Email Processing Management interface showing the batch workflow from creation to processing and result review">
+                </a>
+              </figure>
+              <div class="case-facts">
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
+                  <dd><span data-lang="en">Solution design · Product workflow · AI-assisted full-stack delivery</span><span data-lang="zh">方案设计 · 产品流程 · AI 辅助全栈交付</span></dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
+                  <dd>Next.js · TypeScript · Python · Flask</dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Services</span><span data-lang="zh">服务</span></dt>
+                  <dd>GPTBots LLM · Knowledge Base API</dd>
+                </dl>
+                <div class="case-links">
+                  <a class="text-link" href="#pipeline"><span data-lang="en">See the pipeline</span><span data-lang="zh">查看处理管线</span><span class="text-link__arrow" aria-hidden="true">↓</span></a>
+                  <a class="text-link" href="https://github.com/CurtisYoung18/Eml_process_platform" target="_blank" rel="noopener">GitHub <span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="email-pipeline" id="pipeline" aria-labelledby="pipeline-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">System flow</span><span data-lang="zh">系统流程</span></p>
+              <h2 class="section-title" id="pipeline-title"><span data-lang="en">Turn email history into internal knowledge.</span><span data-lang="zh">把邮件历史转成企业内部可用知识。</span></h2>
+            </div>
+            <p class="email-pipeline__intro"><span data-lang="en">Code removes repetition first. The model extracts facts only after the archive is reliable.</span><span data-lang="zh">先由代码去除重复；档案可靠后，模型才提取业务事实。</span></p>
+          </div>
+
+          <figure class="project-logic-visual email-logic-visual reveal" aria-label="Archive-to-RAG visual narrative">
+            <a class="case-image-link" href="/images/products/email-archive-to-rag.png" target="_blank" rel="noopener" aria-label="Open original archive-to-RAG visual">
+              <img src="/images/products/email-archive-to-rag.png" loading="lazy" decoding="async" alt="A paper archive moving through successive physical filters into an orderly internal knowledge workspace">
+            </a>
+            <figcaption class="project-logic-visual__legend">
+              <div class="project-logic-visual__step">
+                <span class="meta-text">01</span>
+                <strong><span data-lang="en">Raw archive</span><span data-lang="zh">原始档案</span></strong>
+                <small><span data-lang="en">overlapping email history</span><span data-lang="zh">交叠的邮件历史</span></small>
+              </div>
+              <div class="project-logic-visual__step">
+                <span class="meta-text">02</span>
+                <strong><span data-lang="en">Clean &amp; structure</span><span data-lang="zh">清洗与结构化</span></strong>
+                <small><span data-lang="en">parse · dedupe · extract</span><span data-lang="zh">解析 · 去重 · 提取</span></small>
+              </div>
+              <div class="project-logic-visual__step">
+                <span class="meta-text">03</span>
+                <strong><span data-lang="en">Internal RAG</span><span data-lang="zh">企业内部 RAG</span></strong>
+                <small><span data-lang="en">agent answers for employees</span><span data-lang="zh">为员工提供有据回答</span></small>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="email-demo reveal">
+            <a class="case-image-link" href="/images/products/eml_process.gif" target="_blank" rel="noopener" aria-label="Open original animated Email Processing workflow">
+              <picture>
+                <source media="(prefers-reduced-motion: reduce)" srcset="/images/products/eml_process.png">
+                <img src="/images/products/eml_process.gif" loading="lazy" decoding="async" alt="Animated Email Processing Management workflow showing batch operations">
+              </picture>
+            </a>
+            <figcaption>
+              <span class="meta-text"><span data-lang="en">Working interface</span><span data-lang="zh">可运行界面</span></span>
+              <strong><span data-lang="en">A batch is a controllable unit of work.</span><span data-lang="zh">以批次作为可控制、可追踪的工作单元。</span></strong>
+              <span><span data-lang="en">Operators can create and label a batch, select it for automated processing, monitor state, and inspect outputs without moving between scripts.</span><span data-lang="zh">运营人员可以创建并标记批次、选择自动处理、监控状态并检查输出，无需在多个脚本之间切换。</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="email-evidence surface-paper" aria-labelledby="evidence-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Reference batch</span><span data-lang="zh">参考批次</span></p>
+              <h2 class="section-title" id="evidence-title"><span data-lang="en">Remove repetition without losing provenance.</span><span data-lang="zh">减少重复，但不丢失来源关系。</span></h2>
+            </div>
+            <p class="email-evidence__intro"><span data-lang="en">The implementation notes record a seed archive in which newer messages contained most of the earlier thread. The cleaner retained the useful records and attached covered source filenames to their parent document.</span><span data-lang="zh">实施记录中的种子档案存在大量“新邮件包含旧线程”的情况。清洗器保留有效记录，并在主文档中记录被覆盖的源文件名。</span></p>
+          </div>
+
+          <div class="email-evidence__grid reveal">
+            <div class="email-evidence__metric">
+              <span class="meta-text"><span data-lang="en">Raw messages</span><span data-lang="zh">原始邮件</span></span>
+              <strong>51</strong>
+              <small>.eml</small>
+            </div>
+            <span class="email-evidence__arrow" aria-hidden="true">→</span>
+            <div class="email-evidence__metric email-evidence__metric--retained">
+              <span class="meta-text"><span data-lang="en">Retained records</span><span data-lang="zh">保留记录</span></span>
+              <strong>18</strong>
+              <small>Markdown</small>
+            </div>
+            <article class="email-evidence__note">
+              <span class="meta-text"><span data-lang="en">Why it matters</span><span data-lang="zh">为什么重要</span></span>
+              <strong><span data-lang="en">RAG quality starts before retrieval.</span><span data-lang="zh">RAG 质量从检索之前就开始决定。</span></strong>
+              <p><span data-lang="en">Uploading every quoted reply would create redundant chunks and conflicting retrieval candidates. Deduplication improves the knowledge substrate while source mapping keeps the transformation auditable.</span><span data-lang="zh">把每次引用回复都上传会制造重复切片和相互冲突的检索候选。去重改善知识底座，来源映射则让转换过程保持可审计。</span></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-story surface-paper" aria-labelledby="architecture-title">
+        <div class="content-container">
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Architecture boundary</span><span data-lang="zh">架构边界</span></p>
+              <h2 id="architecture-title"><span data-lang="en">Use code for certainty. Use the model for judgment.</span><span data-lang="zh">确定性交给代码，语义判断交给模型。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">Parsing an email header, detecting repeated content, and tracking whether a file has already entered the knowledge base should not depend on a model. Python handles those rules. The LLM enters only after the archive is reduced, where it extracts products, quotations, project status, dates, decisions, and action items into a consistent schema.</span><span data-lang="zh">解析邮件头、检测重复内容、判断文件是否已进入知识库，都不应依赖模型，因此由 Python 处理。只有在档案完成去重后，LLM 才负责提取产品、报价、项目状态、日期、决策和行动项，并输出统一结构。</span></p>
+              <div class="process-list">
+                <div class="process-item"><span class="meta-text work-index">01</span><strong><span data-lang="en">Deterministic parsing and validation</span><span data-lang="zh">确定性解析与校验</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">02</span><strong><span data-lang="en">Content containment and hash-based deduplication</span><span data-lang="zh">内容包含关系与哈希去重</span></strong></div>
+                <div class="process-item"><span class="meta-text work-index">03</span><strong><span data-lang="en">Schema-guided business extraction</span><span data-lang="zh">Schema 引导的业务信息提取</span></strong></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="content-container">
+          <a class="case-next__link" href="/products/customer-service-widget/">
+            <span><span class="meta-text"><span data-lang="en">Next case study</span><span data-lang="zh">下一个项目案例</span></span><strong><span data-lang="en">AI Customer-Service Widget</span><span data-lang="zh">AI 客服聊天组件</span></strong></span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
+</body>
+</html>

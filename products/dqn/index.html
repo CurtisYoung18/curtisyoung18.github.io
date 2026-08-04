@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="DQN implementation case study: configurable PyTorch experiments across CartPole and LunarLander with replay buffers, target networks, and Duelling DQN.">
+  <meta name="theme-color" content="#121019">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DQN Experiments Case Study | Curtis Young">
+  <meta property="og:description" content="From the reinforcement-learning loop to reproducible checkpoints across CartPole and LunarLander.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/dqn.gif">
+  <link rel="canonical" href="https://curtisyoung18.github.io/products/dqn/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="preload" href="/images/products/dqn.gif" as="image">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>DQN Experiments Case Study | Curtis Young</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
+    }
+  </script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body
+  class="site-page case-page portfolio-case dqn-case"
+  data-page="work"
+  data-title-en="DQN Experiments Case Study | Curtis Young"
+  data-title-zh="DQN 实验项目案例 | Curtis Young"
+  data-description-en="Configurable PyTorch DQN experiments across CartPole and LunarLander with replay buffers, target networks, and Duelling DQN."
+  data-description-zh="基于 PyTorch 的可配置 DQN 实验，覆盖 CartPole、LunarLander、经验回放、目标网络与 Duelling DQN。"
+>
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="content-container case-hero__inner">
+          <aside class="case-rail" aria-label="Case index">
+            <span class="meta-text">CASE 08</span>
+            <div class="case-rail__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </aside>
+          <div>
+            <div class="case-intro reveal">
+              <div>
+                <p class="eyebrow">2024 · REINFORCEMENT LEARNING</p>
+                <h1 class="display-title case-title" id="case-title">DQN</h1>
+                <p class="case-subtitle"><span data-lang="en">Configurable Deep Q-Network Experiments</span><span data-lang="zh">可配置 Deep Q-Network 实验</span></p>
+                <p class="case-summary"><span data-lang="en">A PyTorch implementation that turns the DQN training loop into comparable experiments across network variants and environments, with configuration, visualization, and saved checkpoints built in.</span><span data-lang="zh">一套 PyTorch 实现：把 DQN 训练循环扩展为可比较的网络结构与环境实验，并内置配置、可视化和 Checkpoint 保存。</span></p>
+              </div>
+              <figure class="case-screen portfolio-case__screen">
+                <a class="case-image-link" href="/images/products/dqn.gif" target="_blank" rel="noopener" aria-label="Open original DQN LunarLander demonstration">
+                  <img src="/images/products/dqn.gif" alt="LunarLander environment running from a trained Deep Q-Network checkpoint">
+                </a>
+              </figure>
+              <div class="case-facts">
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
+                  <dd><span data-lang="en">RL implementation · Experiment design</span><span data-lang="zh">强化学习实现 · 实验设计</span></dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
+                  <dd>Python · PyTorch · OpenAI Gym</dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Variants</span><span data-lang="zh">网络变体</span></dt>
+                  <dd>DQN · Duelling DQN</dd>
+                </dl>
+                <div class="case-links">
+                  <a class="text-link" href="https://github.com/CurtisYoung18/RL-DQN" target="_blank" rel="noopener">GitHub <span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="https://github.com/CurtisYoung18/RL-DQN/blob/main/report.pdf" target="_blank" rel="noopener"><span data-lang="en">Report</span><span data-lang="zh">实验报告</span><span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-principles" aria-label="Project summary">
+        <div class="content-container case-principles__grid">
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">01</span>
+            <h2><span data-lang="en">Learning problem</span><span data-lang="zh">学习问题</span></h2>
+            <p><span data-lang="en">Value learning combines bootstrapped targets, correlated experience, and a policy that changes while data is collected—conditions that can destabilize training.</span><span data-lang="zh">价值学习同时面临自举目标、相关经验，以及随数据收集持续变化的策略，训练容易失稳。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">02</span>
+            <h2><span data-lang="en">Engineering response</span><span data-lang="zh">工程处理</span></h2>
+            <p><span data-lang="en">Replay memory decorrelates samples, an epsilon-greedy policy manages exploration, and a separate target network slows the moving objective.</span><span data-lang="zh">经验回放降低样本相关性，Epsilon-greedy 管理探索，独立目标网络减缓目标漂移。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">03</span>
+            <h2><span data-lang="en">Experiment surface</span><span data-lang="zh">实验能力</span></h2>
+            <p><span data-lang="en">One runner compares single-hidden, two-hidden, and Duelling DQN models across CartPole and LunarLander configurations.</span><span data-lang="zh">同一 Runner 可比较单隐藏层、双隐藏层与 Duelling DQN，并覆盖 CartPole 与 LunarLander 配置。</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-band" aria-labelledby="dqn-loop-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Training loop</span><span data-lang="zh">训练循环</span></p>
+              <h2 class="section-title" id="dqn-loop-title"><span data-lang="en">Separate acting, learning, and target updates.</span><span data-lang="zh">把行动、学习与目标更新拆开。</span></h2>
+            </div>
+            <p class="portfolio-band__intro"><span data-lang="en">The implementation makes each stability mechanism explicit, so architecture and hyperparameter changes can be compared without rewriting the training loop.</span><span data-lang="zh">实现把每一种稳定机制显式化，使网络结构与超参数可以直接比较，而无需重写训练循环。</span></p>
+          </div>
+
+          <div class="portfolio-system-grid reveal">
+            <article class="portfolio-system-card">
+              <span class="meta-text">01 · ACT</span>
+              <strong><span data-lang="en">Explore and choose</span><span data-lang="zh">探索并选择动作</span></strong>
+              <p><span data-lang="en">Use epsilon-greedy action selection with a configurable decay schedule for each environment.</span><span data-lang="zh">针对每个环境使用带可配置衰减计划的 Epsilon-greedy 动作选择。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">02 · STORE</span>
+              <strong><span data-lang="en">Replay experience</span><span data-lang="zh">经验回放</span></strong>
+              <p><span data-lang="en">Store transitions in a bounded replay buffer and sample minibatches after the warm-up threshold.</span><span data-lang="zh">把 Transition 存入有界 Replay Buffer，并在预热阈值后抽取 Minibatch。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">03 · OPTIMIZE</span>
+              <strong><span data-lang="en">Fit the Q target</span><span data-lang="zh">拟合 Q Target</span></strong>
+              <p><span data-lang="en">Compute bootstrapped Bellman targets, backpropagate loss, and optionally clip gradients.</span><span data-lang="zh">计算自举 Bellman Target、反向传播损失，并可选择进行梯度裁剪。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">04 · SYNC</span>
+              <strong><span data-lang="en">Update the target</span><span data-lang="zh">更新目标网络</span></strong>
+              <p><span data-lang="en">Compare periodic hard copies with soft Polyak updates controlled by tau.</span><span data-lang="zh">比较周期性硬同步与由 Tau 控制的 Polyak 软更新。</span></p>
+            </article>
+          </div>
+
+          <figure class="portfolio-figure reveal">
+            <a class="case-image-link" href="/images/products/dqn.gif" target="_blank" rel="noopener" aria-label="Open original DQN LunarLander demonstration">
+              <img src="/images/products/dqn.gif" loading="lazy" decoding="async" alt="Animated LunarLander episode generated by a trained DQN agent">
+            </a>
+            <figcaption>
+              <span class="meta-text"><span data-lang="en">Trained policy</span><span data-lang="zh">训练后策略</span></span>
+              <strong><span data-lang="en">A checkpoint should produce behavior you can inspect.</span><span data-lang="zh">Checkpoint 应该产生可检查的实际行为。</span></strong>
+              <span><span data-lang="en">The visualizer opens near the solved threshold, connecting reward statistics with the policy’s actual control of the environment.</span><span data-lang="zh">Visualizer 会在接近解决阈值时运行，把奖励统计与策略对环境的实际控制表现对应起来。</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-story surface-paper" aria-labelledby="dqn-results-title">
+        <div class="content-container">
+          <div class="portfolio-metrics reveal" aria-label="DQN checkpoint results">
+            <div class="portfolio-metric"><span class="meta-text">CartPole-v1</span><strong>475.920</strong><small><span data-lang="en">Saved R100 checkpoint</span><span data-lang="zh">已保存 R100 Checkpoint</span></small></div>
+            <div class="portfolio-metric"><span class="meta-text">LunarLander-v3</span><strong>+202.956</strong><small><span data-lang="en">Saved Duelling DQN checkpoint</span><span data-lang="zh">已保存 Duelling DQN Checkpoint</span></small></div>
+            <div class="portfolio-metric"><span class="meta-text"><span data-lang="en">Network choices</span><span data-lang="zh">网络选择</span></span><strong>3</strong><small><span data-lang="en">Single · two-hidden · duelling</span><span data-lang="zh">单层 · 双层 · Duelling</span></small></div>
+          </div>
+
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Experiment design</span><span data-lang="zh">实验设计</span></p>
+              <h2 id="dqn-results-title"><span data-lang="en">Move decisions out of the script and into configuration.</span><span data-lang="zh">把实验决策从脚本移到配置中。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">Environment-specific YAML controls discounting, replay capacity, exploration decay, hidden sizes, learning rate, synchronization, stopping reward, and frame budget. The command line selects the environment and network variant, so comparable runs share one implementation path.</span><span data-lang="zh">环境级 YAML 统一控制折扣因子、Replay 容量、探索衰减、隐藏层、学习率、同步方式、停止奖励与 Frame 预算；命令行只选择环境和网络变体，让可比较实验复用同一实现路径。</span></p>
+            </div>
+          </div>
+
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Architecture comparison</span><span data-lang="zh">架构比较</span></p>
+              <h2><span data-lang="en">Test capacity and value decomposition separately.</span><span data-lang="zh">分别测试网络容量与价值分解。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">The experiment surface separates a deeper plain DQN from Duelling DQN, which estimates state value and action advantage through different streams before combining them. Saved models and reward traces make those comparisons reproducible.</span><span data-lang="zh">实验将更深的普通 DQN 与 Duelling DQN 分开比较；后者分别估计状态价值与动作优势，再合并输出。已保存模型与奖励轨迹让比较结果可以复现。</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="content-container">
+          <a class="case-next__link" href="/products/intera/">
+            <span><span class="meta-text"><span data-lang="en">Return to case 01</span><span data-lang="zh">返回案例 01</span></span><strong>Intera</strong></span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
+</body>
+</html>

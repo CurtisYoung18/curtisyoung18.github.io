@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Curtis Young">
+  <meta name="description" content="AIM case study: retraining-free AI model modulation through logits redistribution, published at The Web Conference 2025.">
+  <meta name="theme-color" content="#121116">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AIM Research Case Study | Curtis Young">
+  <meta property="og:description" content="One model, multiple end requirements—through training-data-agnostic logits redistribution.">
+  <meta property="og:image" content="https://curtisyoung18.github.io/images/products/AIM.png">
+  <link rel="canonical" href="https://curtisyoung18.github.io/products/aim/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/hero/avatar-favicon.png">
+  <link rel="apple-touch-icon" href="/images/hero/avatar-favicon.png">
+  <link rel="preload" href="/images/products/AIM.png" as="image">
+  <link rel="stylesheet" href="/css/site.css">
+  <title>AIM Research Case Study | Curtis Young</title>
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem("curtis-site-language") === "zh" ? "zh" : "en";
+    } catch (error) {
+      document.documentElement.dataset.language = "en";
+    }
+  </script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body
+  class="site-page case-page portfolio-case aim-case"
+  data-page="work"
+  data-title-en="AIM Research Case Study | Curtis Young"
+  data-title-zh="AIM 研究项目案例 | Curtis Young"
+  data-description-en="AIM modulates one pretrained model for different end requirements through retraining-free logits redistribution."
+  data-description-zh="AIM 通过无需重训练的 Logits 重分布，让同一个预训练模型适配不同终端需求。"
+>
+  <a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+  <div class="site-shell">
+    <header data-site-header></header>
+    <main class="site-main" id="main-content">
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="content-container case-hero__inner">
+          <aside class="case-rail" aria-label="Case index">
+            <span class="meta-text">CASE 03</span>
+            <div class="case-rail__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </aside>
+          <div>
+            <div class="case-intro reveal">
+              <div>
+                <p class="eyebrow">2025 · WWW RESEARCH</p>
+                <h1 class="display-title case-title" id="case-title">AIM</h1>
+                <p class="case-subtitle"><span data-lang="en">AI Model Modulation with Logits Redistribution</span><span data-lang="zh">基于 Logits 重分布的 AI 模型调制</span></p>
+                <p class="case-summary"><span data-lang="en">A retraining-free way to make one pretrained model express different utility levels or focus on different input features—without maintaining a separate model for every requirement.</span><span data-lang="zh">无需为每种需求维护独立模型，也无需重新训练；通过调节 Logits，让同一预训练模型呈现不同效用水平或关注不同输入特征。</span></p>
+              </div>
+              <figure class="case-screen portfolio-case__screen portfolio-case__screen--contain">
+                <a class="case-image-link" href="/images/products/AIM.png" target="_blank" rel="noopener" aria-label="Open original AIM logits redistribution diagram">
+                  <img src="/images/products/AIM.png" alt="AIM logits redistribution diagram showing controlled noise applied across model labels">
+                </a>
+              </figure>
+              <div class="case-facts">
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Role</span><span data-lang="zh">角色</span></dt>
+                  <dd><span data-lang="en">Co-author · Research · Implementation</span><span data-lang="zh">共同作者 · 研究 · 实验实现</span></dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Stack</span><span data-lang="zh">技术栈</span></dt>
+                  <dd>Python · PyTorch · OpenCompass</dd>
+                </dl>
+                <dl class="case-fact">
+                  <dt class="meta-text"><span data-lang="en">Coverage</span><span data-lang="zh">覆盖范围</span></dt>
+                  <dd>ResNet · SegFormer · Llama</dd>
+                </dl>
+                <div class="case-links">
+                  <a class="text-link" href="https://dl.acm.org/doi/10.1145/3696410.3714737" target="_blank" rel="noopener">DOI <span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="https://github.com/UQ-Trust-Lab/AIM" target="_blank" rel="noopener">GitHub <span class="text-link__arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-principles" aria-label="Research summary">
+        <div class="content-container case-principles__grid">
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">01</span>
+            <h2><span data-lang="en">Research problem</span><span data-lang="zh">研究问题</span></h2>
+            <p><span data-lang="en">Fine-tuning and model variants can satisfy different stakeholders, but maintaining many specialized copies is resource-heavy and difficult to scale.</span><span data-lang="zh">微调与模型变体可以满足不同利益相关者，但维护大量专用副本会消耗资源，也难以扩展。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">02</span>
+            <h2><span data-lang="en">Intervention point</span><span data-lang="zh">干预位置</span></h2>
+            <p><span data-lang="en">AIM changes the ordering and distribution of logits at the model’s final decision layer while leaving learned representations and weights intact.</span><span data-lang="zh">AIM 在模型最终决策层改变 Logits 的排序与分布，同时保持已学习的表征与权重不变。</span></p>
+          </article>
+          <article class="case-principle reveal">
+            <span class="meta-text work-index">03</span>
+            <h2><span data-lang="en">Research outcome</span><span data-lang="zh">研究结果</span></h2>
+            <p><span data-lang="en">The method supports utility and focus modulation across image classification, semantic segmentation, and text generation.</span><span data-lang="zh">该方法在图像分类、语义分割与文本生成任务上实现效用调制和焦点调制。</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-band" aria-labelledby="aim-system-title">
+        <div class="content-container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Modulation design</span><span data-lang="zh">调制设计</span></p>
+              <h2 class="section-title" id="aim-system-title"><span data-lang="en">Change behavior at the final decision layer.</span><span data-lang="zh">在最终决策层改变模型行为。</span></h2>
+            </div>
+            <p class="portfolio-band__intro"><span data-lang="en">Logits are where learned features become ranked output choices. AIM redistributes them with controlled statistical functions, avoiding new training data and weight updates.</span><span data-lang="zh">Logits 是学习特征转化为排序输出的位置。AIM 通过可控统计函数重分布 Logits，不需要新增训练数据或更新权重。</span></p>
+          </div>
+
+          <div class="portfolio-system-grid reveal">
+            <article class="portfolio-system-card">
+              <span class="meta-text">01 · UTILITY</span>
+              <strong><span data-lang="en">Control output quality</span><span data-lang="zh">控制输出效用</span></strong>
+              <p><span data-lang="en">Bilateral noise changes overall utility in measured increments, giving model owners one deployment with adjustable service levels.</span><span data-lang="zh">双侧噪声按可测量幅度改变整体效用，让模型所有者在同一部署中调节服务水平。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">02 · FOCUS</span>
+              <strong><span data-lang="en">Shift feature attention</span><span data-lang="zh">转移特征关注</span></strong>
+              <p><span data-lang="en">One-sided adjustments increase or decrease the model’s responsiveness to selected labels or input features.</span><span data-lang="zh">单侧调整增强或减弱模型对指定标签或输入特征的响应倾向。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">03 · FOUNDATION</span>
+              <strong><span data-lang="en">Bound the regulation</span><span data-lang="zh">建立调节基础</span></strong>
+              <p><span data-lang="en">Joint probability distributions over logits ordering provide the formal basis for predictable modulation behavior.</span><span data-lang="zh">基于 Logits 排序的联合概率分布，为可预测的调制行为提供形式化基础。</span></p>
+            </article>
+            <article class="portfolio-system-card">
+              <span class="meta-text">04 · TRANSFER</span>
+              <strong><span data-lang="en">Work across architectures</span><span data-lang="zh">跨架构复用</span></strong>
+              <p><span data-lang="en">The same paradigm is evaluated across vision, segmentation, and language-generation stacks.</span><span data-lang="zh">同一范式在视觉、分割与语言生成技术栈中完成评测。</span></p>
+            </article>
+          </div>
+
+          <figure class="portfolio-figure portfolio-figure--contain reveal">
+            <a class="case-image-link" href="/images/products/AIM.png" target="_blank" rel="noopener" aria-label="Open original AIM logits redistribution diagram">
+              <img src="/images/products/AIM.png" loading="lazy" decoding="async" alt="Illustration of AIM redistributing model logits with controlled noise">
+            </a>
+            <figcaption>
+              <span class="meta-text"><span data-lang="en">Core mechanism</span><span data-lang="zh">核心机制</span></span>
+              <strong><span data-lang="en">Redistribute decisions, not model weights.</span><span data-lang="zh">重分布决策，而不是重训练权重。</span></strong>
+              <span><span data-lang="en">The modulation sits after representation learning and before final probabilities, which makes it lightweight and training-data agnostic.</span><span data-lang="zh">调制发生在表征学习之后、最终概率之前，因此保持轻量，并且不依赖训练数据。</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-story surface-paper" aria-labelledby="aim-evidence-title">
+        <div class="content-container">
+          <div class="case-story__row reveal">
+            <div>
+              <p class="eyebrow"><span data-lang="en">Evaluation surface</span><span data-lang="zh">评测范围</span></p>
+              <h2 id="aim-evidence-title"><span data-lang="en">Test the idea across modalities, not one benchmark.</span><span data-lang="zh">跨模态验证，而不是只跑一个 Benchmark。</span></h2>
+            </div>
+            <div class="case-story__copy">
+              <p><span data-lang="en">The implementation covers CIFAR image classification with ResNet, ADE20K-style semantic segmentation with SegFormer, and language-model evaluation through a modified OpenCompass stack for Llama and Qwen-family models.</span><span data-lang="zh">实现覆盖基于 ResNet 的 CIFAR 图像分类、基于 SegFormer 的 ADE20K 类语义分割，并通过改造后的 OpenCompass 对 Llama 与 Qwen 系列模型进行语言任务评测。</span></p>
+              <div class="process-list">
+                <div class="process-item"><span class="meta-text work-index">01</span><strong>Image classification · ResNet</strong></div>
+                <div class="process-item"><span class="meta-text work-index">02</span><strong>Semantic segmentation · SegFormer</strong></div>
+                <div class="process-item"><span class="meta-text work-index">03</span><strong>Text generation · Llama / Qwen</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <div class="content-container">
+          <a class="case-next__link" href="/products/food-poisoning/">
+            <span><span class="meta-text"><span data-lang="en">Next case study</span><span data-lang="zh">下一个项目案例</span></span><strong><span data-lang="en">Public Health POC</span><span data-lang="zh">公共卫生 POC</span></strong></span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer data-site-footer></footer>
+  </div>
+</body>
+</html>
